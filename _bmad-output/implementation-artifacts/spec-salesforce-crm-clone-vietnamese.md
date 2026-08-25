@@ -2,7 +2,8 @@
 title: 'Build Salesforce CRM Clone in Vietnamese (Nuxt 4 / Vue 3)'
 type: 'feature'
 created: '2026-08-25'
-status: 'ready-for-dev'
+status: 'done'
+baseline_commit: '9a37c39bb0e50dd904ca90153c5a6aa97bd385a7'
 review_loop_iteration: 0
 context:
   - '_bmad-output/planning-artifacts/research/competitive-salesforce-crm-teardown-2026-08-25/research.md'
@@ -68,19 +69,19 @@ context:
 ## Tasks & Acceptance
 
 **Execution:**
-- [ ] `package.json` & `nuxt.config.ts` -- Cài đặt Tailwind CSS v4 và cấu hình Nuxt 4 -- Thiết lập nền tảng styling và build
-- [ ] `app/assets/css/main.css` -- Định nghĩa biến màu sắc `#0176D3`, `#032D60`, font stack và animations -- Chuẩn hóa Design Tokens
-- [ ] `app/data/` (`navigation.ts`, `crm-blades.ts`, `pricing.ts`, `faqs.ts`) -- Khởi tạo toàn bộ dữ liệu nội dung tiếng Việt -- Tách biệt dữ liệu và giao diện
-- [ ] `app/composables/useDemoModal.ts` -- Viết logic mở/đóng modal video demo -- Trạng thái tương tác toàn cục
-- [ ] `app/components/ui/` (`SfButton.vue`, `SfBadge.vue`, `SfDemoModal.vue`) -- Xây dựng các UI Atoms cơ bản -- Thành phần tái sử dụng
-- [ ] `app/components/blades/` -- Xây dựng toàn bộ 17 Component Blades -- Tái hiện giao diện 17 khối nội dung chuẩn
-- [ ] `app/components/AppHeader.vue` & `AppFooter.vue` -- Lập trình Header 2 tầng (Global + C360 Sticky) và Footer đa cột -- Điều hướng hoàn chỉnh
-- [ ] `app/layouts/default.vue` -- Tạo default layout bọc Header, Slot và Footer -- Cấu trúc trang chuẩn
-- [ ] `app/pages/index.vue` -- Lắp ghép 17 Blades vào trang chủ CRM -- Hoàn thiện Landing Page chính
-- [ ] `app/pages/crm/what-is-crm.vue` -- Lập trình trang Khái niệm CRM -- Hoàn thiện trang con giáo dục
-- [ ] `app/pages/crm/pricing.vue` -- Lập trình trang Bảng giá CRM -- Hoàn thiện trang con pricing
-- [ ] `app/pages/crm/free-trial.vue` -- Lập trình trang Form dùng thử 30 ngày với client validation -- Hoàn thiện trang thu thập lead
-- [ ] `app/app.vue` -- Cập nhật NuxtLayout và NuxtPage -- Khởi chạy ứng dụng
+- [x] `package.json` & `nuxt.config.ts` -- Cài đặt Tailwind CSS v4 và cấu hình Nuxt 4 -- Thiết lập nền tảng styling và build
+- [x] `app/assets/css/main.css` -- Định nghĩa biến màu sắc `#0176D3`, `#032D60`, font stack và animations -- Chuẩn hóa Design Tokens
+- [x] `app/data/` (`navigation.ts`, `crm-blades.ts`, `pricing.ts`, `faqs.ts`) -- Khởi tạo toàn bộ dữ liệu nội dung tiếng Việt -- Tách biệt dữ liệu và giao diện
+- [x] `app/composables/useDemoModal.ts` -- Viết logic mở/đóng modal video demo -- Trạng thái tương tác toàn cục
+- [x] `app/components/ui/` (`SfButton.vue`, `SfBadge.vue`, `SfDemoModal.vue`) -- Xây dựng các UI Atoms cơ bản -- Thành phần tái sử dụng
+- [x] `app/components/blades/` -- Xây dựng toàn bộ 17 Component Blades -- Tái hiện giao diện 17 khối nội dung chuẩn
+- [x] `app/components/AppHeader.vue` & `AppFooter.vue` -- Lập trình Header 2 tầng (Global + C360 Sticky) và Footer đa cột -- Điều hướng hoàn chỉnh
+- [x] `app/layouts/default.vue` -- Tạo default layout bọc Header, Slot và Footer -- Cấu trúc trang chuẩn
+- [x] `app/pages/index.vue` -- Lắp ghép 17 Blades vào trang chủ CRM -- Hoàn thiện Landing Page chính
+- [x] `app/pages/crm/what-is-crm.vue` -- Lập trình trang Khái niệm CRM -- Hoàn thiện trang con giáo dục
+- [x] `app/pages/crm/pricing.vue` -- Lập trình trang Bảng giá CRM -- Hoàn thiện trang con pricing
+- [x] `app/pages/crm/free-trial.vue` -- Lập trình trang Form dùng thử 30 ngày với client validation -- Hoàn thiện trang thu thập lead
+- [x] `app/app.vue` -- Cập nhật NuxtLayout và NuxtPage -- Khởi chạy ứng dụng
 
 **Acceptance Criteria:**
 - Given người dùng truy cập `/`, when cuộn trang, then thấy đủ 17 Blades với bố cục chuẩn, font chữ sắc nét và màu sắc xanh Lightning / Navy.
@@ -99,3 +100,59 @@ Giao diện áp dụng Tailwind CSS v4 kết hợp theme tùy biến:
 **Commands:**
 - `npm run build` -- expected: Build thành công không có lỗi (Exit code 0)
 - `npx nuxi typecheck` -- expected: TypeScript kiểm tra hợp lệ
+
+## Suggested Review Order
+
+**1. Data Architecture & Content Layer**
+
+- Định nghĩa 17 Blades và toàn bộ nội dung tiếng Việt chuẩn hóa
+  [`crm-blades.ts:1`](../../app/data/crm-blades.ts#L1)
+
+- Cấu trúc menu điều hướng 2 tầng (Global & ContextNav C360)
+  [`navigation.ts:1`](../../app/data/navigation.ts#L1)
+
+- Bảng giá chi tiết 3 gói cước (Free, Starter $25, Pro $100)
+  [`pricing.ts:1`](../../app/data/pricing.ts#L1)
+
+- 12 câu hỏi và trả lời FAQ tiếng Việt
+  [`faqs.ts:1`](../../app/data/faqs.ts#L1)
+
+**2. Layouts & Header Navigation**
+
+- Header 2 tầng cố định, mega menu dropdown và mobile drawer
+  [`AppHeader.vue:1`](../../app/components/AppHeader.vue#L1)
+
+- Layout mặc định bọc toàn bộ trang và tích hợp Demo Modal
+  [`default.vue:1`](../../app/layouts/default.vue#L1)
+
+**3. 17 Component Blades Trang Chủ**
+
+- Hero Marquee với tiêu đề 2 màu và floating badges
+  [`SfHeroMarquee.vue:1`](../../app/components/blades/SfHeroMarquee.vue#L1)
+
+- Lưới 3 card tài nguyên tỷ lệ 16:9
+  [`SfResourceGrid.vue:1`](../../app/components/blades/SfResourceGrid.vue#L1)
+
+- Tính năng Z-pattern so le (Góc nhìn 360°, Agentforce AI)
+  [`SfFeatureZPattern.vue:1`](../../app/components/blades/SfFeatureZPattern.vue#L1)
+
+- Bộ chọn Tab 5 Core Clouds chuyển đổi mượt mà
+  [`SfProductTabs.vue:1`](../../app/components/blades/SfProductTabs.vue#L1)
+
+- Accordion 12 câu hỏi FAQ đóng/mở mượt mà
+  [`SfFaqAccordion.vue:1`](../../app/components/blades/SfFaqAccordion.vue#L1)
+
+**4. Pages & Form Submission**
+
+- Trang chủ CRM Hub lắp ghép toàn bộ 17 Blades
+  [`index.vue:1`](../../app/pages/index.vue#L1)
+
+- Trang khái niệm CRM và lợi ích theo từng phòng ban
+  [`what-is-crm.vue:1`](../../app/pages/crm/what-is-crm.vue#L1)
+
+- Trang bảng giá chi tiết 3 gói cước
+  [`pricing.vue:1`](../../app/pages/crm/pricing.vue#L1)
+
+- Form đăng ký dùng thử 30 ngày với client validation
+  [`free-trial.vue:1`](../../app/pages/crm/free-trial.vue#L1)
+

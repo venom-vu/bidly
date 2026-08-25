@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0176D3;
+  --color-brand-hover: #014486;
+  --color-brand-navy: #032D60;
+  --color-brand-navy-light: #0B3F7E;
+  --color-brand-accent-green: #04844B;
+  --color-surface-light: #F4F6F9;
+  --color-surface-gradient-start: #F8FAFC;
+  --color-surface-gradient-end: #EEF4F9;
+  --color-border-subtle: #E5E5E5;
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: floatY 3.5s ease-in-out infinite alternate;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: #181818;
+}
+
+body {
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom utility styles */
+.sf-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sf-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.sf-card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.sf-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(3, 45, 96, 0.09);
+}
+
+.sf-gradient-bg {
+  background: linear-gradient(180deg, #F8FAFC 0%, #EEF4F9 100%);
+}
