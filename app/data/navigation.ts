@@ -53,17 +53,16 @@ export const navigationData = {
         {
           categoryTitle: 'Kỹ thuật & Tính năng',
           items: [
-            { label: 'Phần mềm CRM', url: '/crm/what-is-crm' },
-            { label: 'Quy trình Triển khai CRM', url: '/crm/what-is-crm#implementation' },
-            { label: 'Tính năng CRM Nổi bật', url: '/crm/what-is-crm#features' }
+            { label: 'Tính năng CRM Nổi bật', url: '/crm/features' },
+            { label: 'Quy trình Triển khai CRM', url: '/crm/crm-implementation' },
+            { label: 'Ví dụ & Câu chuyện Khách hàng', url: '/crm/examples' }
           ]
         },
         {
-          categoryTitle: 'Giá trị thực tiễn',
+          categoryTitle: 'Quy mô Doanh nghiệp',
           items: [
-            { label: 'Quy chuẩn tốt nhất (Best Practices)', url: '/crm/what-is-crm#practices' },
-            { label: 'Lợi ích của CRM', url: '/crm/what-is-crm#benefits' },
-            { label: 'Ví dụ & Câu chuyện thành công', url: '/crm/what-is-crm#examples' }
+            { label: 'Doanh nghiệp Vừa & Nhỏ (SMB)', url: '/crm/solutions/small-business', description: 'Gói giải pháp Starter Suite tinh gọn, dễ dùng.' },
+            { label: 'Tập đoàn & Doanh nghiệp Lớn', url: '/crm/solutions/enterprise', description: 'Nền tảng mở rộng quy mô, bảo mật tối đa.' }
           ]
         }
       ]
@@ -72,41 +71,36 @@ export const navigationData = {
       title: 'Giải pháp',
       categories: [
         {
-          categoryTitle: 'Theo Quy mô Doanh nghiệp',
+          categoryTitle: 'Theo Quy mô',
           items: [
-            { label: 'Doanh nghiệp Vừa & Nhỏ (SMB)', url: '/crm/solutions/small-business', description: 'Gói giải pháp Starter Suite tinh gọn, dễ dùng.' },
-            { label: 'Startup & Khởi nghiệp', url: '/crm/solutions/small-business' }
+            { label: 'Doanh nghiệp Vừa & Nhỏ (SMB)', url: '/crm/solutions/small-business' },
+            { label: 'Doanh nghiệp Lớn (Enterprise)', url: '/crm/solutions/enterprise' }
           ]
         },
         {
-          categoryTitle: 'Theo Ngành nghề',
+          categoryTitle: 'Tính năng & Năng lực',
           items: [
-            { label: 'CRM Bất động sản', url: '/crm/what-is-crm' },
-            { label: 'B2B CRM Thương mại', url: '/crm/what-is-crm' }
+            { label: 'Agentic AI & Tự động hóa', url: '/crm/features#ai' },
+            { label: 'Bán hàng & Phễu Lead', url: '/crm/features#sales' },
+            { label: 'Dịch vụ Khách hàng Đa kênh', url: '/crm/features#service' }
           ]
         },
         {
-          categoryTitle: 'Năng lực AI & Nền tảng',
+          categoryTitle: 'Thực tiễn & Đánh giá',
           items: [
-            { label: 'Agentic AI CRM', url: '/#blade-agentforce', badge: 'Mới' },
-            { label: 'Tự động hóa Quy trình', url: '/#blade-automation' },
-            { label: 'CRM Di động & Đám mây', url: '/crm/what-is-crm' }
+            { label: 'Câu chuyện Thành công', url: '/crm/examples' },
+            { label: 'Lộ trình Triển khai Chuẩn', url: '/crm/crm-implementation' }
           ]
         }
       ]
     },
     {
-      title: 'Tài nguyên',
-      categories: [
-        {
-          categoryTitle: 'Cẩm nang & Báo cáo',
-          items: [
-            { label: 'Chiến lược Triển khai CRM', url: '/crm/what-is-crm' },
-            { label: 'Cơ sở dữ liệu Khách hàng', url: '/crm/what-is-crm' },
-            { label: 'Generative CRM & AI', url: '/crm/what-is-crm' }
-          ]
-        }
-      ]
+      title: 'Tính năng',
+      url: '/crm/features'
+    },
+    {
+      title: 'Khách hàng',
+      url: '/crm/examples'
     },
     {
       title: 'Bảng giá',
