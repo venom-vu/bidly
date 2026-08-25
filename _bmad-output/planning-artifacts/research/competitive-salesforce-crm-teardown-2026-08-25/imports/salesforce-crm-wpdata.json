@@ -1,0 +1,2650 @@
+{
+  "navigation": {
+    "contextnav-c360": {
+      "propertyTitle": {
+        "target": "_self",
+        "label": "CRM",
+        "url": "https://www.salesforce.com/ap/crm/",
+        "ariaLabel": ""
+      },
+      "utilityNavigation": {
+        "ctamain": {
+          "cta": {
+            "variant": "primary",
+            "url": "https://www.salesforce.com/ap/products/demos/interactive-portfolio/?d=pb",
+            "label": "Take guided tour",
+            "target": "_blank"
+          }
+        },
+        "ctasecondary": {
+          "cta": {
+            "variant": "secondary",
+            "label": "Start for free",
+            "url": "https://www.salesforce.com/ap/small-business/free-trial/starter-suite-v2/?d=pb",
+            "target": "_blank"
+          }
+        }
+      },
+      "lock": {
+        "move": false,
+        "remove": true
+      },
+      "bladeId": "1720470090136_gms",
+      "variation": "static",
+      "isLogoEnabled": false,
+      "menuGroup": {
+        "menuItems": [
+          {
+            "ID": 1,
+            "link": {
+              "target": "_self",
+              "label": "Overview",
+              "url": "https://www.salesforce.com/ap/crm/",
+              "ariaLabel": ""
+            },
+            "bladeId": "1720470119681_qxj"
+          },
+          {
+            "ID": 2,
+            "title": "What is CRM?",
+            "bladeId": "1720470119684_rqk",
+            "submenu": [
+              {
+                "ID": 1,
+                "eyebrowHeading": "Get started here",
+                "bladeId": "1720815647208_tyq",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "description": "Build and grow relationships by uniting your teams around a single view of your customer data.",
+                    "link": {
+                      "label": "What is CRM?",
+                      "url": "https://www.salesforce.com/ap/crm/what-is-crm/",
+                      "target": "_self",
+                      "ariaLabel": ""
+                    },
+                    "bladeId": "1723664567007_bn4"
+                  }
+                ],
+                "hasSeparator": true
+              },
+              {
+                "ID": 2,
+                "bladeId": "1723664684393_qys",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Software",
+                      "url": "https://www.salesforce.com/ap/crm/what-is-crm/software/"
+                    },
+                    "bladeId": "1720815688985_j9k"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Implementation",
+                      "url": "https://www.salesforce.com/ap/crm/crm-implementation/"
+                    },
+                    "bladeId": "1720815688989_wmt"
+                  },
+                  {
+                    "ID": 3,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Features",
+                      "url": "https://www.salesforce.com/ap/crm/features/"
+                    },
+                    "bladeId": "1720815688993_2ou"
+                  }
+                ],
+                "hasSeparator": true
+              },
+              {
+                "ID": 3,
+                "bladeId": "1723664822843_14ei",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "Best Practices",
+                      "url": "https://www.salesforce.com/ap/crm/best-practices/"
+                    },
+                    "bladeId": "1720815814979_1uo"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "Benefits of CRM",
+                      "url": "https://www.salesforce.com/ap/crm/benefits-of-crm/"
+                    },
+                    "bladeId": "1720815829025_ng3"
+                  },
+                  {
+                    "ID": 3,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Examples",
+                      "url": "https://www.salesforce.com/ap/crm/examples/"
+                    },
+                    "bladeId": "1720815842530_c1m"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 3,
+            "title": "Solutions",
+            "bladeId": "1720470119690_78j",
+            "submenu": [
+              {
+                "ID": 1,
+                "eyebrowHeading": "Business Size",
+                "bladeId": "1720816050639_vsk",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "Small Business",
+                      "url": "https://www.salesforce.com/ap/crm/crm-for-small-business/"
+                    },
+                    "bladeId": "1720816052254_81a"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "Startup CRM",
+                      "url": "https://www.salesforce.com/ap/crm/startup-crm/"
+                    },
+                    "bladeId": "1722540206994_nyi"
+                  }
+                ],
+                "hasSeparator": true
+              },
+              {
+                "ID": 2,
+                "eyebrowHeading": "Industry",
+                "bladeId": "1720817437110_8sf",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "Real Estate CRM",
+                      "url": "https://www.salesforce.com/ap/crm/real-estate-crm/"
+                    },
+                    "bladeId": "1720817440408_2jw"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "B2B CRM",
+                      "url": "https://www.salesforce.com/ap/crm/b2b-crm/"
+                    },
+                    "bladeId": "1722540232091_azu"
+                  }
+                ],
+                "hasSeparator": true
+              },
+              {
+                "ID": 3,
+                "eyebrowHeading": "Capabilities",
+                "bladeId": "1720817482534_2q7",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "AI CRM",
+                      "url": "https://www.salesforce.com/ap/crm/ai-crm/"
+                    },
+                    "bladeId": "1720817491666_wky"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Automation",
+                      "url": "https://www.salesforce.com/ap/crm/automation/"
+                    },
+                    "bladeId": "1720817500754_1au1"
+                  },
+                  {
+                    "ID": 3,
+                    "link": {
+                      "target": "_self",
+                      "label": "Social CRM",
+                      "url": "https://www.salesforce.com/ap/crm/social-crm/"
+                    },
+                    "bladeId": "1722540284169_fvx"
+                  },
+                  {
+                    "ID": 4,
+                    "link": {
+                      "target": "_self",
+                      "label": "Custom CRM",
+                      "url": "https://www.salesforce.com/ap/crm/custom-crm/"
+                    },
+                    "bladeId": "1722540294299_189h"
+                  }
+                ]
+              },
+              {
+                "ID": 4,
+                "hasSeparator": false,
+                "bladeId": "1723665503920_1219",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "Mobile CRM",
+                      "url": "https://www.salesforce.com/ap/crm/mobile-crm/"
+                    },
+                    "bladeId": "1722540308029_gy4"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "Cloud CRM",
+                      "url": "https://www.salesforce.com/ap/crm/cloud-crm/"
+                    },
+                    "bladeId": "1722540332727_xtj"
+                  },
+                  {
+                    "ID": 3,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Reporting",
+                      "url": "https://www.salesforce.com/ap/crm/report/"
+                    },
+                    "bladeId": "1722540354782_ioi"
+                  },
+                  {
+                    "ID": 4,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Project Management",
+                      "url": "https://www.salesforce.com/ap/crm/project-management/"
+                    },
+                    "bladeId": "1722540374387_67r"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 4,
+            "title": "Resources",
+            "bladeId": "1720470119693_387",
+            "submenu": [
+              {
+                "ID": 1,
+                "eyebrowHeading": "",
+                "bladeId": "1720470121528_l8f",
+                "menuItems": [
+                  {
+                    "ID": 1,
+                    "link": {
+                      "target": "_self",
+                      "label": "Free CRM",
+                      "url": "https://www.salesforce.com/ap/crm/free-crm/"
+                    },
+                    "bladeId": "1722540433586_1adi"
+                  },
+                  {
+                    "ID": 2,
+                    "link": {
+                      "target": "_self",
+                      "label": "Best CRM",
+                      "url": "https://www.salesforce.com/ap/crm/best-crm/"
+                    },
+                    "bladeId": "1720470123195_19r8"
+                  },
+                  {
+                    "ID": 3,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Strategy",
+                      "url": "https://www.salesforce.com/ap/crm/strategy/"
+                    },
+                    "bladeId": "1720470140820_jj1"
+                  },
+                  {
+                    "ID": 4,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Integration",
+                      "url": "https://www.salesforce.com/ap/crm/crm-integration/"
+                    },
+                    "bladeId": "1720470123199_1dqo"
+                  },
+                  {
+                    "ID": 5,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Database",
+                      "url": "https://www.salesforce.com/ap/crm/database/"
+                    },
+                    "bladeId": "1722540470855_w0t"
+                  },
+                  {
+                    "ID": 6,
+                    "link": {
+                      "target": "_self",
+                      "label": "Generative CRM",
+                      "url": "https://www.salesforce.com/ap/crm/generative-crm/"
+                    },
+                    "bladeId": "1720817803740_183m"
+                  },
+                  {
+                    "ID": 7,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Certification",
+                      "url": "https://trailhead.salesforce.com/en/credentials/administratoroverview/"
+                    },
+                    "bladeId": "1720817819581_n7t"
+                  },
+                  {
+                    "ID": 8,
+                    "link": {
+                      "target": "_self",
+                      "label": "CRM Free Trial",
+                      "url": "https://www.salesforce.com/ap/crm/free-trial/"
+                    },
+                    "bladeId": "1720817857736_146b"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 5,
+            "link": {
+              "label": "Pricing",
+              "url": "https://www.salesforce.com/ap/crm/pricing/",
+              "target": "_self"
+            },
+            "bladeId": "1741727701282_17uv"
+          }
+        ]
+      }
+    }
+  },
+  "blades": [
+    {
+      "id": "1786020098656_17jv",
+      "name": "sf/marquee",
+      "attributes": {
+        "blade_layout": "right",
+        "two_column_spacing": "standard",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light",
+        "minimize_blade_spacing_bottom": false,
+        "minimize_blade_spacing": true,
+        "experiment_id": "",
+        "experiment_type": "content",
+        "eyebrow": {
+          "label": "Salesforce CRM"
+        },
+        "headline": "Asia's #1 agentic CRM <strong>powers the Agentic Enterprise.</strong>",
+        "headline_font_color": "#032D60",
+        "headline_size": "standard",
+        "description": "<p>Attract more prospects, close more deals, and strengthen customer relationships by uniting sales, service, marketing, commerce, and IT on one integrated platform.</p>\n",
+        "link_1": {
+          "variant": "primary",
+          "label": "Watch demo",
+          "target": "_blank",
+          "ariaLabel": "",
+          "source": "custom-action-link",
+          "id": 29560,
+          "custom_action_options": {
+            "offer_id": "gated-content-00001220",
+            "action_template": "offer",
+            "offer_status": "PUBLISHED",
+            "offer_locale": "EN_SG",
+            "offer_type": "gated-content",
+            "tbid_auth": "NO"
+          }
+        },
+        "link_2": {
+          "variant": "secondary",
+          "label": "Start for free",
+          "url": "https://www.salesforce.com/ap/crm/free-trial/?d=sh",
+          "target": "_self",
+          "ariaLabel": "",
+          "source": "standard-link"
+        },
+        "media": {
+          "video": {
+            "uuid": "CKE2DPPqQQd1NwCFtzoFxU",
+            "video_type": "vidyard",
+            "aspect_ratio": "16:9"
+          }
+        },
+        "blade_background_type": {
+          "kind": "custom_background",
+          "blade_background_color": "255, 255, 255",
+          "blade_custom_image_desktop": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?w=1024",
+            "alt": "",
+            "title": "2026/01/marquee-background-agentforce-sales.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=300,94",
+                "width": 300,
+                "height": 94
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=768,240",
+                "width": 768,
+                "height": 240
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=1024,320",
+                "width": 1024,
+                "height": 320
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=1536,480",
+                "width": 1536,
+                "height": 480
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg?resize=2048,640",
+                "width": 2048,
+                "height": 640
+              }
+            ],
+            "width": 1024,
+            "height": 320,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/01/marquee-background-agentforce-sales.jpg"
+          },
+          "blade_custom_image_mobile": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?w=357",
+            "alt": "",
+            "title": "2025/12/marquee-sales-pdp-mobile-bg.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?resize=105,300",
+                "width": 105,
+                "height": 300
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?resize=357,1024",
+                "width": 357,
+                "height": 1024
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?resize=535,1536",
+                "width": 535,
+                "height": 1536
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg?resize=714,2048",
+                "width": 714,
+                "height": 2048
+              }
+            ],
+            "width": 357,
+            "height": 1024,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/marquee-sales-pdp-mobile-bg.jpg"
+          }
+        },
+        "offer_id": "gated-content-00001220",
+        "offer_status": "PUBLISHED",
+        "offer_locale": "EN_SG",
+        "tbid_auth": "NO",
+        "offer_type": "gated-content"
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "metadata": [
+        {
+          "tagName": "meta",
+          "attributes": [
+            {
+              "name": "property",
+              "value": "og:title"
+            },
+            {
+              "name": "content",
+              "value": "CRM Software: Try the World’s first AI CRM"
+            }
+          ]
+        },
+        {
+          "tagName": "link",
+          "attributes": [
+            {
+              "name": "rel",
+              "value": "canonical"
+            },
+            {
+              "name": "href",
+              "value": "https://www.salesforce.com/ap/crm/"
+            }
+          ]
+        }
+      ],
+      "tbidGreeting": {
+        "isEnabled": false,
+        "thEndpoint": "https://mobile.api.trailhead.com/graphql",
+        "localization": {
+          "localizedGreeting": "Hello, {firstname}!",
+          "localizedWordForBadges": "Badges",
+          "localizedWordForPoints": "Points"
+        }
+      },
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17,
+        "social_sharing_enabled": true,
+        "idxForm": {
+          "gated-content": {
+            "schema": {
+              "gated-content-00001220": {
+                "offer": {
+                  "tbidAuth": "NO",
+                  "offerType": "gated-content",
+                  "offerStatus": "PUBLISHED",
+                  "offerId": "gated-content-00001220",
+                  "locale": "EN_SG"
+                },
+                "form": {
+                  "submitLabel": "Test drive Salesforce",
+                  "submitAriaLabel": "Test drive Salesforce.",
+                  "subhead": "",
+                  "redirectUrl": "https://app.arcade.software/share/mlWbm56n7bnQgmezFoo0",
+                  "redirectTarget": "window",
+                  "image": "{\"sizes\":[{\"width\":150,\"height\":150,\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?resize=150,150\"},{\"width\":300,\"height\":169,\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?resize=300,169\"},{\"width\":768,\"height\":432,\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?resize=768,432\"},{\"width\":1024,\"height\":577,\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?resize=1024,577\"},{\"width\":1024,\"height\":577,\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?resize=1024,577\"}],\"height\":714,\"width\":1268,\"title\":\"portfolio-interactive-demo-form\",\"alt\":\"\",\"src\":\"https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/11/portfolio-interactive-demo-form.png?w=1268\"}",
+                  "headline": "Experience the power of Salesforce through a guided tour.",
+                  "formSubhead": "",
+                  "formHeadline": "",
+                  "fieldSetId": "fieldset-000009",
+                  "disclosureSetId": "disclosureset-000012",
+                  "description": "<p>Dive into a guided journey and get hands on with Salesforce products by exploring real use cases and solutions built for the agentic enterprise.</p><ul><li>Choose your priority and explore how Salesforce can help you achieve your goals.</li><li>See how Salesforce’s unified platform brings together humans, AI agents, apps, and data in one place.</li><li>Complete tasks and experience an agentic enterprise in action.</li></ul><p>Questions? Call us at <strong style=\"font-size: 10pt;\">+65 6302 5700</strong></p>",
+                  "alignment": "right"
+                },
+                "campaign": {
+                  "partnerPromoCode": "",
+                  "optInCampaignId": "",
+                  "formCampaignId": "701ed00000ksaOzAAI"
+                },
+                "userFields": {
+                  "fieldSetId": "fieldset-000009",
+                  "locale": "EN_SG",
+                  "properties": {
+                    "company": {
+                      "maxLength": 80,
+                      "minLength": 1,
+                      "order": 3,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter company name.",
+                          "maxLength": "Maximum character length exceeded.",
+                          "minLength": "Enter company name.",
+                          "required": "Enter company name."
+                        },
+                        "label": "Company",
+                        "placeholder": ""
+                      }
+                    },
+                    "country": {
+                      "maxLength": 40,
+                      "minLength": 1,
+                      "order": 5,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Select country/region.",
+                          "maxLength": "Select country/region.",
+                          "minLength": "Select country/region.",
+                          "required": "Select country/region."
+                        },
+                        "label": "Country/region",
+                        "placeholder": "Select country/region"
+                      }
+                    },
+                    "employees": {
+                      "maxLength": 100,
+                      "minLength": 1,
+                      "order": 4,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Select company size.",
+                          "maxLength": "Select company size.",
+                          "minLength": "Select company size.",
+                          "required": "Select company size."
+                        },
+                        "label": "Company size",
+                        "placeholder": "Select company size"
+                      }
+                    },
+                    "firstName": {
+                      "maxLength": 80,
+                      "minLength": 1,
+                      "order": 0,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter first name.",
+                          "maxLength": "Maximum character length exceeded.",
+                          "minLength": "Enter first name.",
+                          "required": "Enter first name."
+                        },
+                        "label": "First name",
+                        "placeholder": ""
+                      }
+                    },
+                    "jobTitle": {
+                      "maxLength": 80,
+                      "minLength": 1,
+                      "order": 2,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter job title.",
+                          "maxLength": "Maximum character length exceeded.",
+                          "minLength": "Enter job title.",
+                          "required": "Enter job title."
+                        },
+                        "label": "Job title",
+                        "placeholder": ""
+                      }
+                    },
+                    "lastName": {
+                      "maxLength": 80,
+                      "minLength": 1,
+                      "order": 1,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter last name.",
+                          "maxLength": "Maximum character length exceeded.",
+                          "minLength": "Enter last name.",
+                          "required": "Enter last name."
+                        },
+                        "label": "Last name",
+                        "placeholder": ""
+                      }
+                    },
+                    "phone": {
+                      "maxLength": 20,
+                      "minLength": 1,
+                      "order": 8,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter valid phone number.",
+                          "maxLength": "Enter valid phone number.",
+                          "minLength": "Enter valid phone number.",
+                          "required": "Enter valid phone number."
+                        },
+                        "label": "Phone",
+                        "placeholder": ""
+                      }
+                    },
+                    "state": {
+                      "maxLength": 40,
+                      "minLength": 1,
+                      "order": 6,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Select state/province.",
+                          "maxLength": "Select state/province.",
+                          "minLength": "Select state/province.",
+                          "required": "Select state/province."
+                        },
+                        "label": "State/province",
+                        "placeholder": "Select state/province"
+                      }
+                    },
+                    "workEmail": {
+                      "maxLength": 80,
+                      "minLength": 1,
+                      "order": 7,
+                      "type": "string",
+                      "uiLabels": {
+                        "description": "",
+                        "errorMessages": {
+                          "fallback": "Enter valid email address.",
+                          "maxLength": "Maximum character length exceeded.",
+                          "minLength": "Enter valid email address.",
+                          "required": "Enter valid email address."
+                        },
+                        "label": "Work email",
+                        "placeholder": ""
+                      }
+                    }
+                  },
+                  "required": [
+                    "firstName",
+                    "lastName",
+                    "jobTitle",
+                    "company",
+                    "employees",
+                    "country",
+                    "workEmail",
+                    "phone"
+                  ],
+                  "steps": [],
+                  "type": "object"
+                },
+                "disclosures": {
+                  "locale": "en_sg",
+                  "disclosureSetId": "disclosureset-000012",
+                  "disclosures": [
+                    {
+                      "type": "checkbox",
+                      "text": "Yes, Salesforce may share my contact information with sponsoring partners for marketing purposes.",
+                      "required": false,
+                      "disclosureType": "dataSharing",
+                      "defaultChecked": false
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": true
+      }
+    },
+    {
+      "id": "1786020115379_11ti",
+      "name": "sf/nup",
+      "attributes": {
+        "link_location": "below",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "headline_font_color": "#032D60",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": false,
+        "experiment_type": "content",
+        "card_type": "sf/resource",
+        "grid_type": "grid",
+        "card_layout": "Standard",
+        "card_description_visibility": true,
+        "card_image": true,
+        "card_eyebrow_visibility": true,
+        "card_link_visibility": true,
+        "headline": "CRM solutions to surpass your business goals and customer expectations",
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background",
+          "blade_background_image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?w=1024",
+            "alt": "",
+            "title": "2025/12/logos-bg-agentforce-for-sales.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=300,92",
+                "width": 300,
+                "height": 92
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=768,235",
+                "width": 768,
+                "height": 235
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=1024,313",
+                "width": 1024,
+                "height": 313
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=1536,469",
+                "width": 1536,
+                "height": 469
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg?resize=2048,626",
+                "width": 2048,
+                "height": 626
+              }
+            ],
+            "width": 1024,
+            "height": 313,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/logos-bg-agentforce-for-sales.jpg"
+          },
+          "blade_background_shape": "convex"
+        }
+      },
+      "media_items": [
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?w=1024",
+            "alt": "A woman holds an tablet surrounded by 3D images representing Sales, Slack, Agentforce, Marketing, Data, and more.",
+            "title": "2026/04/3-up_Image2_CRM_16x9_1x.webp",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp"
+          },
+          "badge": "Resource",
+          "headline": "What is CRM?",
+          "description": "<p>Learn how customer relationship management software helps all your teams work together to put customers at the center of every interaction.</p>\n",
+          "link_1": {
+            "label": "Learn about CRM",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/crm/what-is-crm/"
+          },
+          "kind": "card_resource",
+          "id": "1786020115369_15xc"
+        },
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?w=1024",
+            "alt": "A woman views a laptop that emits AI agents, charts, and other symbols. ",
+            "title": "2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png"
+          },
+          "badge": "Blog",
+          "headline": "Why CRM software is essential for the Agentic Enterprise",
+          "description": "<p>Beyond data, it also gives AI agents the context and rules to get real work done.</p>\n",
+          "link_1": {
+            "label": "Find out more",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/blog/crm-foundation-agentic-enterprise/",
+            "target": "_self",
+            "source": "standard-link"
+          },
+          "kind": "card_resource",
+          "id": "1786020115372_100o"
+        },
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?w=1024",
+            "alt": "Salesforce Starter Suite",
+            "title": "2026/03/smb-resource-starter-4.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg"
+          },
+          "badge": "Starter Suite",
+          "headline": "Try our all-in-one CRM software - free for 30 days",
+          "description": "<p>The CRM that brings your business together, with marketing, sales, service, and commerce — plus AI that helps automate work as you grow.</p>\n",
+          "link_1": {
+            "label": "Start for free",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/small-business/free-trial/starter-suite-v2/?d=pb",
+            "target": "_self",
+            "source": "standard-link"
+          },
+          "kind": "card_resource",
+          "id": "1786020115376_tmt"
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": true
+      }
+    },
+    {
+      "id": "1786020115380_gwi",
+      "name": "sf/text",
+      "attributes": {
+        "blade_layout": "center",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "CRM that serves customers, boosts productivity, and grows revenue.",
+        "headline_font_color": "#032D60",
+        "headline_size": "large",
+        "column_grid": "one"
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": true
+      }
+    },
+    {
+      "id": "1786020115381_iyi",
+      "name": "sf/oneup",
+      "attributes": {
+        "blade_layout": "right",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": false,
+        "experiment_type": "content",
+        "headline": "Build relationships with a single, shared view of every customer.",
+        "headline_font_color": "#032D60",
+        "description": "<p>Empower employees to deliver more personalised experiences with a holistic view of every interaction across every department. Turn data into context and workflows into intelligence — all in one place.</p>\n",
+        "link_1": {
+          "variant": "primary",
+          "linkAttributes": [],
+          "label": "Learn about Agentforce 360",
+          "source": "standard-link",
+          "url": "https://www.salesforce.com/ap/products/"
+        },
+        "media": {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?w=1024",
+            "alt": "A customer taps a floating button representing CSAT scores, surrounded by other CRM buttons and logos.",
+            "title": "2026/04/nUp_Image2_CRM_16x9_1x.webp",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp"
+          }
+        }
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115382_43s",
+      "name": "sf/oneup",
+      "attributes": {
+        "blade_layout": "left",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "Simplify handoffs from agents to employees with agentic AI.",
+        "headline_font_color": "#032D60",
+        "description": "<p>Take action faster by giving employees and AI agents the foundation they need to work seamlessly and efficiently across every part of your business.</p>\n",
+        "link_1": {
+          "variant": "primary",
+          "label": "See how",
+          "source": "standard-link",
+          "url": "https://www.salesforce.com/ap/agentforce/"
+        },
+        "media": {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?w=1024",
+            "alt": "A woman uses a tablet to check graphs and AI recommendations",
+            "title": "2024/09/1-up-crm-trusted-ai.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?resize=300,300",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?resize=768,768",
+                "width": 768,
+                "height": 768
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?resize=1024,1024",
+                "width": 1024,
+                "height": 1024
+              }
+            ],
+            "width": 1024,
+            "height": 1024,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg"
+          }
+        }
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115383_gs3",
+      "name": "sf/oneup",
+      "attributes": {
+        "blade_layout": "right",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "Find solutions tailored to your industry and business size.",
+        "headline_font_color": "#032D60",
+        "description": "<p>Get CRM solutions built on over 25 years of experience, best practices, and industry-specific needs for healthcare, retail, high tech, the public sector, and many more.</p>\n",
+        "link_1": {
+          "variant": "primary",
+          "linkAttributes": [],
+          "label": "See all industries",
+          "source": "standard-link",
+          "url": "https://www.salesforce.com/ap/industries/"
+        },
+        "media": {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?w=1024",
+            "alt": "Astro walks past people who work in different industries",
+            "title": "2024/09/1-up-crm-industry-business-size.webp",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?resize=300,300",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?resize=768,768",
+                "width": 768,
+                "height": 768
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?resize=1024,1024",
+                "width": 1024,
+                "height": 1024
+              }
+            ],
+            "width": 1024,
+            "height": 1024,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp"
+          }
+        }
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115384_o8r",
+      "name": "sf/text",
+      "attributes": {
+        "blade_layout": "center",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": false,
+        "experiment_type": "content",
+        "headline": "One enterprise CRM platform for stronger customer relationships",
+        "headline_font_color": "#032D60",
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background"
+        },
+        "headline_size": "large",
+        "column_grid": "one"
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115400_8rf",
+      "name": "sf/productportfolio",
+      "attributes": {
+        "layout": "legacy",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "card_type": "sf/productaddon",
+        "headline_font_color": "#032D60",
+        "anchor_product_visibility": false,
+        "content_source_type": "manual-content",
+        "link_1": {
+          "variant": "primary",
+          "label": "View all products",
+          "source": "standard-link",
+          "url": "https://www.salesforce.com/ap/products/"
+        },
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background",
+          "blade_background_image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?w=1024",
+            "alt": "",
+            "title": "2025/12/related-products-bg-sales.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=300,94",
+                "width": 300,
+                "height": 94
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=768,240",
+                "width": 768,
+                "height": 240
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=1024,320",
+                "width": 1024,
+                "height": 320
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=1536,480",
+                "width": 1536,
+                "height": 480
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg?resize=2048,640",
+                "width": 2048,
+                "height": 640
+              }
+            ],
+            "width": 1024,
+            "height": 320,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/12/related-products-bg-sales.jpg"
+          }
+        }
+      },
+      "media_items": [
+        {
+          "kind": "product_category_group",
+          "id": "1732037851262_zue",
+          "categories": [
+            {
+              "title": "Try a free trial",
+              "dropdown_link_label": "Try a free trial",
+              "kind": "card_product-category",
+              "id": "1786020115397_u7s",
+              "cards": [
+                {
+                  "headline": "Agentforce",
+                  "description": "<p>Drive productivity and personalisation with agentic AI that works across your entire CRM.</p>\n",
+                  "product_color": "#D17DFE",
+                  "link_1": {
+                    "label": "Explore AI",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/artificial-intelligence/",
+                    "target": "_self"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115388_5to"
+                },
+                {
+                  "headline": "Sales Cloud",
+                  "description": "<p>Accelerate growth and boost productivity with built-in AI — from lead management to forecasting to closing deals.</p>\n",
+                  "product_color": "#04E1CB",
+                  "link_1": {
+                    "label": "Explore Sales Cloud",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/sales/",
+                    "target": "_self"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115390_gg2"
+                },
+                {
+                  "headline": "Service Cloud",
+                  "description": "<p>Transform service to improve customer experiences and engagement with streamlined processes, automation, and service operations.</p>\n",
+                  "product_color": "#FF538A",
+                  "link_1": {
+                    "label": "Explore Service Cloud",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/service/",
+                    "target": "_self"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115392_15nr"
+                },
+                {
+                  "headline": "Marketing Cloud",
+                  "description": "<p>Win customers. Engage efficiently. Grow revenue. Build long-lasting relationships by infusing AI into your marketing.</p>\n",
+                  "product_color": "#FE9339",
+                  "link_1": {
+                    "label": "Explore Marketing Cloud",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/marketing/",
+                    "target": "_self"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115393_15sx"
+                },
+                {
+                  "headline": "Commerce Cloud",
+                  "description": "<p>Simplify everything from setting up your digital storefront to driving sales on any customer touchpoint with native AI and automation.</p>\n",
+                  "product_color": "#41B658",
+                  "link_1": {
+                    "label": "Explore Commerce Cloud",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/commerce/",
+                    "target": "_self"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115395_179h"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115401_1c0l",
+      "name": "sf/text",
+      "attributes": {
+        "blade_layout": "center",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "From small businesses to large enterprises, businesses are growing with Salesforce.",
+        "headline_font_color": "#032D60",
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background"
+        },
+        "headline_size": "large",
+        "column_grid": "one"
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115410_17xg",
+      "name": "sf/productportfolio",
+      "attributes": {
+        "layout": "carousel",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": false,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "card_type": "sf/productaddon",
+        "headline": "",
+        "headline_font_color": "#032D60",
+        "anchor_product_visibility": false,
+        "content_source_type": "manual-content",
+        "link_1": {
+          "variant": "primary",
+          "source": "standard-link",
+          "label": "See CRM pricing and options",
+          "url": "https://www.salesforce.com/ap/crm/pricing/"
+        },
+        "blade_background_type": {
+          "blade_background_color": "234, 245, 254",
+          "kind": "standard_background"
+        }
+      },
+      "media_items": [
+        {
+          "kind": "product_category_group",
+          "id": "1732037851296_olj",
+          "categories": [
+            {
+              "title": "Find the CRM solution that fits your business size",
+              "dropdown_link_label": "Find the CRM that fits your business size.",
+              "kind": "card_product-category",
+              "id": "1786020115407_m2p",
+              "cards": [
+                {
+                  "headline": "CRM for SMB",
+                  "description": "<p>Businesses in every industry grow faster with <a data-rec-at=\"al\" data-rec-ru=\"https://www.salesforce.com/communications\" data-rec-lt=\"Salesforce\" href=\"https://www.salesforce.com/communications\">Salesforce</a>. Get started today with Starter Suite, the CRM for small business.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Explore Starter Suite",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/small-business/starter/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115403_riy"
+                },
+                {
+                  "headline": "Enterprise CRM",
+                  "description": "<p>Salesforce is the #1 agentic CRM and a trusted platform built to meet the needs of complex organisations. You can scale endlessly on a single, integrated platform.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "See all products",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/products/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115404_e5u"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115422_x02",
+      "name": "sf/logogrid",
+      "attributes": {
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing": false,
+        "experiment_type": "content",
+        "card_type": "sf/logomark",
+        "card_link_visibility": true,
+        "grid_type": "grid",
+        "headline": "See how customers transform their business with CRM, trusted AI, and data.",
+        "headline_font_color": "#032D60",
+        "link_1": {
+          "variant": "primary",
+          "label": "See all stories",
+          "source": "standard-link",
+          "url": "https://www.salesforce.com/ap/customer-stories/"
+        },
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background"
+        }
+      },
+      "media_items": [
+        {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/good360-logo-eyebrow.png?w=320",
+            "alt": "Good360 Logo",
+            "title": "2025/09/good360-logo-eyebrow.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/good360-logo-eyebrow.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/good360-logo-eyebrow.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              }
+            ],
+            "width": 320,
+            "height": 180,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/good360-logo-eyebrow.png"
+          },
+          "content_source_type": "manual-content",
+          "link": {
+            "url": "https://www.salesforce.com/ap/customer-stories/good360/"
+          },
+          "kind": "card_logomark",
+          "id": "1786020115412_igq"
+        },
+        {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/07/Logo-320x180-Nexo.png?w=320",
+            "alt": "Nexo Logo",
+            "title": "2025/07/Logo-320x180-Nexo.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/07/Logo-320x180-Nexo.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/07/Logo-320x180-Nexo.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              }
+            ],
+            "width": 320,
+            "height": 180,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/07/Logo-320x180-Nexo.png"
+          },
+          "content_source_type": "manual-content",
+          "link": {
+            "url": "https://www.salesforce.com/ap/customer-stories/nexo/"
+          },
+          "kind": "card_logomark",
+          "id": "1786020115415_n5"
+        },
+        {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/12/Precina@3x.png?w=736",
+            "alt": "Precina Logo",
+            "title": "2024/12/Precina@3x.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/12/Precina@3x.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/12/Precina@3x.png?resize=300,92",
+                "width": 300,
+                "height": 92
+              }
+            ],
+            "width": 736,
+            "height": 226,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/12/Precina@3x.png"
+          },
+          "content_source_type": "manual-content",
+          "link": {
+            "url": "https://www.salesforce.com/ap/customer-stories/precina/"
+          },
+          "kind": "card_logomark",
+          "id": "1786020115416_11zj"
+        },
+        {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/08/Logo-320x180-reMarkable.png?w=320",
+            "alt": "reMarkable logo",
+            "title": "2025/08/Logo-320x180-reMarkable.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/08/Logo-320x180-reMarkable.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/08/Logo-320x180-reMarkable.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              }
+            ],
+            "width": 320,
+            "height": 180,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/08/Logo-320x180-reMarkable.png"
+          },
+          "content_source_type": "manual-content",
+          "link": {
+            "url": "https://www.salesforce.com/ap/customer-stories/remarkable/"
+          },
+          "kind": "card_logomark",
+          "id": "1786020115418_qtd"
+        },
+        {
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/zota-eyebrow.png?w=320",
+            "alt": "Zota logo",
+            "title": "2025/09/zota-eyebrow.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/zota-eyebrow.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/zota-eyebrow.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              }
+            ],
+            "width": 320,
+            "height": 180,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/zota-eyebrow.png"
+          },
+          "content_source_type": "manual-content",
+          "link": {
+            "url": "https://www.salesforce.com/ap/customer-stories/zota/"
+          },
+          "kind": "card_logomark",
+          "id": "1786020115419_aik"
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115423_1c4v",
+      "name": "sf/text",
+      "attributes": {
+        "blade_layout": "center",
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "Read these articles on how CRM can solve your business needs.",
+        "headline_font_color": "#032D60",
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background"
+        },
+        "headline_size": "large",
+        "column_grid": "one"
+      },
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115433_k48",
+      "name": "sf/productportfolio",
+      "attributes": {
+        "layout": "carousel",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "card_type": "sf/productaddon",
+        "headline": "",
+        "headline_font_color": "#032D60",
+        "anchor_product_visibility": false,
+        "content_source_type": "manual-content"
+      },
+      "media_items": [
+        {
+          "kind": "product_category_group",
+          "id": "1732037851363_16o4",
+          "categories": [
+            {
+              "title": "Explore CRM that's made for your business type.",
+              "dropdown_link_label": "Explore CRM that's made for your business type.",
+              "kind": "card_product-category",
+              "id": "1786020115430_om4",
+              "cards": [
+                {
+                  "headline": "Small Business CRM",
+                  "description": "<p>Running a small business is no easy task but finding the right CRM can make a big difference.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/crm-for-small-business/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115425_6zf"
+                },
+                {
+                  "headline": "Startup CRM",
+                  "description": "<p>See how a CRM can help streamline processes, gain insights, and deepen relationships with customers and stakeholders.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/startup-crm/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115426_dut"
+                },
+                {
+                  "headline": "Real Estate CRM",
+                  "description": "<p>Transform your real estate business by organizing contacts, automating work, and improving decision-making.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/real-estate-crm/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115428_5c7"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115446_1chp",
+      "name": "sf/productportfolio",
+      "attributes": {
+        "layout": "carousel",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": false,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "card_type": "sf/productaddon",
+        "headline": "",
+        "headline_font_color": "#032D60",
+        "anchor_product_visibility": false,
+        "content_source_type": "manual-content"
+      },
+      "media_items": [
+        {
+          "kind": "product_category_group",
+          "id": "1732037851399_6gd",
+          "categories": [
+            {
+              "title": "Learn more about key CRM topics.",
+              "dropdown_link_label": "Learn more about key CRM topics.",
+              "kind": "card_product-category",
+              "id": "1786020115443_cb3",
+              "cards": [
+                {
+                  "headline": "CRM Best Practices",
+                  "description": "<p>Make the most of your CRM and set your business up for success and with these 8 steps.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/best-practices/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115435_1aje"
+                },
+                {
+                  "headline": "CRM Database",
+                  "description": "<p>Use customer data to strenghthen relationships and streamline efficiency across all channels and teams.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/database/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115437_12hd"
+                },
+                {
+                  "headline": "CRM Strategy",
+                  "description": "<p>Follow these steps to create a plan for using your CRM to the fullest.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/strategy/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115438_k5n"
+                },
+                {
+                  "headline": "B2B CRM",
+                  "description": "<p>Learn how CRM features can play a key role in the unique B2B sales process and beyond.</p>\n",
+                  "product_color": "#90D0FE",
+                  "link_1": {
+                    "label": "Read the article",
+                    "variant": "text",
+                    "url": "https://www.salesforce.com/ap/crm/b2b-crm/"
+                  },
+                  "kind": "card_productaddon",
+                  "id": "1786020115441_13t4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1755031829817_1lg_908013",
+      "name": "sf/nup",
+      "attributes": {
+        "link_location": "below",
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "headline_font_color": "#032D60",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "card_type": "sf/resource",
+        "grid_type": "grid",
+        "card_layout": "Standard",
+        "card_description_visibility": false,
+        "card_image": true,
+        "card_eyebrow_visibility": true,
+        "card_link_visibility": true,
+        "headline": "Keep up with the latest in CRM with guides, research, and insights.",
+        "description": "",
+        "link_1": {
+          "variant": "secondary",
+          "label": "See all resources",
+          "url": "https://www.salesforce.com/ap/blog/category/customer-relationships/",
+          "ariaLabel": "",
+          "source": "standard-link"
+        }
+      },
+      "media_items": [
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?w=1024",
+            "alt": "A 3D Astro icon hovers over a grass and flower-covered 3D bar graph.",
+            "title": "2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp"
+          },
+          "badge": "Guide",
+          "headline": "Transform your AI potential into business reality with this step-by-step guide.",
+          "link_1": {
+            "label": "Get the guide",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/blog/playbook/agentic-ai/",
+            "target": "_self",
+            "ariaLabel": "",
+            "source": "standard-link"
+          },
+          "kind": "card_resource",
+          "id": "1755031829813_qt0"
+        },
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?w=1024",
+            "alt": "Salesforce sales, service, marketing, commerce, and IT cloud logos on top of a Salesforce demo. ",
+            "title": "2025/09/portfolio_interactive_demo_resource_card.png",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png"
+          },
+          "badge": "Demo",
+          "headline": "Experience Salesforce with an interactive demo.",
+          "link_1": {
+            "label": "Try it",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/products/demos/interactive-portfolio/?d=pb",
+            "ariaLabel": "",
+            "target": "_blank",
+            "source": "standard-link"
+          },
+          "kind": "card_resource",
+          "id": "1755031829784_a2y"
+        },
+        {
+          "content_source_type": "manual-content",
+          "image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?w=1024",
+            "alt": "Members of the IT, Service, and Sales teams interacting with Jennifer, a new customer who has a Loyalty offer",
+            "title": "2024/07/n-up-resource-crm-bring-teams-together.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=300,169",
+                "width": 300,
+                "height": 169
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=768,432",
+                "width": 768,
+                "height": 432
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=1024,576",
+                "width": 1024,
+                "height": 576
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=1536,865",
+                "width": 1536,
+                "height": 865
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?resize=2048,1153",
+                "width": 2048,
+                "height": 1153
+              }
+            ],
+            "width": 1024,
+            "height": 576,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg"
+          },
+          "badge": "CRM",
+          "headline": "Learn how CRM brings teams together to build a 360-degree view of your customer.",
+          "link_1": {
+            "label": "see more",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/crm/what-is-crm/",
+            "ariaLabel": "",
+            "source": "standard-link"
+          },
+          "kind": "card_resource",
+          "id": "1755031829804_l7y"
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1668731671593_17ln_908014",
+      "name": "sf/contactus",
+      "attributes": {
+        "audience_segment": [
+          "prospect",
+          "customer"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing_bottom": true,
+        "minimize_blade_spacing": true,
+        "experiment_type": "content",
+        "headline": "See what’s possible with the world’s #1 agentic CRM.",
+        "headline_font_color": "#032D60",
+        "blade_background_type": {
+          "kind": "standard_background",
+          "blade_background_color": "255, 255, 255",
+          "blade_background_image": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?w=1024",
+            "alt": "",
+            "title": "2026/08/logos-bg-agentforce-for-sales.jpg",
+            "sizes": [
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=150,150",
+                "width": 150,
+                "height": 150
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=300,94",
+                "width": 300,
+                "height": 94
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=768,240",
+                "width": 768,
+                "height": 240
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=1024,320",
+                "width": 1024,
+                "height": 320
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=1536,480",
+                "width": 1536,
+                "height": 480
+              },
+              {
+                "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg?resize=2048,640",
+                "width": 2048,
+                "height": 640
+              }
+            ],
+            "width": 1024,
+            "height": 320,
+            "file_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/logos-bg-agentforce-for-sales.jpg"
+          },
+          "blade_background_shape": "convex"
+        }
+      },
+      "media_items": [
+        {
+          "icon": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/08/screen.svg"
+          },
+          "headline": "Start your trial.",
+          "description": "<p>Try Salesforce CRM free for 30 days. No credit card required. Nothing to install.</p>\n",
+          "link": {
+            "label": "Try for free",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/form/signup/freetrial-salesforce-in-product/?d=pb",
+            "target": "_blank",
+            "ariaLabel": ""
+          },
+          "kind": "card_contactus",
+          "id": "1670344843552_5tw"
+        },
+        {
+          "icon": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/08/call.svg"
+          },
+          "headline": "Talk to an expert.",
+          "description": "<p>Ask about Salesforce products, pricing, implementation or anything else. Our highly trained reps are standing by, ready to help.</p>\n",
+          "link": {
+            "typeOptions": {
+              "kind": "standard"
+            },
+            "variant": "text",
+            "label": "Contact us",
+            "url": "https://www.salesforce.com/ap/company/contact-us/?d=pb",
+            "target": "_self",
+            "ariaLabel": ""
+          },
+          "kind": "card_contactus",
+          "id": "1668731671714_1524"
+        },
+        {
+          "icon": {
+            "src": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/08/email.svg"
+          },
+          "headline": "Stay up to date.",
+          "description": "<p>Get the latest research, industry insights and product news delivered straight to your inbox.</p>\n",
+          "link": {
+            "label": "Sign up for newsletter",
+            "variant": "text",
+            "url": "https://www.salesforce.com/ap/form/other/role-based-newsletter-crm/?d=pb",
+            "ariaLabel": "",
+            "target": "_blank"
+          },
+          "kind": "card_contactus",
+          "id": "1670344843553_10si"
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    },
+    {
+      "id": "1786020115467_pam",
+      "name": "sf/faq",
+      "attributes": {
+        "audience_segment": [
+          "customer",
+          "prospect"
+        ],
+        "theme_variant": "light_gradient",
+        "minimize_blade_spacing": false,
+        "experiment_type": "content",
+        "headline": "Salesforce CRM software frequently asked questions",
+        "headline_font_color": "#032D60",
+        "blade_background_type": {
+          "blade_background_color": "255, 255, 255",
+          "kind": "standard_background"
+        }
+      },
+      "tab_items": [
+        {
+          "label": "Salesforce CRM frequently asked questions",
+          "kind": "card_faq-category",
+          "id": "1786020115460_13nx",
+          "content": [
+            {
+              "kind": "accordion_group",
+              "id": "1732037851427_tox",
+              "accordions": [
+                {
+                  "headline": "Is Salesforce a CRM?",
+                  "description": "<p>Yes. Salesforce CRM offers AI-powered, <a href=\"https://www.salesforce.com/ap/crm/what-is-crm/\" target=\"_self\">customer relationship management (CRM)</a> software that makes it easier for companies to build customer relationships, be more productive, and increase efficiency. This helps businesses of all sizes and in all industries conect with customers and prospects at scale.<br><br>Salesforce CRM brings together all your data onto <a href=\"https://www.salesforce.com/ap/products/\" target=\"_self\">one integrated platform</a> that unites your <a href=\"https://www.salesforce.com/ap/sales/\" target=\"_self\">sales</a>, <a href=\"https://www.salesforce.com/ap/service/\" target=\"_self\">service</a>, <a href=\"https://www.salesforce.com/ap/marketing/\" target=\"_self\">marketing</a>, <a href=\"https://www.salesforce.com/ap/commerce/\" target=\"_self\">commerce</a>, and <a href=\"https://www.salesforce.com/ap/platform/\" target=\"_self\">IT teams</a> with a single, shared view of your customer.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115447_j2k"
+                },
+                {
+                  "headline": "Is Salesforce an online CRM?",
+                  "description": "<p>Yes. Salesforce is an online CRM, also known as a <a href=\"https://www.salesforce.com/ap/crm/cloud-crm/\" target=\"_self\">cloud-based CRM</a>. It is a <a href=\"https://www.salesforce.com/ap/saas/\" target=\"_self\">Software as a Service (SaaS)</a> platform, which delivers applications over the internet. As a cloud-based CRM system, all platform hosting and maintenence is performed by Salesforce, eliminating many of the costs and responsibilities involved in maintaining CRM infrastructure and security management.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115448_32l"
+                },
+                {
+                  "headline": "How much does Salesforce CRM cost?",
+                  "description": "<p>There are a variety of Salesforce <a href=\"https://www.salesforce.com/ap/crm/pricing/\" target=\"_self\">CRM pricing</a> options. You can also view all <a href=\"https://www.salesforce.com/ap/pricing/\" target=\"_self\">Salesforce product pricing here</a>.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115449_13vv"
+                },
+                {
+                  "headline": "What types of businesses use Salesforce?",
+                  "description": "<p>Salesforce is built to be a scalable and <a href=\"https://www.salesforce.com/ap/crm/custom-crm/\" target=\"_self\">customisable CRM</a>, so that it can meet the needs of businesses across all sizes, stages, and industries. Salesforce provides <a href=\"https://www.salesforce.com/ap/products/\" target=\"_self\">enterprise CRM</a> options, as well as <a href=\"https://www.salesforce.com/ap/small-business/\" target=\"_self\">CRM for small businesses</a> and <a href=\"https://www.salesforce.com/ap/crm/startup-crm/\" target=\"_self\">CRM for startups</a>.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115449_h7d"
+                },
+                {
+                  "headline": "How easy is it to use Salesforce?",
+                  "description": "<p>Salesforce was built to be easy-to-use by all employees across your entire organisation. Salesforce has an intuitive interface, which lets you interact with Salesforce CRM through <a href=\"https://www.salesforce.com/ap/artificial-intelligence/what-is-conversational-ai/\" target=\"_self\">conversational AI</a>, the way you would speak to a colleague. With <a href=\"https://trailhead.salesforce.com/\" target=\"_self\">Trailhead</a>, Salesforce's free online learning platform, anyone can learn in-demand skills, earn resume-worthy credentials, gain <a href=\"https://trailhead.salesforce.com/en/credentials/associateoverview\" target=\"_self\">CRM certification</a>, and connect to new career opportunities.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115450_15h7"
+                },
+                {
+                  "headline": "What are the most popular CRM software features?",
+                  "description": "<p>There are many <a href=\"https://www.salesforce.com/ap/crm/features/\" target=\"_self\">CRM features</a> that benefit businesses. Some of them include contact management, collaboration tools like <a href=\"https://www.salesforce.com/ap/slack/\" target=\"_self\">Slack</a>, <a href=\"https://www.salesforce.com/ap/crm/automation/\" target=\"_self\">automation</a>, <a href=\"https://www.salesforce.com/ap/analytics/\" target=\"_self\">analytics</a> and <a href=\"https://www.salesforce.com/ap/crm/report/\" target=\"_self\">reporting</a>, <a href=\"https://www.salesforce.com/ap/crm/ai-crm/\" target=\"_self\">AI (Artificial Intelligence)</a>, <a href=\"https://www.salesforce.com/ap/crm/custom-crm/\" target=\"_self\">customisation</a>, <a href=\"https://www.salesforce.com/ap/crm/crm-integration/\" target=\"_self\">integration</a>, <a href=\"https://www.salesforce.com/ap/crm/cloud-crm/\" target=\"_self\">cloud-based mobile accessibility</a>, flexibility, and the ability to scale as you grow.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115451_9ko"
+                },
+                {
+                  "headline": "What are the benefits of CRM software?",
+                  "description": "<p><a href=\"https://www.salesforce.com/ap/crm/benefits-of-crm/\" target=\"_self\">CRM benefits</a> companies in many different ways. Some of them include more productive sales teams, a single view of the customer, actionable <a href=\"https://www.salesforce.com/ap/analytics/\" target=\"_self\">analytics</a> and data dashboards, customer-centric <a href=\"https://www.salesforce.com/ap/crm/automation/\" target=\"_self\">automation</a>, proactive customer service interactions, simplified collaboration, increased productivity with <a href=\"https://www.salesforce.com/ap/artificial-intelligence/what-is-ai/\" target=\"_self\">artificial intelligence (AI)</a>, <a href=\"https://www.salesforce.com/ap/crm/crm-integration/\" target=\"_self\">integration</a> with your existing business apps, access to your information from anywhere, scalability for growth, and security you can trust.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115452_9bp"
+                },
+                {
+                  "headline": "What are some CRM use cases?",
+                  "description": "<p>Read about Salesforce CRM <a href=\"https://www.salesforce.com/ap/customer-stories/\" target=\"_self\">customer stories</a> here. Salesforce is used by companies of every size, stage, and industry around the world, providing many <a href=\"https://www.salesforce.com/ap/crm/examples/\" target=\"_self\">CRM examples</a> by successful businesses across <a href=\"https://www.salesforce.com/ap/sales/\" target=\"_self\">sales</a>, <a href=\"https://www.salesforce.com/ap/service/\" target=\"_self\">service</a>, <a href=\"https://www.salesforce.com/ap/marketing/\" target=\"_self\">marketing</a>, <a href=\"https://www.salesforce.com/ap/commerce/\" target=\"_self\">commerce</a>, <a href=\"https://www.salesforce.com/ap/platform/\" target=\"_self\">IT</a>, and more.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115453_mvt"
+                },
+                {
+                  "headline": "How does CRM help sales teams?",
+                  "description": "<p>Salesforce is a sales CRM that helps teams sell faster, smarter, and more efficiently. <a href=\"https://www.salesforce.com/ap/sales/\" target=\"_self\">Sales Cloud</a> is part of the #1 agentic CRM, which empowers sellers, sales leaders, sales operations — and even partners — with data from any source and built-in <a href=\"https://www.salesforce.com/ap/artificial-intelligence/\" target=\"_self\">trusted AI</a>. With Salesforce, sales organisations can engage buyers, improve productivity, close deals faster, and grow revenue with sales software on the most complete platform for sales.<br><br>In addition to sales, Salesforce also offers <a href=\"https://www.salesforce.com/ap/marketing/\" target=\"_self\">CRM for Marketing (Marketing Cloud)</a>, <a href=\"https://www.salesforce.com/ap/service/\" target=\"_self\">CRM for Service (Service Cloud)</a>, <a href=\"https://www.salesforce.com/ap/commerce/\" target=\"_self\">CRM for Commerce (Commerce Cloud)</a>, <a href=\"https://www.salesforce.com/ap/data/\" target=\"_self\">CRM for Data (Data 360)</a>, and more. Salesforce CRM and apps provide one single source of truth with the most up-to-date customer information, helping strengthen the customer relationship at every point of the the customer lifecycle.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115454_g93"
+                },
+                {
+                  "headline": "Is Salesforce CRM only for sales teams?",
+                  "description": "<p><a href=\"https://www.salesforce.com/ap/sales/\" target=\"_self\">Sales Cloud</a> is just one part of Salesforce CRM, which is built to be used by teams across your business, including <a href=\"https://www.salesforce.com/ap/service/\" target=\"_self\">Service Cloud</a>, <a href=\"https://www.salesforce.com/ap/marketing/\" target=\"_self\">Marketing Cloud</a>, <a href=\"https://www.salesforce.com/ap/commerce/\" target=\"_self\">Commerce Cloud</a>, <a href=\"https://www.salesforce.com/ap/platform/\" target=\"_self\">Headless 360 platform for IT</a>, <a href=\"https://www.salesforce.com/ap/data/\" target=\"_self\">Data 360</a>, and more. Salesforce brings your teams together with a consolidated view of customer data, empowering you to nurture relationships with your clients and leads.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115454_7zx"
+                },
+                {
+                  "headline": "What is CRM in Marketing?",
+                  "description": "<p>CRM apps like <a href=\"https://www.salesforce.com/ap/marketing/\" target=\"_self\">Marketing Cloud</a> helps businesses manage and optimise marketing efforts with current and potential customers. It enables businesses to create, <a href=\"https://www.salesforce.com/ap/marketing/automation/\" target=\"_self\">automate</a>, and personalise marketing campaigns using email, social media, mobile messaging, advertising, and web channels. Marketing CRM, together with <a href=\"https://www.salesforce.com/ap/marketing/ai/\" target=\"_self\">marketing AI</a>, utilises your customer data to create personalised communications aimed at growing lasting customer relationships to boost customer retention and revenue. Combined with CRM for <a href=\"https://www.salesforce.com/ap/sales/\" target=\"_self\">sales</a>, <a href=\"https://www.salesforce.com/ap/service/\" target=\"_self\">service</a>, <a href=\"https://www.salesforce.com/ap/commerce/\" target=\"_self\">commerce</a>, <a href=\"https://www.salesforce.com/ap/data/\" target=\"_self\">data</a>, and <a href=\"https://www.salesforce.com/ap/platform/\" target=\"_self\">IT</a>, CRM marketing gives you access to unified customer profiles, rapid audience segmentation, content creation, campaign management, analytics, and customer journey mapping.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115455_5jp"
+                },
+                {
+                  "headline": "Does Salesforce CRM software integrate with other apps?",
+                  "description": "<p>Yes. Salesforce is built for <a href=\"https://www.salesforce.com/ap/crm/crm-integration/\" target=\"_self\">CRM integration</a>, making sure that your business is able to share data across internal and external applications. <a href=\"https://www.salesforce.com/ap/mulesoft/\" target=\"_self\">Salesforce's MuleSoft</a> is a unified platform that provides businesses with the essential building blocks for connected experiences, products, and services.<br><br>With Salesforce CRM, you can integrate all of your data, systems, or AI models, and automate any task or process to transform your business and drive real value. <a href=\"https://agentexchange.salesforce.com/\" target=\"_blank\">AgentExchange</a> is a robust SaaS marketplace, where Salesforce partners build custom apps that can be used with your Salesforce CRM.</p>\n",
+                  "kind": "card_faq-qna",
+                  "id": "1786020115456_r5a"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "path": "/crm",
+      "urlLoc": "ap",
+      "curHref": "/ap/crm/?d=cta-body-promo-601",
+      "curLocale": "en-ap",
+      "cdnEnvTag": "stable",
+      "pageAttrs": {
+        "livechat": {
+          "enabled": true
+        },
+        "content_type": "page",
+        "seo_page_type": "product",
+        "seo_product_name": "Salesforce CRM",
+        "autogenerate_json_ld": true,
+        "conviva": {
+          "envEnabled": true
+        },
+        "bladeCount": 17
+      },
+      "wpTemplate": "resources-template",
+      "seoOptions": {
+        "eager_load_images": false
+      }
+    }
+  ],
+  "renderer": "nunjucks",
+  "styleVersion": "v1",
+  "agent": {
+    "language": "en_AP",
+    "orgId": "00D000000000062",
+    "deploymentDevName": "page_builder_miaw_ui",
+    "messagingUrl": "https://org62.my.salesforce-scrt.com",
+    "fallbackOrgId": "00Dfh000001sFaz",
+    "fallbackDeploymentDevName": "page_builder_miaw_ui",
+    "fallbackMessagingUrl": "https://det.demo.my.salesforce-scrt.com",
+    "agentLanguageCode": "en_US",
+    "enableCompanion": true,
+    "enable_rich_content": true,
+    "translations": {
+      "prompts": [
+        "Connect me with a sales rep",
+        "Show me an Agentforce demo",
+        "How can Salesforce help my business"
+      ]
+    },
+    "mfeAttributes": {
+      "enable-rich-content": "true",
+      "streaming": "true",
+      "routing-attributes": "{\"SFPlusApiEndpoint\":\"https://www.salesforce.com/plus\",\"userApiUrl\":\"https://www.salesforce.com/api/plus/user\"}",
+      "ga-tracking-id": "G-3VHBZ2DJWP"
+    },
+    "experiment": true,
+    "experimentRoutes": {
+      "run": [],
+      "experiment": [],
+      "excluded": [
+        "ap/company/legal/privacy/",
+        "ap/crm/free-crm/sign-up*",
+        "ap/company/careers/*"
+      ]
+    },
+    "decisionSource": "none"
+  },
+  "qualified": "Qualified not turned on for this page"
+}
