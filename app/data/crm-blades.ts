@@ -8,16 +8,42 @@ export interface BladeResourceCard {
   linkUrl: string
 }
 
-export interface BladeCloudTab {
+export interface BladeProductCard {
   id: string
   title: string
-  eyebrow?: string
+  borderColor: string
+  description: string
+  linkText: string
+  linkUrl: string
+}
+
+export interface BladeScaleCard {
+  id: string
+  title: string
+  borderColor: string
+  description: string
+  linkText: string
+  linkUrl: string
+}
+
+export interface BladeArticleCard {
+  id: string
+  title: string
+  borderColor: string
+  description: string
+  linkText: string
+  linkUrl: string
+}
+
+export interface BladeFeatureZ {
+  id: string
+  layout: 'image-right' | 'image-left'
+  eyebrow: string
   headline: string
   description: string
   linkText: string
   linkUrl: string
   imageUrl: string
-  features: string[]
 }
 
 export const crmBladesData = {
@@ -41,8 +67,9 @@ export const crmBladesData = {
     }
   },
 
-  // Blade 2: 3-Up Resource Cards
+  // Blade 2: 3-Up Resource Cards Top (Heading 2)
   resourceGridTop: {
+    heading: 'Giải pháp CRM bứt phá mọi mục tiêu',
     cards: [
       {
         id: 'res-1',
@@ -74,9 +101,9 @@ export const crmBladesData = {
     ] as BladeResourceCard[]
   },
 
-  // Blade 3: Heading
+  // Blade 3: Section Divider Heading 1 (Heading 3)
   heading1: {
-    text: 'Giải pháp CRM phục vụ khách hàng tận tâm, bứt phá năng suất và tăng trưởng doanh thu.'
+    text: 'Tối ưu vận hành, bứt phá năng suất và doanh thu.'
   },
 
   // Blade 4, 5, 6: Feature Z-Pattern
@@ -85,7 +112,7 @@ export const crmBladesData = {
       id: 'feature-1',
       layout: 'image-right' as const,
       eyebrow: 'HỢP NHẤT DỮ LIỆU',
-      headline: 'Xây dựng mối quan hệ bền chặt với góc nhìn 360 độ duy nhất về từng khách hàng.',
+      headline: 'Xây dựng mối quan hệ bền chặt với góc nhìn 360 độ về từng khách hàng.',
       description: 'Trao quyền cho nhân viên mang đến trải nghiệm cá nhân hóa vượt trội nhờ góc nhìn toàn diện về mọi tương tác qua từng phòng ban. Biến dữ liệu thô thành ngữ cảnh hữu ích và quy trình làm việc thành trí tuệ thông minh — tất cả trên một nền tảng duy nhất.',
       linkText: 'Khám phá Agentforce 360',
       linkUrl: '/crm/what-is-crm',
@@ -95,7 +122,7 @@ export const crmBladesData = {
       id: 'feature-2',
       layout: 'image-left' as const,
       eyebrow: 'AGENTIC AI',
-      headline: 'Tối ưu hóa quy trình chuyển giao giữa AI Agent và nhân viên nhờ trí tuệ tự hành.',
+      headline: 'Tối ưu hóa chuyển giao giữa AI Agent và nhân viên.',
       description: 'Hành động nhanh hơn bằng cách cung cấp cho nhân sự và các AI Agent nền tảng cần thiết để làm việc liền mạch và hiệu quả trên mọi mắt xích của doanh nghiệp.',
       linkText: 'Xem cách thức hoạt động',
       linkUrl: '/crm/what-is-crm#ai',
@@ -105,114 +132,221 @@ export const crmBladesData = {
       id: 'feature-3',
       layout: 'image-right' as const,
       eyebrow: 'CHUYÊN BIỆT THEO NGÀNH',
-      headline: 'Khám phá các giải pháp được may đo chuyên biệt cho từng ngành nghề và quy mô.',
+      headline: 'Giải pháp may đo theo từng ngành nghề và quy mô.',
       description: 'Sở hữu giải pháp CRM được đúc kết từ hơn 25 năm kinh nghiệm thực chiến, quy chuẩn hàng đầu và yêu cầu chuyên sâu cho y tế, bán lẻ, công nghệ cao, tài chính, dịch vụ công và nhiều ngành khác.',
       linkText: 'Xem tất cả các ngành nghề',
       linkUrl: '/crm/what-is-crm#industries',
       imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?w=1024'
     }
-  ],
+  ] as BladeFeatureZ[],
 
-  // Blade 7 & 8: 5 Core Clouds Tabs
+  // Blade 7 & 8: 5 Core Cloud Product Cards (Portfolio Grid)
   productPortfolio: {
-    heading: 'Một nền tảng CRM doanh nghiệp toàn diện cho mối quan hệ khách hàng vững mạnh',
-    clouds: [
+    heading: 'Một nền tảng CRM cho mọi mối quan hệ khách hàng',
+    cta: {
+      label: 'Xem tất cả sản phẩm',
+      url: '/crm/what-is-crm'
+    },
+    cards: [
       {
         id: 'agentforce',
-        title: 'Agentforce AI',
-        eyebrow: 'TRÍ TUỆ NHÂN TẠO TỰ HÀNH',
-        headline: 'Thúc đẩy năng suất và cá nhân hóa với các AI Agent hoạt động 24/7.',
-        description: 'Tự động hóa các tác vụ phức tạp từ phân tích dữ liệu, soạn thảo email phản hồi đến giải quyết các yêu cầu hỗ trợ khách hàng đa kênh với độ chính xác cao.',
-        linkText: 'Khám phá Agentforce AI',
-        linkUrl: '/crm/what-is-crm',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?w=800',
-        features: ['AI Agent tự xử lý ticket', 'Phân tích dự báo hành vi khách hàng', 'Tích hợp mô hình LLM an toàn']
+        title: 'Agentforce',
+        borderColor: '#D17DFE', // Soft Purple
+        description: 'Thúc đẩy năng suất và cá nhân hóa với các AI Agent hoạt động trên toàn bộ hệ thống CRM của bạn.',
+        linkText: 'Khám phá AI',
+        linkUrl: '/crm/what-is-crm#ai'
       },
       {
         id: 'sales-cloud',
         title: 'Sales Cloud',
-        eyebrow: 'TĂNG TRƯỞNG DOANH SỐ',
-        headline: 'Tăng tốc độ tăng trưởng và bứt phá doanh số với AI tích hợp sẵn.',
-        description: 'Từ quản lý cơ hội tiềm năng, chấm điểm lead thông minh đến dự báo doanh thu chính xác – giúp đội ngũ kinh doanh chốt hợp đồng nhanh hơn 30%.',
-        linkText: 'Tìm hiểu Sales Cloud',
-        linkUrl: '/crm/what-is-crm',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?w=800',
-        features: ['Chấm điểm Lead Scoring bằng AI', 'Dự báo doanh số tự động', 'Tích hợp quản lý Pipeline trực quan']
+        borderColor: '#04E1CB', // Turquoise / Cyan
+        description: 'Tăng tốc độ tăng trưởng và bứt phá doanh số với AI tích hợp sẵn – từ quản lý cơ hội tiềm năng đến dự báo và chốt hợp đồng.',
+        linkText: 'Khám phá Sales Cloud',
+        linkUrl: '/crm/features'
       },
       {
         id: 'service-cloud',
         title: 'Service Cloud',
-        eyebrow: 'DỊCH VỤ KHÁCH HÀNG',
-        headline: 'Chuyển đổi chất lượng dịch vụ để nâng tầm trải nghiệm và lòng trung thành.',
-        description: 'Hỗ trợ khách hàng đa kênh liền mạch (Omnichannel), định tuyến thông minh và cung cấp cho tổng đài viên đầy đủ lịch sử tương tác 360 độ.',
-        linkText: 'Tìm hiểu Service Cloud',
-        linkUrl: '/crm/what-is-crm',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?w=800',
-        features: ['Hỗ trợ đa kênh Omnichannel', 'Cổng tự phục vụ Self-service', 'Định tuyến ticket thông minh']
+        borderColor: '#FF538A', // Coral / Pink
+        description: 'Chuyển đổi chất lượng dịch vụ để nâng tầm trải nghiệm và sự tương tác của khách hàng với các quy trình tinh gọn, tự động hóa và vận hành dịch vụ.',
+        linkText: 'Khám phá Service Cloud',
+        linkUrl: '/crm/what-is-crm'
       },
       {
         id: 'marketing-cloud',
         title: 'Marketing Cloud',
-        eyebrow: 'TIẾP THỊ CÁ NHÂN HÓA',
-        headline: 'Thu hút khách hàng tiềm năng và tối ưu hóa hiệu quả chiến dịch.',
-        description: 'Tự động hóa hành trình khách hàng qua Email, SMS, Mạng xã hội và Web, đo lường chính xác ROI cho từng chiến dịch tiếp thị.',
-        linkText: 'Tìm hiểu Marketing Cloud',
-        linkUrl: '/crm/what-is-crm',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?w=800',
-        features: ['Bản đồ hành trình Customer Journey', 'Tự động hóa chiến dịch đa kênh', 'Phân khúc tệp khách hàng sâu']
+        borderColor: '#FE9339', // Bright Orange
+        description: 'Thu hút khách hàng. Tương tác hiệu quả. Tăng trưởng doanh thu. Xây dựng mối quan hệ dài lâu bằng cách đưa AI vào tiếp thị.',
+        linkText: 'Khám phá Marketing Cloud',
+        linkUrl: '/crm/what-is-crm'
       },
       {
         id: 'commerce-cloud',
         title: 'Commerce Cloud',
-        eyebrow: 'THƯƠNG MẠI SỐ',
-        headline: 'Đơn giản hóa trải nghiệm mua sắm và gia tăng giá trị đơn hàng.',
-        description: 'Thiết lập trải nghiệm thương mại điện tử mượt mà cho cả mô hình B2B và B2C, cá nhân hóa đề xuất sản phẩm dựa trên hành vi mua sắm.',
-        linkText: 'Tìm hiểu Commerce Cloud',
-        linkUrl: '/crm/what-is-crm',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?w=800',
-        features: ['Cá nhân hóa giỏ hàng', 'Quản lý danh mục sản phẩm thông minh', 'Tối ưu thanh toán đa cổng']
+        borderColor: '#41B658', // Green
+        description: 'Đơn giản hóa mọi quy trình từ thiết lập gian hàng số đến thúc đẩy doanh số tại mọi điểm chạm khách hàng với AI bản địa và tự động hóa.',
+        linkText: 'Khám phá Commerce Cloud',
+        linkUrl: '/crm/what-is-crm'
       }
-    ] as BladeCloudTab[]
+    ] as BladeProductCard[]
   },
 
-  // Blade 9 & 10: Scale by Business Size
+  // Blade 9 & 10: Scale by Business Size (SMB vs Enterprise)
   businessScale: {
-    heading: 'Từ doanh nghiệp nhỏ đến tập đoàn lớn, các tổ chức đều đang bứt phá mạnh mẽ cùng chúng tôi.',
-    items: [
+    mainHeading: 'Đồng hành cùng mọi quy mô doanh nghiệp.',
+    leftTitle: 'Giải pháp đúng theo quy mô của bạn',
+    cta: {
+      label: 'Xem bảng giá và các gói CRM',
+      url: '/crm/pricing'
+    },
+    cards: [
       {
-        badge: 'DOANH NGHIỆP VỪA & NHỎ (SMB)',
-        title: 'Starter Suite — Bộ công cụ CRM khởi đầu hoàn hảo',
-        description: 'Tất cả những gì bạn cần để quản lý bán hàng, chăm sóc khách hàng và tiếp thị trong một ứng dụng duy nhất với mức giá tối ưu nhất.',
-        price: 'Từ 25 USD / người dùng / tháng',
+        id: 'crm-smb',
+        title: 'CRM cho SMB',
+        borderColor: '#90D0FE', // Sky Blue
+        description: 'Doanh nghiệp trong mọi ngành nghề phát triển nhanh hơn cùng Salesforce CRM. Bắt đầu ngay hôm nay với Starter Suite, giải pháp CRM dành riêng cho doanh nghiệp vừa và nhỏ.',
         linkText: 'Khám phá Starter Suite',
-        linkUrl: '/crm/pricing'
+        linkUrl: '/crm/solutions/small-business'
       },
       {
-        badge: 'TẬP ĐOÀN LỚN (ENTERPRISE)',
-        title: 'Enterprise Platform — Nền tảng mở rộng quy mô không giới hạn',
-        description: 'Hạ tầng bảo mật cấp doanh nghiệp, hỗ trợ hàng triệu giao dịch, tùy biến quy trình làm việc phức tạp và tích hợp đa hệ thống thông qua API mạnh mẽ.',
-        price: 'Báo giá theo quy mô & nhu cầu tùy biến',
-        linkText: 'Liên hệ tư vấn Enterprise',
-        linkUrl: '/crm/free-trial'
+        id: 'crm-enterprise',
+        title: 'Enterprise CRM',
+        borderColor: '#90D0FE', // Sky Blue
+        description: 'CRM số 1 tích hợp AI tự hành và là nền tảng đáng tin cậy được thiết kế đáp ứng các nhu cầu phức tạp nhất của tổ chức. Bạn có thể mở rộng quy mô không giới hạn trên một nền tảng duy nhất.',
+        linkText: 'Xem tất cả sản phẩm',
+        linkUrl: '/crm/solutions/enterprise'
       }
-    ]
+    ] as BladeScaleCard[]
   },
 
   // Blade 11: Logo Grid & Case Studies
   customerLogos: {
-    heading: 'Xem cách các thương hiệu hàng đầu chuyển đổi doanh nghiệp với CRM, AI và Dữ liệu.',
+    heading: 'Khách hàng bứt phá cùng CRM, AI và Dữ liệu.',
+    cta: {
+      label: 'Xem tất cả câu chuyện khách hàng',
+      url: '/crm/examples'
+    },
     logos: [
-      { name: 'Good360', stat: '+45% năng suất vận hành', quote: 'Giải pháp CRM giúp chúng tôi kết nối hàng nghìn đối tác liền mạch.' },
-      { name: 'Nexo', stat: 'Gấp đôi tốc độ phản hồi', quote: 'AI tự động hóa đã giảm một nửa thời gian xử lý yêu cầu khách hàng.' },
-      { name: 'Precina', stat: '+32% tỷ lệ chốt đơn', quote: 'Đội ngũ bán hàng quản lý phễu cơ hội tiềm năng rõ ràng và chính xác hơn.' },
-      { name: 'reMarkable', stat: 'Trải nghiệm 5 sao', quote: 'Góc nhìn khách hàng 360 độ giúp chúng tôi thấu hiểu từng người dùng.' },
-      { name: 'Zota', stat: '+50% tăng trưởng doanh thu', quote: 'Nền tảng CRM là đòn bẩy quan trọng nhất cho chiến lược mở rộng thị trường.' }
+      {
+        id: 'good360',
+        name: 'Good360',
+        color: '#70B62C',
+        stat: '+45% năng suất vận hành',
+        quote: 'Giải pháp CRM giúp chúng tôi kết nối hàng nghìn đối tác liền mạch.'
+      },
+      {
+        id: 'nexo',
+        name: 'NEXO',
+        color: '#1A1A1A',
+        stat: 'Gấp đôi tốc độ phản hồi',
+        quote: 'AI tự động hóa đã giảm một nửa thời gian xử lý yêu cầu khách hàng.'
+      },
+      {
+        id: 'precina',
+        name: 'Precina',
+        color: '#0085CA',
+        stat: '+32% tỷ lệ chốt đơn',
+        quote: 'Đội ngũ bán hàng quản lý phễu cơ hội tiềm năng rõ ràng và chính xác hơn.'
+      },
+      {
+        id: 'remarkable',
+        name: 'reMarkable',
+        color: '#111111',
+        stat: 'Trải nghiệm 5 sao',
+        quote: 'Góc nhìn khách hàng 360 độ giúp chúng tôi thấu hiểu từng người dùng.'
+      },
+      {
+        id: 'zota',
+        name: 'zota',
+        color: '#0052CC',
+        stat: '+50% tăng trưởng doanh thu',
+        quote: 'Nền tảng CRM là đòn bẩy quan trọng nhất cho chiến lược mở rộng thị trường.'
+      }
     ]
+  },
+
+  // Blade 12, 13, 14: Article Carousels (Business Types & Topics)
+  articleCarousels: {
+    mainHeading: 'Kiến thức và cẩm nang thực chiến về CRM.',
+    row1: {
+      leftTitle: 'CRM theo loại hình doanh nghiệp',
+      cards: [
+        {
+          id: 'art-smb',
+          title: 'CRM cho Doanh nghiệp nhỏ',
+          borderColor: '#90D0FE',
+          description: 'Vận hành một doanh nghiệp nhỏ chưa bao giờ là dễ dàng, nhưng việc tìm đúng giải pháp CRM có thể tạo nên bước ngoặt lớn.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/solutions/small-business'
+        },
+        {
+          id: 'art-startup',
+          title: 'CRM cho Doanh nghiệp khởi nghiệp',
+          borderColor: '#90D0FE',
+          description: 'Tìm hiểu cách CRM giúp tinh gọn quy trình, khai phá dữ liệu chi tiết và làm sâu sắc mối quan hệ với khách hàng và các bên liên quan.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/what-is-crm'
+        },
+        {
+          id: 'art-real-estate',
+          title: 'CRM cho Bất động sản',
+          borderColor: '#90D0FE',
+          description: 'Chuyển đổi hoạt động kinh doanh bất động sản bằng cách tổ chức danh bạ tập trung, tự động hóa tác vụ và cải thiện việc ra quyết định.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/what-is-crm'
+        },
+        {
+          id: 'art-b2b',
+          title: 'CRM cho B2B',
+          borderColor: '#90D0FE',
+          description: 'Tìm hiểu cách các tính năng CRM đóng vai trò then chốt trong quy trình bán hàng B2B đặc thù và mở rộng quy mô.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/features'
+        }
+      ] as BladeArticleCard[]
+    },
+    row2: {
+      leftTitle: 'Các chủ đề CRM then chốt',
+      cards: [
+        {
+          id: 'art-best-practices',
+          title: 'Thực tiễn CRM Tốt nhất',
+          borderColor: '#90D0FE',
+          description: 'Khai thác tối đa tiềm năng CRM và thiết lập nền tảng thành công cho doanh nghiệp của bạn với 8 bước tối ưu này.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/what-is-crm#best-practices'
+        },
+        {
+          id: 'art-database',
+          title: 'Cơ sở Dữ liệu CRM',
+          borderColor: '#90D0FE',
+          description: 'Sử dụng dữ liệu khách hàng để thắt chặt mối quan hệ và tinh gọn hiệu suất làm việc trên tất cả kênh và phòng ban.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/what-is-crm'
+        },
+        {
+          id: 'art-strategy',
+          title: 'Chiến lược CRM',
+          borderColor: '#90D0FE',
+          description: 'Làm theo các bước chỉ dẫn để xây dựng kế hoạch triển khai và ứng dụng CRM toàn diện nhất.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/crm-implementation'
+        },
+        {
+          id: 'art-automation',
+          title: 'Tự động hóa CRM',
+          borderColor: '#90D0FE',
+          description: 'Tự động hóa các tác vụ lặp đi lặp lại để đội ngũ của bạn tập trung vào điều quan trọng nhất: khách hàng.',
+          linkText: 'Đọc bài viết',
+          linkUrl: '/crm/features'
+        }
+      ] as BladeArticleCard[]
+    }
   },
 
   // Blade 15: Resource Grid Bottom (Guides & Insights)
   resourceGridBottom: {
-    heading: 'Cập nhật những xu hướng CRM mới nhất với cẩm nang hướng dẫn và báo cáo chuyên gia.',
+    heading: 'Xu hướng CRM, cẩm nang và báo cáo chuyên sâu.',
     cards: [
       {
         id: 'guide-1',
@@ -246,7 +380,7 @@ export const crmBladesData = {
 
   // Blade 16: Contact Us (3 Action Pillars)
   contactUs: {
-    heading: 'Khám phá những gì có thể đạt được với Hệ thống Agentic CRM số 1.',
+    heading: 'Khám phá sức mạnh của Agentic CRM số 1.',
     pillars: [
       {
         id: 'pillar-trial',

@@ -2,6 +2,7 @@
 import AppHeader from '~/components/AppHeader.vue'
 import AppFooter from '~/components/AppFooter.vue'
 import SfDemoModal from '~/components/ui/SfDemoModal.vue'
+import SfFloatingAssistant from '~/components/ui/SfFloatingAssistant.vue'
 </script>
 
 <template>
@@ -12,5 +13,6 @@ import SfDemoModal from '~/components/ui/SfDemoModal.vue'
     </main>
     <AppFooter />
     <SfDemoModal />
+    <SfFloatingAssistant />
   </div>
 </template>
