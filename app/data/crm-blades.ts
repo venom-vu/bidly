@@ -49,10 +49,10 @@ export interface BladeFeatureZ {
 export const crmBladesData = {
   // Blade 1: Marquee Hero
   hero: {
-    eyebrow: 'Hệ thống Salesforce CRM',
+    eyebrow: 'Hệ thống Bidly Preconstruction CRM',
     headlinePrefix: 'Hệ thống Agentic CRM số 1 Châu Á',
     headlineHighlight: 'vận hành Doanh nghiệp Tự động hóa bằng AI.',
-    description: 'Thu hút thêm khách hàng tiềm năng, chốt nhiều hợp đồng hơn và thắt chặt mối quan hệ khách hàng bằng cách hợp nhất bán hàng, dịch vụ, marketing, thương mại và CNTT trên một nền tảng duy nhất.',
+    description: 'Thu hút thêm cơ hội tiềm năng, quản lý hồ sơ thầu chuẩn xác và thắt chặt mối quan hệ khách hàng bằng cách hợp nhất bán hàng, tiền dự án, dịch vụ và dữ liệu trên một nền tảng duy nhất.',
     primaryCta: {
       label: 'Xem bản Demo',
       url: '#demo'
@@ -133,7 +133,7 @@ export const crmBladesData = {
       layout: 'image-right' as const,
       eyebrow: 'CHUYÊN BIỆT THEO NGÀNH',
       headline: 'Giải pháp may đo theo từng ngành nghề và quy mô.',
-      description: 'Sở hữu giải pháp CRM được đúc kết từ hơn 25 năm kinh nghiệm thực chiến, quy chuẩn hàng đầu và yêu cầu chuyên sâu cho y tế, bán lẻ, công nghệ cao, tài chính, dịch vụ công và nhiều ngành khác.',
+      description: 'Sở hữu giải pháp CRM được đúc kết từ nhiều năm kinh nghiệm thực chiến, quy chuẩn hàng đầu và yêu cầu chuyên sâu cho xây dựng công nghiệp, y tế, bất động sản, tài chính và nhiều ngành khác.',
       linkText: 'Xem tất cả các ngành nghề',
       linkUrl: '/crm/what-is-crm#industries',
       imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?w=1024'
@@ -150,24 +150,24 @@ export const crmBladesData = {
     cards: [
       {
         id: 'agentforce',
-        title: 'Agentforce',
-        borderColor: '#D17DFE', // Soft Purple
+        title: 'Agentforce AI',
+        borderColor: 'var(--stage-s2)', // Purple
         description: 'Thúc đẩy năng suất và cá nhân hóa với các AI Agent hoạt động trên toàn bộ hệ thống CRM của bạn.',
         linkText: 'Khám phá AI',
         linkUrl: '/crm/what-is-crm#ai'
       },
       {
         id: 'sales-cloud',
-        title: 'Sales Cloud',
-        borderColor: '#04E1CB', // Turquoise / Cyan
-        description: 'Tăng tốc độ tăng trưởng và bứt phá doanh số với AI tích hợp sẵn – từ quản lý cơ hội tiềm năng đến dự báo và chốt hợp đồng.',
+        title: 'Sales & Preconstruction',
+        borderColor: 'var(--stage-s3)', // Teal
+        description: 'Tăng tốc độ tăng trưởng và bứt phá doanh số với AI tích hợp sẵn – từ quản lý cơ hội tiềm năng đến dự báo và đấu thầu.',
         linkText: 'Khám phá Sales Cloud',
         linkUrl: '/crm/features'
       },
       {
         id: 'service-cloud',
         title: 'Service Cloud',
-        borderColor: '#FF538A', // Coral / Pink
+        borderColor: 'var(--tone-info)', // Cyan
         description: 'Chuyển đổi chất lượng dịch vụ để nâng tầm trải nghiệm và sự tương tác của khách hàng với các quy trình tinh gọn, tự động hóa và vận hành dịch vụ.',
         linkText: 'Khám phá Service Cloud',
         linkUrl: '/crm/what-is-crm'
@@ -175,7 +175,7 @@ export const crmBladesData = {
       {
         id: 'marketing-cloud',
         title: 'Marketing Cloud',
-        borderColor: '#FE9339', // Bright Orange
+        borderColor: 'var(--tone-warn)', // Amber
         description: 'Thu hút khách hàng. Tương tác hiệu quả. Tăng trưởng doanh thu. Xây dựng mối quan hệ dài lâu bằng cách đưa AI vào tiếp thị.',
         linkText: 'Khám phá Marketing Cloud',
         linkUrl: '/crm/what-is-crm'
@@ -183,7 +183,7 @@ export const crmBladesData = {
       {
         id: 'commerce-cloud',
         title: 'Commerce Cloud',
-        borderColor: '#41B658', // Green
+        borderColor: 'var(--primary)', // Brand Green
         description: 'Đơn giản hóa mọi quy trình từ thiết lập gian hàng số đến thúc đẩy doanh số tại mọi điểm chạm khách hàng với AI bản địa và tự động hóa.',
         linkText: 'Khám phá Commerce Cloud',
         linkUrl: '/crm/what-is-crm'
@@ -202,16 +202,16 @@ export const crmBladesData = {
     cards: [
       {
         id: 'crm-smb',
-        title: 'CRM cho SMB',
-        borderColor: '#90D0FE', // Sky Blue
-        description: 'Doanh nghiệp trong mọi ngành nghề phát triển nhanh hơn cùng Salesforce CRM. Bắt đầu ngay hôm nay với Starter Suite, giải pháp CRM dành riêng cho doanh nghiệp vừa và nhỏ.',
+        title: 'CRM cho SMB & Startup',
+        borderColor: 'var(--brand)', // Brand light green
+        description: 'Doanh nghiệp trong mọi ngành nghề phát triển nhanh hơn cùng Bidly CRM. Bắt đầu ngay hôm nay với Starter Suite, giải pháp CRM tinh gọn cho doanh nghiệp vừa và nhỏ.',
         linkText: 'Khám phá Starter Suite',
         linkUrl: '/crm/solutions/small-business'
       },
       {
         id: 'crm-enterprise',
         title: 'Enterprise CRM',
-        borderColor: '#90D0FE', // Sky Blue
+        borderColor: 'var(--primary)', // Brand primary green
         description: 'CRM số 1 tích hợp AI tự hành và là nền tảng đáng tin cậy được thiết kế đáp ứng các nhu cầu phức tạp nhất của tổ chức. Bạn có thể mở rộng quy mô không giới hạn trên một nền tảng duy nhất.',
         linkText: 'Xem tất cả sản phẩm',
         linkUrl: '/crm/solutions/enterprise'
@@ -274,7 +274,7 @@ export const crmBladesData = {
         {
           id: 'art-smb',
           title: 'CRM cho Doanh nghiệp nhỏ',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--brand)',
           description: 'Vận hành một doanh nghiệp nhỏ chưa bao giờ là dễ dàng, nhưng việc tìm đúng giải pháp CRM có thể tạo nên bước ngoặt lớn.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/solutions/small-business'
@@ -282,23 +282,23 @@ export const crmBladesData = {
         {
           id: 'art-startup',
           title: 'CRM cho Doanh nghiệp khởi nghiệp',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--stage-s3)',
           description: 'Tìm hiểu cách CRM giúp tinh gọn quy trình, khai phá dữ liệu chi tiết và làm sâu sắc mối quan hệ với khách hàng và các bên liên quan.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/what-is-crm'
         },
         {
           id: 'art-real-estate',
-          title: 'CRM cho Bất động sản',
-          borderColor: '#90D0FE',
-          description: 'Chuyển đổi hoạt động kinh doanh bất động sản bằng cách tổ chức danh bạ tập trung, tự động hóa tác vụ và cải thiện việc ra quyết định.',
+          title: 'CRM cho Bất động sản & Xây dựng',
+          borderColor: 'var(--tone-info)',
+          description: 'Chuyển đổi hoạt động kinh doanh bằng cách tổ chức danh bạ tập trung, tự động hóa tác vụ và cải thiện việc ra quyết định.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/what-is-crm'
         },
         {
           id: 'art-b2b',
-          title: 'CRM cho B2B',
-          borderColor: '#90D0FE',
+          title: 'CRM cho B2B & Tổng thầu',
+          borderColor: 'var(--stage-s2)',
           description: 'Tìm hiểu cách các tính năng CRM đóng vai trò then chốt trong quy trình bán hàng B2B đặc thù và mở rộng quy mô.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/features'
@@ -311,7 +311,7 @@ export const crmBladesData = {
         {
           id: 'art-best-practices',
           title: 'Thực tiễn CRM Tốt nhất',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--primary)',
           description: 'Khai thác tối đa tiềm năng CRM và thiết lập nền tảng thành công cho doanh nghiệp của bạn với 8 bước tối ưu này.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/what-is-crm#best-practices'
@@ -319,7 +319,7 @@ export const crmBladesData = {
         {
           id: 'art-database',
           title: 'Cơ sở Dữ liệu CRM',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--stage-s3)',
           description: 'Sử dụng dữ liệu khách hàng để thắt chặt mối quan hệ và tinh gọn hiệu suất làm việc trên tất cả kênh và phòng ban.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/what-is-crm'
@@ -327,7 +327,7 @@ export const crmBladesData = {
         {
           id: 'art-strategy',
           title: 'Chiến lược CRM',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--tone-info)',
           description: 'Làm theo các bước chỉ dẫn để xây dựng kế hoạch triển khai và ứng dụng CRM toàn diện nhất.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/crm-implementation'
@@ -335,7 +335,7 @@ export const crmBladesData = {
         {
           id: 'art-automation',
           title: 'Tự động hóa CRM',
-          borderColor: '#90D0FE',
+          borderColor: 'var(--stage-s2)',
           description: 'Tự động hóa các tác vụ lặp đi lặp lại để đội ngũ của bạn tập trung vào điều quan trọng nhất: khách hàng.',
           linkText: 'Đọc bài viết',
           linkUrl: '/crm/features'
@@ -380,7 +380,7 @@ export const crmBladesData = {
 
   // Blade 16: Contact Us (3 Action Pillars)
   contactUs: {
-    heading: 'Khám phá sức mạnh của Agentic CRM số 1.',
+    heading: 'Khám phá sức mạnh của Bidly Preconstruction CRM.',
     pillars: [
       {
         id: 'pillar-trial',

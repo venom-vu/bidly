@@ -1,0 +1,12 @@
+allowBuilds:
+  "@parcel/watcher": true
+  "@swc/core": true
+  "@tailwindcss/oxide": true
+  better-sqlite3: true
+  cbor-extract: true
+  core-js: true
+  esbuild: true
+  fsevents: true
+  maplibre-gl: true
+  unrs-resolver: true
+  vue-demi: true

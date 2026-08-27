@@ -45,11 +45,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-white border-b border-gray-100 overflow-hidden">
+  <section class="py-16 md:py-24 bg-card border-b border-border overflow-hidden">
     <div class="sf-container space-y-16 md:space-y-20">
       <!-- Main Centered Heading -->
       <div class="text-center max-w-3xl mx-auto space-y-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#032D60] tracking-tight leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-foreground tracking-tight leading-tight">
           {{ data.mainHeading }}
         </h2>
       </div>
@@ -58,7 +58,7 @@ onMounted(() => {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Left Title -->
         <div class="lg:col-span-3 space-y-4 pt-2">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-[#032D60] tracking-tight leading-snug">
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ data.row1.leftTitle }}
           </h3>
         </div>
@@ -90,7 +90,7 @@ onMounted(() => {
           <!-- Navigation Arrow Next Button (Right) -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-white shadow-xl border border-gray-200 text-[#032D60] hover:text-[#0176D3] hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-card shadow-xl border border-border text-foreground hover:text-primary hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
             aria-label="Xem tiếp"
             @click="scrollNext(row1Container)"
           >
@@ -100,9 +100,9 @@ onMounted(() => {
           </button>
 
           <!-- Scroll Progress Bar Indicator -->
-          <div class="mt-4 w-full max-w-md bg-gray-200 h-1 rounded-full overflow-hidden">
+          <div class="mt-4 w-full max-w-md bg-secondary h-1 rounded-full overflow-hidden">
             <div
-              class="bg-gray-400 h-full rounded-full transition-all duration-150"
+              class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row1Progress)}%` }"
             />
           </div>
@@ -113,7 +113,7 @@ onMounted(() => {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6">
         <!-- Left Title -->
         <div class="lg:col-span-3 space-y-4 pt-2">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-[#032D60] tracking-tight leading-snug">
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ data.row2.leftTitle }}
           </h3>
         </div>
@@ -145,7 +145,7 @@ onMounted(() => {
           <!-- Navigation Arrow Next Button (Right) -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-white shadow-xl border border-gray-200 text-[#032D60] hover:text-[#0176D3] hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-card shadow-xl border border-border text-foreground hover:text-primary hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
             aria-label="Xem tiếp"
             @click="scrollNext(row2Container)"
           >
@@ -155,9 +155,9 @@ onMounted(() => {
           </button>
 
           <!-- Scroll Progress Bar Indicator -->
-          <div class="mt-4 w-full max-w-md bg-gray-200 h-1 rounded-full overflow-hidden">
+          <div class="mt-4 w-full max-w-md bg-secondary h-1 rounded-full overflow-hidden">
             <div
-              class="bg-gray-400 h-full rounded-full transition-all duration-150"
+              class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row2Progress)}%` }"
             />
           </div>

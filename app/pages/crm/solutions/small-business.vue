@@ -4,7 +4,7 @@ import SfButton from '~/components/ui/SfButton.vue'
 import SfContactPillars from '~/components/blades/SfContactPillars.vue'
 
 useSeoMeta({
-  title: 'Giải pháp CRM cho Doanh Nghiệp Vừa & Nhỏ (SMB) & Startup | bidly',
+  title: 'Giải pháp CRM cho Doanh Nghiệp Vừa & Nhỏ (SMB) & Startup | Bidly',
   description: 'Khám phá Starter Suite: bộ công cụ CRM all-in-one cho doanh nghiệp nhỏ. Tích hợp Bán hàng, CSKH, Marketing và AI chỉ từ 25 USD/tháng.'
 })
 
@@ -35,15 +35,15 @@ const smbFeatures = [
 <template>
   <div class="space-y-0">
     <!-- Hero SMB -->
-    <section class="py-16 md:py-24 sf-gradient-bg border-b border-gray-100">
+    <section class="py-16 md:py-24 sf-gradient-bg border-b border-border">
       <div class="sf-container text-center max-w-4xl space-y-6">
-        <SfBadge variant="blue" size="md">
+        <SfBadge variant="green" size="md">
           GIẢI PHÁP CHO SMB & STARTUP
         </SfBadge>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#032D60] tracking-tight leading-[1.2]">
-          Phần mềm CRM Tinh gọn, Dễ dùng và Đầy đủ Sức mạnh cho <span class="text-[#0176D3]">Doanh nghiệp Nhỏ</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2]">
+          Phần mềm CRM Tinh gọn, Dễ dùng và Đầy đủ Sức mạnh cho <span class="text-primary">Doanh nghiệp Nhỏ</span>
         </h1>
-        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        <p class="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
           Tạm biệt những bảng tính Excel rời rạc. Tăng tốc kinh doanh, quản lý thông tin khách hàng tập trung và tạo dựng lòng tin bền vững với gói giải pháp Starter Suite.
         </p>
         <div class="pt-2 flex flex-wrap justify-center gap-4">
@@ -58,13 +58,13 @@ const smbFeatures = [
     </section>
 
     <!-- SMB Value Props Grid -->
-    <section class="py-16 md:py-20 bg-white">
+    <section class="py-16 md:py-20 bg-card">
       <div class="sf-container space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#032D60]">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground">
             Tại sao hàng nghìn doanh nghiệp nhỏ chọn chúng tôi?
           </h2>
-          <p class="text-gray-600">
+          <p class="text-muted-foreground">
             Được thiết kế riêng để tối giản quy trình vận hành nhưng vẫn mang lại hiệu quả kinh doanh tối đa.
           </p>
         </div>
@@ -73,15 +73,15 @@ const smbFeatures = [
           <div
             v-for="(feat, idx) in smbFeatures"
             :key="idx"
-            class="sf-card-hover bg-[#F4F6F9] p-8 rounded-3xl border border-gray-100 space-y-4"
+            class="sf-card-hover bg-background p-8 rounded-3xl border border-border space-y-4"
           >
-            <div class="w-12 h-12 rounded-2xl bg-white text-[#0176D3] flex items-center justify-center font-bold text-lg shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-card text-primary flex items-center justify-center font-bold text-lg shadow-xs border border-border">
               0{{ idx + 1 }}
             </div>
-            <h3 class="text-xl font-bold text-[#032D60]">
+            <h3 class="text-xl font-bold text-foreground">
               {{ feat.title }}
             </h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
+            <p class="text-sm text-muted-foreground leading-relaxed">
               {{ feat.description }}
             </p>
           </div>
@@ -90,15 +90,15 @@ const smbFeatures = [
     </section>
 
     <!-- Z-Pattern Feature Detail -->
-    <section class="py-16 md:py-20 sf-gradient-bg border-y border-gray-100">
+    <section class="py-16 md:py-20 sf-gradient-bg border-y border-border">
       <div class="sf-container">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-6 space-y-6">
             <SfBadge variant="navy">TRẢI NGHIỆM TRỰC QUAN</SfBadge>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#032D60] leading-tight">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight">
               Quản lý toàn bộ cơ hội bán hàng trên một màn hình Kanban sinh động
             </h2>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-muted-foreground leading-relaxed">
               Kéo thả các giao dịch qua từng giai đoạn phễu bán hàng (Từ tiếp cận, báo giá đến chốt hợp đồng). Nhân viên kinh doanh không còn bỏ lỡ bất kỳ khách hàng tiềm năng nào.
             </p>
             <div class="pt-2">
@@ -108,7 +108,7 @@ const smbFeatures = [
             </div>
           </div>
           <div class="lg:col-span-6">
-            <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white aspect-[4/3]">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-border bg-card aspect-[4/3]">
               <img
                 src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?w=800"
                 alt="Bảng điều khiển Starter Suite"

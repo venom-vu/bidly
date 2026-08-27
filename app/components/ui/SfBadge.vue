@@ -1,11 +1,11 @@
 <script setup lang="ts">
 interface Props {
-  variant?: 'blue' | 'navy' | 'green' | 'gray' | 'orange'
+  variant?: 'blue' | 'navy' | 'green' | 'gray' | 'orange' | 'teal'
   size?: 'sm' | 'md'
 }
 
 withDefaults(defineProps<Props>(), {
-  variant: 'blue',
+  variant: 'green',
   size: 'sm'
 })
 </script>
@@ -15,11 +15,12 @@ withDefaults(defineProps<Props>(), {
     :class="[
       'inline-flex items-center gap-1.5 font-bold uppercase tracking-wider rounded-full select-none',
       size === 'sm' ? 'px-2.5 py-0.5 text-[11px]' : 'px-3.5 py-1 text-xs',
-      variant === 'blue' ? 'bg-[#EBF5FF] text-[#0176D3]' : '',
-      variant === 'navy' ? 'bg-[#032D60] text-white' : '',
-      variant === 'green' ? 'bg-[#E6F4EA] text-[#04844B]' : '',
-      variant === 'gray' ? 'bg-[#F4F6F9] text-[#5C5C5C] border border-[#E5E5E5]' : '',
-      variant === 'orange' ? 'bg-[#FFF4E5] text-[#D46B08]' : ''
+      variant === 'blue' ? 'bg-brand-soft text-brand-text' : '',
+      variant === 'green' ? 'bg-brand-soft text-brand-text' : '',
+      variant === 'navy' ? 'bg-brand-panel text-on-accent' : '',
+      variant === 'gray' ? 'bg-secondary text-muted-foreground border border-border' : '',
+      variant === 'orange' ? 'bg-tone-warn-soft text-tone-warn' : '',
+      variant === 'teal' ? 'bg-stage-s3/15 text-stage-s3' : ''
     ]"
   >
     <slot />

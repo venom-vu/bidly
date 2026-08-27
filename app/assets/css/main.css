@@ -1,17 +1,71 @@
 @import "tailwindcss";
+@import "./tokens.css";
 
 @theme {
-  --color-brand-primary: #0176D3;
-  --color-brand-hover: #014486;
-  --color-brand-navy: #032D60;
-  --color-brand-navy-light: #0B3F7E;
-  --color-brand-accent-green: #04844B;
-  --color-surface-light: #F4F6F9;
-  --color-surface-gradient-start: #F8FAFC;
-  --color-surface-gradient-end: #EEF4F9;
-  --color-border-subtle: #E5E5E5;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-brand-primary: var(--primary);
+  --color-brand-hover: var(--primary-hover);
+  --color-brand: var(--brand);
+  --color-brand-gate: var(--brand-gate);
+  --color-brand-text: var(--brand-text);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-panel: var(--brand-panel);
+  --color-brand-panel-foreground: var(--brand-panel-foreground);
+  --color-brand-panel-muted: var(--brand-panel-muted);
+  --color-brand-panel-border: var(--brand-panel-border);
   
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-on-accent: var(--on-accent);
+  --color-logo-tile: var(--logo-tile);
+  --color-logo-glyph: var(--logo-glyph);
+  --color-logo-gate: var(--logo-gate);
+
+  --color-stage-s0: var(--stage-s0);
+  --color-stage-s1: var(--stage-s1);
+  --color-stage-s2: var(--stage-s2);
+  --color-stage-s3: var(--stage-s3);
+  --color-stage-s4: var(--stage-s4);
+  --color-stage-s5: var(--stage-s5);
+  --color-stage-s6: var(--stage-s6);
+  --color-stage-s7: var(--stage-s7);
+  --color-stage-s8: var(--stage-s8);
+
+  --color-outcome-won: var(--outcome-won);
+  --color-outcome-lost: var(--outcome-lost);
+  --color-outcome-nobid: var(--outcome-nobid);
+
+  --color-tone-ok: var(--tone-ok);
+  --color-tone-ok-soft: var(--tone-ok-soft);
+  --color-tone-warn: var(--tone-warn);
+  --color-tone-warn-soft: var(--tone-warn-soft);
+  --color-tone-danger: var(--tone-danger);
+  --color-tone-danger-soft: var(--tone-danger-soft);
+  --color-tone-info: var(--tone-info);
+  --color-tone-info-soft: var(--tone-info-soft);
+
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 @keyframes floatY {
@@ -45,13 +99,20 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  color: #181818;
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Tiền và ngày thẳng cột */
+.tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Custom utility styles */
@@ -71,14 +132,26 @@ body {
 }
 
 .sf-card-hover {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .sf-card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(3, 45, 96, 0.09);
+  box-shadow: 0 16px 32px rgba(27, 33, 28, 0.08);
 }
 
 .sf-gradient-bg {
-  background: linear-gradient(180deg, #F8FAFC 0%, #EEF4F9 100%);
+  background: linear-gradient(180deg, var(--background) 0%, #EBF2EB 100%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }

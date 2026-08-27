@@ -15,11 +15,11 @@ defineProps<Props>();
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24 bg-card">
     <div class="sf-container space-y-12">
       <div v-if="heading" class="text-center max-w-3xl mx-auto space-y-4">
         <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#032D60] tracking-tight leading-tight"
+          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
         >
           {{ heading }}
         </h2>
@@ -29,10 +29,10 @@ defineProps<Props>();
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card-hover bg-white rounded-2xl border border-gray-100/90 overflow-hidden flex flex-col group shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-[#0176D3]/30 transition-all duration-300"
+          class="sf-card-hover bg-card rounded-2xl border border-border overflow-hidden flex flex-col group shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-brand/50 transition-all duration-300"
         >
           <!-- Card Image Container -->
-          <div class="relative aspect-[16/9] bg-gray-100 overflow-hidden">
+          <div class="relative aspect-[16/9] bg-muted overflow-hidden">
             <img
               :src="card.imageUrl"
               :alt="card.headline"
@@ -45,26 +45,26 @@ defineProps<Props>();
           <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
             <div class="space-y-3">
               <div v-if="card.badge">
-                <SfBadge variant="blue" size="sm">
+                <SfBadge variant="green" size="sm">
                   {{ card.badge }}
                 </SfBadge>
               </div>
 
               <h3
-                class="text-lg sm:text-xl font-extrabold text-[#032D60] leading-snug group-hover:text-[#0176D3] transition-colors"
+                class="text-lg sm:text-xl font-extrabold text-foreground leading-snug group-hover:text-brand-text transition-colors"
               >
                 {{ card.headline }}
               </h3>
-              <p class="text-sm sm:text-[15px] text-gray-600 leading-relaxed line-clamp-3">
+              <p class="text-sm sm:text-[15px] text-muted-foreground leading-relaxed line-clamp-3">
                 {{ card.description }}
               </p>
             </div>
 
             <!-- Card Link -->
-            <div class="pt-3 border-t border-gray-100">
+            <div class="pt-3 border-t border-border">
               <NuxtLink
                 :to="card.linkUrl"
-                class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-[#0176D3] underline underline-offset-4 decoration-2 group-hover:text-[#014486] transition-all"
+                class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-brand-text underline underline-offset-4 decoration-2 group-hover:text-primary group-hover:decoration-primary transition-all"
               >
                 {{ card.linkText }}
                 <svg
@@ -90,7 +90,7 @@ defineProps<Props>();
       <div v-if="ctaButton" class="text-center pt-4">
         <NuxtLink
           :to="ctaButton.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-[#0176D3] text-white font-bold text-base rounded-xl hover:bg-[#014486] transition-all shadow-md active:scale-[0.98]"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-bold text-base rounded-xl hover:bg-primary-hover transition-all shadow-md active:scale-[0.98]"
         >
           {{ ctaButton.label }}
         </NuxtLink>

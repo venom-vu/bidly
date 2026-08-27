@@ -29,25 +29,25 @@ onUnmounted(() => {
     >
       <div
         v-if="isOpen"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#032D60]/75 backdrop-blur-sm"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-brand-panel/80 backdrop-blur-sm"
         @click.self="closeModal"
       >
         <div
-          class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20 transform transition-all"
+          class="relative w-full max-w-4xl bg-card rounded-2xl shadow-2xl overflow-hidden border border-white/20 transform transition-all"
         >
           <!-- Modal Header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#F4F6F9]">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-border bg-background">
             <div class="flex items-center gap-3">
-              <span class="inline-flex p-2 bg-[#0176D3]/10 text-[#0176D3] rounded-lg">
+              <span class="inline-flex p-2 bg-brand-soft text-brand-text rounded-lg">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                 </svg>
               </span>
-              <h3 class="text-lg font-bold text-[#032D60]">{{ videoTitle }}</h3>
+              <h3 class="text-lg font-bold text-foreground">{{ videoTitle }}</h3>
             </div>
             <button
               type="button"
-              class="p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"
+              class="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full transition-colors"
               aria-label="Đóng"
               @click="closeModal"
             >
@@ -59,21 +59,21 @@ onUnmounted(() => {
 
           <!-- Video / Demo Body -->
           <div class="p-6">
-            <div class="relative w-full aspect-video bg-[#032D60] rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
+            <div class="relative w-full aspect-video bg-brand-panel rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
               <div class="text-center text-white px-6">
                 <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center animate-pulse">
-                  <svg class="w-10 h-10 text-[#0176D3]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-10 h-10 text-brand" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                   </svg>
                 </div>
                 <h4 class="text-xl font-bold mb-2">Trải nghiệm tương tác thực tế</h4>
-                <p class="text-sm text-gray-300 max-w-md mx-auto mb-6">
+                <p class="text-sm text-brand-panel-muted max-w-md mx-auto mb-6">
                   Khám phá cách thức Agentic AI tự động hóa việc chấm điểm lead, soạn thảo email và giải quyết ticket chăm sóc khách hàng.
                 </p>
                 <div class="flex items-center justify-center gap-4">
                   <NuxtLink
                     to="/crm/free-trial"
-                    class="px-6 py-2.5 bg-[#0176D3] text-white font-bold rounded-lg hover:bg-[#014486] transition-colors"
+                    class="px-6 py-2.5 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary-hover transition-colors"
                     @click="closeModal"
                   >
                     Bắt đầu dùng thử miễn phí

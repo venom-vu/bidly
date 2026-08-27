@@ -4,21 +4,21 @@ import SfButton from '~/components/ui/SfButton.vue'
 import SfContactPillars from '~/components/blades/SfContactPillars.vue'
 
 useSeoMeta({
-  title: 'Tổng hợp Tính năng Nổi bật của Hệ thống CRM | bidly',
-  description: 'Khám phá chi tiết các tính năng của CRM: Quản lý Lead, Chấm điểm AI, Omnichannel Service, Marketing Automation, Báo cáo & Dashboard phân tích dữ liệu.'
+  title: 'Tổng hợp Tính năng Nổi bật của Hệ thống CRM | Bidly',
+  description: 'Khám phá chi tiết các tính năng của CRM: Quản lý Lead & Cơ hội S0–S8, Chấm điểm AI, Omnichannel Service, Marketing Automation, Báo cáo & Dashboard phân tích dữ liệu.'
 })
 
 const featureCategories = [
   {
     id: 'sales',
-    badge: 'BÁN HÀNG & PHỄU CƠ HỘI',
-    title: 'Quản lý Lead & Tăng tốc Doanh số',
-    description: 'Chuyển đổi khách hàng tiềm năng thành hợp đồng nhanh chóng với quy trình bán hàng chuẩn hóa.',
+    badge: 'BÁN HÀNG & TIỀN DỰ ÁN (PRECONSTRUCTION)',
+    title: 'Quản lý Lead & Quy trình 9 Giai đoạn S0–S8',
+    description: 'Chuyển đổi cơ hội tiềm năng thành hợp đồng trúng thầu với quy trình kiểm soát cổng cứng (Hard Gates).',
     items: [
-      'Chấm điểm cơ hội bán hàng (Lead Scoring) tự động bằng AI',
+      'Chấm điểm cơ hội Go/No-Go tự động bằng ma trận tiêu chí',
       'Bảng theo dõi giao dịch dạng Pipeline & Kanban trực quan',
-      'Tự động ghi nhận lịch sử cuộc gọi, email và cuộc họp',
-      'Dự báo doanh số đa chiều theo thời gian thực'
+      'Quản lý hồ sơ nộp thầu (Tender Room) và gói bàn giao S8',
+      'Dự báo doanh số và quản trị rủi ro đa chiều theo thời gian thực'
     ]
   },
   {
@@ -63,16 +63,16 @@ const featureCategories = [
 <template>
   <div class="space-y-0">
     <!-- Hero Features -->
-    <section class="py-16 md:py-24 sf-gradient-bg border-b border-gray-100">
+    <section class="py-16 md:py-24 sf-gradient-bg border-b border-border">
       <div class="sf-container text-center max-w-4xl space-y-6">
-        <SfBadge variant="blue" size="md">
+        <SfBadge variant="green" size="md">
           TÍNH NĂNG NỀN TẢNG
         </SfBadge>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#032D60] tracking-tight leading-[1.2]">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2]">
           Trang bị Đầy đủ Bộ Công cụ cho Mọi Bộ phận Doanh nghiệp
         </h1>
-        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-          Khám phá hệ sinh thái tính năng CRM toàn diện được thiết kế để kết nối Bán hàng, Chăm sóc khách hàng và Tiếp thị xoay quanh trải nghiệm khách hàng xuất sắc.
+        <p class="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          Khám phá hệ sinh thái tính năng CRM toàn diện được thiết kế để kết nối Bán hàng, Tiền dự án, Chăm sóc khách hàng và Tiếp thị xoay quanh hiệu quả kinh doanh.
         </p>
         <div class="pt-2 flex justify-center gap-4">
           <SfButton variant="primary" size="lg" to="/crm/free-trial">
@@ -83,34 +83,34 @@ const featureCategories = [
     </section>
 
     <!-- Feature Categories Grid -->
-    <section class="py-16 md:py-24 bg-white">
+    <section class="py-16 md:py-24 bg-card">
       <div class="sf-container space-y-16">
         <div
           v-for="cat in featureCategories"
           :id="cat.id"
           :key="cat.id"
-          class="sf-card-hover bg-[#F8FAFC] p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-sm space-y-6"
+          class="sf-card-hover bg-background p-8 sm:p-12 rounded-3xl border border-border shadow-sm space-y-6"
         >
           <div class="space-y-2">
             <SfBadge variant="navy">{{ cat.badge }}</SfBadge>
-            <h2 class="text-2xl sm:text-3xl font-bold text-[#032D60]">
+            <h2 class="text-2xl sm:text-3xl font-bold text-foreground">
               {{ cat.title }}
             </h2>
-            <p class="text-base text-gray-600">
+            <p class="text-base text-muted-foreground">
               {{ cat.description }}
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border">
             <div
               v-for="(item, iIdx) in cat.items"
               :key="iIdx"
-              class="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 shadow-xs"
+              class="flex items-start gap-3 bg-card p-4 rounded-xl border border-border shadow-xs"
             >
-              <span class="w-5 h-5 rounded-full bg-[#E6F4EA] text-[#04844B] flex items-center justify-center shrink-0 mt-0.5">
+              <span class="w-5 h-5 rounded-full bg-brand-soft text-brand-text flex items-center justify-center shrink-0 mt-0.5">
                 ✓
               </span>
-              <span class="text-sm font-semibold text-[#032D60]">{{ item }}</span>
+              <span class="text-sm font-semibold text-foreground">{{ item }}</span>
             </div>
           </div>
         </div>

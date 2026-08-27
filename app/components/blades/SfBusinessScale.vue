@@ -6,11 +6,11 @@ const businessScale = crmBladesData.businessScale
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-[#EAF5FE] border-t border-blue-100/50">
+  <section class="py-16 md:py-24 bg-secondary/60 border-t border-border">
     <div class="sf-container space-y-12 md:space-y-16">
       <!-- Main Centered Top Headline -->
       <div class="text-center max-w-4xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-[#032D60] tracking-tight leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-foreground tracking-tight leading-tight">
           {{ businessScale.mainHeading }}
         </h2>
       </div>
@@ -19,7 +19,7 @@ const businessScale = crmBladesData.businessScale
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
         <!-- Left Title -->
         <div class="lg:col-span-4 space-y-4">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-[#032D60] tracking-tight leading-snug">
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ businessScale.leftTitle }}
           </h3>
         </div>
@@ -37,7 +37,7 @@ const businessScale = crmBladesData.businessScale
               :description="card.description"
               :link-text="card.linkText"
               :link-url="card.linkUrl"
-              class="w-full shadow-[0_8px_24px_rgba(3,45,96,0.06)]"
+              class="w-full shadow-[0_8px_24px_rgba(27,33,28,0.06)]"
             />
           </div>
         </div>
@@ -47,7 +47,7 @@ const businessScale = crmBladesData.businessScale
       <div class="text-center pt-4">
         <NuxtLink
           :to="businessScale.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-[#0176D3] text-white font-bold text-base rounded-xl hover:bg-[#014486] transition-all shadow-md active:scale-[0.98]"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-bold text-base rounded-xl hover:bg-primary-hover transition-all shadow-md active:scale-[0.98]"
         >
           {{ businessScale.cta.label }}
         </NuxtLink>

@@ -1,0 +1,81 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+ * Bidly — TOKEN MÀU CHUẨN (Single Source of Truth)
+ * Dựa trên docs/brand.md, docs/design-system.md, docs/design-system/index.html
+ * ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ═══ LỚP 1 — SHADCN / GIAO DIỆN CHUNG (Clean Light - Mặc định) ═══════════ */
+  --background: #F4F6F4;
+  --foreground: #1B211C;
+
+  --card: #FFFFFF;
+  --card-foreground: #1B211C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1B211C;
+
+  /* Nút hành động chính = XANH VTECHCOM */
+  --primary: #3F9E25;
+  --primary-hover: #2E7D1A;
+  --primary-foreground: #FFFFFF;
+
+  /* Nét nhấn thương hiệu (thanh cổng logo, ring, gạch active) */
+  --brand: #74CC55;
+  --brand-gate: #74CC55;
+  --brand-text: #277A14;
+  --brand-soft: #EBF7E8;
+
+  --secondary: #EFF2EF;
+  --secondary-foreground: #1B211C;
+  --muted: #EFF2EF;
+  --muted-foreground: #5C665D;
+
+  --accent: #E5EAE5;
+  --accent-foreground: #1B211C;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E3E8E3;
+  --input: #D4DDD4;
+  --ring: #74CC55;
+
+  --radius: 0.5rem;
+
+  /* Panel tối (Footer, Hero tối, Auth panel) */
+  --brand-panel: #171C18;
+  --brand-panel-foreground: #F4F6F4;
+  --brand-panel-muted: #8E9B8F;
+  --brand-panel-border: #262E27;
+
+  /* Chữ trên nền màu đặc */
+  --on-accent: #FFFFFF;
+
+  /* Logo */
+  --logo-tile: #1B211C;
+  --logo-glyph: #FFFFFF;
+  --logo-gate: #74CC55;
+
+  /* ═══ LỚP 2 — NGỮ NGHĨA BIDLY & CHỨC NĂNG ═════════════════════════════════ */
+  --stage-s0: #64748B;
+  --stage-s1: #475569;
+  --stage-s2: #8B5CF6;
+  --stage-s3: #0D9488;
+  --stage-s4: #0284C7;
+  --stage-s5: #2563EB;
+  --stage-s6: #4F46E5;
+  --stage-s7: #475569;
+  --stage-s8: #3F9E25;
+
+  --outcome-won: #3F9E25;
+  --outcome-lost: #DC2626;
+  --outcome-nobid: #64748B;
+
+  --tone-ok: #3F9E25;
+  --tone-ok-soft: #EBF7E8;
+  --tone-warn: #D97706;
+  --tone-warn-soft: #FEF3C7;
+  --tone-danger: #DC2626;
+  --tone-danger-soft: #FEE2E2;
+  --tone-info: #0284C7;
+  --tone-info-soft: #E0F2FE;
+}

@@ -4,7 +4,7 @@ import SfButton from '~/components/ui/SfButton.vue'
 import SfContactPillars from '~/components/blades/SfContactPillars.vue'
 
 useSeoMeta({
-  title: 'Câu chuyện Khách hàng Thành công & Ví dụ Điển hình | bidly CRM',
+  title: 'Câu chuyện Khách hàng Thành công & Ví dụ Điển hình | Bidly CRM',
   description: 'Khám phá cách các thương hiệu Good360, Nexo, Precina, reMarkable và Zota bứt phá doanh số và tối ưu vận hành cùng hệ thống CRM.'
 })
 
@@ -37,13 +37,13 @@ const caseStudies = [
     company: 'Precina',
     industry: 'Bất động sản & Xây dựng',
     headline: 'Bứt phá 32% tỷ lệ chốt đơn nhờ quản lý phễu bán hàng thông minh',
-    summary: 'Đội ngũ hơn 200 chuyên viên môi giới của Precina theo dõi sát sao từng khách hàng tiềm năng, nhận thông báo nhắc nhở lịch hẹn và chấm điểm cơ hội tự động.',
+    summary: 'Đội ngũ hơn 200 chuyên viên của Precina theo dõi sát sao từng khách hàng tiềm năng, nhận thông báo nhắc nhở lịch hẹn và chấm điểm cơ hội tự động.',
     metrics: [
       { label: 'Tỷ lệ chốt hợp đồng', value: '+32%' },
       { label: 'Thất thoát Lead', value: '-80%' },
       { label: 'Chu kỳ bán hàng', value: 'Rút ngắn 18 ngày' }
     ],
-    quote: 'Không còn tình trạng quên chăm sóc khách hàng. Mỗi chuyên viên môi giới đều làm việc như một chuyên gia hàng đầu.'
+    quote: 'Không còn tình trạng quên chăm sóc khách hàng. Mỗi chuyên viên đều làm việc như một chuyên gia hàng đầu.'
   }
 ]
 </script>
@@ -51,15 +51,15 @@ const caseStudies = [
 <template>
   <div class="space-y-0">
     <!-- Hero Case Studies -->
-    <section class="py-16 md:py-24 sf-gradient-bg border-b border-gray-100">
+    <section class="py-16 md:py-24 sf-gradient-bg border-b border-border">
       <div class="sf-container text-center max-w-4xl space-y-6">
-        <SfBadge variant="blue" size="md">
+        <SfBadge variant="green" size="md">
           CÂU CHUYỆN KHÁCH HÀNG
         </SfBadge>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#032D60] tracking-tight leading-[1.2]">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2]">
           Xem Cách Các Thương Hiệu Hàng Đầu Chuyển Đổi Doanh Nghiệp
         </h1>
-        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        <p class="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
           Khám phá những kết quả kinh doanh thực tế, chỉ số ROI đo lường được và bài học kinh nghiệm từ các doanh nghiệp đã ứng dụng giải pháp CRM của chúng tôi.
         </p>
         <div class="pt-2 flex justify-center gap-4">
@@ -71,26 +71,26 @@ const caseStudies = [
     </section>
 
     <!-- Case Studies Detail -->
-    <section class="py-16 md:py-24 bg-white">
+    <section class="py-16 md:py-24 bg-card">
       <div class="sf-container space-y-16">
         <div
           v-for="(study, sIdx) in caseStudies"
           :key="sIdx"
-          class="sf-card-hover bg-[#F8FAFC] p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-sm space-y-8"
+          class="sf-card-hover bg-background p-8 sm:p-12 rounded-3xl border border-border shadow-sm space-y-8"
         >
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
             <div>
-              <div class="text-2xl font-black text-[#032D60] font-serif">{{ study.company }}</div>
-              <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">{{ study.industry }}</div>
+              <div class="text-2xl font-black text-foreground font-serif">{{ study.company }}</div>
+              <div class="text-xs font-bold text-muted-foreground uppercase tracking-wider mt-1">{{ study.industry }}</div>
             </div>
             <SfBadge variant="green" size="md">CHỨNG THỰC THỰC TẾ</SfBadge>
           </div>
 
           <div class="space-y-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-[#032D60] leading-snug">
+            <h2 class="text-2xl sm:text-3xl font-bold text-foreground leading-snug">
               {{ study.headline }}
             </h2>
-            <p class="text-base text-gray-600 leading-relaxed max-w-3xl">
+            <p class="text-base text-muted-foreground leading-relaxed max-w-3xl">
               {{ study.summary }}
             </p>
           </div>
@@ -100,15 +100,15 @@ const caseStudies = [
             <div
               v-for="(metric, mIdx) in study.metrics"
               :key="mIdx"
-              class="bg-white p-6 rounded-2xl border border-gray-100 shadow-xs"
+              class="bg-card p-6 rounded-2xl border border-border shadow-xs"
             >
-              <div class="text-3xl font-extrabold text-[#0176D3]">{{ metric.value }}</div>
-              <div class="text-xs font-semibold text-gray-500 mt-1 uppercase">{{ metric.label }}</div>
+              <div class="text-3xl font-extrabold text-primary">{{ metric.value }}</div>
+              <div class="text-xs font-semibold text-muted-foreground mt-1 uppercase">{{ metric.label }}</div>
             </div>
           </div>
 
           <!-- Quote Block -->
-          <div class="bg-[#EBF5FF] p-6 rounded-2xl border-l-4 border-[#0176D3] italic text-sm text-[#032D60] font-medium">
+          <div class="bg-brand-soft p-6 rounded-2xl border-l-4 border-primary italic text-sm text-foreground font-medium">
             "{{ study.quote }}"
           </div>
         </div>

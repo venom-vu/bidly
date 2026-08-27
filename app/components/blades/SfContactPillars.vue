@@ -6,10 +6,10 @@ const contactUs = crmBladesData.contactUs
 </script>
 
 <template>
-  <section class="py-16 md:py-24 sf-gradient-bg border-t border-gray-100">
+  <section class="py-16 md:py-24 sf-gradient-bg border-t border-border">
     <div class="sf-container text-center space-y-12">
       <div class="max-w-3xl mx-auto space-y-3">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#032D60] tracking-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
           {{ contactUs.heading }}
         </h2>
       </div>
@@ -19,11 +19,11 @@ const contactUs = crmBladesData.contactUs
         <div
           v-for="pillar in contactUs.pillars"
           :key="pillar.id"
-          class="sf-card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-md flex flex-col justify-between space-y-6 text-left"
+          class="sf-card-hover bg-card p-8 rounded-3xl border border-border shadow-md flex flex-col justify-between space-y-6 text-left"
         >
           <div class="space-y-4">
             <!-- Icon -->
-            <div class="w-12 h-12 rounded-2xl bg-[#EBF5FF] text-[#0176D3] flex items-center justify-center shadow-inner">
+            <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-text flex items-center justify-center shadow-inner">
               <svg v-if="pillar.icon === 'trial'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -35,11 +35,11 @@ const contactUs = crmBladesData.contactUs
               </svg>
             </div>
 
-            <h3 class="text-xl font-bold text-[#032D60]">
+            <h3 class="text-xl font-bold text-foreground">
               {{ pillar.title }}
             </h3>
 
-            <p class="text-sm text-gray-600 leading-relaxed">
+            <p class="text-sm text-muted-foreground leading-relaxed">
               {{ pillar.description }}
             </p>
           </div>

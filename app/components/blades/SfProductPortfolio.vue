@@ -10,11 +10,11 @@ const bottomCards = computed(() => portfolio.cards.slice(3, 5))
 </script>
 
 <template>
-  <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-white via-white to-[#EAF5FE] overflow-hidden">
+  <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-card via-card to-brand-soft/50 overflow-hidden">
     <div class="sf-container relative z-10 space-y-12 md:space-y-16">
       <!-- Section Heading -->
       <div class="text-center max-w-3xl mx-auto space-y-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-[#032D60] tracking-tight leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-foreground tracking-tight leading-tight">
           {{ portfolio.heading }}
         </h2>
       </div>
@@ -62,7 +62,7 @@ const bottomCards = computed(() => portfolio.cards.slice(3, 5))
       <div class="text-center pt-4">
         <NuxtLink
           :to="portfolio.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-[#0176D3] text-white font-bold text-base rounded-xl hover:bg-[#014486] transition-all shadow-md active:scale-[0.98]"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-bold text-base rounded-xl hover:bg-primary-hover transition-all shadow-md active:scale-[0.98]"
         >
           {{ portfolio.cta.label }}
         </NuxtLink>
