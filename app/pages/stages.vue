@@ -334,17 +334,14 @@ const nonLinearFlows = [
 <template>
   <div class="space-y-0">
     <!-- Hero Header -->
-    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border">
-      <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
-      <div class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80">
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md">
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
             STATE MACHINE CHUẨN MỰC · S0 ĐẾN S8
-          </SfBadge>
+          </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
           9 Giai Đoạn Cố Định
           <span class="text-primary block mt-1">
             Trong Vòng Đời Đấu Thầu
@@ -374,30 +371,27 @@ const nonLinearFlows = [
         </div>
 
         <!-- Quick Strip -->
-        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-2xl mx-auto">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-primary inline-block shrink-0" />
-            <span>9 Giai đoạn cố định bất biến (S0 - S8)</span>
+        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-2xl mx-auto">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
+            <span>9 Giai đoạn cố định (S0 - S8)</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-destructive inline-block shrink-0" />
-            <span>5 Cổng cứng bảo vệ ở máy chủ</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-destructive inline-block shrink-0" />
+            <span>5 Cổng cứng máy chủ</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block shrink-0" />
-            <span>Khóa lạc quan &amp; Audit Log append-only</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
+            <span>Audit Log append-only</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 4 Core Principles -->
-    <section class="py-12 md:py-16 bg-card border-b border-border">
+    <section class="py-12 md:py-16 bg-card border-b border-border/80">
       <div class="sf-container space-y-8">
         <div class="text-center max-w-3xl mx-auto space-y-2">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            NGUYÊN TẮC THIẾT KẾ HỆ THỐNG
-          </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
             4 Trụ Cột Đảm Bảo Tính Toàn Vẹn Của State Machine
           </h2>
@@ -407,7 +401,7 @@ const nonLinearFlows = [
           <div
             v-for="(p, pIdx) in principles"
             :key="pIdx"
-            class="sf-card rounded-xl p-6 bg-card shadow-card hover:shadow-card-hover transition-all duration-300 space-y-3 flex flex-col justify-between"
+            class="sf-card group bg-card rounded-xl p-6 sm:p-7 border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between"
           >
             <div class="space-y-3">
               <div class="w-10 h-10 rounded-lg bg-brand-soft text-primary flex items-center justify-center">
@@ -415,7 +409,7 @@ const nonLinearFlows = [
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="p.icon" />
                 </svg>
               </div>
-              <h3 class="text-base font-extrabold text-foreground tracking-tight leading-snug">
+              <h3 class="text-base font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
                 {{ p.title }}
               </h3>
               <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
@@ -428,12 +422,9 @@ const nonLinearFlows = [
     </section>
 
     <!-- Detailed Vertical Timeline Stages Section -->
-    <section class="py-16 md:py-24 bg-background border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            CHI TIẾT 9 GIAI ĐOẠN THEO TRỤC DỌC
-          </div>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             Vận Hành Từng Giai Đoạn Trong Preconstruction CRM
           </h2>
@@ -477,13 +468,10 @@ const nonLinearFlows = [
             <!-- Detailed Stage Card (Right Content) -->
             <div
               :class="[
-                'flex-1 sf-card bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden w-full border border-border/80',
-                stg.isHard ? 'ring-2 ring-primary/40' : ''
+                'flex-1 sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70',
+                stg.isHard ? 'border-primary/50' : ''
               ]"
             >
-              <!-- Top Header Bar -->
-              <div class="h-2 w-full shrink-0" :style="{ backgroundColor: stg.color }" />
-
               <div class="p-6 sm:p-8 space-y-6">
                 <!-- Header Info -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/70 pb-4">
@@ -600,12 +588,9 @@ const nonLinearFlows = [
     </section>
 
     <!-- 5 Non-Linear Transitions Section -->
-    <section class="py-16 md:py-24 bg-card border-b border-border">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80">
       <div class="sf-container space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            LUỒNG NGHIỆP VỤ THỰC TẾ
-          </div>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             5 Đường Rẽ Không Tuyến Tính Trong Đấu Thầu
           </h2>
@@ -618,24 +603,21 @@ const nonLinearFlows = [
           <div
             v-for="(flow, fIdx) in nonLinearFlows"
             :key="fIdx"
-            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col justify-between"
+            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 p-6 sm:p-8 flex flex-col justify-between space-y-4"
           >
-            <div class="h-2 w-full shrink-0" :style="{ backgroundColor: flow.accentColor }" />
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono font-bold text-primary tabular">{{ flow.code }}</span>
-                  <span class="text-[10.5px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-brand-soft text-primary">
-                    {{ flow.type }}
-                  </span>
-                </div>
-                <h3 class="text-lg font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
-                  {{ flow.name }}
-                </h3>
-                <p class="text-xs sm:text-[13.5px] text-muted-foreground leading-relaxed font-normal">
-                  {{ flow.summary }}
-                </p>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-primary tabular">{{ flow.code }}</span>
+                <span class="text-[10.5px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-brand-soft text-primary">
+                  {{ flow.type }}
+                </span>
               </div>
+              <h3 class="text-lg font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
+                {{ flow.name }}
+              </h3>
+              <p class="text-xs sm:text-[13.5px] text-muted-foreground leading-relaxed font-normal">
+                {{ flow.summary }}
+              </p>
             </div>
           </div>
         </div>

@@ -164,17 +164,14 @@ const comparisonRows = [
 <template>
   <div class="space-y-0">
     <!-- Hero Header -->
-    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border">
-      <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80">
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md">
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
             KIỂM SOÁT TẦNG MÁY CHỦ · HARD GATES
-          </SfBadge>
+          </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
           5 Cổng Cứng Kiểm Soát
           <span class="text-primary block mt-1">
             Bảo Vệ Toàn Vẹn Dữ Liệu Thầu
@@ -204,30 +201,27 @@ const comparisonRows = [
         </div>
 
         <!-- Trust Badges Strip -->
-        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-2xl mx-auto">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-primary inline-block shrink-0" />
-            <span>5 Cổng cứng bắt buộc (S2, S4, S5, S7, S8)</span>
+        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-2xl mx-auto">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
+            <span>5 Cổng cứng (S2, S4, S5, S7, S8)</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block shrink-0" />
-            <span>Chống split-state trong Database Transaction</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
+            <span>Database Transaction Atomic</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-destructive inline-block shrink-0" />
-            <span>Khóa cứng phiên bản &amp; Phân quyền RBAC</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-destructive inline-block shrink-0" />
+            <span>Chống split-state &amp; RBAC</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 4 Server Enforcing Pillars -->
-    <section class="py-12 md:py-16 bg-card border-b border-border">
+    <section class="py-12 md:py-16 bg-card border-b border-border/80">
       <div class="sf-container space-y-8">
         <div class="text-center max-w-3xl mx-auto space-y-2">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            KIẾN TRÚC BẢO MẬT &amp; TOÀN VẸN DỮ LIỆU
-          </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
             Cơ Chế Thực Thi Cổng Cứng Ở Tầng Máy Chủ
           </h2>
@@ -237,7 +231,7 @@ const comparisonRows = [
           <div
             v-for="(pillar, pIdx) in serverPillars"
             :key="pIdx"
-            class="sf-card rounded-xl p-6 bg-card shadow-card hover:shadow-card-hover transition-all duration-300 space-y-3 flex flex-col justify-between"
+            class="sf-card group bg-card rounded-xl p-6 sm:p-7 border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between"
           >
             <div class="space-y-3">
               <div class="w-10 h-10 rounded-lg bg-brand-soft text-primary flex items-center justify-center">
@@ -245,7 +239,7 @@ const comparisonRows = [
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="pillar.icon" />
                 </svg>
               </div>
-              <h3 class="text-base font-extrabold text-foreground tracking-tight leading-snug">
+              <h3 class="text-base font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
                 {{ pillar.title }}
               </h3>
               <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
@@ -258,12 +252,9 @@ const comparisonRows = [
     </section>
 
     <!-- Vertical 5 Hard Gates Breakdown -->
-    <section class="py-16 md:py-24 bg-background border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            DANH SÁCH 5 CỔNG CỨNG THEO TRỤC DỌC
-          </div>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             Chi Tiết Từng Chốt Chặn Kiểm Soát Cứng
           </h2>
@@ -298,10 +289,7 @@ const comparisonRows = [
             </div>
 
             <!-- Gate Card (Right Content) -->
-            <div class="flex-1 sf-card bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden w-full border border-border/80 ring-2 ring-primary/40">
-              <!-- Top Header Bar -->
-              <div class="h-2.5 w-full shrink-0" :style="{ backgroundColor: gate.accentColor }" />
-
+            <div class="flex-1 sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70">
               <div class="p-6 sm:p-8 space-y-6">
                 <!-- Header Info -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/70 pb-4">
@@ -387,12 +375,9 @@ const comparisonRows = [
     </section>
 
     <!-- Comparison Table: Bidly Hard Gates vs Generic CRM -->
-    <section class="py-16 md:py-24 bg-card border-b border-border">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80">
       <div class="sf-container space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            ĐỐI CHIẾU KIỂM SOÁT
-          </div>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             5 Cổng Cứng Bidly vs CRM Bán Lẻ Thông Thường
           </h2>
@@ -401,7 +386,7 @@ const comparisonRows = [
           </p>
         </div>
 
-        <div class="sf-card rounded-2xl shadow-card overflow-hidden border border-border max-w-5xl mx-auto bg-card">
+        <div class="sf-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden border border-border/70 max-w-5xl mx-auto bg-card">
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <thead>

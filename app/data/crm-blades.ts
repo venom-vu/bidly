@@ -9,6 +9,18 @@ export interface BladeResourceCard {
   accentColor?: string;
 }
 
+export interface BladeProductCloud {
+  id: string;
+  title: string;
+  eyebrow?: string;
+  headline: string;
+  description: string;
+  features: string[];
+  linkText: string;
+  linkUrl: string;
+  imageUrl: string;
+}
+
 export interface BladeProductCard {
   id: string;
   title: string;
@@ -67,7 +79,7 @@ export const crmBladesData = {
     },
     media: {
       imageUrl:
-        "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=1024&q=80",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1024&q=80",
       videoUrl: "",
     },
   },
@@ -78,39 +90,36 @@ export const crmBladesData = {
     cards: [
       {
         id: "res-1",
-        headline:
-          "Tín hiệu dự án và mạng lưới quan hệ phân mảnh trên Zalo, Excel",
+        badge: "TÍN HIỆU & QUAN HỆ",
+        headline: "Dữ liệu dự án và quan hệ phân mảnh trên Zalo, Excel",
         description:
-          "Khi nhân sự biến động, thông tin chủ đầu tư và lịch sử tiếp xúc dễ thất lạc. Bidly tập trung toàn bộ vào Project Inbox và Stakeholder Map theo dự án.",
+          "Thông tin chủ đầu tư và lịch sử tiếp xúc dễ thất lạc khi nhân sự biến động. Bidly tập trung toàn bộ vào Project Inbox và Stakeholder Map theo dự án.",
         imageUrl:
           "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=768&q=80",
-        linkText: "Xem giải pháp Inbox & Quan hệ",
+        linkText: "Khám phá Project Inbox & Quan hệ",
         linkUrl: "/features#stakeholder",
-        accentColor: "var(--stage-s0, #64748B)",
       },
       {
         id: "res-2",
-        headline:
-          "Quyết định Go/No-Go cảm tính, dàn trải nguồn lực thiếu căn cứ",
+        badge: "RA QUYẾT ĐỊNH",
+        headline: "Quyết định Go/No-Go cảm tính, dàn trải chi phí làm thầu",
         description:
-          "Theo đuổi dự án rủi ro gây lãng phí chi phí cơ hội lớn. Scorecard S2 chuẩn hóa 6 tiêu chí trọng số, giúp dừng thầu sớm có căn cứ xác thực.",
+          "Theo đuổi dự án rủi ro gây lãng phí hàng trăm triệu đồng chi phí thầu. Scorecard S2 chuẩn hóa 6 tiêu chí trọng số giúp dừng thầu sớm có căn cứ xác thực.",
         imageUrl:
           "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=768&q=80",
         linkText: "Xem Scorecard Go/No-Go",
         linkUrl: "/features#gonogo",
-        accentColor: "var(--stage-s2, #8B5CF6)",
       },
       {
         id: "res-3",
-        headline:
-          "Hồ sơ nộp sai phiên bản, checklist liên phòng ban dễ sót việc",
+        badge: "PHÒNG THẦU SỐ",
+        headline: "Hồ sơ nộp sai phiên bản, checklist liên phòng dễ sót việc",
         description:
-          "Phối hợp 5 phòng ban qua email dễ trễ hạn và nhầm file. Tender Workspace quản lý theo vòng thầu với quy tắc bất biến duy nhất 1 bản nộp final.",
+          "Phối hợp 5 phòng ban qua email dễ trễ hạn và nộp nhầm file giá. Tender Workspace quản lý theo vòng thầu với bất biến duy nhất 1 bản nộp final.",
         imageUrl:
           "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=768&q=80",
-        linkText: "Xem Tender Workspace",
+        linkText: "Khám phá Tender Workspace",
         linkUrl: "/features#tender",
-        accentColor: "var(--stage-s4, #0284C7)",
       },
     ] as BladeResourceCard[],
   },
@@ -120,29 +129,102 @@ export const crmBladesData = {
     text: "Bidly: Nền tảng chuẩn hóa quy trình theo đuổi thầu và bảo toàn tri thức cho nhà thầu công nghiệp.",
   },
 
-  // Blade 4, 5, 6: Z-Pattern 3 năng lực cốt lõi
+  // Blade 4: Product Cloud Tabs (Salesforce Style)
+  productTabs: {
+    heading: "Bốn Không Gian Làm Việc Chuyên Sâu Cho Mọi Phòng Ban",
+    clouds: [
+      {
+        id: "bd-cloud",
+        title: "BD & Phát Triển Cơ Hội",
+        eyebrow: "SÀNG LỌC TÍN HIỆU & QUAN HỆ",
+        headline: "Tập trung tín hiệu dự án và bản đồ 4 vai trò bên liên quan",
+        description:
+          "Project Inbox phân loại nguồn tin KCN/FDI, tự động chống trùng lặp dữ liệu và gán người phụ trách. Stakeholder Map quản lý Decision Maker, Influencer, Champion theo từng cơ hội.",
+        features: [
+          "Import dữ liệu thầu từ Excel với ánh xạ cột tự động",
+          "Bản đồ quan hệ stakeholder theo dự án, không mất khi đổi nhân sự",
+          "Nhật ký tiếp xúc (Touchpoint Log) lưu vết cuộc gọi, khảo sát, gặp gỡ",
+        ],
+        linkText: "Xem chi tiết mô-đun BD",
+        linkUrl: "/features#project-intel",
+        imageUrl:
+          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      },
+      {
+        id: "gov-cloud",
+        title: "Hội Đồng Phê Duyệt",
+        eyebrow: "KIỂM SOÁT & RA QUYẾT ĐỊNH",
+        headline: "Scorecard Go/No-Go 6 tiêu chí & Phê duyệt có thẩm quyền",
+        description:
+          "Định lượng tính khả thi của dự án bằng Scorecard 0-100. Ban điều hành phê duyệt GO hoặc NO_GO kèm lưu vết kiểm toán và lý do tại tầng máy chủ.",
+        features: [
+          "Chấm điểm 6 tiêu chí trọng số: Kỹ thuật, Quan hệ, Giá, Lợi nhuận, Rủi ro, Nguồn lực",
+          "Dừng thầu sớm có căn cứ (No-Go), tiết kiệm chi phí làm thầu",
+          "Bất biến lưu vết phê duyệt và lý do vào StageHistory",
+        ],
+        linkText: "Xem cơ chế Scorecard",
+        linkUrl: "/features#gonogo",
+        imageUrl:
+          "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=80",
+      },
+      {
+        id: "tender-cloud",
+        title: "Phòng Đấu Thầu Số",
+        eyebrow: "ĐIỀU PHỐI LIÊN PHÒNG BAN",
+        headline: "Checklist 5 phòng ban & Kiểm soát duy nhất 1 bản nộp Final",
+        description:
+          "Không gian làm việc số theo từng vòng thầu (RFP/RFQ/Đấu lại). Phân quyền checklist cho Kỹ thuật, MEP, Dự toán, Pháp lý và khóa chặn nộp nhầm phiên bản.",
+        features: [
+          "Đồng hồ đếm ngược hạn nộp và cảnh báo deadline 7-14-30 ngày",
+          "Quản lý chuỗi phiên bản hồ sơ và chốt 1 bản Final duy nhất",
+          "Đấu lại tạo vòng thầu mới, bảo toàn lịch sử các vòng trước",
+        ],
+        linkText: "Khám phá Tender Workspace",
+        linkUrl: "/features#tender",
+        imageUrl:
+          "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+      },
+      {
+        id: "handover-cloud",
+        title: "Bàn Giao & Tri Thức",
+        eyebrow: "KHO TRI THỨC & BÀN GIAO THI CÔNG",
+        headline: "Gói bàn giao S8 chuẩn hóa & Thư viện năng lực tập trung",
+        description:
+          "Capability Library số hóa kho dự án tiêu biểu, hồ sơ kỹ sư và chứng chỉ kỹ thuật. Gói bàn giao Handover Pack S8 chuẩn hóa cam kết trước khi chuyển sang ERP thi công.",
+        features: [
+          "Tra cứu nhanh dự án mẫu theo tonnage thép, diện tích và MEP",
+          "Cảnh báo tự động khi chứng chỉ năng lực sắp hết hạn",
+          "Gói bàn giao S8 chuyển giao trọn vẹn giả định và rủi ro sang ERP",
+        ],
+        linkText: "Xem gói bàn giao S8",
+        linkUrl: "/features#dashboard",
+        imageUrl:
+          "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+      },
+    ] as BladeProductCloud[],
+  },
+
+  // Blade 5: Z-Pattern Feature Highlights
   featuresZPattern: [
     {
       id: "feat-1",
       layout: "image-right",
-      eyebrow: "State Machine Chuẩn",
-      headline:
-        "Pipeline 9 giai đoạn cố định: Minh bạch tiến độ và kiểm soát chuyển bước",
+      eyebrow: "Quy Trình Chuẩn",
+      headline: "Pipeline 9 giai đoạn cố định với 5 cổng kiểm soát cứng",
       description:
-        "Khác với CRM kéo thả tự do dễ sai lệch số liệu, Bidly thiết lập 9 giai đoạn chuẩn với 5 cổng kiểm soát ở máy chủ, đảm bảo mọi cơ hội đều có quyết định và lý do rõ ràng.",
+        "Khác với CRM kéo thả tự do dễ sai lệch, Bidly thiết lập 9 giai đoạn chuẩn mực từ S0 đến S8. Các cổng kiểm soát ở máy chủ đảm bảo mọi chuyển bước đều có người duyệt và lưu vết kiểm toán bất biến.",
       linkText: "Xem chi tiết 9 giai đoạn",
-      linkUrl: "/business-map",
+      linkUrl: "/stages",
       imageUrl:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     },
     {
       id: "feat-2",
       layout: "image-left",
-      eyebrow: "Phòng Thầu Số",
-      headline:
-        "Phối hợp 5 phòng ban: Kiểm soát tiến độ và bất biến 1 bản nộp Final",
+      eyebrow: "Phối Hợp Nhóm",
+      headline: "Phòng thầu số: Đồng bộ 5 phòng ban và kiểm soát hạn chót",
       description:
-        "Không gian làm việc số theo từng vòng thầu: phân rã checklist cho 5 phòng ban, theo dõi hạn chót và chuỗi phiên bản giá. Cơ chế chốt chặn máy chủ loại bỏ hoàn toàn rủi ro nộp nhầm tài liệu.",
+        "Tập trung đầu việc lập hồ sơ thầu giữa Kinh doanh, Kỹ thuật, Dự toán, Pháp lý và Ban điều hành. Hệ thống tự động cảnh báo hạn nộp và kiểm soát chuỗi phiên bản giá thầu chính xác.",
       linkText: "Khám phá Tender Workspace",
       linkUrl: "/features#tender",
       imageUrl:
@@ -151,11 +233,10 @@ export const crmBladesData = {
     {
       id: "feat-3",
       layout: "image-right",
-      eyebrow: "Thư Viện Năng Lực",
-      headline:
-        "Thư viện năng lực số hóa: Biến kinh nghiệm cá nhân thành tài sản tổ chức",
+      eyebrow: "Tài Sản Số",
+      headline: "Thư viện năng lực tập trung: Bảo toàn tri thức của tổ chức",
       description:
-        "Kho lưu trữ tập trung dự án tiêu biểu, thông số kỹ thuật (tonnage, diện tích, MEP), hồ sơ chuyên gia và chứng chỉ. Hệ thống tự động cảnh báo hạn hiệu lực, rút ngắn 30% thời gian lập hồ sơ thầu.",
+        "Số hóa toàn bộ kho dự án tiêu biểu (diện tích, tonnage, công nghệ), hồ sơ chuyên gia và chứng chỉ kỹ thuật. Tra cứu nhanh chóng phục vụ lập hồ sơ thầu, rút ngắn 30% thời gian chuẩn bị.",
       linkText: "Tìm hiểu Capability Library",
       linkUrl: "/features#capability",
       imageUrl:
@@ -163,91 +244,35 @@ export const crmBladesData = {
     },
   ] as BladeFeatureZ[],
 
-  // Blade 7: 6 Module MVP của Bidly
-  productPortfolio: {
-    heading: "Hệ Thống 6 Mô-đun Lõi Bao Phủ Trọn Vòng Đời Đấu Thầu",
-    cards: [
-      {
-        id: "mod-1",
-        title: "M1 · Project Intelligence",
-        borderColor: "#D17DFE",
-        description:
-          "Thu thập tín hiệu KCN, FDI; import Excel xem trước và ánh xạ cột; tự động lọc trùng và gán người phụ trách.",
-        linkText: "Xem mô-đun M1",
-        linkUrl: "/features#project-intel",
-      },
-      {
-        id: "mod-2",
-        title: "M2 · Pursuit & Go/No-Go",
-        borderColor: "#04E1CB",
-        description:
-          "Quản trị pipeline 9 giai đoạn; chấm điểm Scorecard Go/No-Go 0-100; tự động tính giá trị dự báo theo trọng số xác suất.",
-        linkText: "Xem mô-đun M2",
-        linkUrl: "/features#gonogo",
-      },
-      {
-        id: "mod-3",
-        title: "M3 · Stakeholder Map",
-        borderColor: "#FF538A",
-        description:
-          "Bản đồ 4 vai trò bên liên quan (Decision Maker, Influencer, Champion, Gatekeeper) theo dự án và ghi nhận lịch sử tiếp xúc.",
-        linkText: "Xem mô-đun M3",
-        linkUrl: "/features#stakeholder",
-      },
-      {
-        id: "mod-4",
-        title: "M4 · Tender Workspace",
-        borderColor: "#FE9339",
-        description:
-          "Không gian làm việc số theo vòng thầu; checklist phân quyền 5 phòng ban; kiểm soát chuỗi phiên bản và chốt 1 bản final.",
-        linkText: "Xem mô-đun M4",
-        linkUrl: "/features#tender",
-      },
-      {
-        id: "mod-5",
-        title: "M5 · Capability Library",
-        borderColor: "#41B658",
-        description:
-          "Số hóa dự án tiêu biểu (thông số kỹ thuật, tonnage, diện tích), hồ sơ chuyên gia, thiết bị và cảnh báo hạn chứng chỉ.",
-        linkText: "Xem mô-đun M5",
-        linkUrl: "/features#capability",
-      },
-      {
-        id: "mod-6",
-        title: "M6 · Dashboard & Handover",
-        borderColor: "#0284C7",
-        description:
-          "Bảng điều hành Control Tower, heatmap hạn chót 7-14-30 ngày, phân tích Win/Loss và gói bàn giao thi công S8 sang ERP.",
-        linkText: "Xem mô-đun M6",
-        linkUrl: "/features#dashboard",
-      },
-    ] as BladeProductCard[],
+  // Blade 6: Bối cảnh thị trường & số liệu
+  customerLogos: {
+    heading: "Cơ sở thực tế để nhà thầu công nghiệp chuyển đổi số",
     cta: {
-      label: "Xem tất cả tính năng chi tiết",
-      url: "/features",
+      label: "Xem phân tích thị trường & ROI",
+      url: "/why-bidly",
     },
   },
 
-  // Blade 8: Cấu hình theo phân khúc tổng thầu
+  // Blade 7: Cấu hình theo phân khúc
   businessScale: {
     mainHeading: "Giải Pháp Chuyên Biệt Cho Từng Phân Khúc Nhà Thầu",
-    leftTitle: "Mẫu quy trình may đo sẵn sàng cho EPC, MEP và Kết cấu thép",
+    leftTitle: "3 Mẫu nghiệp vụ cấu hình sẵn sàng cho EPC, MEP và Kết cấu thép",
     cards: [
       {
         id: "scale-1",
         title: "Tổng thầu EPC & Công nghiệp",
         borderColor: "var(--stage-s4, #0284C7)",
         description:
-          "Phù hợp quy mô 50-500 nhân sự. Quản lý đa gói thầu phức tạp, phân quyền RBAC 5 vai trò và Control Tower theo dõi tiến độ toàn diện.",
+          "Quản lý đa gói thầu quy mô lớn, phân quyền 5 vai trò và Control Tower theo dõi tiến độ toàn cảnh theo thời gian thực.",
         linkText: "Giải pháp cho EPC",
         linkUrl: "/solutions#epc",
       },
       {
         id: "scale-2",
-        title: "Nhà thầu MEP, PCCC & Kết cấu thép",
+        title: "Nhà thầu Cơ điện MEP & Kết cấu thép",
         borderColor: "var(--stage-s3, #0D9488)",
         description:
-          "Tối ưu cho việc theo đuổi hàng chục gói thầu song song. Kiểm soát hạn chót nghiêm ngặt, tra cứu nhanh năng lực và bảo toàn quan hệ chủ đầu tư.",
+          "Theo đuổi hàng chục gói thầu song song. Kiểm soát hạn chót nghiêm ngặt, tra cứu nhanh năng lực và bảo toàn quan hệ chủ đầu tư.",
         linkText: "Giải pháp cho MEP & Thép",
         linkUrl: "/solutions#mep",
       },
@@ -258,27 +283,18 @@ export const crmBladesData = {
     },
   },
 
-  // Blade 9: Bối cảnh thị trường & số liệu
-  customerLogos: {
-    heading: "Bối Cảnh Ngành & Cơ Sở Chuyển Đổi Số Đấu Thầu",
-    cta: {
-      label: "Xem phân tích thị trường & giải pháp",
-      url: "/why-bidly",
-    },
-  },
-
-  // Blade 10: Bài viết & Cẩm nang chuyên môn
+  // Blade 8: Bài viết & Cẩm nang
   articleCarousels: {
-    mainHeading: "Cẩm Nang Quản Trị Đấu Thầu & Tiêu Chuẩn Bảo Mật Dữ Liệu",
+    mainHeading: "Cẩm Nang Quản Trị Đấu Thầu & Tiêu Chuẩn Bảo Mật",
     row1: {
-      leftTitle: "Chiến lược & Quản trị đấu thầu",
+      leftTitle: "Chiến lược & Quản trị thầu",
       cards: [
         {
           id: "art-1",
           title: "5 dấu hiệu pipeline đấu thầu rò rỉ thông tin và cơ hội",
           borderColor: "var(--stage-s0, #64748B)",
           description:
-            "Nhận diện rủi ro thất thoát cơ hội và thông tin khi quản lý qua bảng tính và nhóm chat phân mảnh.",
+            "Nhận diện rủi ro thất thoát cơ hội khi theo dõi qua bảng tính và nhóm chat phân mảnh.",
           linkText: "Đọc cẩm nang",
           linkUrl: "/why-bidly",
         },
@@ -287,14 +303,13 @@ export const crmBladesData = {
           title: "Thiết lập ma trận Scorecard Go/No-Go chuẩn cho tổng thầu",
           borderColor: "var(--stage-s2, #8B5CF6)",
           description:
-            "Phương pháp định lượng 6 tiêu chí trọng số: năng lực, quan hệ, giá, biên lợi nhuận, rủi ro và nguồn lực.",
+            "Phương pháp định lượng 6 tiêu chí trọng số: kỹ thuật, quan hệ, giá, lợi nhuận, rủi ro và nguồn lực.",
           linkText: "Xem hướng dẫn",
           linkUrl: "/features#gonogo",
         },
         {
           id: "art-3",
-          title:
-            "Kiểm soát chuỗi phiên bản hồ sơ thầu: Loại bỏ rủi ro nhầm file",
+          title: "Kiểm soát chuỗi phiên bản hồ sơ thầu: Loại bỏ rủi ro nhầm file",
           borderColor: "var(--stage-s4, #0284C7)",
           description:
             "Cơ chế bất biến duy nhất 1 bản final kèm dấu thời gian và bằng chứng nộp ở máy chủ.",
@@ -306,65 +321,62 @@ export const crmBladesData = {
           title: "Xây dựng bản đồ bên liên quan (Stakeholder Map) theo dự án",
           borderColor: "var(--stage-s3, #0D9488)",
           description:
-            "Phương pháp phân loại 4 vai trò chủ chốt và bảo toàn tài sản quan hệ khi nhân sự biến động.",
+            "Phân loại 4 vai trò chủ chốt và bảo toàn tài sản quan hệ khi nhân sự biến động.",
           linkText: "Xem phương pháp",
           linkUrl: "/features#stakeholder",
         },
       ] as BladeArticleCard[],
     },
     row2: {
-      leftTitle: "Kiến trúc kỹ thuật & Bảo mật",
+      leftTitle: "Bảo mật & Kiến trúc dữ liệu",
       cards: [
         {
           id: "art-5",
-          title:
-            "Tại sao dữ liệu đấu thầu cần cô lập trên Private Cloud / On-premise?",
+          title: "Tại sao dữ liệu thầu cần cô lập trên Private Cloud / On-premise?",
           borderColor: "var(--stage-s8, #04844B)",
           description:
             "Bí mật giá thầu là sống còn. Phân tích sự khác biệt giữa SaaS dùng chung và cơ sở dữ liệu riêng biệt.",
-          linkText: "Xem so sánh bảo mật",
+          linkText: "Xem so sánh",
           linkUrl: "/crm/pricing",
         },
         {
           id: "art-6",
-          title:
-            "Mô hình dữ liệu chuẩn: Project → Pursuit → Package → Round → Submission",
+          title: "Mô hình dữ liệu chuẩn: Project → Pursuit → Package → Round",
           borderColor: "var(--stage-s5, #0176D3)",
           description:
-            'Lý do không thể quản lý quy trình thầu phức tạp bằng thực thể "Deal" của CRM bán lẻ.',
-          linkText: "Xem mô hình dữ liệu",
+            "Lý do không thể quản lý quy trình thầu phức tạp bằng mô hình đơn hàng (Deal) của CRM bán lẻ.",
+          linkText: "Xem mô hình",
           linkUrl: "/crm/what-is-crm",
         },
         {
           id: "art-7",
-          title:
-            "Gói bàn giao thi công (S8): Cầu nối chuẩn xác giữa CRM và ERP",
+          title: "Gói bàn giao thi công S8: Cầu nối chuẩn xác giữa CRM và ERP",
           borderColor: "var(--stage-s6, #4F46E5)",
           description:
-            "Chuẩn hóa phạm vi, cam kết thương mại, giả định và rủi ro trước khi chuyển giao cho ban điều hành công trường.",
+            "Chuẩn hóa phạm vi, cam kết thương mại, giả định và rủi ro trước khi chuyển giao cho công trường.",
           linkText: "Xem quy trình bàn giao",
           linkUrl: "/features#dashboard",
         },
         {
           id: "art-8",
-          title:
-            "Tuân thủ Luật Bảo vệ Dữ liệu Cá nhân 91/2025/QH15 trong quản trị hồ sơ thầu",
+          title: "Tuân thủ Luật PDPA 91/2025/QH15 trong quản trị hồ sơ thầu",
           borderColor: "var(--stage-s1, #475569)",
           description:
-            "Quy chuẩn quản lý thông tin nhân sự, chuyên gia và đối tác trong hồ sơ năng lực theo quy định mới.",
-          linkText: "Xem tiêu chuẩn PDPA",
+            "Quy chuẩn quản lý thông tin nhân sự, chuyên gia và đối tác theo luật mới.",
+          linkText: "Xem tiêu chuẩn",
           linkUrl: "/crm/what-is-crm",
         },
       ] as BladeArticleCard[],
     },
   },
 
-  // Blade 11: 3-Up Resource Cards Bottom
+  // Blade 9: 3-Up Resource Cards Bottom
   resourceGridBottom: {
-    heading: "Tài Liệu Chuyên Sâu Về Bidly Preconstruction CRM",
+    heading: "Tài liệu chuyên sâu về Bidly Preconstruction CRM",
     cards: [
       {
         id: "res-bot-1",
+        badge: "TỔNG QUAN",
         headline: "Preconstruction CRM là gì? Khác biệt với CRM & ERP",
         description:
           "Phân tích vì sao nhà thầu công nghiệp cần hệ thống quản trị chuyên biệt từ tín hiệu dự án đến bàn giao thi công.",
@@ -372,10 +384,10 @@ export const crmBladesData = {
           "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=768&q=80",
         linkText: "Đọc bài phân tích",
         linkUrl: "/crm/what-is-crm",
-        accentColor: "var(--stage-s2, #7F27FF)",
       },
       {
         id: "res-bot-2",
+        badge: "SO SÁNH",
         headline: "Vì sao chọn Bidly? So sánh 5 giải pháp thay thế",
         description:
           "Đối chiếu chi tiết giữa Bidly với CRM bán lẻ, CRM quốc tế, ERP thi công và phần mềm tự phát triển.",
@@ -383,25 +395,24 @@ export const crmBladesData = {
           "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=768&q=80",
         linkText: "Xem bảng so sánh",
         linkUrl: "/why-bidly",
-        accentColor: "var(--stage-s4, #0284C7)",
       },
       {
         id: "res-bot-3",
-        headline: "Chương trình Design Partner Pilot & Bảng giá triển khai",
+        badge: "TRIỂN KHAI",
+        headline: "Chương trình Design Partner Pilot & Bảng giá",
         description:
           "Lộ trình triển khai thí điểm 8-10 tuần trên dữ liệu thật cùng chính sách giá linh hoạt theo quy mô.",
         imageUrl:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=768&q=80",
         linkText: "Xem bảng giá chi tiết",
         linkUrl: "/crm/pricing",
-        accentColor: "var(--stage-s8, #04844B)",
       },
     ] as BladeResourceCard[],
   },
 
-  // Blade 12: Contact Us 3 Action Pillars
+  // Blade 10: 3 Action Pillars
   contactPillars: {
-    heading: "Sẵn Sàng Chuẩn Hóa Quy Trình Đấu Thầu Cùng Vtechcom",
+    heading: "Sẵn sàng chuẩn hóa quy trình đấu thầu cùng Vtechcom",
     subheading:
       "Đội ngũ chuyên gia Vtechcom đồng hành tư vấn giải pháp phù hợp với quy mô và đặc thù doanh nghiệp của bạn.",
     pillars: [

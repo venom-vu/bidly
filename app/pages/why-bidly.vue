@@ -148,27 +148,19 @@ const kpiMetrics = [
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Section with Ambient Glow -->
+    <!-- Hero Section -->
     <section
-      class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border"
+      class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80"
     >
-      <!-- Background subtle ambient glow -->
-      <div
-        class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <div
-        class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none"
-      />
-
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md">
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
             ĐỊNH VỊ GIẢI PHÁP
-          </SfBadge>
+          </span>
         </div>
 
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
         >
           Vì Sao Tổng Thầu Công Nghiệp
           <span class="text-primary block mt-1">
@@ -177,7 +169,7 @@ const kpiMetrics = [
         </h1>
 
         <p
-          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal"
+          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
         >
           Bidly lấp đầy khoảng trống giữa CRM bán hàng và ERP thi công: giúp tổng thầu tập trung đúng cơ hội, nộp đúng hồ sơ và giữ trọn tri thức quan hệ của tổ chức.
         </p>
@@ -202,54 +194,31 @@ const kpiMetrics = [
 
         <!-- Trust Badges -->
         <div
-          class="flex flex-wrap items-center justify-center gap-6 pt-3 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-xl mx-auto"
+          class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
         >
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
             <span>Khấu trừ 100% chi phí Pilot</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span>Bảo mật dữ liệu độc lập</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
+            <span>Bảo mật dữ liệu On-premise</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Market Context & "Why Now" -->
-    <section class="py-16 md:py-24 bg-card border-b border-border">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80">
       <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            CĂN CỨ THỊ TRƯỜNG
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
             Vì Sao Cần Bidly Ngay Lúc Này?
           </h2>
           <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Thị trường 2026 bùng nổ vốn FDI nhà máy, nhưng cũng đối mặt áp lực cạnh tranh giá gay gắt.
+            Thị trường bùng nổ vốn FDI nhà máy, nhưng cũng đối mặt áp lực cạnh tranh giá gay gắt.
           </p>
         </div>
 
@@ -259,11 +228,10 @@ const kpiMetrics = [
           <div
             v-for="(stat, sIdx) in marketData"
             :key="sIdx"
-            class="sf-card group bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between text-left"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between text-left"
           >
             <div
-              class="text-3xl sm:text-4xl font-extrabold tabular tracking-tight"
-              :style="{ color: stat.accentColor }"
+              class="text-3xl sm:text-4xl font-extrabold tabular tracking-tight text-primary"
             >
               {{ stat.value }}
             </div>
@@ -283,12 +251,9 @@ const kpiMetrics = [
     </section>
 
     <!-- AS-IS vs TO-BE Transformation Table -->
-    <section class="py-16 md:py-24 bg-secondary/40 border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            CHUYỂN ĐỔI VẬN HÀNH
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
@@ -303,7 +268,7 @@ const kpiMetrics = [
           <div
             v-for="(item, idx) in asIsToBe"
             :key="idx"
-            class="sf-card bg-card rounded-xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 space-y-4"
+            class="sf-card group bg-card border border-border/70 rounded-xl p-6 sm:p-8 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-4"
           >
             <div class="flex items-center gap-3">
               <span
@@ -318,7 +283,7 @@ const kpiMetrics = [
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
               <!-- AS-IS -->
-              <div class="p-4 sm:p-5 rounded-lg bg-destructive/5 space-y-2">
+              <div class="p-4 sm:p-5 rounded-lg bg-destructive/5 space-y-2 border border-destructive/10">
                 <div
                   class="text-xs font-bold uppercase tracking-wider text-destructive flex items-center gap-1.5"
                 >
@@ -339,7 +304,7 @@ const kpiMetrics = [
               </div>
 
               <!-- TO-BE -->
-              <div class="p-4 sm:p-5 rounded-lg bg-brand-soft/70 space-y-2">
+              <div class="p-4 sm:p-5 rounded-lg bg-brand-soft/70 space-y-2 border border-brand/20">
                 <div
                   class="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5"
                 >
@@ -365,12 +330,9 @@ const kpiMetrics = [
     </section>
 
     <!-- Competitive Alternatives Comparison -->
-    <section class="py-16 md:py-24 bg-card border-b border-border">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80">
       <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            SO SÁNH GIẢI PHÁP
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
@@ -387,34 +349,26 @@ const kpiMetrics = [
           <div
             v-for="(comp, cIdx) in competitiveMatrix"
             :key="cIdx"
-            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
+            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between p-6 sm:p-8 space-y-4"
           >
-            <!-- Top Accent Bar -->
-            <div
-              class="h-2 w-full shrink-0"
-              :style="{ backgroundColor: comp.accentColor }"
-            />
-
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
-              <div class="space-y-3">
-                <h3
-                  class="text-lg sm:text-xl font-extrabold text-foreground leading-snug tracking-tight group-hover:text-primary transition-colors"
-                >
-                  {{ comp.group }}
-                </h3>
-                <div class="space-y-3 text-xs sm:text-[13px]">
-                  <div>
-                    <span class="font-bold text-primary">Điểm mạnh:</span>
-                    <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
-                      {{ comp.pros }}
-                    </span>
-                  </div>
-                  <div>
-                    <span class="font-bold text-destructive">Khoảng trống:</span>
-                    <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
-                      {{ comp.cons }}
-                    </span>
-                  </div>
+            <div class="space-y-3">
+              <h3
+                class="text-lg sm:text-xl font-extrabold text-foreground leading-snug tracking-tight group-hover:text-primary transition-colors"
+              >
+                {{ comp.group }}
+              </h3>
+              <div class="space-y-3 text-xs sm:text-[13px]">
+                <div>
+                  <span class="font-bold text-primary">Điểm mạnh:</span>
+                  <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
+                    {{ comp.pros }}
+                  </span>
+                </div>
+                <div>
+                  <span class="font-bold text-destructive">Khoảng trống:</span>
+                  <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
+                    {{ comp.cons }}
+                  </span>
                 </div>
               </div>
             </div>
@@ -424,12 +378,9 @@ const kpiMetrics = [
     </section>
 
     <!-- Pilot ROI & Adoption Metrics -->
-    <section class="py-16 md:py-24 sf-gradient-bg border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            ĐO LƯỜNG ROI
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
@@ -446,28 +397,20 @@ const kpiMetrics = [
           <div
             v-for="(kpi, kIdx) in kpiMetrics"
             :key="kIdx"
-            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-2 text-left flex flex-col justify-between overflow-hidden"
+            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 p-6 sm:p-8 space-y-2 text-left flex flex-col justify-between"
           >
-            <!-- Top Accent Bar -->
-            <div
-              class="h-2 w-full shrink-0"
-              :style="{ backgroundColor: kpi.accentColor }"
-            />
-
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-2">
-              <div class="space-y-2">
-                <div
-                  class="text-3xl sm:text-4xl font-extrabold text-primary tabular tracking-tight"
-                >
-                  {{ kpi.metric }}
-                </div>
-                <div class="text-base font-extrabold text-foreground tracking-tight">
-                  {{ kpi.label }}
-                </div>
-                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
-                  {{ kpi.desc }}
-                </p>
+            <div class="space-y-2">
+              <div
+                class="text-3xl sm:text-4xl font-extrabold text-primary tabular tracking-tight"
+              >
+                {{ kpi.metric }}
               </div>
+              <div class="text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
+                {{ kpi.label }}
+              </div>
+              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                {{ kpi.desc }}
+              </p>
             </div>
           </div>
         </div>

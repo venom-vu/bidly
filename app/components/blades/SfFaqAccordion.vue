@@ -13,12 +13,9 @@ const toggleFaq = (index: number) => {
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-card border-t border-border">
+  <section class="py-16 md:py-24 bg-card border-t border-border/80">
     <div class="sf-container max-w-4xl">
       <div class="text-center space-y-3 mb-12">
-        <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-          HỎI ĐÁP CHUYÊN SÂU
-        </div>
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
           {{ faqsData.heading }}
         </h2>
@@ -32,8 +29,8 @@ const toggleFaq = (index: number) => {
         <div
           v-for="(faq, idx) in faqsData.items"
           :key="faq.id"
-          class="rounded-xl overflow-hidden transition-all duration-200"
-          :class="openIndex === idx ? 'shadow-card bg-brand-soft/30' : 'shadow-xs hover:shadow-card bg-card'"
+          class="rounded-xl border border-border/70 overflow-hidden transition-all duration-200"
+          :class="openIndex === idx ? 'shadow-card bg-background border-primary/40' : 'shadow-xs hover:shadow-card bg-background'"
         >
           <button
             type="button"
@@ -53,7 +50,7 @@ const toggleFaq = (index: number) => {
 
           <div
             v-show="openIndex === idx"
-            class="px-6 pb-6 text-sm sm:text-[15px] text-muted-foreground leading-relaxed border-t border-border/70 pt-4 font-normal"
+            class="px-6 pb-6 text-sm sm:text-[15px] text-muted-foreground leading-relaxed border-t border-border/60 pt-4 font-normal"
           >
             {{ faq.answer }}
           </div>

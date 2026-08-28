@@ -36,27 +36,19 @@ const philosophies = [
 
 <template>
   <div class="space-y-0">
-    <!-- Pricing Header with Ambient Glow -->
+    <!-- Pricing Header -->
     <section
-      class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border"
+      class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80"
     >
-      <!-- Background subtle ambient glow -->
-      <div
-        class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <div
-        class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none"
-      />
-
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md">
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
             BẢNG GIÁ TRIỂN KHAI
-          </SfBadge>
+          </span>
         </div>
 
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
         >
           {{ pricingData.heading.split(':')[0] }}
           <span class="text-primary block mt-1">
@@ -90,34 +82,14 @@ const philosophies = [
 
         <!-- Trust Badges Strip -->
         <div
-          class="flex flex-wrap items-center justify-center gap-6 pt-3 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-xl mx-auto"
+          class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
         >
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
             <span>Không giới hạn số lượng tài khoản</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
             <span>Khấu trừ 100% chi phí thí điểm</span>
           </div>
         </div>
@@ -125,12 +97,9 @@ const philosophies = [
     </section>
 
     <!-- Pricing Philosophies -->
-    <section class="py-16 md:py-20 bg-card border-b border-border">
+    <section class="py-16 md:py-20 bg-card border-b border-border/80">
       <div class="sf-container space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            TRIẾT LÝ ĐỊNH GIÁ
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
@@ -145,30 +114,22 @@ const philosophies = [
           <div
             v-for="(phil, pIdx) in philosophies"
             :key="pIdx"
-            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
+            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between p-6 sm:p-8 space-y-4"
           >
-            <!-- Top Accent Bar -->
-            <div
-              class="h-2 w-full shrink-0"
-              :style="{ backgroundColor: phil.accentColor }"
-            />
-
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
-              <div class="space-y-3">
-                <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-primary">
-                  <span
-                    class="w-6 h-6 rounded-full bg-brand-soft text-primary flex items-center justify-center font-bold text-xs tabular"
-                  >
-                    0{{ pIdx + 1 }}
-                  </span>
-                  <span class="tracking-wide">{{ phil.title }}</span>
-                </div>
-                <p
-                  class="text-sm text-muted-foreground leading-relaxed font-normal"
+            <div class="space-y-3">
+              <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-primary">
+                <span
+                  class="w-6 h-6 rounded-full bg-brand-soft text-primary flex items-center justify-center font-bold text-xs tabular"
                 >
-                  {{ phil.desc }}
-                </p>
+                  0{{ pIdx + 1 }}
+                </span>
+                <span class="tracking-wide">{{ phil.title }}</span>
               </div>
+              <p
+                class="text-sm text-muted-foreground leading-relaxed font-normal"
+              >
+                {{ phil.desc }}
+              </p>
             </div>
           </div>
         </div>
@@ -176,26 +137,20 @@ const philosophies = [
     </section>
 
     <!-- Pricing Cards Grid -->
-    <section class="py-16 md:py-24 bg-background border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           <div
             v-for="tier in pricingData.tiers"
             :id="tier.id"
             :key="tier.id"
-            class="sf-card rounded-xl flex flex-col justify-between transition-all duration-300 overflow-hidden relative"
+            class="sf-card group rounded-xl flex flex-col justify-between transition-all duration-300 overflow-hidden relative border"
             :class="[
               tier.popular
-                ? 'shadow-modal bg-card scale-[1.03] z-10 ring-2 ring-primary/80'
-                : 'shadow-card bg-card hover:shadow-card-hover hover:-translate-y-1'
+                ? 'shadow-modal bg-card scale-[1.03] z-10 border-primary ring-1 ring-primary'
+                : 'shadow-card bg-card border-border/70 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1'
             ]"
           >
-            <!-- Top Accent Bar -->
-            <div
-              class="h-2 w-full shrink-0"
-              :class="tier.popular ? 'bg-primary' : 'bg-brand'"
-            />
-
             <!-- Popular Badge -->
             <div
               v-if="tier.popular"
@@ -228,7 +183,7 @@ const philosophies = [
                 </div>
 
                 <!-- Price Display -->
-                <div class="py-4 border-y border-border/80">
+                <div class="py-4 border-y border-border/70">
                   <div class="flex items-baseline gap-1">
                     <span
                       class="text-3xl sm:text-4xl font-extrabold text-foreground tabular tracking-tight"
@@ -299,10 +254,10 @@ const philosophies = [
     </section>
 
     <!-- Enterprise Tier Section -->
-    <section id="enterprise" class="py-12 md:py-16 bg-card border-b border-border">
+    <section id="enterprise" class="py-12 md:py-16 bg-card border-b border-border/80">
       <div class="sf-container">
         <div
-          class="sf-card bg-gradient-to-r from-card via-card to-brand-soft/50 p-8 sm:p-10 lg:p-12 rounded-xl shadow-card hover:shadow-card-hover transition-all flex flex-col lg:flex-row items-center justify-between gap-8 max-w-6xl mx-auto"
+          class="sf-card group bg-card border border-border/70 p-8 sm:p-10 lg:p-12 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all flex flex-col lg:flex-row items-center justify-between gap-8 max-w-6xl mx-auto"
         >
           <div class="space-y-3 max-w-3xl">
             <div class="flex items-center gap-2">
@@ -336,13 +291,10 @@ const philosophies = [
     <!-- Success Plans Section -->
     <section
       id="pilot-details"
-      class="py-16 md:py-24 bg-background border-b border-border"
+      class="py-16 md:py-24 bg-background border-b border-border/80"
     >
       <div class="sf-container space-y-12">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-            DỊCH VỤ ĐỒNG HÀNH
-          </div>
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
@@ -357,26 +309,18 @@ const philosophies = [
           <div
             v-for="(plan, pIdx) in pricingData.successPlans.plans"
             :key="pIdx"
-            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
+            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between p-6 sm:p-8 space-y-6"
           >
-            <!-- Top Accent Bar -->
-            <div
-              class="h-2 w-full shrink-0"
-              :style="{ backgroundColor: pIdx === 0 ? 'var(--primary, #0176D3)' : pIdx === 1 ? 'var(--brand, #00A1E0)' : 'var(--stage-s8, #04844B)' }"
-            />
-
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
-              <div class="space-y-3">
-                <h4 class="text-lg sm:text-xl font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
-                  {{ plan.name }}
-                </h4>
-                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
-                  {{ plan.description }}
-                </p>
-              </div>
-              <div class="text-xs font-bold text-primary pt-3 border-t border-border/80">
-                {{ plan.included }}
-              </div>
+            <div class="space-y-3">
+              <h3 class="text-lg sm:text-xl font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
+                {{ plan.name }}
+              </h3>
+              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                {{ plan.description }}
+              </p>
+            </div>
+            <div class="text-xs font-bold text-primary pt-3 border-t border-border/70">
+              {{ plan.included }}
             </div>
           </div>
         </div>

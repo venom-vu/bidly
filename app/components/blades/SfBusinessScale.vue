@@ -6,13 +6,10 @@ const businessScale = crmBladesData.businessScale;
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-card border-t border-border">
+  <section class="py-16 md:py-24 bg-background border-t border-border/80">
     <div class="sf-container space-y-12 md:space-y-16">
       <!-- Main Centered Top Headline -->
       <div class="text-center max-w-4xl mx-auto space-y-3">
-        <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-          TÙY BIẾN THEO ĐẶC THÙ NGÀNH
-        </div>
         <h2
           class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
         >

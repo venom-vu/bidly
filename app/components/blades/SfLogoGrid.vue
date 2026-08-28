@@ -5,20 +5,17 @@ const marketEvidence = crmBladesData.customerLogos;
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-secondary/50 border-y border-border">
-    <div class="sf-container text-center space-y-10 md:space-y-12">
+  <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <div class="sf-container text-center space-y-12 md:space-y-16">
       <!-- Section Top Headline -->
       <div class="max-w-3xl mx-auto space-y-3">
-        <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-          BỐI CẢNH THỊ TRƯỜNG &amp; CĂN CỨ NGÀNH
-        </div>
         <h2
           class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
         >
           {{ marketEvidence.heading }}
         </h2>
         <p class="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-          Số liệu thực tế: lý do nhà thầu công nghiệp cần chuyển đổi từ vận hành phân mảnh sang Preconstruction CRM chuẩn mực.
+          Dữ liệu thống kê: lý do nhà thầu công nghiệp cần chuyển đổi từ vận hành phân mảnh sang Preconstruction CRM chuẩn mực.
         </p>
       </div>
 
@@ -28,7 +25,7 @@ const marketEvidence = crmBladesData.customerLogos;
       >
         <!-- Stat 1 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="sf-card group bg-card p-6 sm:p-7 rounded-xl border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -36,7 +33,7 @@ const marketEvidence = crmBladesData.customerLogos;
             +10,28%
           </div>
           <div>
-            <div class="text-sm sm:text-[15px] font-bold text-foreground">
+            <div class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">
               Tăng trưởng xây dựng Q2/2026
             </div>
             <div
@@ -49,7 +46,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 2 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="sf-card group bg-card p-6 sm:p-7 rounded-xl border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -57,7 +54,7 @@ const marketEvidence = crmBladesData.customerLogos;
             34,65 tỷ $
           </div>
           <div>
-            <div class="text-sm sm:text-[15px] font-bold text-foreground">
+            <div class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">
               Tổng FDI đăng ký 6T/2026
             </div>
             <div
@@ -70,7 +67,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 3 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="sf-card group bg-card p-6 sm:p-7 rounded-xl border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-destructive tracking-tight tabular"
@@ -78,7 +75,7 @@ const marketEvidence = crmBladesData.customerLogos;
             44,7%
           </div>
           <div>
-            <div class="text-sm sm:text-[15px] font-bold text-foreground">
+            <div class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-destructive/80 transition-colors tracking-tight">
               DN xây dựng thiếu hợp đồng mới
             </div>
             <div
@@ -91,7 +88,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 4 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="sf-card group bg-card p-6 sm:p-7 rounded-xl border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -99,7 +96,7 @@ const marketEvidence = crmBladesData.customerLogos;
             2,6 / 5
           </div>
           <div>
-            <div class="text-sm sm:text-[15px] font-bold text-foreground">
+            <div class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">
               Mức sẵn sàng số hóa hiện tại
             </div>
             <div

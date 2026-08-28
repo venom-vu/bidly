@@ -45,13 +45,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-card border-b border-border overflow-hidden">
+  <section class="py-16 md:py-24 bg-background border-b border-border/80 overflow-hidden">
     <div class="sf-container space-y-16 md:space-y-20">
       <!-- Main Centered Heading -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
-          TRI THỨC &amp; BẢO MẬT
-        </div>
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
           {{ data.mainHeading }}
         </h2>

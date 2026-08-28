@@ -50,19 +50,19 @@ export const navigationData = {
               label: "Preconstruction CRM là gì?",
               url: "/crm/what-is-crm",
               description:
-                "Định vị giải pháp, chuỗi thực thể dữ liệu và so sánh với CRM bán lẻ & ERP.",
+                "Định vị giải pháp và so sánh với CRM bán lẻ & ERP.",
             },
             {
               label: "Vì sao chọn Bidly?",
               url: "/why-bidly",
               description:
-                "Phân tích 5 giải pháp thay thế, 6 chuyển dịch vận hành và đo lường ROI.",
+                "Phân tích 5 giải pháp thay thế và đo lường hiệu quả ROI.",
             },
             {
               label: "Bản đồ nghiệp vụ 5 làn",
               url: "/business-map",
               description:
-                "Quy trình 9 giai đoạn, 5 cổng kiểm soát và phân định trách nhiệm 5 làn.",
+                "Quy trình 9 giai đoạn và phân định trách nhiệm 5 làn.",
             },
           ],
         },
@@ -70,35 +70,35 @@ export const navigationData = {
     },
     {
       title: "Tính năng & Mô-đun",
-      widthClass: "w-[980px]",
+      widthClass: "w-[960px]",
       categories: [
         {
-          categoryTitle: "Cơ chế & Chốt chặn Lõi",
+          categoryTitle: "Chốt chặn cốt lõi",
           hasSeparator: true,
           items: [
             {
               label: "9 Giai đoạn cố định",
               url: "/stages",
               description:
-                "Chuỗi vòng đời thầu chuẩn mực S0-S8 và các nhánh rẽ thực tế.",
+                "Chuỗi vòng đời thầu chuẩn mực từ S0 đến S8.",
             },
             {
               label: "5 Cổng kiểm soát cứng",
               url: "/gates",
               description:
-                "Chốt chặn máy chủ chuyển giai đoạn và lưu vết lịch sử bất biến.",
+                "Chốt chặn máy chủ bảo vệ dữ liệu và ngân sách thầu.",
             },
             {
               label: "Scorecard Go/No-Go",
               url: "/features#gonogo",
               description:
-                "Định lượng 6 tiêu chí trọng số giúp ra quyết định dừng thầu sớm.",
+                "Định lượng 6 tiêu chí trọng số giúp dừng thầu sớm.",
             },
             {
               label: "Tender Workspace",
               url: "/features#tender",
               description:
-                "Không gian số phối hợp liên phòng và kiểm soát bản nộp duy nhất.",
+                "Không gian phối hợp 5 phòng ban và chốt 1 bản final.",
             },
           ],
         },
@@ -110,19 +110,19 @@ export const navigationData = {
               label: "M1 · Tín hiệu dự án",
               url: "/features#project-intel",
               description:
-                "Tập trung tín hiệu dự án FDI/KCN và tự động lọc trùng dữ liệu.",
+                "Thu thập tín hiệu KCN/FDI và tự động lọc trùng dữ liệu.",
             },
             {
               label: "M2 · Pipeline & Go/No-Go",
               url: "/features#gonogo",
               description:
-                "Quản trị 9 giai đoạn cơ hội và chấm điểm Go/No-Go định lượng.",
+                "Quản trị 9 giai đoạn và chấm điểm Go/No-Go định lượng.",
             },
             {
               label: "M3 · Stakeholder Map",
               url: "/features#stakeholder",
               description:
-                "Bản đồ 4 vai trò bên liên quan (DM, Influencer, Champion) theo dự án.",
+                "Bản đồ 4 vai trò bên liên quan bảo toàn quan hệ tổ chức.",
             },
           ],
         },
@@ -134,25 +134,25 @@ export const navigationData = {
               label: "M4 · Phòng thầu số",
               url: "/features#tender",
               description:
-                "Checklist phối hợp 5 phòng ban và kiểm soát tiến độ nộp thầu.",
+                "Checklist 5 phòng ban và kiểm soát hạn chót nộp thầu.",
             },
             {
               label: "M5 · Thư viện năng lực",
               url: "/features#capability",
               description:
-                "Số hóa hồ sơ dự án tiêu biểu, chuyên gia và chứng chỉ kỹ thuật.",
+                "Số hóa kho dự án tiêu biểu, chuyên gia và chứng chỉ.",
             },
             {
-              label: "M6 · Control Tower & Bàn giao",
+              label: "M6 · Dashboard & Bàn giao",
               url: "/features#dashboard",
               description:
-                "Bảng điều hành cảnh báo hạn chót và gói bàn giao thi công S8.",
+                "Cảnh báo hạn chót và gói bàn giao thi công S8 sang ERP.",
             },
             {
               label: "M7 · Nền tảng & Bảo mật",
               url: "/features#platform-sec",
               description:
-                "Kiến trúc Private Cloud / On-premise cô lập dữ liệu 100%.",
+                "Kiến trúc On-premise / Private Cloud cô lập dữ liệu 100%.",
             },
           ],
         },
@@ -163,26 +163,26 @@ export const navigationData = {
       widthClass: "w-[680px]",
       categories: [
         {
-          categoryTitle: "Mẫu nghiệp vụ theo ngành",
+          categoryTitle: "Mẫu nghiệp vụ ngành",
           hasSeparator: true,
           items: [
             {
               label: "Tổng thầu EPC & Công nghiệp",
               url: "/solutions#epc",
               description:
-                "Tối ưu cho tổng thầu quy mô lớn, quản lý đa gói thầu phức tạp.",
+                "Tối ưu cho tổng thầu lớn, quản lý đa gói thầu phức tạp.",
             },
             {
               label: "Nhà thầu Cơ điện MEP",
               url: "/solutions#mep",
               description:
-                "Quản lý hàng chục gói thầu song song và kiểm soát hạn chót chặt chẽ.",
+                "Theo dõi hàng chục gói thầu song song và kiểm soát hạn chót.",
             },
             {
               label: "Kết cấu thép tiền chế",
               url: "/solutions#steel",
               description:
-                "Quản lý thông số tonnage, thư viện năng lực và tối ưu chào giá.",
+                "Quản lý thông số tonnage, thư viện năng lực và chào giá.",
             },
           ],
         },
@@ -191,23 +191,23 @@ export const navigationData = {
           hasSeparator: false,
           items: [
             {
+              label: "Design Partner Pilot",
+              url: "/crm/pricing#pilot",
+              description:
+                "Thí điểm 8-10 tuần trên dữ liệu thật có hỗ trợ chuyên sâu.",
+              badge: "KHUYẾN NGHỊ",
+            },
+            {
               label: "Private Cloud Managed",
               url: "/crm/pricing#professional",
               description:
-                "Hạ tầng đám mây riêng biệt, do Vtechcom vận hành và bảo mật.",
+                "Hạ tầng đám mây riêng biệt, do Vtechcom bảo mật và vận hành.",
             },
             {
               label: "Enterprise On-premise",
               url: "/crm/pricing#enterprise",
               description:
                 "Cài đặt trực tiếp trên máy chủ nội bộ, tích hợp SSO doanh nghiệp.",
-            },
-            {
-              label: "Design Partner Pilot",
-              url: "/crm/pricing#pilot",
-              description:
-                "Chương trình thí điểm 8-10 tuần trên dữ liệu thật có hỗ trợ chuyên sâu.",
-              badge: "KHUYẾN NGHỊ",
             },
           ],
         },

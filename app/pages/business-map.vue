@@ -444,27 +444,19 @@ function isStageInActiveFlow(stageId: string): boolean {
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header with Ambient Glow -->
+    <!-- Hero Header -->
     <section
-      class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border"
+      class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80"
     >
-      <!-- Background subtle ambient glow -->
-      <div
-        class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <div
-        class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none"
-      />
-
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md">
-            BẢN ĐỒ NGHIỆP VỤ
-          </SfBadge>
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
+            BẢN ĐỒ NGHIỆP VỤ 5 LÀN
+          </span>
         </div>
 
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
         >
           Bản Đồ Nghiệp Vụ
           <span class="text-primary block mt-1">
@@ -473,7 +465,7 @@ function isStageInActiveFlow(stageId: string): boolean {
         </h1>
 
         <p
-          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal"
+          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
         >
           Minh bạch quy trình: <strong>ai làm gì ở giai đoạn nào</strong>, cổng cứng ở máy chủ, số tự tính và trách nhiệm từng phòng ban trong chu kỳ theo đuổi và giành gói thầu.
         </p>
@@ -498,34 +490,14 @@ function isStageInActiveFlow(stageId: string): boolean {
 
         <!-- Trust Badges -->
         <div
-          class="flex flex-wrap items-center justify-center gap-6 pt-3 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-xl mx-auto"
+          class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
         >
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
             <span>5 Làn phối hợp liên phòng ban</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 text-primary shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
             <span>9 Luồng nghiệp vụ tương tác</span>
           </div>
         </div>
@@ -533,7 +505,7 @@ function isStageInActiveFlow(stageId: string): boolean {
     </section>
 
     <!-- Flow Selector Section (F01-F09) -->
-    <section class="py-8 bg-card border-b border-border">
+    <section class="py-8 bg-card border-b border-border/80">
       <div class="sf-container space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div class="text-xs font-bold uppercase tracking-wider text-muted-foreground">
@@ -550,10 +522,10 @@ function isStageInActiveFlow(stageId: string): boolean {
             :key="flow.id"
             type="button"
             :class="[
-              'px-3.5 py-2 rounded-[4px] text-xs font-bold transition-all cursor-pointer tabular select-none',
+              'px-3.5 py-2 rounded-[4px] text-xs font-bold transition-all cursor-pointer tabular select-none border',
               activeFlowId === flow.id
-                ? 'bg-primary text-primary-foreground shadow-sm'
-                : 'bg-background text-muted-foreground hover:text-foreground shadow-xs hover:shadow-card'
+                ? 'bg-primary text-primary-foreground border-primary shadow-xs'
+                : 'bg-background text-muted-foreground border-border/80 hover:text-foreground hover:border-primary/40'
             ]"
             @click="activeFlowId = activeFlowId === flow.id ? '' : flow.id"
           >
@@ -563,7 +535,7 @@ function isStageInActiveFlow(stageId: string): boolean {
 
         <div
           v-if="currentFlow"
-          class="p-5 rounded-xl bg-brand-soft shadow-xs text-xs text-foreground flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          class="p-5 rounded-xl bg-brand-soft/80 border border-brand/20 shadow-xs text-xs text-foreground flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div>
             <span class="font-bold text-primary">{{ currentFlow.name }}:</span>
@@ -580,7 +552,7 @@ function isStageInActiveFlow(stageId: string): boolean {
 
     <!-- Filter Bar by Lane & Search -->
     <section
-      class="py-4 bg-background/95 border-b border-border sticky top-20 z-30 backdrop-blur-md"
+      class="py-4 bg-background/95 border-b border-border/80 sticky top-20 z-30 backdrop-blur-md"
     >
       <div class="sf-container">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -590,7 +562,7 @@ function isStageInActiveFlow(stageId: string): boolean {
               v-model="searchQuery"
               type="text"
               placeholder="Tìm hoạt động, cổng, ghi chú..."
-              class="w-full h-10 pl-3.5 pr-3 text-xs rounded-[4px] border border-border bg-card text-foreground focus:outline-none focus:border-primary shadow-xs"
+              class="w-full h-10 pl-3.5 pr-3 text-xs rounded-[4px] border border-border/80 bg-card text-foreground focus:outline-none focus:border-primary shadow-xs"
             />
           </div>
 
@@ -604,10 +576,10 @@ function isStageInActiveFlow(stageId: string): boolean {
               :key="lane.id"
               type="button"
               :class="[
-                'px-3 py-1.5 rounded-[4px] text-xs font-bold transition-all cursor-pointer select-none',
+                'px-3 py-1.5 rounded-[4px] text-xs font-bold transition-all cursor-pointer select-none border',
                 activeLane === lane.id
-                  ? `${lane.color} shadow-xs`
-                  : 'bg-card text-muted-foreground hover:text-foreground shadow-xs hover:shadow-card'
+                  ? `${lane.color} border-transparent shadow-xs`
+                  : 'bg-card text-muted-foreground border-border/70 hover:text-foreground hover:border-primary/40'
               ]"
               @click="activeLane = lane.id"
             >
@@ -619,12 +591,12 @@ function isStageInActiveFlow(stageId: string): boolean {
     </section>
 
     <!-- Stage Pipeline Matrix View -->
-    <section class="py-16 md:py-24 bg-background border-b border-border">
+    <section class="py-16 md:py-24 bg-background border-b border-border/80">
       <div class="sf-container space-y-12 md:space-y-16">
         <!-- Explanatory note 3 cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            class="sf-card bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
           >
             <div
               class="w-10 h-10 rounded-lg bg-brand-soft text-primary flex items-center justify-center font-extrabold text-base shrink-0 tabular"
@@ -632,7 +604,7 @@ function isStageInActiveFlow(stageId: string): boolean {
               9
             </div>
             <div>
-              <div class="text-base font-extrabold text-foreground tracking-tight">
+              <div class="text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
                 9 Giai Đoạn Cố Định
               </div>
               <div class="text-xs text-muted-foreground mt-1 leading-relaxed font-normal">
@@ -642,7 +614,7 @@ function isStageInActiveFlow(stageId: string): boolean {
           </div>
 
           <div
-            class="sf-card bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
           >
             <div
               class="w-10 h-10 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center font-extrabold text-base shrink-0 tabular"
@@ -650,7 +622,7 @@ function isStageInActiveFlow(stageId: string): boolean {
               5
             </div>
             <div>
-              <div class="text-base font-extrabold text-foreground tracking-tight">
+              <div class="text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
                 5 Cổng Cứng (Hard Gates)
               </div>
               <div class="text-xs text-muted-foreground mt-1 leading-relaxed font-normal">
@@ -660,7 +632,7 @@ function isStageInActiveFlow(stageId: string): boolean {
           </div>
 
           <div
-            class="sf-card bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-start gap-4"
           >
             <div
               class="w-10 h-10 rounded-lg bg-[#4f46e5]/10 text-[#4f46e5] flex items-center justify-center font-extrabold text-base shrink-0"
@@ -668,7 +640,7 @@ function isStageInActiveFlow(stageId: string): boolean {
               Tx
             </div>
             <div>
-              <div class="text-base font-extrabold text-foreground tracking-tight">
+              <div class="text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
                 Audit Log &amp; StageHistory
               </div>
               <div class="text-xs text-muted-foreground mt-1 leading-relaxed font-normal">
@@ -684,16 +656,10 @@ function isStageInActiveFlow(stageId: string): boolean {
             v-for="stg in filteredStages"
             :key="stg.id"
             :class="[
-              'sf-card bg-card rounded-xl p-6 sm:p-8 transition-all duration-300 shadow-card hover:shadow-card-hover overflow-hidden',
+              'sf-card group bg-card border border-border/70 rounded-xl p-6 sm:p-8 transition-all duration-300 shadow-card hover:shadow-card-hover hover:border-primary/40 overflow-hidden',
               !isStageInActiveFlow(stg.id) ? 'opacity-40 grayscale-40' : ''
             ]"
           >
-            <!-- Top Accent line -->
-            <div
-              class="-mt-6 -mx-6 sm:-mt-8 sm:-mx-8 h-2 mb-6 shrink-0"
-              :style="{ backgroundColor: stg.color }"
-            />
-
             <!-- Stage Header -->
             <div
               class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border/80 gap-4"
@@ -748,7 +714,7 @@ function isStageInActiveFlow(stageId: string): boolean {
               <div
                 v-for="node in stg.nodes"
                 :key="node.id"
-                class="bg-secondary/40 hover:bg-secondary/70 p-4 sm:p-5 rounded-lg space-y-2 transition-all duration-200 shadow-xs hover:shadow-card hover:-translate-y-0.5"
+                class="sf-card group/node bg-card border border-border/70 hover:border-primary/40 p-4 sm:p-5 rounded-lg space-y-2 transition-all duration-300 shadow-card hover:shadow-card-hover hover:-translate-y-0.5"
               >
                 <div class="flex items-center justify-between gap-2">
                   <span
@@ -757,7 +723,7 @@ function isStageInActiveFlow(stageId: string): boolean {
                     {{ lanes.find((l) => l.id === node.lane)?.label || node.lane }}
                   </span>
                 </div>
-                <div class="text-sm font-extrabold text-foreground tracking-tight">
+                <div class="text-sm font-extrabold text-foreground tracking-tight group-hover/node:text-primary transition-colors">
                   {{ node.label }}
                 </div>
                 <p

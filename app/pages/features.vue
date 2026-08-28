@@ -129,80 +129,66 @@ const modules = [
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header with Ambient Glow -->
+    <!-- Hero Header -->
     <section
-      class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border"
+      class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80"
     >
-      <!-- Background subtle ambient glow -->
-      <div
-        class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <div
-        class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none"
-      />
-
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <SfBadge variant="green" size="md"> BỘ TÍNH NĂNG TOÀN DIỆN </SfBadge>
+          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
+            7 MÔ-ĐUN LÕI TOÀN DIỆN
+          </span>
         </div>
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
         >
-          Tính Năng Chuyên Ngành
+          Tính Năng Chuyên Biệt Cho
           <span class="text-primary block mt-1">
-            Bidly Preconstruction CRM
+            Tổng Thầu Xây Dựng Công Nghiệp
           </span>
         </h1>
         <p
-          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal"
+          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
         >
-          Hệ thống 7 mô-đun lõi và kiến trúc bảo mật dữ liệu riêng biệt bao phủ
-          trọn vẹn vòng đời thầu từ tiếp nhận tín hiệu đến bàn giao thi công.
+          Bao phủ trọn vẹn vòng đời theo đuổi thầu: từ thu thập tín hiệu KCN/FDI đến phê duyệt Go/No-Go, phòng thầu số và bàn giao thi công.
         </p>
+
+        <!-- Quick Jump Links -->
+        <div class="flex flex-wrap justify-center items-center gap-2 pt-2">
+          <a
+            v-for="mod in modules"
+            :key="mod.id"
+            :href="`#${mod.id}`"
+            class="px-3.5 py-1.5 text-xs font-bold rounded-full bg-card border border-border/80 text-foreground hover:text-primary hover:border-primary/40 transition-colors"
+          >
+            {{ mod.title.split('·')[0].trim() }}
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- 7 Modules Detail Sections -->
-    <section class="py-16 md:py-24 bg-card border-b border-border">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80">
       <div class="sf-container space-y-20">
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-          <div class="text-xs font-bold uppercase tracking-wider text-primary">
-            7 MÔ-ĐUN LÕI (M1 - M7)
-          </div>
-          <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
-          >
-            Chi Tiết Toàn Bộ Tính Năng Lõi
-          </h2>
-          <p
-            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
-          >
-            Được xây dựng chuyên biệt cho các phòng ban tham gia vào quá trình
-            theo đuổi thầu xây dựng công nghiệp.
-          </p>
-        </div>
-
         <div
           v-for="(mod, mIdx) in modules"
           :key="mod.id"
           :id="mod.id"
           :class="[
             'grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-10',
-            mIdx > 0 ? 'border-t border-border/80' : '',
+            mIdx > 0 ? 'border-t border-border/70' : '',
           ]"
         >
           <!-- Left Info Column -->
-          <div class="lg:col-span-6 space-y-4">
-            <div
-              class="text-xs font-bold text-primary uppercase tracking-widest"
-            >
+          <div class="lg:col-span-5 space-y-4">
+            <div class="text-xs font-bold text-primary">
               {{ mod.eyebrow }}
             </div>
-            <h3
+            <h2
               class="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight tracking-tight"
             >
               {{ mod.title }}
-            </h3>
+            </h2>
             <p
               class="text-muted-foreground leading-relaxed text-sm sm:text-base font-normal"
             >
@@ -211,38 +197,33 @@ const modules = [
             <div class="pt-2">
               <button
                 type="button"
-                class="sf-link text-sm font-bold cursor-pointer"
+                class="sf-link text-sm font-bold cursor-pointer inline-flex items-center gap-1.5"
                 @click="openModal(`Đăng ký trải nghiệm mô-đun: ${mod.title}`)"
               >
-                Trải nghiệm mô-đun này trong bản Demo ➔
+                <span>Trải nghiệm mô-đun này trong bản Demo</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             </div>
           </div>
 
-          <!-- Right Features Box with Top Accent -->
+          <!-- Right Features Card (Clean Salesforce White Card) -->
           <div
-            class="lg:col-span-6 sf-card rounded-xl bg-card shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col justify-between border border-border/70"
+            class="lg:col-span-7 sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 p-6 sm:p-8 space-y-5"
           >
-            <div
-              class="h-2 w-full shrink-0"
-              :style="{
-                backgroundColor: mod.accentColor || 'var(--primary, #0176D3)',
-              }"
-            />
-            <div class="p-6 sm:p-8 space-y-4">
-              <div
-                class="text-xs font-bold uppercase tracking-wider text-primary"
+            <div class="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Tính năng then chốt:
+            </div>
+            <ul class="space-y-3.5">
+              <li
+                v-for="(feat, fIdx) in mod.features"
+                :key="fIdx"
+                class="flex items-start gap-3 text-xs sm:text-sm text-foreground font-medium leading-relaxed"
               >
-                Tính năng then chốt:
-              </div>
-              <ul class="space-y-3">
-                <li
-                  v-for="(feat, fIdx) in mod.features"
-                  :key="fIdx"
-                  class="flex items-start gap-3 text-xs sm:text-sm text-foreground font-medium leading-relaxed"
-                >
+                <span class="w-5 h-5 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 mt-0.5">
                   <svg
-                    class="w-4 h-4 text-primary shrink-0 mt-0.5"
+                    class="w-3.5 h-3.5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -252,10 +233,10 @@ const modules = [
                       clip-rule="evenodd"
                     />
                   </svg>
-                  <span>{{ feat }}</span>
-                </li>
-              </ul>
-            </div>
+                </span>
+                <span>{{ feat }}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

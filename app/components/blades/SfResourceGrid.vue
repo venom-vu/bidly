@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { BladeResourceCard } from "~/data/crm-blades";
-import SfBadge from "~/components/ui/SfBadge.vue";
 
 interface Props {
   heading?: string;
@@ -15,8 +14,8 @@ defineProps<Props>();
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-card border-b border-border">
-    <div class="sf-container space-y-12">
+  <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <div class="sf-container space-y-12 md:space-y-16">
       <div v-if="heading" class="text-center max-w-3xl mx-auto space-y-3">
         <h2
           class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
@@ -31,19 +30,10 @@ defineProps<Props>();
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card group bg-card rounded-xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1"
+          class="sf-card group bg-card rounded-xl border border-border/70 overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1"
         >
-          <!-- Top Accent Bar: 8px height with single solid color (only shown when card has NO image) -->
-          <div
-            v-if="!card.imageUrl"
-            class="h-2 w-full shrink-0"
-            :style="{
-              backgroundColor: card.accentColor || 'var(--primary, #0176D3)',
-            }"
-          />
-
           <!-- Card Image Container (16:9) -->
-          <div class="relative aspect-[16/9] bg-muted overflow-hidden">
+          <div class="relative aspect-[16/9] bg-muted overflow-hidden border-b border-border/50">
             <img
               :src="card.imageUrl"
               :alt="card.headline"
@@ -58,9 +48,11 @@ defineProps<Props>();
           >
             <div class="space-y-3">
               <div v-if="card.badge">
-                <SfBadge variant="green" size="sm">
+                <span
+                  class="inline-flex px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-brand-soft text-primary select-none"
+                >
                   {{ card.badge }}
-                </SfBadge>
+                </span>
               </div>
 
               <h3
@@ -75,13 +67,16 @@ defineProps<Props>();
               </p>
             </div>
 
-            <!-- Card Link with delicate 1px underline -->
-            <div class="pt-1">
+            <!-- Card Link with smooth hover -->
+            <div class="pt-2">
               <NuxtLink
                 :to="card.linkUrl"
-                class="inline-flex items-center text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
+                class="inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-primary hover:text-primary-hover transition-colors cursor-pointer group/link"
               >
-                <span>{{ card.linkText }}</span>
+                <span class="underline underline-offset-4 decoration-1 hover:decoration-2">{{ card.linkText }}</span>
+                <svg class="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                </svg>
               </NuxtLink>
             </div>
           </div>
