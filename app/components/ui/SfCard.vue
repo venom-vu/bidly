@@ -15,9 +15,9 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="sf-card group bg-card rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full"
+    class="sf-card group bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full border-0"
   >
-    <!-- Top Accent Bar: 8px height with module/stage distinctive color -->
+    <!-- Top Accent Bar: 8px height with single solid color -->
     <div
       class="h-2 w-full shrink-0"
       :style="{ backgroundColor: borderColor }"
@@ -47,11 +47,11 @@ withDefaults(defineProps<Props>(), {
         </p>
       </div>
 
-      <!-- Card Link (Signature Salesforce Underlined Link with Animated Arrow) -->
-      <div class="pt-2 border-t border-border">
+      <!-- Card Link (Clean Salesforce Underlined Link with delicate 1px underline) -->
+      <div class="pt-1">
         <NuxtLink
           :to="linkUrl"
-          class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-2 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
+          class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-1 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
         >
           <span>{{ linkText }}</span>
           <svg
@@ -63,7 +63,7 @@ withDefaults(defineProps<Props>(), {
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2.5"
+              stroke-width="2"
               d="M14 5l7 7m0 0l-7 7m7-7H3"
             />
           </svg>

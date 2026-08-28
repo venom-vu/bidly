@@ -31,9 +31,9 @@ defineProps<Props>();
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card group bg-card rounded-2xl border border-border overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1"
+          class="sf-card group bg-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 border-0"
         >
-          <!-- Top Accent Bar: 8px height -->
+          <!-- Top Accent Bar: 8px height with single solid color -->
           <div
             class="h-2 w-full shrink-0"
             :style="{
@@ -74,11 +74,11 @@ defineProps<Props>();
               </p>
             </div>
 
-            <!-- Card Link with Animated Arrow -->
-            <div class="pt-3 border-t border-border">
+            <!-- Card Link with delicate 1px underline -->
+            <div class="pt-1">
               <NuxtLink
                 :to="card.linkUrl"
-                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-2 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
+                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-1 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
               >
                 <span>{{ card.linkText }}</span>
                 <svg
@@ -90,7 +90,7 @@ defineProps<Props>();
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2.5"
+                    stroke-width="2"
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
                 </svg>

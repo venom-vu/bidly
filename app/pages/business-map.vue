@@ -348,7 +348,7 @@ function isStageInActiveFlow(stageId: string): boolean {
     <section class="py-16 md:py-24 bg-background border-b border-border">
       <div class="sf-container space-y-16">
         <!-- Explanatory note -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-card border border-border shadow-card">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-card shadow-card border-0">
           <div class="flex items-start gap-3">
             <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm shrink-0 tabular">
               9
@@ -386,10 +386,10 @@ function isStageInActiveFlow(stageId: string): boolean {
             v-for="stg in filteredStages"
             :key="stg.id"
             :class="[
-              'rounded-2xl p-6 sm:p-8 border-2 transition-all',
+              'rounded-2xl p-6 sm:p-8 transition-all',
               stg.isHard
-                ? 'border-primary/50 bg-card shadow-card'
-                : 'border-border bg-card/60 shadow-xs',
+                ? 'border border-primary/50 bg-card shadow-card'
+                : 'bg-card shadow-card border-0',
               !isStageInActiveFlow(stg.id) ? 'opacity-40 grayscale-40' : ''
             ]"
           >

@@ -28,7 +28,7 @@ const marketEvidence = crmBladesData.customerLogos;
       >
         <!-- Stat 1 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border-0"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -49,7 +49,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 2 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border-0"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -70,7 +70,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 3 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border-0"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-destructive tracking-tight tabular"
@@ -91,7 +91,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 4 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
+          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border-0"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-brand-text tracking-tight tabular"

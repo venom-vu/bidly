@@ -51,14 +51,14 @@
   --radius-3xl: 1.5rem; /* 24px */
   --radius-full: 9999px;
 
-  /* Thang Đổ Bóng Đa Tầng */
-  --shadow-xs: 0 1px 2px 0 rgba(27, 33, 28, 0.04);
-  --shadow-card: 0 4px 16px 0 rgba(27, 33, 28, 0.04);
+  /* Thang Đổ Bóng Đa Tầng Salesforce PBC Elevation */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 2px 8px -2px rgba(23, 23, 23, 0.08), 0 8px 16px -2px rgba(23, 23, 23, 0.10);
   --shadow-card-hover:
-    0 16px 32px -4px rgba(27, 33, 28, 0.08),
-    0 4px 12px -2px rgba(27, 33, 28, 0.03);
-  --shadow-dropdown: 0 20px 40px -8px rgba(27, 33, 28, 0.12);
-  --shadow-modal: 0 25px 50px -12px rgba(27, 33, 28, 0.25);
+    0 12px 24px -4px rgba(23, 23, 23, 0.08),
+    0 16px 32px -4px rgba(23, 23, 23, 0.16);
+  --shadow-dropdown: 0 20px 40px -8px rgba(23, 23, 23, 0.14);
+  --shadow-modal: 0 25px 50px -12px rgba(23, 23, 23, 0.25);
 
   /* Panel tối (Footer, Hero tối, Auth panel) */
   --brand-panel: #171c18;

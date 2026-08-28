@@ -170,7 +170,7 @@ const kpiMetrics = [
           <div
             v-for="(stat, sIdx) in marketData"
             :key="sIdx"
-            class="sf-card bg-card p-6 sm:p-7 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between"
+            class="sf-card bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border-0"
           >
             <div class="text-2xl sm:text-3xl font-black text-primary tabular">{{ stat.value }}</div>
             <div>
@@ -199,7 +199,7 @@ const kpiMetrics = [
           <div
             v-for="(item, idx) in asIsToBe"
             :key="idx"
-            class="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-card hover:shadow-card-hover transition-all duration-300 space-y-4"
+            class="bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 space-y-4 border-0"
           >
             <div class="flex items-center gap-3">
               <span class="w-7 h-7 rounded-full bg-brand-soft text-brand-text flex items-center justify-center font-bold text-xs tabular">
@@ -253,7 +253,7 @@ const kpiMetrics = [
           <div
             v-for="(comp, cIdx) in competitiveMatrix"
             :key="cIdx"
-            class="sf-card bg-background p-6 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-4"
+            class="sf-card bg-background p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-4 border-0"
           >
             <div class="space-y-3">
               <h3 class="text-lg font-bold text-foreground leading-snug">{{ comp.group }}</h3>
@@ -290,7 +290,7 @@ const kpiMetrics = [
           <div
             v-for="(kpi, kIdx) in kpiMetrics"
             :key="kIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-2 text-left flex flex-col justify-between"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-2 text-left flex flex-col justify-between border-0"
           >
             <div class="space-y-2">
               <div class="text-3xl sm:text-4xl font-black text-primary tabular">{{ kpi.metric }}</div>

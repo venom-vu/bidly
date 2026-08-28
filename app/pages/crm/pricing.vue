@@ -51,7 +51,7 @@ const philosophies = [
           <div
             v-for="(phil, pIdx) in philosophies"
             :key="pIdx"
-            class="p-6 rounded-2xl bg-background border border-border space-y-2 shadow-xs"
+            class="p-6 rounded-2xl bg-card space-y-2 shadow-card border-0"
           >
             <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-text">
               <span class="w-5 h-5 rounded-full bg-brand-soft text-brand-text flex items-center justify-center font-mono text-[10px] tabular">
@@ -78,8 +78,8 @@ const philosophies = [
             :class="[
               'rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative',
               tier.popular
-                ? 'border-2 border-primary shadow-2xl bg-card scale-[1.02] z-10'
-                : 'border border-border shadow-card bg-card hover:border-muted-foreground/30'
+                ? 'border border-primary shadow-2xl bg-card scale-[1.02] z-10'
+                : 'shadow-card bg-card border-0 hover:shadow-card-hover'
             ]"
           >
             <!-- Popular Badge -->
@@ -151,7 +151,7 @@ const philosophies = [
     <!-- Enterprise Tier Section -->
     <section id="enterprise" class="py-12 bg-card border-b border-border">
       <div class="sf-container">
-        <div class="bg-gradient-to-r from-card via-card to-brand-soft/40 p-8 sm:p-10 rounded-2xl border-2 border-border shadow-card flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="bg-gradient-to-r from-card via-card to-brand-soft/40 p-8 sm:p-10 rounded-2xl border border-border shadow-card flex flex-col lg:flex-row items-center justify-between gap-8">
           <div class="space-y-3 max-w-3xl">
             <div class="flex items-center gap-2">
               <SfBadge variant="navy" size="sm">ENTERPRISE / ON-PREMISE</SfBadge>
@@ -191,7 +191,7 @@ const philosophies = [
           <div
             v-for="(plan, pIdx) in pricingData.successPlans.plans"
             :key="pIdx"
-            class="bg-card p-6 rounded-2xl border border-border shadow-card space-y-3"
+            class="bg-card p-6 rounded-2xl shadow-card space-y-3 border-0"
           >
             <h4 class="text-lg font-bold text-foreground">{{ plan.name }}</h4>
             <p class="text-xs text-muted-foreground leading-relaxed">{{ plan.description }}</p>

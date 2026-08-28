@@ -218,13 +218,13 @@ const scopeBoundaries = [
           </div>
 
           <div class="lg:col-span-6">
-            <div class="rounded-2xl overflow-hidden shadow-card border border-border bg-background p-6 space-y-6">
+            <div class="rounded-2xl overflow-hidden shadow-card bg-background p-6 space-y-6 border-0">
               <div class="flex items-center justify-between border-b border-border pb-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-brand-text">Ranh giới vòng đời sản phẩm</span>
                 <span class="text-xs text-muted-foreground font-mono tabular">S0 ➔ S8</span>
               </div>
               <div class="space-y-4">
-                <div class="p-4 rounded-xl bg-card border border-border shadow-xs flex items-center gap-4">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
                   <div class="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">
                     S0
                   </div>
@@ -235,7 +235,7 @@ const scopeBoundaries = [
                   </div>
                 </div>
 
-                <div class="p-4 rounded-xl bg-card border border-border shadow-xs flex items-center gap-4">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
                   <div class="w-10 h-10 rounded-lg bg-stage-s4 text-white flex items-center justify-center font-bold text-sm shrink-0">
                     S2-S6
                   </div>
@@ -246,7 +246,7 @@ const scopeBoundaries = [
                   </div>
                 </div>
 
-                <div class="p-4 rounded-xl bg-card border border-border shadow-xs flex items-center gap-4">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
                   <div class="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">
                     S8
                   </div>
@@ -316,7 +316,7 @@ const scopeBoundaries = [
           <div
             v-for="(ent, eIdx) in entities"
             :key="eIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 border-0"
           >
             <div class="text-xs font-mono font-bold text-brand-text uppercase tabular">Entity #0{{ eIdx + 1 }}</div>
             <h3 class="text-lg font-bold text-foreground">{{ ent.name }}</h3>
@@ -343,7 +343,7 @@ const scopeBoundaries = [
           <div
             v-for="(persona, pIdx) in personas"
             :key="pIdx"
-            class="sf-card bg-card p-7 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between"
+            class="sf-card bg-card p-7 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border-0"
           >
             <div class="space-y-3">
               <div class="flex items-center justify-between">

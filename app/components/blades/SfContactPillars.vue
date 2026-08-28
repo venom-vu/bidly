@@ -38,7 +38,7 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
         <div
           v-for="pillar in contactPillars.pillars"
           :key="pillar.id"
-          class="sf-card group bg-card p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left"
+          class="sf-card group bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left border-0"
           :class="pillar.isPrimary ? 'ring-2 ring-primary shadow-lg' : ''"
         >
           <div class="space-y-4">
@@ -58,7 +58,7 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
             </p>
           </div>
 
-          <div class="pt-4 border-t border-border">
+          <div class="pt-2">
             <SfButton
               v-if="pillar.ctaUrl === '#demo'"
               :variant="pillar.isPrimary ? 'primary' : 'secondary'"

@@ -22,9 +22,9 @@ const variantClasses = computed(() => {
     case "primary":
       return "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm hover:shadow active:scale-[0.98]";
     case "secondary":
-      return "bg-card text-brand-text border-2 border-primary hover:bg-brand-soft active:scale-[0.98]";
+      return "bg-card text-brand-text border border-primary hover:bg-brand-soft active:scale-[0.98]";
     case "outline":
-      return "border border-foreground text-foreground hover:bg-secondary active:scale-[0.98]";
+      return "border border-border text-foreground hover:bg-secondary active:scale-[0.98]";
     case "navy":
       return "bg-brand-panel text-brand-panel-foreground hover:bg-brand-panel-border shadow-sm active:scale-[0.98]";
     case "ghost":

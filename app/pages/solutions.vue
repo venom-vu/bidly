@@ -175,7 +175,7 @@ const deploymentModels = [
 
           <!-- Right Image Column -->
           <div :class="['lg:col-span-6', sIdx % 2 === 1 ? 'lg:order-1' : '']">
-            <div class="rounded-2xl overflow-hidden shadow-card border border-border aspect-[4/3] bg-background">
+            <div class="rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-background border-0">
               <img
                 :src="seg.imageUrl"
                 :alt="seg.title"
@@ -205,14 +205,14 @@ const deploymentModels = [
           <div
             v-for="(mod, mIdx) in deploymentModels"
             :key="mIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border-0"
           >
             <div class="space-y-2">
               <h3 class="text-lg font-bold text-foreground">{{ mod.name }}</h3>
               <div class="text-xs font-semibold text-primary">{{ mod.target }}</div>
               <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ mod.desc }}</p>
             </div>
-            <div class="pt-4 border-t border-border">
+            <div class="pt-2">
               <SfButton variant="secondary" size="sm" :to="mod.ctaUrl" block>
                 Xem chi tiết &amp; Báo giá
               </SfButton>

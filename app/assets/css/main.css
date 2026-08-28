@@ -200,23 +200,23 @@ p,
 
 .sf-card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(27, 33, 28, 0.08);
+  box-shadow: 0 12px 24px -4px rgba(23, 23, 23, 0.08), 0 16px 32px -4px rgba(23, 23, 23, 0.16);
 }
 
 .shadow-card {
-  box-shadow: 0 4px 16px rgba(27, 33, 28, 0.04);
+  box-shadow: 0 2px 8px -2px rgba(23, 23, 23, 0.08), 0 8px 16px -2px rgba(23, 23, 23, 0.10);
 }
 
 .shadow-card-hover {
-  box-shadow: 0 16px 32px rgba(27, 33, 28, 0.08);
+  box-shadow: 0 12px 24px -4px rgba(23, 23, 23, 0.08), 0 16px 32px -4px rgba(23, 23, 23, 0.16);
 }
 
 .shadow-dropdown {
-  box-shadow: 0 20px 40px -8px rgba(27, 33, 28, 0.12);
+  box-shadow: 0 20px 40px -8px rgba(23, 23, 23, 0.14);
 }
 
 .shadow-modal {
-  box-shadow: 0 25px 50px -12px rgba(27, 33, 28, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(23, 23, 23, 0.25);
 }
 
 .sf-gradient-bg {

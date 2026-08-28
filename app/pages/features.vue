@@ -246,7 +246,7 @@ const modules = [
           <div
             v-for="(flow, fIdx) in nonLinearFlows"
             :key="fIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border-0"
           >
             <div class="space-y-3">
               <div class="flex items-center justify-between">
@@ -291,7 +291,7 @@ const modules = [
           </div>
 
           <!-- Right Features Box with Top Accent -->
-          <div class="lg:col-span-6 rounded-2xl bg-card border border-border shadow-card overflow-hidden flex flex-col justify-between">
+          <div class="lg:col-span-6 rounded-2xl bg-card shadow-card overflow-hidden flex flex-col justify-between border-0">
             <div class="h-1.5 w-full shrink-0" :style="{ backgroundColor: mod.accentColor || 'var(--brand, #74CC55)' }" />
             <div class="p-6 sm:p-8 space-y-4">
               <div class="text-xs font-bold uppercase tracking-widest text-brand-text">

@@ -153,7 +153,7 @@ export const crmBladesData = {
       {
         id: 'mod-1',
         title: 'M1 · Project Intelligence',
-        borderColor: 'var(--stage-s0, #64748B)',
+        borderColor: '#D17DFE',
         badge: 'SÀNG LỌC TÍN HIỆU',
         description: 'Thu thập tín hiệu KCN, FDI; import Excel preview và mapping cột; kiểm tra trùng lặp, gắn người phụ trách.',
         linkText: 'Xem mô-đun M1',
@@ -162,7 +162,7 @@ export const crmBladesData = {
       {
         id: 'mod-2',
         title: 'M2 · Pursuit & Go/No-Go',
-        borderColor: 'var(--stage-s2, #8B5CF6)',
+        borderColor: '#04E1CB',
         badge: 'SCORECARD ĐỊNH LƯỢNG',
         description: 'Pipeline 9 giai đoạn; Scorecard Go/No-Go trọng số 0-100; tính giá trị pipeline theo xác suất thắng.',
         linkText: 'Xem mô-đun M2',
@@ -171,7 +171,7 @@ export const crmBladesData = {
       {
         id: 'mod-3',
         title: 'M3 · Stakeholder Map',
-        borderColor: 'var(--stage-s3, #0D9488)',
+        borderColor: '#FF538A',
         badge: 'QUAN HỆ DỰ ÁN',
         description: 'Bản đồ bên liên quan theo dự án (Decision Maker, Influencer, Champion, Gatekeeper); ghi nhật ký tiếp xúc.',
         linkText: 'Xem mô-đun M3',
@@ -180,7 +180,7 @@ export const crmBladesData = {
       {
         id: 'mod-4',
         title: 'M4 · Tender Workspace',
-        borderColor: 'var(--stage-s4, #0284C7)',
+        borderColor: '#FE9339',
         badge: 'PHÒNG THẦU SỐ',
         description: 'Không gian làm việc theo vòng thầu; checklist 5 phòng ban; kiểm soát phiên bản và 1 bản final duy nhất.',
         linkText: 'Xem mô-đun M4',
@@ -189,7 +189,7 @@ export const crmBladesData = {
       {
         id: 'mod-5',
         title: 'M5 · Capability Library',
-        borderColor: 'var(--stage-s6, #4F46E5)',
+        borderColor: '#41B658',
         badge: 'TRI THỨC NĂNG LỰC',
         description: 'Thư viện dự án tiêu biểu (tonnage, diện tích), chuyên gia, máy móc và cảnh báo hạn chứng chỉ.',
         linkText: 'Xem mô-đun M5',
@@ -198,7 +198,7 @@ export const crmBladesData = {
       {
         id: 'mod-6',
         title: 'M6 · Dashboard & Handover',
-        borderColor: 'var(--stage-s8, #3F9E25)',
+        borderColor: '#0284C7',
         badge: 'ĐIỀU HÀNH & BÀN GIAO',
         description: 'Control Tower điều hành, Deadline Heatmap 7-14-30 ngày, phân tích Win/Loss và Gói bàn giao S8 sang ERP.',
         linkText: 'Xem mô-đun M6',

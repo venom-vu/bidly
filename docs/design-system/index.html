@@ -145,14 +145,14 @@
 
   /* ── Salesforce Style Card (Live Demo) ─────────────────────────────────── */
   .sf-card-demo {
-    background: #FFF; border: 1px solid var(--border-color); border-radius: 16px;
-    overflow: hidden; box-shadow: 0 4px 16px rgba(27, 33, 28, 0.04);
+    background: #FFF; border: none; border-radius: 16px;
+    overflow: hidden; box-shadow: 0 2px 8px -2px rgba(23, 23, 23, 0.08), 0 8px 16px -2px rgba(23, 23, 23, 0.10);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex; flex-direction: column; justify-content: space-between;
   }
   .sf-card-demo:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 32px rgba(27, 33, 28, 0.08);
+    box-shadow: 0 12px 24px -4px rgba(23, 23, 23, 0.08), 0 16px 32px -4px rgba(23, 23, 23, 0.16);
   }
   .sf-card-accent { height: 8px; width: 100% }
   .sf-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 16px }
@@ -160,7 +160,7 @@
   .sf-card-desc { font-size: 14px; color: #5C665D; line-height: 1.55 }
   .sf-card-link {
     font-size: 14px; font-weight: 700; color: var(--brand-text); text-decoration: underline;
-    text-underline-offset: 4px; text-decoration-thickness: 2px;
+    text-underline-offset: 4px; text-decoration-thickness: 1px;
     display: inline-flex; align-items: center; gap: 4px;
   }
   .sf-card-link:hover { color: var(--primary-color); text-decoration-color: var(--primary-color) }
@@ -323,7 +323,7 @@
   </div>
 
   <div class="use"><b>Class Tailwind thật cho Salesforce Card:</b>
-class="bg-card rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"</div>
+class="bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border-0"</div>
 
   <!-- ── 3. Buttons & Actions ── -->
   <h2>3 · Nút Bấm & Tương Tác (Buttons & Controls)</h2>
