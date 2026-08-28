@@ -51,15 +51,15 @@ const philosophies = [
           <div
             v-for="(phil, pIdx) in philosophies"
             :key="pIdx"
-            class="p-6 rounded-2xl bg-card space-y-2 shadow-card border-0"
+            class="p-6 rounded-2xl bg-card space-y-2 shadow-card border border-border/70"
           >
-            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-text">
-              <span class="w-5 h-5 rounded-full bg-brand-soft text-brand-text flex items-center justify-center font-mono text-[10px] tabular">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
+              <span class="w-5 h-5 rounded-full bg-brand-soft text-primary flex items-center justify-center font-mono text-[10px] tabular border border-primary/20">
                 0{{ pIdx + 1 }}
               </span>
               {{ phil.title }}
             </div>
-            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
               {{ phil.desc }}
             </p>
           </div>
@@ -78,8 +78,8 @@ const philosophies = [
             :class="[
               'rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative',
               tier.popular
-                ? 'border border-primary shadow-2xl bg-card scale-[1.02] z-10'
-                : 'shadow-card bg-card border-0 hover:shadow-card-hover'
+                ? 'border-2 border-primary shadow-dropdown bg-card scale-[1.02] z-10'
+                : 'shadow-card bg-card border border-border/70 hover:border-primary/40 hover:shadow-card-hover'
             ]"
           >
             <!-- Popular Badge -->
@@ -94,10 +94,10 @@ const philosophies = [
                 <div v-if="tier.badge" class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
                   {{ tier.badge }}
                 </div>
-                <h3 class="text-2xl font-extrabold text-foreground">
+                <h3 class="text-2xl font-extrabold text-foreground tracking-tight">
                   {{ tier.name }}
                 </h3>
-                <p class="text-xs text-muted-foreground mt-1 min-h-[32px]">
+                <p class="text-xs text-muted-foreground mt-1 min-h-[32px] font-normal leading-relaxed">
                   {{ tier.description }}
                 </p>
               </div>
@@ -105,9 +105,9 @@ const philosophies = [
               <!-- Price Display -->
               <div class="py-4 border-y border-border">
                 <div class="flex items-baseline gap-1">
-                  <span class="text-3xl sm:text-4xl font-black text-foreground tabular">{{ tier.price }}</span>
+                  <span class="text-3xl sm:text-4xl font-extrabold text-foreground tabular tracking-tight">{{ tier.price }}</span>
                 </div>
-                <div class="text-xs text-muted-foreground mt-1 tabular">
+                <div class="text-xs text-muted-foreground mt-1 tabular font-medium">
                   {{ tier.period }}
                 </div>
               </div>
@@ -121,7 +121,7 @@ const philosophies = [
                   <li
                     v-for="(feat, fIdx) in tier.features"
                     :key="fIdx"
-                    class="flex items-start gap-2.5 text-xs sm:text-sm text-foreground"
+                    class="flex items-start gap-2.5 text-xs sm:text-sm text-foreground font-medium"
                   >
                     <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -156,7 +156,7 @@ const philosophies = [
             <div class="flex items-center gap-2">
               <SfBadge variant="navy" size="sm">ENTERPRISE / ON-PREMISE</SfBadge>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
               {{ pricingData.enterpriseTier.heading }}
             </h3>
             <p class="text-sm text-muted-foreground leading-relaxed font-normal">
@@ -182,7 +182,7 @@ const philosophies = [
       <div class="sf-container space-y-10">
         <div class="text-center max-w-3xl mx-auto space-y-3">
           <SfBadge variant="green">DỊCH VỤ ĐỒNG HÀNH</SfBadge>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
             {{ pricingData.successPlans.heading }}
           </h2>
         </div>
@@ -191,11 +191,11 @@ const philosophies = [
           <div
             v-for="(plan, pIdx) in pricingData.successPlans.plans"
             :key="pIdx"
-            class="bg-card p-6 rounded-2xl shadow-card space-y-3 border-0"
+            class="bg-card p-6 rounded-2xl shadow-card space-y-3 border border-border/70 hover:border-primary/40 hover:shadow-card-hover transition-all"
           >
-            <h4 class="text-lg font-bold text-foreground">{{ plan.name }}</h4>
-            <p class="text-xs text-muted-foreground leading-relaxed">{{ plan.description }}</p>
-            <div class="text-xs font-semibold text-brand-text pt-2 border-t border-border">
+            <h4 class="text-lg font-extrabold text-foreground tracking-tight">{{ plan.name }}</h4>
+            <p class="text-xs text-muted-foreground leading-relaxed font-normal">{{ plan.description }}</p>
+            <div class="text-xs font-bold text-primary pt-2 border-t border-border/80">
               {{ plan.included }}
             </div>
           </div>

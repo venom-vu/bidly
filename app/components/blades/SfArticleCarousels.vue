@@ -96,7 +96,7 @@ onMounted(() => {
           <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-lg border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
             aria-label="Xem tiếp"
             @click="scrollNext(row1Container)"
           >
@@ -106,7 +106,7 @@ onMounted(() => {
           </button>
 
           <!-- Scroll Progress Bar -->
-          <div class="mt-4 w-full max-w-xs bg-secondary h-1 rounded-full overflow-hidden">
+          <div class="mt-4 w-full max-w-xs bg-secondary h-1.5 rounded-full overflow-hidden">
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row1Progress)}%` }"
@@ -122,7 +122,7 @@ onMounted(() => {
           <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ data.row2.leftTitle }}
           </h3>
-          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
             Tiêu chuẩn kỹ thuật bảo vệ bí quyết giá thầu doanh nghiệp.
           </p>
         </div>
@@ -154,7 +154,7 @@ onMounted(() => {
           <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-lg border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
             aria-label="Xem tiếp"
             @click="scrollNext(row2Container)"
           >
@@ -164,7 +164,7 @@ onMounted(() => {
           </button>
 
           <!-- Scroll Progress Bar -->
-          <div class="mt-4 w-full max-w-xs bg-secondary h-1 rounded-full overflow-hidden">
+          <div class="mt-4 w-full max-w-xs bg-secondary h-1.5 rounded-full overflow-hidden">
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row2Progress)}%` }"

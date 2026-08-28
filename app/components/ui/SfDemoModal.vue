@@ -117,7 +117,7 @@ onUnmounted(() => {
                     type="text"
                     required
                     placeholder="Ví dụ: Nguyễn Văn An"
-                    class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+                    class="w-full h-11 px-3.5 bg-card rounded-xl border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ onUnmounted(() => {
                     type="text"
                     required
                     placeholder="Ví dụ: Công ty CP Xây dựng AZB"
-                    class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+                    class="w-full h-11 px-3.5 bg-card rounded-xl border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   />
                 </div>
               </div>
@@ -145,7 +145,7 @@ onUnmounted(() => {
                     type="tel"
                     required
                     placeholder="0912 345 678"
-                    class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+                    class="w-full h-11 px-3.5 bg-card rounded-xl border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   />
                 </div>
 
@@ -158,7 +158,7 @@ onUnmounted(() => {
                     type="email"
                     required
                     placeholder="an.nguyen@azb.vn"
-                    class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+                    class="w-full h-11 px-3.5 bg-card rounded-xl border border-input text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                   />
                 </div>
               </div>
@@ -169,7 +169,7 @@ onUnmounted(() => {
                 </label>
                 <select
                   v-model="formState.segment"
-                  class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+                  class="w-full h-11 px-3.5 bg-card rounded-xl border border-input text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                 >
                   <option value="epc">Tổng thầu EPC & Xây dựng Công nghiệp</option>
                   <option value="mep">Nhà thầu Cơ điện MEP & PCCC</option>
@@ -178,7 +178,7 @@ onUnmounted(() => {
                 </select>
               </div>
 
-              <p class="text-xs text-muted-foreground">
+              <p class="text-xs text-muted-foreground leading-relaxed">
                 Thông tin được bảo mật theo tiêu chuẩn Luật PDPA 91/2025/QH15. Vtechcom cam kết không chia sẻ dữ liệu cho bên thứ ba.
               </p>
             </form>
@@ -190,14 +190,14 @@ onUnmounted(() => {
           >
             <button
               type="button"
-              class="px-4 py-2 text-sm font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors cursor-pointer"
+              class="px-4 py-2 text-sm font-bold text-foreground hover:bg-secondary rounded-xl transition-colors cursor-pointer"
               @click="closeModal"
             >
               Đóng
             </button>
             <button
               type="button"
-              class="px-5 py-2 bg-primary text-primary-foreground text-sm font-bold rounded-lg hover:bg-primary-hover shadow-sm hover:shadow active:scale-[0.98] transition-all cursor-pointer"
+              class="px-6 py-2.5 bg-primary text-primary-foreground text-sm font-extrabold rounded-xl hover:bg-primary-hover shadow-sm hover:shadow active:scale-[0.98] transition-all cursor-pointer"
               @click="submitDemoForm"
             >
               Gửi Yêu Cầu Demo

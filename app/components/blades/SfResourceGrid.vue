@@ -31,13 +31,13 @@ defineProps<Props>();
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card group bg-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 border-0"
+          class="sf-card group bg-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 border border-border/70 hover:border-primary/40"
         >
           <!-- Top Accent Bar: 8px height with single solid color -->
           <div
             class="h-2 w-full shrink-0"
             :style="{
-              backgroundColor: card.accentColor || 'var(--brand, #74CC55)',
+              backgroundColor: card.accentColor || 'var(--primary, #0176D3)',
             }"
           />
 
@@ -63,7 +63,7 @@ defineProps<Props>();
               </div>
 
               <h3
-                class="text-lg sm:text-xl font-extrabold text-foreground leading-snug group-hover:text-brand-text transition-colors"
+                class="text-lg sm:text-xl font-extrabold text-foreground leading-snug group-hover:text-primary transition-colors tracking-tight"
               >
                 {{ card.headline }}
               </h3>
@@ -78,7 +78,7 @@ defineProps<Props>();
             <div class="pt-1">
               <NuxtLink
                 :to="card.linkUrl"
-                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-1 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
+                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
               >
                 <span>{{ card.linkText }}</span>
                 <svg
@@ -90,7 +90,7 @@ defineProps<Props>();
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
+                    stroke-width="2.5"
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
                 </svg>
@@ -104,7 +104,7 @@ defineProps<Props>();
       <div v-if="ctaButton" class="text-center pt-2">
         <NuxtLink
           :to="ctaButton.url"
-          class="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ ctaButton.label }}
         </NuxtLink>

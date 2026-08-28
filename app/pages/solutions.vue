@@ -175,11 +175,11 @@ const deploymentModels = [
 
           <!-- Right Image Column -->
           <div :class="['lg:col-span-6', sIdx % 2 === 1 ? 'lg:order-1' : '']">
-            <div class="rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-background border-0">
+            <div class="rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all aspect-[4/3] bg-background border border-border/80">
               <img
                 :src="seg.imageUrl"
                 :alt="seg.title"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 loading="lazy"
               >
             </div>
@@ -196,7 +196,7 @@ const deploymentModels = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Lựa Chọn Mô Hình Triển Khai Linh Hoạt
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Từ thí điểm nhanh đến cài đặt trên máy chủ riêng của doanh nghiệp với độ bảo mật tuyệt đối.
           </p>
         </div>
@@ -205,12 +205,12 @@ const deploymentModels = [
           <div
             v-for="(mod, mIdx) in deploymentModels"
             :key="mIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border-0"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border border-border/70 hover:border-primary/40"
           >
             <div class="space-y-2">
-              <h3 class="text-lg font-bold text-foreground">{{ mod.name }}</h3>
-              <div class="text-xs font-semibold text-primary">{{ mod.target }}</div>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ mod.desc }}</p>
+              <h3 class="text-lg font-extrabold text-foreground tracking-tight">{{ mod.name }}</h3>
+              <div class="text-xs font-bold text-primary">{{ mod.target }}</div>
+              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ mod.desc }}</p>
             </div>
             <div class="pt-2">
               <SfButton variant="secondary" size="sm" :to="mod.ctaUrl" block>

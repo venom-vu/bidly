@@ -9,13 +9,13 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  borderColor: "var(--brand, #74CC55)",
+  borderColor: "var(--primary, #0176D3)",
 });
 </script>
 
 <template>
   <div
-    class="sf-card group bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full border-0"
+    class="sf-card group bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full border border-border/70 hover:border-primary/40"
   >
     <!-- Top Accent Bar: 8px height with single solid color -->
     <div
@@ -29,14 +29,14 @@ withDefaults(defineProps<Props>(), {
         <!-- Optional Category Badge -->
         <div v-if="badge">
           <span
-            class="inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-soft text-brand-text select-none"
+            class="inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-soft text-brand-text border border-brand-text/15 select-none"
           >
             {{ badge }}
           </span>
         </div>
 
         <h3
-          class="text-lg sm:text-xl font-extrabold text-foreground tracking-tight leading-snug group-hover:text-brand-text transition-colors"
+          class="text-lg sm:text-xl font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors"
         >
           {{ title }}
         </h3>
@@ -51,7 +51,7 @@ withDefaults(defineProps<Props>(), {
       <div class="pt-1">
         <NuxtLink
           :to="linkUrl"
-          class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-1 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
+          class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
         >
           <span>{{ linkText }}</span>
           <svg
@@ -63,7 +63,7 @@ withDefaults(defineProps<Props>(), {
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="2.5"
               d="M14 5l7 7m0 0l-7 7m7-7H3"
             />
           </svg>
@@ -78,3 +78,4 @@ withDefaults(defineProps<Props>(), {
   will-change: transform, box-shadow;
 }
 </style>
+

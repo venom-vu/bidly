@@ -13,16 +13,16 @@
   /* ── Reset & Khung Trang ─────────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
   :root {
-    --bg-page: var(--background, #F4F6F4);
-    --fg-page: var(--foreground, #1B211C);
+    --bg-page: var(--background, #F4F6F9);
+    --fg-page: var(--foreground, #032D60);
     --card-bg: var(--card, #FFFFFF);
-    --border-color: var(--border, #E3E8E3);
-    --primary-color: var(--primary, #3F9E25);
-    --primary-hover: var(--primary-hover, #2E7D1A);
-    --brand-gate: var(--brand-gate, #74CC55);
-    --brand-text: var(--brand-text, #277A14);
-    --brand-soft: var(--brand-soft, #EBF7E8);
-    --panel-dark: var(--brand-panel, #171C18);
+    --border-color: var(--border, #DDDBDA);
+    --primary-color: var(--primary, #0176D3);
+    --primary-hover: var(--primary-hover, #0B5CAB);
+    --brand-gate: var(--brand-gate, #0176D3);
+    --brand-text: var(--brand-text, #0176D3);
+    --brand-soft: var(--brand-soft, #EBF5FE);
+    --panel-dark: var(--brand-panel, #032D60);
   }
 
   body {
@@ -113,24 +113,24 @@
   /* ── Buttons (Live Demo) ────────────────────────────────────────────────── */
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    height: 40px; padding: 0 18px; border-radius: 8px; font-family: inherit;
+    height: 42px; padding: 0 20px; border-radius: 12px; font-family: inherit;
     font-size: 14px; font-weight: 700; border: 0; cursor: pointer; text-decoration: none;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); user-select: none;
   }
   .btn:active { transform: scale(0.98) }
-  .btn.primary { background: var(--primary-color); color: #FFF; box-shadow: 0 2px 6px rgba(63, 158, 37, 0.2) }
-  .btn.primary:hover { background: var(--primary-hover); box-shadow: 0 4px 12px rgba(63, 158, 37, 0.3) }
-  .btn.secondary { background: #FFF; color: var(--brand-text); border: 2px solid var(--primary-color) }
+  .btn.primary { background: var(--primary-color); color: #FFF; box-shadow: 0 2px 6px rgba(1, 118, 211, 0.25) }
+  .btn.primary:hover { background: var(--primary-hover); box-shadow: 0 4px 12px rgba(1, 118, 211, 0.35) }
+  .btn.secondary { background: #FFF; color: var(--primary-color); border: 1.5px solid var(--primary-color) }
   .btn.secondary:hover { background: var(--brand-soft) }
-  .btn.outline { background: transparent; color: var(--fg-page); border: 1px solid #C4CDC4 }
+  .btn.outline { background: transparent; color: var(--fg-page); border: 1px solid var(--border-color) }
   .btn.outline:hover { background: #EFF2EF }
-  .btn.navy { background: var(--panel-dark); color: #F4F6F4 }
-  .btn.navy:hover { background: #262E27 }
-  .btn.ghost { background: transparent; color: var(--brand-text) }
+  .btn.navy { background: var(--panel-dark); color: #FFF }
+  .btn.navy:hover { background: #0B3B75 }
+  .btn.ghost { background: transparent; color: var(--primary-color) }
   .btn.ghost:hover { background: var(--brand-soft) }
   .btn.pill { border-radius: 9999px }
-  .btn.lg { height: 48px; padding: 0 28px; font-size: 15px }
-  .btn.sm { height: 32px; padding: 0 12px; font-size: 12.5px }
+  .btn.lg { height: 48px; padding: 0 28px; font-size: 15px; font-weight: 800 }
+  .btn.sm { height: 32px; padding: 0 14px; font-size: 12px }
 
   /* ── Badges (Live Demo) ─────────────────────────────────────────────────── */
   .badge-ui {
@@ -139,62 +139,63 @@
   }
   .badge-stage {
     display: inline-flex; align-items: center; gap: 6px;
-    border-radius: 6px; padding: 3px 8px; font-size: 12px; font-weight: 700;
+    border-radius: 8px; padding: 3px 8px; font-size: 12px; font-weight: 700;
   }
   .badge-stage .code { opacity: 0.8; font-variant-numeric: tabular-nums }
 
   /* ── Salesforce Style Card (Live Demo) ─────────────────────────────────── */
   .sf-card-demo {
-    background: #FFF; border: none; border-radius: 16px;
-    overflow: hidden; box-shadow: 0 2px 8px -2px rgba(23, 23, 23, 0.08), 0 8px 16px -2px rgba(23, 23, 23, 0.10);
+    background: #FFF; border: 1px solid var(--border-color); border-radius: 16px;
+    overflow: hidden; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex; flex-direction: column; justify-content: space-between;
   }
   .sf-card-demo:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px -4px rgba(23, 23, 23, 0.08), 0 16px 32px -4px rgba(23, 23, 23, 0.16);
+    box-shadow: 0 12px 24px -4px rgba(3, 45, 96, 0.12), 0 4px 12px -2px rgba(3, 45, 96, 0.08);
+    border-color: rgba(1, 118, 211, 0.4);
   }
   .sf-card-accent { height: 8px; width: 100% }
   .sf-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 16px }
   .sf-card-title { font-size: 18px; font-weight: 800; color: var(--fg-page); letter-spacing: -0.015em }
-  .sf-card-desc { font-size: 14px; color: #5C665D; line-height: 1.55 }
+  .sf-card-desc { font-size: 14px; color: #54698D; line-height: 1.55 }
   .sf-card-link {
-    font-size: 14px; font-weight: 700; color: var(--brand-text); text-decoration: underline;
+    font-size: 14px; font-weight: 700; color: var(--primary-color); text-decoration: underline;
     text-underline-offset: 4px; text-decoration-thickness: 1px;
     display: inline-flex; align-items: center; gap: 4px;
   }
-  .sf-card-link:hover { color: var(--primary-color); text-decoration-color: var(--primary-color) }
+  .sf-card-link:hover { color: var(--primary-hover); text-decoration-color: var(--primary-hover) }
 
   /* ── Form Inputs (Live Demo) ────────────────────────────────────────────── */
   .form-group { display: flex; flex-direction: column; gap: 6px }
   .form-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-page) }
-  .form-label span.req { color: #DC2626 }
+  .form-label span.req { color: #EA001E }
   .input-field {
-    height: 42px; width: 100%; border-radius: 8px; border: 1px solid #D4DDD4;
+    height: 44px; width: 100%; border-radius: 12px; border: 1px solid var(--border-color);
     background: #FFF; padding: 0 14px; font-family: inherit; font-size: 14px; color: var(--fg-page);
     transition: all 0.2s ease;
   }
   .input-field:focus {
-    outline: none; border-color: var(--brand-gate);
-    box-shadow: 0 0 0 3px rgba(116, 204, 85, 0.25);
+    outline: none; border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(1, 118, 211, 0.25);
   }
-  .input-field::placeholder { color: #8E9B8F }
+  .input-field::placeholder { color: #93A7C3 }
 
   /* ── 3-Layer Modal Preview (Live Demo) ─────────────────────────────────── */
   .modal-preview {
     background: #FFF; border-radius: 20px; border: 1px solid var(--border-color);
-    box-shadow: 0 25px 50px -12px rgba(27, 33, 28, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(3, 45, 96, 0.25);
     overflow: hidden; max-width: 600px; margin: 0 auto;
     display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
   }
   .modal-header {
-    padding: 18px 24px; border-bottom: 1px solid var(--border-color); background: #FAFBF9;
+    padding: 18px 24px; border-bottom: 1px solid var(--border-color); background: #F4F6F9;
     display: flex; align-items: center; justify-content: space-between;
   }
   .modal-header h4 { font-size: 16px; font-weight: 800; color: var(--fg-page) }
   .modal-body { padding: 24px; overflow-y: auto; max-height: 240px; display: flex; flex-direction: column; gap: 14px }
   .modal-footer {
-    padding: 16px 24px; border-top: 1px solid var(--border-color); background: #FAFBF9;
+    padding: 16px 24px; border-top: 1px solid var(--border-color); background: #F4F6F9;
     display: flex; justify-content: flex-end; gap: 10px;
   }
 
@@ -255,14 +256,14 @@
   
   <h3>Lớp 1: Màu Giao Diện Bề Mặt (Surfaces & Actions)</h3>
   <div class="grid4">
-    <div class="swatch"><span class="chip" style="background:#3F9E25"></span><div class="sw-meta"><div class="n">Primary</div><div class="v">#3F9E25 · Hành động</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#2E7D1A"></span><div class="sw-meta"><div class="n">Primary Hover</div><div class="v">#2E7D1A · Hover nút</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#74CC55"></span><div class="sw-meta"><div class="n">Brand Gate</div><div class="v">#74CC55 · Cổng logo & Ring</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#277A14"></span><div class="sw-meta"><div class="n">Brand Text</div><div class="v">#277A14 · Chữ xanh WCAG</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#F4F6F4"></span><div class="sw-meta"><div class="n">Background</div><div class="v">#F4F6F4 · Giấy lạnh</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0176D3"></span><div class="sw-meta"><div class="n">Primary</div><div class="v">#0176D3 · Salesforce Blue</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0B5CAB"></span><div class="sw-meta"><div class="n">Primary Hover</div><div class="v">#0B5CAB · Hover CTA</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#00A1E0"></span><div class="sw-meta"><div class="n">Brand Cloud</div><div class="v">#00A1E0 · Cloud Accent</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0176D3"></span><div class="sw-meta"><div class="n">Brand Text</div><div class="v">#0176D3 · Link & Brand</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#F4F6F9"></span><div class="sw-meta"><div class="n">Background</div><div class="v">#F4F6F9 · SLDS Canvas</div></div></div>
     <div class="swatch"><span class="chip" style="background:#FFFFFF"></span><div class="sw-meta"><div class="n">Card</div><div class="v">#FFFFFF · Trắng thẻ</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#1B211C"></span><div class="sw-meta"><div class="n">Foreground</div><div class="v">#1B211C · Mực đen than</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#171C18"></span><div class="sw-meta"><div class="n">Dark Panel</div><div class="v">#171C18 · Footer & Dark</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#032D60"></span><div class="sw-meta"><div class="n">Foreground</div><div class="v">#032D60 · Deep Navy</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#032D60"></span><div class="sw-meta"><div class="n">Dark Panel</div><div class="v">#032D60 · Midnight Footer</div></div></div>
   </div>
 
   <h3>Lớp 2: Ngữ Nghĩa Nghiệp Vụ Stage S0–S8 (Bất Biến)</h3>
@@ -270,14 +271,14 @@
     <div style="display:flex;flex-wrap:wrap;gap:8px">
       <span class="badge-stage" style="background:#F1F5F9;color:#64748B"><span class="code">S0</span>Tín hiệu</span>
       <span class="badge-stage" style="background:#F1F5F9;color:#475569"><span class="code">S1</span>Sàng lọc</span>
-      <span class="badge-stage" style="background:#F5F3FF;color:#8B5CF6"><span class="code">S2</span>Go/No-Go</span>
+      <span class="badge-stage" style="background:#F5F3FF;color:#7F27FF"><span class="code">S2</span>Go/No-Go</span>
       <span class="badge-stage" style="background:#F0FDFA;color:#0D9488"><span class="code">S3</span>Chuẩn bị</span>
       <span class="badge-stage" style="background:#F0F9FF;color:#0284C7"><span class="code">S4</span>Đấu thầu</span>
-      <span class="badge-stage" style="background:#EFF6FF;color:#2563EB"><span class="code">S5</span>Chờ kết quả</span>
+      <span class="badge-stage" style="background:#EBF5FE;color:#0176D3"><span class="code">S5</span>Chờ kết quả</span>
       <span class="badge-stage" style="background:#EEF2FF;color:#4F46E5"><span class="code">S6</span>Thương thảo</span>
-      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25"><span class="code">S8</span>Bàn giao</span>
-      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25">Thắng (WON)</span>
-      <span class="badge-stage" style="background:#FEE2E2;color:#DC2626">Thua (LOST)</span>
+      <span class="badge-stage" style="background:#EBF7EE;color:#04844B"><span class="code">S8</span>Bàn giao</span>
+      <span class="badge-stage" style="background:#EBF7EE;color:#04844B">Thắng (WON)</span>
+      <span class="badge-stage" style="background:#FDE8E8;color:#EA001E">Thua (LOST)</span>
     </div>
     <div class="use"><b>&lt;SfBadge&gt;</b> quy chuẩn: <b>Nền Soft + Chữ Đặc</b> — tránh dùng màu bão hòa đặc gây chói mắt trên bảng dữ liệu dày.</div>
   </div>
@@ -298,10 +299,10 @@
     </div>
 
     <div class="sf-card-demo">
-      <div class="sf-card-accent" style="background:#8B5CF6"></div>
+      <div class="sf-card-accent" style="background:#7F27FF"></div>
       <div class="sf-card-body">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="badge-tag" style="background:#F5F3FF;color:#8B5CF6;align-self:flex-start">HARD GATE S2</div>
+          <div class="badge-tag" style="background:#F5F3FF;color:#7F27FF;align-self:flex-start">HARD GATE S2</div>
           <div class="sf-card-title">Scorecard Go/No-Go</div>
           <p class="sf-card-desc">Chấm điểm 6 tiêu chí trọng số 0–100, ép buộc phán quyết có căn cứ và lưu vết lý do vĩnh viễn ở máy chủ.</p>
         </div>
@@ -310,10 +311,10 @@
     </div>
 
     <div class="sf-card-demo">
-      <div class="sf-card-accent" style="background:#3F9E25"></div>
+      <div class="sf-card-accent" style="background:#04844B"></div>
       <div class="sf-card-body">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="badge-tag" style="background:#EBF7E8;color:#277A14;align-self:flex-start">BÀN GIAO S8</div>
+          <div class="badge-tag" style="background:#EBF7EE;color:#04844B;align-self:flex-start">BÀN GIAO S8</div>
           <div class="sf-card-title">Handover Pack</div>
           <p class="sf-card-desc">Đóng gói cam kết hồ sơ thầu, bàn giao thông suốt sang Ban chỉ huy công trường tránh thất thoát thông tin.</p>
         </div>

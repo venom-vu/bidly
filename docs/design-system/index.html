@@ -13,16 +13,16 @@
   /* ── Reset & Khung Trang ─────────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
   :root {
-    --bg-page: var(--background, #F4F6F4);
-    --fg-page: var(--foreground, #1B211C);
+    --bg-page: var(--background, #F4F6F9);
+    --fg-page: var(--foreground, #032D60);
     --card-bg: var(--card, #FFFFFF);
-    --border-color: var(--border, #E3E8E3);
-    --primary-color: var(--primary, #3F9E25);
-    --primary-hover: var(--primary-hover, #2E7D1A);
-    --brand-gate: var(--brand-gate, #74CC55);
-    --brand-text: var(--brand-text, #277A14);
-    --brand-soft: var(--brand-soft, #EBF7E8);
-    --panel-dark: var(--brand-panel, #171C18);
+    --border-color: var(--border, #DDDBDA);
+    --primary-color: var(--primary, #0176D3);
+    --primary-hover: var(--primary-hover, #0B5CAB);
+    --brand-gate: var(--brand-gate, #0176D3);
+    --brand-text: var(--brand-text, #0176D3);
+    --brand-soft: var(--brand-soft, #EBF5FE);
+    --panel-dark: var(--brand-panel, #032D60);
   }
 
   body {
@@ -255,14 +255,14 @@
   
   <h3>Lớp 1: Màu Giao Diện Bề Mặt (Surfaces & Actions)</h3>
   <div class="grid4">
-    <div class="swatch"><span class="chip" style="background:#3F9E25"></span><div class="sw-meta"><div class="n">Primary</div><div class="v">#3F9E25 · Hành động</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#2E7D1A"></span><div class="sw-meta"><div class="n">Primary Hover</div><div class="v">#2E7D1A · Hover nút</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#74CC55"></span><div class="sw-meta"><div class="n">Brand Gate</div><div class="v">#74CC55 · Cổng logo & Ring</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#277A14"></span><div class="sw-meta"><div class="n">Brand Text</div><div class="v">#277A14 · Chữ xanh WCAG</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#F4F6F4"></span><div class="sw-meta"><div class="n">Background</div><div class="v">#F4F6F4 · Giấy lạnh</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0176D3"></span><div class="sw-meta"><div class="n">Primary</div><div class="v">#0176D3 · Salesforce Blue</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0B5CAB"></span><div class="sw-meta"><div class="n">Primary Hover</div><div class="v">#0B5CAB · Hover CTA</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#00A1E0"></span><div class="sw-meta"><div class="n">Brand Cloud</div><div class="v">#00A1E0 · Cloud Accent</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#0176D3"></span><div class="sw-meta"><div class="n">Brand Text</div><div class="v">#0176D3 · Link & Brand</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#F4F6F9"></span><div class="sw-meta"><div class="n">Background</div><div class="v">#F4F6F9 · SLDS Canvas</div></div></div>
     <div class="swatch"><span class="chip" style="background:#FFFFFF"></span><div class="sw-meta"><div class="n">Card</div><div class="v">#FFFFFF · Trắng thẻ</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#1B211C"></span><div class="sw-meta"><div class="n">Foreground</div><div class="v">#1B211C · Mực đen than</div></div></div>
-    <div class="swatch"><span class="chip" style="background:#171C18"></span><div class="sw-meta"><div class="n">Dark Panel</div><div class="v">#171C18 · Footer & Dark</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#032D60"></span><div class="sw-meta"><div class="n">Foreground</div><div class="v">#032D60 · Deep Navy</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#032D60"></span><div class="sw-meta"><div class="n">Dark Panel</div><div class="v">#032D60 · Midnight Footer</div></div></div>
   </div>
 
   <h3>Lớp 2: Ngữ Nghĩa Nghiệp Vụ Stage S0–S8 (Bất Biến)</h3>
@@ -270,14 +270,14 @@
     <div style="display:flex;flex-wrap:wrap;gap:8px">
       <span class="badge-stage" style="background:#F1F5F9;color:#64748B"><span class="code">S0</span>Tín hiệu</span>
       <span class="badge-stage" style="background:#F1F5F9;color:#475569"><span class="code">S1</span>Sàng lọc</span>
-      <span class="badge-stage" style="background:#F5F3FF;color:#8B5CF6"><span class="code">S2</span>Go/No-Go</span>
+      <span class="badge-stage" style="background:#F5F3FF;color:#7F27FF"><span class="code">S2</span>Go/No-Go</span>
       <span class="badge-stage" style="background:#F0FDFA;color:#0D9488"><span class="code">S3</span>Chuẩn bị</span>
       <span class="badge-stage" style="background:#F0F9FF;color:#0284C7"><span class="code">S4</span>Đấu thầu</span>
-      <span class="badge-stage" style="background:#EFF6FF;color:#2563EB"><span class="code">S5</span>Chờ kết quả</span>
+      <span class="badge-stage" style="background:#EBF5FE;color:#0176D3"><span class="code">S5</span>Chờ kết quả</span>
       <span class="badge-stage" style="background:#EEF2FF;color:#4F46E5"><span class="code">S6</span>Thương thảo</span>
-      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25"><span class="code">S8</span>Bàn giao</span>
-      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25">Thắng (WON)</span>
-      <span class="badge-stage" style="background:#FEE2E2;color:#DC2626">Thua (LOST)</span>
+      <span class="badge-stage" style="background:#EBF7EE;color:#04844B"><span class="code">S8</span>Bàn giao</span>
+      <span class="badge-stage" style="background:#EBF7EE;color:#04844B">Thắng (WON)</span>
+      <span class="badge-stage" style="background:#FDE8E8;color:#EA001E">Thua (LOST)</span>
     </div>
     <div class="use"><b>&lt;SfBadge&gt;</b> quy chuẩn: <b>Nền Soft + Chữ Đặc</b> — tránh dùng màu bão hòa đặc gây chói mắt trên bảng dữ liệu dày.</div>
   </div>
@@ -298,10 +298,10 @@
     </div>
 
     <div class="sf-card-demo">
-      <div class="sf-card-accent" style="background:#8B5CF6"></div>
+      <div class="sf-card-accent" style="background:#7F27FF"></div>
       <div class="sf-card-body">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="badge-tag" style="background:#F5F3FF;color:#8B5CF6;align-self:flex-start">HARD GATE S2</div>
+          <div class="badge-tag" style="background:#F5F3FF;color:#7F27FF;align-self:flex-start">HARD GATE S2</div>
           <div class="sf-card-title">Scorecard Go/No-Go</div>
           <p class="sf-card-desc">Chấm điểm 6 tiêu chí trọng số 0–100, ép buộc phán quyết có căn cứ và lưu vết lý do vĩnh viễn ở máy chủ.</p>
         </div>
@@ -310,10 +310,10 @@
     </div>
 
     <div class="sf-card-demo">
-      <div class="sf-card-accent" style="background:#3F9E25"></div>
+      <div class="sf-card-accent" style="background:#04844B"></div>
       <div class="sf-card-body">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="badge-tag" style="background:#EBF7E8;color:#277A14;align-self:flex-start">BÀN GIAO S8</div>
+          <div class="badge-tag" style="background:#EBF7EE;color:#04844B;align-self:flex-start">BÀN GIAO S8</div>
           <div class="sf-card-title">Handover Pack</div>
           <p class="sf-card-desc">Đóng gói cam kết hồ sơ thầu, bàn giao thông suốt sang Ban chỉ huy công trường tránh thất thoát thông tin.</p>
         </div>

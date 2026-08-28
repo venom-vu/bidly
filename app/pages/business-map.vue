@@ -348,34 +348,34 @@ function isStageInActiveFlow(stageId: string): boolean {
     <section class="py-16 md:py-24 bg-background border-b border-border">
       <div class="sf-container space-y-16">
         <!-- Explanatory note -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-card shadow-card border-0">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 rounded-2xl bg-card shadow-card border border-border/70">
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm shrink-0 tabular">
+            <div class="w-8 h-8 rounded-xl bg-brand-soft text-primary flex items-center justify-center font-extrabold text-sm shrink-0 tabular border border-primary/20">
               9
             </div>
             <div>
-              <div class="text-sm font-bold text-foreground">9 Giai đoạn Cố định</div>
-              <div class="text-xs text-muted-foreground mt-0.5">State machine bất biến, không thêm/xóa stage để đảm bảo tính toàn vẹn dữ liệu.</div>
+              <div class="text-sm font-extrabold text-foreground tracking-tight">9 Giai đoạn Cố định</div>
+              <div class="text-xs text-muted-foreground mt-0.5 leading-relaxed font-normal">State machine bất biến, không thêm/xóa stage để đảm bảo tính toàn vẹn dữ liệu.</div>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-destructive/20 text-destructive flex items-center justify-center font-bold text-sm shrink-0 tabular">
+            <div class="w-8 h-8 rounded-xl bg-destructive/10 text-destructive flex items-center justify-center font-extrabold text-sm shrink-0 tabular border border-destructive/20">
               5
             </div>
             <div>
-              <div class="text-sm font-bold text-foreground">5 Cổng Cứng (Hard Gates)</div>
-              <div class="text-xs text-muted-foreground mt-0.5">S2, S4 vào, S5 nộp final, S7 outcome, S8 handover: server enforce, không thể vượt quyền.</div>
+              <div class="text-sm font-extrabold text-foreground tracking-tight">5 Cổng Cứng (Hard Gates)</div>
+              <div class="text-xs text-muted-foreground mt-0.5 leading-relaxed font-normal">S2, S4 vào, S5 nộp final, S7 outcome, S8 handover: server enforce, không thể vượt quyền.</div>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-[#4f46e5]/20 text-[#4f46e5] flex items-center justify-center font-bold text-sm shrink-0">
+            <div class="w-8 h-8 rounded-xl bg-[#4f46e5]/10 text-[#4f46e5] flex items-center justify-center font-extrabold text-sm shrink-0 border border-[#4f46e5]/20">
               Tx
             </div>
             <div>
-              <div class="text-sm font-bold text-foreground">Audit Log &amp; StageHistory</div>
-              <div class="text-xs text-muted-foreground mt-0.5">Mọi bước chuyển đều ghi nhận gate + reason + actor trong cùng một database transaction.</div>
+              <div class="text-sm font-extrabold text-foreground tracking-tight">Audit Log &amp; StageHistory</div>
+              <div class="text-xs text-muted-foreground mt-0.5 leading-relaxed font-normal">Mọi bước chuyển đều ghi nhận gate + reason + actor trong cùng một database transaction.</div>
             </div>
           </div>
         </div>
@@ -388,13 +388,13 @@ function isStageInActiveFlow(stageId: string): boolean {
             :class="[
               'rounded-2xl p-6 sm:p-8 transition-all',
               stg.isHard
-                ? 'border border-primary/50 bg-card shadow-card'
-                : 'bg-card shadow-card border-0',
+                ? 'border-2 border-primary/70 bg-card shadow-card'
+                : 'bg-card shadow-card border border-border/70',
               !isStageInActiveFlow(stg.id) ? 'opacity-40 grayscale-40' : ''
             ]"
           >
             <!-- Stage Header -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border gap-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border/80 gap-4">
               <div class="flex items-center gap-4">
                 <span :class="[
                   'w-12 h-12 rounded-xl flex items-center justify-center font-black text-base tabular',
@@ -403,15 +403,15 @@ function isStageInActiveFlow(stageId: string): boolean {
                   {{ stg.id }}
                 </span>
                 <div>
-                  <h3 class="text-xl font-extrabold text-foreground">{{ stg.name }}</h3>
-                  <p class="text-xs text-muted-foreground">{{ stg.sub }}</p>
+                  <h3 class="text-xl font-extrabold text-foreground tracking-tight">{{ stg.name }}</h3>
+                  <p class="text-xs text-muted-foreground font-normal">{{ stg.sub }}</p>
                 </div>
               </div>
 
               <div class="flex items-center gap-3">
                 <span :class="[
-                  'px-3 py-1 rounded-full text-xs font-bold',
-                  stg.isHard ? 'bg-primary/15 text-primary border border-primary/30' : 'bg-secondary text-muted-foreground'
+                  'px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider',
+                  stg.isHard ? 'bg-brand-soft text-primary border border-primary/30' : 'bg-secondary text-muted-foreground border border-border'
                 ]">
                   {{ stg.gateType }}
                 </span>
@@ -419,7 +419,7 @@ function isStageInActiveFlow(stageId: string): boolean {
             </div>
 
             <!-- Exit condition requirement -->
-            <div class="py-3 px-4 my-4 rounded-xl bg-background border border-border text-xs text-muted-foreground flex items-center gap-2">
+            <div class="py-3 px-4 my-4 rounded-xl bg-background border border-border/80 text-xs text-muted-foreground flex items-center gap-2 font-normal">
               <span class="font-bold text-foreground shrink-0">Điều kiện qua cổng:</span>
               <span>{{ stg.exitCondition }}</span>
             </div>
@@ -429,15 +429,15 @@ function isStageInActiveFlow(stageId: string): boolean {
               <div
                 v-for="node in stg.nodes"
                 :key="node.id"
-                class="bg-background p-4 sm:p-5 rounded-xl border border-border space-y-2 hover:border-primary/40 transition-colors shadow-xs"
+                class="bg-background p-4 sm:p-5 rounded-xl border border-border/80 space-y-2 hover:border-primary/40 transition-colors shadow-xs"
               >
                 <div class="flex items-center justify-between gap-2">
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-brand-text">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-primary">
                     {{ lanes.find(l => l.id === node.lane)?.label || node.lane }}
                   </span>
                 </div>
-                <div class="text-sm font-bold text-foreground">{{ node.label }}</div>
-                <p class="text-xs text-muted-foreground leading-relaxed">{{ node.desc }}</p>
+                <div class="text-sm font-extrabold text-foreground tracking-tight">{{ node.label }}</div>
+                <p class="text-xs text-muted-foreground leading-relaxed font-normal">{{ node.desc }}</p>
               </div>
             </div>
           </div>

@@ -38,8 +38,8 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
         <div
           v-for="pillar in contactPillars.pillars"
           :key="pillar.id"
-          class="sf-card group bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left border-0"
-          :class="pillar.isPrimary ? 'ring-2 ring-primary shadow-lg' : ''"
+          class="sf-card group bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left border border-border/70"
+          :class="pillar.isPrimary ? 'ring-2 ring-primary/80 border-primary shadow-lg' : ''"
         >
           <div class="space-y-4">
             <!-- Badge -->
@@ -49,11 +49,11 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
               </SfBadge>
             </div>
 
-            <h3 class="text-xl font-bold text-foreground">
+            <h3 class="text-xl font-extrabold text-foreground tracking-tight">
               {{ pillar.title }}
             </h3>
 
-            <p class="text-sm text-muted-foreground leading-relaxed">
+            <p class="text-sm text-muted-foreground leading-relaxed font-normal">
               {{ pillar.description }}
             </p>
           </div>

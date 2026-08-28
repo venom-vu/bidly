@@ -127,7 +127,7 @@ const modules = [
     id: 'dashboard',
     title: 'M6 · Dashboard Điều Hành & Gói Bàn Giao (S8)',
     eyebrow: 'CONTROL TOWER & BÀN GIAO SANG THI CÔNG',
-    accentColor: 'var(--stage-s8, #3F9E25)',
+    accentColor: 'var(--stage-s8, #04844B)',
     description: 'Control Tower điều hành toàn cảnh: pipeline trọng số, cơ hội rủi ro, deadline heatmap và phân tích Win/Loss. Gói bàn giao S8 chuẩn hóa cam kết thương mại, giả định và rủi ro chuyển giao sang ERP.',
     features: [
       'Control Tower với 4 chỉ số điều hành then chốt tính toán theo thời gian thực',
@@ -142,7 +142,7 @@ const modules = [
     id: 'platform-sec',
     title: 'M7 · Nền Tảng & Bảo Mật Dữ Liệu Riêng Biệt',
     eyebrow: 'AN TOÀN THÔNG TIN CẤP DOANH NGHIỆP',
-    accentColor: 'var(--brand-panel, #171C18)',
+    accentColor: 'var(--brand-panel, #032D60)',
     description: 'Kiến trúc On-premise Single-tenant hoặc Private Cloud. Mỗi doanh nghiệp sở hữu database PostgreSQL độc lập, tuyệt đối không chia sẻ dữ liệu giá thầu. Phân quyền RBAC 5 vai trò và audit log append-only.',
     features: [
       'Cơ sở dữ liệu PostgreSQL độc lập cho từng khách hàng (Database Isolation)',
@@ -246,15 +246,15 @@ const modules = [
           <div
             v-for="(flow, fIdx) in nonLinearFlows"
             :key="fIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border-0"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border border-border/70 hover:border-primary/40"
           >
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-mono font-bold text-brand-text tabular">Flow #0{{ fIdx + 1 }}</span>
-                <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-muted text-foreground">{{ flow.type }}</span>
+                <span class="text-xs font-mono font-bold text-primary tabular">Flow #0{{ fIdx + 1 }}</span>
+                <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-brand-soft text-primary border border-primary/20">{{ flow.type }}</span>
               </div>
-              <h3 class="text-base font-bold text-foreground">{{ flow.flow }}</h3>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ flow.desc }}</p>
+              <h3 class="text-base font-extrabold text-foreground tracking-tight">{{ flow.flow }}</h3>
+              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ flow.desc }}</p>
             </div>
           </div>
         </div>
@@ -269,7 +269,7 @@ const modules = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Chi Tiết Toàn Bộ Tính Năng Lõi
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Được xây dựng chuyên biệt cho các phòng ban tham gia vào quá trình theo đuổi thầu.
           </p>
         </div>
@@ -286,22 +286,22 @@ const modules = [
           <!-- Left Info Column -->
           <div class="lg:col-span-6 space-y-4">
             <div class="text-xs font-bold text-primary uppercase tracking-widest">{{ mod.eyebrow }}</div>
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight">{{ mod.title }}</h3>
-            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">{{ mod.description }}</p>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight tracking-tight">{{ mod.title }}</h3>
+            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base font-normal">{{ mod.description }}</p>
           </div>
 
           <!-- Right Features Box with Top Accent -->
-          <div class="lg:col-span-6 rounded-2xl bg-card shadow-card overflow-hidden flex flex-col justify-between border-0">
-            <div class="h-1.5 w-full shrink-0" :style="{ backgroundColor: mod.accentColor || 'var(--brand, #74CC55)' }" />
+          <div class="lg:col-span-6 rounded-2xl bg-card shadow-card hover:shadow-card-hover transition-all overflow-hidden flex flex-col justify-between border border-border/70">
+            <div class="h-2 w-full shrink-0" :style="{ backgroundColor: mod.accentColor || 'var(--primary, #0176D3)' }" />
             <div class="p-6 sm:p-8 space-y-4">
-              <div class="text-xs font-bold uppercase tracking-widest text-brand-text">
+              <div class="text-xs font-bold uppercase tracking-widest text-primary">
                 Tính năng then chốt:
               </div>
               <ul class="space-y-3">
                 <li
                   v-for="(feat, fIdx) in mod.features"
                   :key="fIdx"
-                  class="flex items-start gap-3 text-xs sm:text-sm text-foreground"
+                  class="flex items-start gap-3 text-xs sm:text-sm text-foreground font-medium"
                 >
                   <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />

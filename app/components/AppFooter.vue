@@ -30,7 +30,7 @@ const currentYear = new Date().getFullYear();
               </g>
               <path
                 d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"
-                style="fill: var(--logo-gate, #74CC55)"
+                style="fill: var(--logo-gate, #0176D3)"
               />
             </svg>
             <div class="min-w-0">
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
               </div>
             </div>
           </div>
-          <p class="text-xs text-brand-panel-muted max-w-sm leading-relaxed">
+          <p class="text-xs text-brand-panel-muted max-w-sm leading-relaxed font-normal">
             Preconstruction CRM cho Tổng thầu Xây dựng Công nghiệp Việt Nam (EPC, MEP, Kết cấu thép). Từ tín hiệu dự án đến bàn giao tiền thi công: kiểm soát chuyển bước có chốt chặn ở máy chủ, Go/No-Go định lượng và bảo vệ tri thức quan hệ của tổ chức.
           </p>
           <div class="text-xs text-brand-panel-muted space-y-1">

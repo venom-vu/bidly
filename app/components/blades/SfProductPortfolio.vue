@@ -43,7 +43,7 @@ const portfolio = crmBladesData.productPortfolio;
       <div class="text-center pt-2">
         <NuxtLink
           :to="portfolio.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ portfolio.cta.label }}
         </NuxtLink>
@@ -51,3 +51,4 @@ const portfolio = crmBladesData.productPortfolio;
     </div>
   </section>
 </template>
+

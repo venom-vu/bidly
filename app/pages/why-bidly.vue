@@ -161,7 +161,7 @@ const kpiMetrics = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Vì Sao Cần Bidly Ngay Lúc Này?
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Thị trường 2026 bùng nổ vốn FDI, nhưng cũng đối mặt áp lực cạnh tranh gay gắt.
           </p>
         </div>
@@ -170,12 +170,12 @@ const kpiMetrics = [
           <div
             v-for="(stat, sIdx) in marketData"
             :key="sIdx"
-            class="sf-card bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border-0"
+            class="sf-card bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between border border-border/70 hover:border-primary/40"
           >
-            <div class="text-2xl sm:text-3xl font-black text-primary tabular">{{ stat.value }}</div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-primary tabular tracking-tight">{{ stat.value }}</div>
             <div>
-              <div class="text-sm font-bold text-foreground">{{ stat.label }}</div>
-              <p class="text-xs text-muted-foreground leading-relaxed mt-1">{{ stat.desc }}</p>
+              <div class="text-sm font-extrabold text-foreground tracking-tight">{{ stat.label }}</div>
+              <p class="text-xs text-muted-foreground leading-relaxed mt-1 font-normal">{{ stat.desc }}</p>
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@ const kpiMetrics = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             6 Điểm Chuyển Đổi: Từ Thủ Công sang Chuẩn Hóa
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             So sánh vận hành hiện tại (AS-IS) với mô hình quản trị của Bidly (TO-BE).
           </p>
         </div>
@@ -199,13 +199,13 @@ const kpiMetrics = [
           <div
             v-for="(item, idx) in asIsToBe"
             :key="idx"
-            class="bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 space-y-4 border-0"
+            class="bg-card rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300 space-y-4 border border-border/70"
           >
             <div class="flex items-center gap-3">
-              <span class="w-7 h-7 rounded-full bg-brand-soft text-brand-text flex items-center justify-center font-bold text-xs tabular">
+              <span class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center font-extrabold text-xs tabular border border-primary/20">
                 {{ idx + 1 }}
               </span>
-              <h3 class="text-lg font-bold text-foreground">{{ item.area }}</h3>
+              <h3 class="text-lg font-extrabold text-foreground tracking-tight">{{ item.area }}</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
@@ -217,7 +217,7 @@ const kpiMetrics = [
                   </svg>
                   <span>Hiện tại (AS-IS)</span>
                 </div>
-                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ item.asIs }}</p>
+                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ item.asIs }}</p>
               </div>
 
               <!-- TO-BE -->
@@ -228,7 +228,7 @@ const kpiMetrics = [
                   </svg>
                   <span>Với Bidly (TO-BE)</span>
                 </div>
-                <p class="text-xs sm:text-sm text-foreground font-medium leading-relaxed">{{ item.toBe }}</p>
+                <p class="text-xs sm:text-sm text-foreground font-semibold leading-relaxed">{{ item.toBe }}</p>
               </div>
             </div>
           </div>
@@ -244,7 +244,7 @@ const kpiMetrics = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             So Sánh Bidly với 5 Nhóm Giải Pháp Thay Thế
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Tại sao CRM bán lẻ, ERP hay tự phát triển không giải quyết được bài toán thầu xây dựng?
           </p>
         </div>
@@ -253,18 +253,18 @@ const kpiMetrics = [
           <div
             v-for="(comp, cIdx) in competitiveMatrix"
             :key="cIdx"
-            class="sf-card bg-background p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-4 border-0"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-4 border border-border/70 hover:border-primary/40"
           >
             <div class="space-y-3">
-              <h3 class="text-lg font-bold text-foreground leading-snug">{{ comp.group }}</h3>
+              <h3 class="text-lg font-extrabold text-foreground leading-snug tracking-tight">{{ comp.group }}</h3>
               <div class="space-y-2.5 text-xs">
                 <div>
                   <span class="font-bold text-primary">Điểm mạnh:</span>
-                  <span class="text-muted-foreground ml-1">{{ comp.pros }}</span>
+                  <span class="text-muted-foreground ml-1 font-normal">{{ comp.pros }}</span>
                 </div>
                 <div>
                   <span class="font-bold text-destructive">Khoảng trống:</span>
-                  <span class="text-muted-foreground ml-1">{{ comp.cons }}</span>
+                  <span class="text-muted-foreground ml-1 font-normal">{{ comp.cons }}</span>
                 </div>
               </div>
             </div>
@@ -281,7 +281,7 @@ const kpiMetrics = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             6 Chỉ Số Đo Lường Hiệu Quả Chương Trình Pilot
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Vtechcom cùng khách hàng theo dõi các chỉ số đo lường rõ ràng trong 8-10 tuần thí điểm.
           </p>
         </div>
@@ -290,12 +290,12 @@ const kpiMetrics = [
           <div
             v-for="(kpi, kIdx) in kpiMetrics"
             :key="kIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-2 text-left flex flex-col justify-between border-0"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-2 text-left flex flex-col justify-between border border-border/70 hover:border-primary/40"
           >
             <div class="space-y-2">
-              <div class="text-3xl sm:text-4xl font-black text-primary tabular">{{ kpi.metric }}</div>
-              <div class="text-base font-bold text-foreground">{{ kpi.label }}</div>
-              <p class="text-xs text-muted-foreground leading-relaxed">{{ kpi.desc }}</p>
+              <div class="text-3xl sm:text-4xl font-extrabold text-primary tabular tracking-tight">{{ kpi.metric }}</div>
+              <div class="text-base font-extrabold text-foreground tracking-tight">{{ kpi.label }}</div>
+              <p class="text-xs text-muted-foreground leading-relaxed font-normal">{{ kpi.desc }}</p>
             </div>
           </div>
         </div>

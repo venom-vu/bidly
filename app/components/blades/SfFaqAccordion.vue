@@ -33,11 +33,11 @@ const toggleFaq = (index: number) => {
           v-for="(faq, idx) in faqsData.items"
           :key="faq.id"
           class="border rounded-2xl overflow-hidden transition-all duration-200"
-          :class="openIndex === idx ? 'border-primary/60 shadow-sm bg-background' : 'border-border hover:border-muted-foreground/30 bg-card'"
+          :class="openIndex === idx ? 'border-primary/60 shadow-card bg-brand-soft/20' : 'border-border hover:border-muted-foreground/30 bg-card'"
         >
           <button
             type="button"
-            class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-foreground cursor-pointer select-none"
+            class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-foreground cursor-pointer select-none"
             @click="toggleFaq(idx)"
           >
             <span>{{ faq.question }}</span>
@@ -53,7 +53,7 @@ const toggleFaq = (index: number) => {
 
           <div
             v-show="openIndex === idx"
-            class="px-6 pb-6 text-sm sm:text-[15px] text-muted-foreground leading-relaxed border-t border-border pt-4 font-normal"
+            class="px-6 pb-6 text-sm sm:text-[15px] text-muted-foreground leading-relaxed border-t border-border/70 pt-4 font-normal"
           >
             {{ faq.answer }}
           </div>
@@ -62,3 +62,4 @@ const toggleFaq = (index: number) => {
     </div>
   </section>
 </template>
+

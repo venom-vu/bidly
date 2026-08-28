@@ -218,42 +218,42 @@ const scopeBoundaries = [
           </div>
 
           <div class="lg:col-span-6">
-            <div class="rounded-2xl overflow-hidden shadow-card bg-background p-6 space-y-6 border-0">
-              <div class="flex items-center justify-between border-b border-border pb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-text">Ranh giới vòng đời sản phẩm</span>
+            <div class="rounded-2xl overflow-hidden shadow-card bg-background p-6 space-y-6 border border-border/70">
+              <div class="flex items-center justify-between border-b border-border/80 pb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary">Ranh giới vòng đời sản phẩm</span>
                 <span class="text-xs text-muted-foreground font-mono tabular">S0 ➔ S8</span>
               </div>
               <div class="space-y-4">
-                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
-                  <div class="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border border-border/60">
+                  <div class="w-10 h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-extrabold text-sm shrink-0">
                     S0
                   </div>
                   <div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-text">Điểm bắt đầu</div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-primary">Điểm bắt đầu</div>
                     <div class="text-sm font-bold text-foreground">Tín hiệu dự án &amp; Sàng lọc cơ hội</div>
-                    <div class="text-xs text-muted-foreground">Project Inbox, dedup, FDI/KCN mapping, gán owner</div>
+                    <div class="text-xs text-muted-foreground font-normal">Project Inbox, dedup, FDI/KCN mapping, gán owner</div>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
-                  <div class="w-10 h-10 rounded-lg bg-stage-s4 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border border-border/60">
+                  <div class="w-10 h-10 rounded-xl bg-stage-s4 text-white flex items-center justify-center font-extrabold text-sm shrink-0">
                     S2-S6
                   </div>
                   <div>
                     <div class="text-xs font-bold uppercase tracking-wider text-muted-foreground">Tiền đấu thầu &amp; Đấu thầu</div>
                     <div class="text-sm font-bold text-foreground">Scorecard Go/No-Go &amp; Tender Workspace</div>
-                    <div class="text-xs text-muted-foreground">Checklist 5 phòng ban, bất biến 1 bản final, làm rõ</div>
+                    <div class="text-xs text-muted-foreground font-normal">Checklist 5 phòng ban, bất biến 1 bản final, làm rõ</div>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border-0">
-                  <div class="w-10 h-10 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">
+                <div class="p-4 rounded-xl bg-card shadow-xs flex items-center gap-4 border border-border/60">
+                  <div class="w-10 h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-extrabold text-sm shrink-0">
                     S8
                   </div>
                   <div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-text">Điểm kết thúc</div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-primary">Điểm kết thúc</div>
                     <div class="text-sm font-bold text-foreground">Gói bàn giao tiền thi công (Handover Pack)</div>
-                    <div class="text-xs text-muted-foreground">Chuyển giao dữ liệu sang ERP/PM thi công</div>
+                    <div class="text-xs text-muted-foreground font-normal">Chuyển giao dữ liệu sang ERP/PM thi công</div>
                   </div>
                 </div>
               </div>
@@ -271,27 +271,27 @@ const scopeBoundaries = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Khác Biệt Giữa CRM Bán Lẻ, Preconstruction CRM &amp; ERP
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Bảng đối chiếu 7 tiêu chí then chốt giúp doanh nghiệp định vị đúng công cụ cho từng giai đoạn.
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-border bg-card shadow-card">
+        <div class="overflow-x-auto rounded-2xl border border-border/80 bg-card shadow-card">
           <table class="w-full text-left text-sm">
-            <thead class="bg-muted/60 border-b border-border text-foreground font-bold">
+            <thead class="bg-muted/60 border-b border-border text-foreground font-extrabold">
               <tr>
                 <th class="p-4 sm:p-5">Tiêu chí</th>
                 <th class="p-4 sm:p-5 text-muted-foreground font-semibold">CRM Bán lẻ (MISA, Base...)</th>
-                <th class="p-4 sm:p-5 text-brand-text bg-brand-soft/40 border-x border-brand-soft font-bold">Bidly Preconstruction CRM</th>
+                <th class="p-4 sm:p-5 text-primary bg-brand-soft/40 border-x border-brand-soft font-extrabold">Bidly Preconstruction CRM</th>
                 <th class="p-4 sm:p-5 text-muted-foreground font-semibold">ERP / PM Thi công (SAP, BIM...)</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-border">
-              <tr v-for="(row, rIdx) in comparisonThreeWays" :key="rIdx" class="hover:bg-muted/20 transition-colors">
+            <tbody class="divide-y divide-border/70">
+              <tr v-for="(row, rIdx) in comparisonThreeWays" :key="rIdx" class="hover:bg-muted/30 transition-colors">
                 <td class="p-4 sm:p-5 font-bold text-foreground whitespace-nowrap">{{ row.criteria }}</td>
-                <td class="p-4 sm:p-5 text-muted-foreground">{{ row.retailCrm }}</td>
-                <td class="p-4 sm:p-5 font-semibold text-foreground bg-brand-soft/20 border-x border-brand-soft">{{ row.preconCrm }}</td>
-                <td class="p-4 sm:p-5 text-muted-foreground">{{ row.erp }}</td>
+                <td class="p-4 sm:p-5 text-muted-foreground font-normal">{{ row.retailCrm }}</td>
+                <td class="p-4 sm:p-5 font-bold text-foreground bg-brand-soft/20 border-x border-brand-soft">{{ row.preconCrm }}</td>
+                <td class="p-4 sm:p-5 text-muted-foreground font-normal">{{ row.erp }}</td>
               </tr>
             </tbody>
           </table>
@@ -307,7 +307,7 @@ const scopeBoundaries = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Chuỗi Thực Thể Nghiệp Vụ Chuẩn (Canonical Model)
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Phân định rõ ràng từng cấp bậc dữ liệu: giải quyết trọn vẹn bài toán một dự án đấu thầu nhiều gói thầu song song (Multi-package) và kết quả thầu từng phần (Partial Award).
           </p>
         </div>
@@ -316,11 +316,11 @@ const scopeBoundaries = [
           <div
             v-for="(ent, eIdx) in entities"
             :key="eIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 border-0"
+            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-3 border border-border/70 hover:border-primary/40"
           >
-            <div class="text-xs font-mono font-bold text-brand-text uppercase tabular">Entity #0{{ eIdx + 1 }}</div>
-            <h3 class="text-lg font-bold text-foreground">{{ ent.name }}</h3>
-            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">{{ ent.desc }}</p>
+            <div class="text-xs font-mono font-bold text-primary uppercase tabular">Entity #0{{ eIdx + 1 }}</div>
+            <h3 class="text-lg font-extrabold text-foreground tracking-tight">{{ ent.name }}</h3>
+            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ ent.desc }}</p>
           </div>
         </div>
       </div>
@@ -334,7 +334,7 @@ const scopeBoundaries = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Bidly Phục Vụ Đúng Nhu Cầu Của 6 Nhóm Nhân Sự Then Chốt
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Mỗi vai trò trong doanh nghiệp tổng thầu có góc nhìn dữ liệu và quyền hạn tương ứng trên cùng một hệ thống duy nhất.
           </p>
         </div>
@@ -343,17 +343,17 @@ const scopeBoundaries = [
           <div
             v-for="(persona, pIdx) in personas"
             :key="pIdx"
-            class="sf-card bg-card p-7 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border-0"
+            class="sf-card bg-card p-7 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border border-border/70 hover:border-primary/40"
           >
             <div class="space-y-3">
               <div class="flex items-center justify-between">
                 <SfBadge variant="navy" size="sm">{{ persona.role }}</SfBadge>
-                <span class="text-[10px] font-bold uppercase text-brand-text">{{ persona.badge }}</span>
+                <span class="text-[10px] font-bold uppercase text-primary tracking-tight">{{ persona.badge }}</span>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-foreground">
+              <h3 class="text-base sm:text-lg font-extrabold text-foreground tracking-tight">
                 {{ persona.title }}
               </h3>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
                 {{ persona.description }}
               </p>
             </div>
@@ -370,7 +370,7 @@ const scopeBoundaries = [
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
             Ranh Giới Rõ Ràng: Không Làm Tràn Lan
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground">
+          <p class="text-sm sm:text-base text-muted-foreground font-normal">
             Bidly tập trung làm xuất sắc miền Preconstruction, không cố gắng trở thành một ERP cồng kềnh hay phần mềm dự toán chi tiết.
           </p>
         </div>
@@ -379,18 +379,18 @@ const scopeBoundaries = [
           <div
             v-for="(bound, bIdx) in scopeBoundaries"
             :key="bIdx"
-            class="p-6 sm:p-7 rounded-2xl bg-background border border-border shadow-xs space-y-3"
+            class="p-6 sm:p-7 rounded-2xl bg-background border border-border/70 shadow-card hover:shadow-card-hover transition-all space-y-3"
           >
-            <h3 class="text-base font-bold text-foreground flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-text"></span>
+            <h3 class="text-base font-extrabold text-foreground flex items-center gap-2 tracking-tight">
+              <span class="w-2.5 h-2.5 rounded-full bg-primary shrink-0"></span>
               {{ bound.domain }}
             </h3>
             <div class="space-y-2 text-xs sm:text-sm">
-              <div class="text-foreground">
-                <strong class="text-brand-text">Trong phạm vi:</strong> {{ bound.inScope }}
+              <div class="text-foreground font-medium">
+                <strong class="text-primary font-bold">Trong phạm vi:</strong> {{ bound.inScope }}
               </div>
-              <div class="text-muted-foreground">
-                <strong class="text-destructive">Ngoài phạm vi:</strong> {{ bound.outScope }}
+              <div class="text-muted-foreground font-normal">
+                <strong class="text-destructive font-bold">Ngoài phạm vi:</strong> {{ bound.outScope }}
               </div>
             </div>
           </div>

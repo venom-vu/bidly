@@ -296,7 +296,7 @@ export const crmBladesData = {
         {
           id: 'art-5',
           title: 'Tại sao dữ liệu đấu thầu cần cô lập Private Cloud / On-premise?',
-          borderColor: 'var(--stage-s8, #3F9E25)',
+          borderColor: 'var(--stage-s8, #04844B)',
           description: 'Giá dự thầu là tài sản tối mật. Phân tích khác biệt SaaS dùng chung và Database riêng biệt.',
           linkText: 'Xem so sánh bảo mật',
           linkUrl: '/crm/pricing'
@@ -304,7 +304,7 @@ export const crmBladesData = {
         {
           id: 'art-6',
           title: 'Chuỗi thực thể chuẩn: Project → Pursuit → Package → Round → Submission',
-          borderColor: 'var(--stage-s5, #2563EB)',
+          borderColor: 'var(--stage-s5, #0176D3)',
           description: 'Tại sao không thể gom quy trình thầu phức tạp vào một "Deal" của CRM bán lẻ.',
           linkText: 'Xem mô hình dữ liệu',
           linkUrl: '/crm/what-is-crm'
@@ -341,7 +341,7 @@ export const crmBladesData = {
         imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=768&q=80',
         linkText: 'Đọc bài phân tích',
         linkUrl: '/crm/what-is-crm',
-        accentColor: 'var(--stage-s2, #8B5CF6)'
+        accentColor: 'var(--stage-s2, #7F27FF)'
       },
       {
         id: 'res-bot-2',
@@ -361,7 +361,7 @@ export const crmBladesData = {
         imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=768&q=80',
         linkText: 'Xem bảng giá chi tiết',
         linkUrl: '/crm/pricing',
-        accentColor: 'var(--stage-s8, #3F9E25)'
+        accentColor: 'var(--stage-s8, #04844B)'
       }
     ] as BladeResourceCard[]
   },

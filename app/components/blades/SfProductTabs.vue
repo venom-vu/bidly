@@ -32,10 +32,10 @@ const activeCloud = computed(() => {
             :key="cloud.id"
             type="button"
             :class="[
-              'px-5 py-3 font-bold text-sm sm:text-base rounded-t-xl transition-all whitespace-nowrap relative cursor-pointer',
+              'px-5 py-3 font-bold text-sm sm:text-base rounded-t-xl transition-all whitespace-nowrap relative cursor-pointer select-none',
               activeTabId === cloud.id
-                ? 'text-brand-text bg-card border-t-2 border-primary shadow-xs'
-                : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                ? 'text-primary bg-card border-t-2 border-primary shadow-xs'
+                : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60'
             ]"
             @click="activeTabId = cloud.id"
           >
@@ -44,7 +44,7 @@ const activeCloud = computed(() => {
         </div>
 
         <!-- Tab Content View (Transition Fade) -->
-        <div class="bg-card rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl border border-border">
+        <div class="bg-card rounded-3xl p-6 sm:p-10 md:p-12 shadow-card border border-border/80">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <!-- Content Left -->
             <div class="lg:col-span-6 space-y-6">
@@ -54,11 +54,11 @@ const activeCloud = computed(() => {
                 </SfBadge>
               </div>
 
-              <h3 class="text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight tracking-tight">
                 {{ activeCloud.headline }}
               </h3>
 
-              <p class="text-base text-muted-foreground leading-relaxed">
+              <p class="text-base text-muted-foreground leading-relaxed font-normal">
                 {{ activeCloud.description }}
               </p>
 
@@ -69,7 +69,7 @@ const activeCloud = computed(() => {
                   :key="fIdx"
                   class="flex items-center gap-3 text-sm font-semibold text-foreground"
                 >
-                  <span class="w-5 h-5 rounded-full bg-brand-soft text-brand-text flex items-center justify-center shrink-0">
+                  <span class="w-5 h-5 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0">
                     <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                     </svg>
@@ -81,7 +81,7 @@ const activeCloud = computed(() => {
               <div class="pt-4">
                 <NuxtLink
                   :to="activeCloud.linkUrl"
-                  class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold text-sm rounded-lg hover:bg-primary-hover transition-all shadow-sm"
+                  class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
                 >
                   {{ activeCloud.linkText }}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const activeCloud = computed(() => {
 
             <!-- Image Right -->
             <div class="lg:col-span-6">
-              <div class="rounded-2xl overflow-hidden shadow-lg border border-border bg-background aspect-[16/10]">
+              <div class="rounded-2xl overflow-hidden shadow-card border border-border/80 bg-background aspect-[16/10]">
                 <img
                   :src="activeCloud.imageUrl"
                   :alt="activeCloud.headline"
