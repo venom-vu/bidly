@@ -17,20 +17,35 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
 });
 
+/*
+ * Salesforce Button Design System
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Primary:   Solid blue #0176D3, white text, hover #0B5CAB
+ * Secondary: White bg, blue border, blue text, hover pale blue fill
+ * Outline:   Transparent bg, dark border, dark text
+ * Ghost:     No bg/border, blue text only
+ * Navy:      Deep navy bg, white text (dark section CTAs)
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Border-radius: 4px (Salesforce uses 4px for most CTAs, NOT pill/rounded)
+ * Pill: Optional 9999px for special cases
+ */
 const variantClasses = computed(() => {
   switch (props.variant) {
     case "primary":
-      return "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm hover:shadow-md active:scale-[0.98]";
+      // Salesforce primary: solid Lightning Blue, shadow-sm, active scale
+      return "bg-primary text-white hover:bg-primary-hover active:scale-[0.98] sf-btn-primary";
     case "secondary":
-      return "bg-card text-primary border border-primary hover:bg-brand-soft active:scale-[0.98] shadow-xs";
+      // Salesforce secondary: white bg, 1px blue border, blue text
+      return "bg-white text-primary border border-primary hover:bg-brand-soft active:scale-[0.98]";
     case "outline":
       return "border border-border text-foreground hover:bg-secondary hover:border-muted-foreground/40 active:scale-[0.98]";
     case "navy":
-      return "bg-brand-panel text-brand-panel-foreground hover:bg-brand-panel-border shadow-sm active:scale-[0.98]";
+      // Dark section CTA
+      return "bg-brand-panel text-white hover:bg-brand-panel-border active:scale-[0.98]";
     case "ghost":
       return "text-primary hover:bg-brand-soft";
     default:
-      return "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm";
+      return "bg-primary text-white hover:bg-primary-hover sf-btn-primary";
   }
 });
 
@@ -39,7 +54,8 @@ const sizeClasses = computed(() => {
     case "sm":
       return "px-3.5 py-1.5 text-xs font-bold";
     case "lg":
-      return "px-7 py-3.5 text-base font-extrabold tracking-tight";
+      // Salesforce large CTA: generous padding, slightly larger text
+      return "px-7 py-3.5 text-[15px] font-extrabold tracking-tight";
     case "md":
     default:
       return "px-5 py-2.5 text-sm font-bold";
@@ -91,3 +107,12 @@ const sizeClasses = computed(() => {
   </button>
 </template>
 
+<style scoped>
+/* Salesforce primary button — shadow that matches SF exactly */
+.sf-btn-primary {
+  box-shadow: 0 2px 6px rgba(1, 118, 211, 0.30);
+}
+.sf-btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(1, 118, 211, 0.35);
+}
+</style>

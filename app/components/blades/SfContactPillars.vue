@@ -15,17 +15,24 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
 </script>
 
 <template>
-  <section class="py-16 md:py-24 sf-gradient-bg border-t border-border">
+  <!--
+    Salesforce Contact / CTA Pillars Blade — theme_variant: "light_gradient"
+    3-column card grid, center-highlighted primary card (scale up slightly)
+    Salesforce "Get in touch" / "Start for free" / "Talk to expert" pattern
+  -->
+  <section class="py-16 md:py-24 sf-section-gradient">
     <div class="sf-container text-center space-y-12">
+      <!-- Section Heading -->
       <div class="max-w-3xl mx-auto space-y-3">
         <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
+          class="text-2xl sm:text-3xl md:text-[2.25rem] font-extrabold text-foreground tracking-tight leading-tight"
         >
           {{ contactPillars.heading }}
         </h2>
         <p
           v-if="contactPillars.subheading"
-          class="text-sm sm:text-base text-muted-foreground"
+          class="text-sm sm:text-base"
+          style="color: #54698d"
         >
           {{ contactPillars.subheading }}
         </p>
@@ -33,13 +40,18 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
 
       <!-- 3 Pillars Grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto"
       >
         <div
           v-for="pillar in contactPillars.pillars"
           :key="pillar.id"
-          class="sf-card group bg-card p-8 rounded-xl border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left"
-          :class="pillar.isPrimary ? 'border-primary/50 shadow-modal scale-[1.02] z-10' : ''"
+          class="group bg-white p-8 rounded-2xl flex flex-col justify-between space-y-6 text-left transition-all duration-300 hover:-translate-y-1"
+          :class="pillar.isPrimary ? 'scale-[1.03] z-10' : ''"
+          :style="
+            pillar.isPrimary
+              ? 'box-shadow: 0 8px 32px rgba(1,118,211,0.18), 0 2px 8px rgba(1,118,211,0.10); border: 1.5px solid rgba(1,118,211,0.30);'
+              : 'box-shadow: 0 2px 8px rgba(3,45,96,0.06), 0 4px 20px rgba(3,45,96,0.04); border: 1px solid rgba(0,0,0,0.06);'
+          "
         >
           <div class="space-y-4">
             <!-- Badge -->
@@ -53,7 +65,7 @@ const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
               {{ pillar.title }}
             </h3>
 
-            <p class="text-sm text-muted-foreground leading-relaxed font-normal">
+            <p class="text-sm leading-relaxed" style="color: #54698d">
               {{ pillar.description }}
             </p>
           </div>

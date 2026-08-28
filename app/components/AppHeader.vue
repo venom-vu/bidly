@@ -21,18 +21,27 @@ const closeAllDropdowns = () => {
 </script>
 
 <template>
+  <!--
+    Salesforce Header / Context Navigation
+    - Nền trắng thuần, 1px border bottom rất nhạt
+    - Logo + nav text màu navy #032D60
+    - CTA buttons: primary solid blue + secondary outline
+    - Dropdown: white card, shadow-dropdown, bo góc xl
+    - Height: 72–80px — Salesforce chuẩn header height
+  -->
   <header
-    class="sticky top-0 z-40 w-full bg-card shadow-xs border-b border-border"
+    class="sticky top-0 z-40 w-full bg-white"
+    style="border-bottom: 1px solid rgba(0,0,0,0.08); box-shadow: 0 1px 4px rgba(3,45,96,0.05);"
     @mouseleave="closeAllDropdowns"
   >
-    <div class="sf-container flex items-center justify-between h-20">
-      <!-- Logo & Brand Badge -->
+    <div class="sf-container flex items-center justify-between h-[72px]">
+      <!-- Logo & Brand -->
       <div class="flex items-center gap-6 lg:gap-8">
-        <NuxtLink to="/" class="flex items-center gap-2">
-          <div class="flex min-w-0 items-center gap-3">
+        <NuxtLink to="/" class="flex items-center gap-2 shrink-0">
+          <div class="flex min-w-0 items-center gap-2.5">
             <svg
-              width="44"
-              height="44"
+              width="40"
+              height="40"
               viewBox="4 3 23 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -41,14 +50,9 @@ const closeAllDropdowns = () => {
               class="shrink-0"
             >
               <g style="fill: var(--logo-tile, #032d60)">
-                <path
-                  d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"
-                />
-                <path
-                  d="M5 28H19.25A4.75 4.75 0 0 0 24 23.25V18.5H19V23H10V18.5H5Z"
-                />
+                <path d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z" />
+                <path d="M5 28H19.25A4.75 4.75 0 0 0 24 23.25V18.5H19V23H10V18.5H5Z" />
               </g>
-              <!-- Gate cutting through B -->
               <path
                 d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"
                 style="fill: var(--logo-gate, #0176d3)"
@@ -56,7 +60,7 @@ const closeAllDropdowns = () => {
             </svg>
             <div class="min-w-0">
               <div
-                class="leading-none font-bold tracking-tight text-2xl text-foreground"
+                class="leading-none font-bold tracking-tight text-[1.375rem] text-foreground"
               >
                 Bidly
               </div>
@@ -64,8 +68,8 @@ const closeAllDropdowns = () => {
           </div>
         </NuxtLink>
 
-        <!-- Desktop Navigation Items -->
-        <nav class="hidden lg:flex items-center gap-1">
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-0.5">
           <div
             v-for="menu in navigationData.mainMenu"
             :key="menu.title"
@@ -76,18 +80,22 @@ const closeAllDropdowns = () => {
                 : (activeDropdown = null)
             "
           >
+            <!-- Nav link (no dropdown) -->
             <NuxtLink
               v-if="menu.url"
               :to="menu.url"
-              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-[4px] hover:bg-background transition-colors inline-flex items-center gap-1"
+              class="px-3.5 py-2 text-[13.5px] font-semibold text-foreground hover:text-primary rounded-sm transition-colors inline-flex items-center gap-1"
+              style="letter-spacing: -0.01em;"
             >
               {{ menu.title }}
             </NuxtLink>
 
+            <!-- Nav button (has dropdown) -->
             <button
               v-else
               type="button"
-              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-[4px] hover:bg-background transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none"
+              class="px-3.5 py-2 text-[13.5px] font-semibold text-foreground hover:text-primary rounded-sm transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none"
+              style="letter-spacing: -0.01em;"
               @click="toggleDropdown(menu.title)"
             >
               <span>{{ menu.title }}</span>
@@ -111,13 +119,17 @@ const closeAllDropdowns = () => {
               </svg>
             </button>
 
-            <!-- Mega Menu Dropdown -->
+            <!-- Mega Dropdown — Salesforce white card with strong shadow -->
             <div
               v-if="menu.categories && activeDropdown === menu.title"
               :class="[
-                'absolute top-full left-0 mt-1.5 bg-card rounded-xl shadow-dropdown border border-border/80 p-5 z-50 transition-all duration-200',
+                'absolute top-full left-0 mt-2 bg-white rounded-xl p-5 z-50',
                 menu.widthClass || 'w-[640px]',
               ]"
+              style="
+                box-shadow: 0 16px 40px rgba(3,45,96,0.16), 0 4px 12px rgba(3,45,96,0.07);
+                border: 1px solid rgba(0,0,0,0.07);
+              "
             >
               <div
                 :class="[
@@ -133,12 +145,16 @@ const closeAllDropdowns = () => {
                   :key="cIdx"
                   :class="[
                     'space-y-2.5',
-                    cat.hasSeparator ? 'border-r border-border/80 pr-5' : '',
+                    cat.hasSeparator
+                      ? 'border-r pr-5'
+                      : '',
                   ]"
+                  :style="cat.hasSeparator ? 'border-color: rgba(0,0,0,0.07)' : ''"
                 >
                   <div
                     v-if="cat.categoryTitle"
-                    class="text-[11px] font-extrabold text-muted-foreground uppercase tracking-wider px-2 pb-1.5 border-b border-border/50"
+                    class="text-[10.5px] font-extrabold uppercase tracking-wider px-2 pb-1.5"
+                    style="color: #54698d; border-bottom: 1px solid rgba(0,0,0,0.07);"
                   >
                     {{ cat.categoryTitle }}
                   </div>
@@ -147,17 +163,22 @@ const closeAllDropdowns = () => {
                       v-for="(item, iIdx) in cat.items"
                       :key="iIdx"
                       :to="item.url"
-                      class="block px-3 py-2 rounded-[4px] hover:bg-brand-soft/80 transition-all duration-150 group"
+                      class="block px-3 py-2 rounded-lg transition-all duration-150 group"
+                      style="color: inherit;"
+                      :style="{}"
+                      @mouseenter="(e: MouseEvent) => { (e.currentTarget as HTMLElement).style.background = '#e8f4fd' }"
+                      @mouseleave="(e: MouseEvent) => { (e.currentTarget as HTMLElement).style.background = 'transparent' }"
                       @click="closeAllDropdowns"
                     >
                       <div
-                        class="text-[13.5px] font-bold text-foreground group-hover:text-primary transition-colors"
+                        class="text-[13px] font-semibold text-foreground group-hover:text-primary transition-colors"
                       >
                         {{ item.label }}
                       </div>
                       <div
                         v-if="item.description"
-                        class="text-xs text-muted-foreground line-clamp-1 mt-0.5 leading-snug group-hover:text-foreground/80 transition-colors font-normal"
+                        class="text-[11.5px] line-clamp-1 mt-0.5 leading-snug group-hover:text-foreground/80 transition-colors"
+                        style="color: #54698d;"
                       >
                         {{ item.description }}
                       </div>
@@ -170,8 +191,8 @@ const closeAllDropdowns = () => {
         </nav>
       </div>
 
-      <!-- Utility CTAs (Right) -->
-      <div class="hidden sm:flex items-center gap-3">
+      <!-- Utility CTAs (Right) — Salesforce: 2 CTAs, primary + secondary -->
+      <div class="hidden sm:flex items-center gap-2.5">
         <SfButton
           variant="primary"
           size="md"
@@ -181,7 +202,7 @@ const closeAllDropdowns = () => {
         </SfButton>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
+      <!-- Mobile Toggle -->
       <div class="lg:hidden flex items-center gap-2">
         <button
           type="button"
@@ -189,33 +210,11 @@ const closeAllDropdowns = () => {
           aria-label="Menu"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         >
-          <svg
-            v-if="!isMobileMenuOpen"
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+          <svg v-if="!isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg
-            v-else
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
+          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -224,7 +223,8 @@ const closeAllDropdowns = () => {
     <!-- Mobile Drawer -->
     <div
       v-if="isMobileMenuOpen"
-      class="lg:hidden border-b border-border bg-card px-6 py-6 space-y-6 shadow-xl max-h-[80vh] overflow-y-auto"
+      class="lg:hidden bg-white px-6 py-6 space-y-6 max-h-[80vh] overflow-y-auto"
+      style="border-top: 1px solid rgba(0,0,0,0.07); box-shadow: 0 16px 40px rgba(3,45,96,0.10);"
     >
       <div class="space-y-4">
         <div
@@ -242,7 +242,8 @@ const closeAllDropdowns = () => {
           </NuxtLink>
           <div v-else class="space-y-1">
             <div
-              class="text-xs font-bold text-muted-foreground uppercase tracking-wider pt-2"
+              class="text-[10.5px] font-extrabold uppercase tracking-wider pt-2"
+              style="color: #54698d;"
             >
               {{ menu.title }}
             </div>
@@ -253,7 +254,8 @@ const closeAllDropdowns = () => {
             >
               <div
                 v-if="cat.categoryTitle"
-                class="text-[11px] font-bold text-brand-text uppercase"
+                class="text-[11px] font-bold uppercase tracking-wider"
+                style="color: #0176d3;"
               >
                 {{ cat.categoryTitle }}
               </div>
@@ -261,7 +263,8 @@ const closeAllDropdowns = () => {
                 v-for="(item, iIdx) in cat.items"
                 :key="iIdx"
                 :to="item.url"
-                class="block text-sm font-semibold text-muted-foreground py-1.5 hover:text-brand-text"
+                class="block text-sm font-semibold py-1.5 hover:text-primary"
+                style="color: #54698d;"
                 @click="isMobileMenuOpen = false"
               >
                 {{ item.label }}
@@ -271,7 +274,7 @@ const closeAllDropdowns = () => {
         </div>
       </div>
 
-      <div class="pt-4 border-t border-border flex flex-col gap-3">
+      <div class="pt-4 flex flex-col gap-3" style="border-top: 1px solid rgba(0,0,0,0.08);">
         <SfButton
           variant="primary"
           block

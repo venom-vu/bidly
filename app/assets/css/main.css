@@ -34,6 +34,7 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
@@ -65,16 +66,17 @@
   --color-tone-info: var(--tone-info);
   --color-tone-info-soft: var(--tone-info-soft);
 
+  /* Salesforce Sans + ITC Avant Garde (headings) */
   --font-sans:
     "Salesforce Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", "Be Vietnam Pro", sans-serif;
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-heading:
-    "Manrope", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Be Vietnam Pro",
-    sans-serif;
+    "ITC Avant Garde Gothic", "Manrope", "Plus Jakarta Sans", ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Local / Web Font Bindings */
+/* ─── Local / Web Font Bindings ─────────────────────────────────────────── */
 @font-face {
   font-family: "ITC Avant Garde Gothic";
   src:
@@ -96,135 +98,147 @@
   font-display: swap;
 }
 
+/* ─── Keyframes ──────────────────────────────────────────────────────────── */
 @keyframes floatY {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-6px);
-  }
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-6px); }
 }
 
 @keyframes pulseGlow {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.04);
-  }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes sfFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-float {
   animation: floatY 3.5s ease-in-out infinite alternate;
 }
-
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
 }
+.animate-fade-up {
+  animation: sfFadeUp 0.4s ease-out forwards;
+}
 
+/* ─── Base Reset ─────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.25rem;
   font-family: var(--font-sans);
   color: var(--foreground);
-  background-color: var(--background);
+  /* Salesforce uses #ffffff as page background, NOT grey */
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #ffffff;
+  color: #181818;  /* Salesforce body text — near-black, not navy */
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings: Manrope */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-heading {
+/* Salesforce heading font stack — ITC Avant Garde / Manrope */
+h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading) !important;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  color: var(--foreground);  /* #032D60 Deep Navy */
 }
 
-/* Paragraphs & UI body text: Salesforce Sans */
-p,
-.font-sans,
-.font-body {
+/* Paragraphs & UI body: Salesforce Sans / Inter */
+p, .font-sans, .font-body {
   font-family: var(--font-sans);
+  color: #181818;
 }
 
-/* Tiền và ngày tháng thẳng cột */
+/* Tabular numbers for money/dates */
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
-/* Custom utility styles */
+/* ─── Container — Salesforce PBC (max-width 1280px, generous horizontal pad) */
 .sf-container {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;    /* 24px — matches SF mobile padding */
+  padding-right: 1.5rem;
 }
-
 @media (min-width: 640px) {
-  .sf-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+  .sf-container { padding-left: 2rem; padding-right: 2rem; }
 }
-
 @media (min-width: 1024px) {
-  .sf-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  .sf-container { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+@media (min-width: 1280px) {
+  .sf-container { padding-left: 3rem; padding-right: 3rem; }
 }
 
-/* Salesforce Card Hover */
-.sf-card-hover {
+/* ─── Salesforce Section Background Utilities ────────────────────────────── */
+/* "light" blade — pure white, Salesforce standard */
+.sf-section-light {
+  background-color: #ffffff;
+}
+
+/* "light_gradient" blade — white top → pale blue bottom
+   Salesforce uses this for alternating sections */
+.sf-section-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #eef5fb 100%);
+}
+
+/* "dark" blade — Deep Navy */
+.sf-section-dark {
+  background-color: var(--brand-panel);
+  color: #ffffff;
+}
+
+/* ─── Salesforce Card System ─────────────────────────────────────────────── */
+/* Salesforce cards: white bg, very subtle shadow, NO hard border by default */
+.sf-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;  /* 12px — SF uses 12px for blades */
+  box-shadow: var(--shadow-card);
+  /* Soft border — almost invisible, just to define shape on white bg */
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transition:
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  will-change: transform, box-shadow;
 }
 
-.sf-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 35px -8px rgba(3, 45, 96, 0.16), 0 8px 16px -4px rgba(3, 45, 96, 0.08);
+.sf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(1, 118, 211, 0.2);  /* subtle blue on hover */
 }
 
-.shadow-card {
-  box-shadow: 0 4px 20px -2px rgba(3, 45, 96, 0.08), 0 2px 6px -1px rgba(3, 45, 96, 0.04);
-}
+/* Legacy compat */
+.sf-card-hover { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease; }
+.sf-card-hover:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
 
-.shadow-card-hover {
-  box-shadow: 0 20px 35px -8px rgba(3, 45, 96, 0.16), 0 8px 16px -4px rgba(3, 45, 96, 0.08);
-}
+/* Shadow utilities */
+.shadow-card { box-shadow: var(--shadow-card); }
+.shadow-card-hover { box-shadow: var(--shadow-card-hover); }
+.shadow-dropdown { box-shadow: var(--shadow-dropdown); }
+.shadow-modal { box-shadow: var(--shadow-modal); }
+.shadow-xs { box-shadow: var(--shadow-xs); }
 
-.shadow-dropdown {
-  box-shadow: 0 16px 36px -4px rgba(3, 45, 96, 0.18), 0 4px 12px -2px rgba(3, 45, 96, 0.08);
-}
-
-.shadow-modal {
-  box-shadow: 0 25px 50px -12px rgba(3, 45, 96, 0.28), 0 10px 20px -6px rgba(3, 45, 96, 0.12);
-}
-
+/* ─── Salesforce Gradient Background (legacy) ────────────────────────────── */
 .sf-gradient-bg {
-  background: linear-gradient(180deg, var(--background) 0%, #eef4fa 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eef5fb 100%);
 }
 
-/* Salesforce Link Standard */
+/* ─── Salesforce Link Standard ───────────────────────────────────────────── */
+/* SF uses bold underline links with arrow icons */
 .sf-link {
   display: inline-flex;
   align-items: center;
@@ -232,34 +246,48 @@ p,
   font-weight: 700;
   color: var(--primary);
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
 }
-
 .sf-link:hover {
   color: var(--primary-hover);
   text-decoration-color: var(--primary-hover);
 }
 
-/* Hide scrollbar for clean tab rails */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
+/* ─── Salesforce Eyebrow Pill ────────────────────────────────────────────── */
+/* Small rounded pill above headlines — e.g. "Salesforce CRM" / "Bidly CRM" */
+.sf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  font-size: 0.75rem;       /* 12px */
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--primary);
+  background-color: var(--brand-soft);
+  border-radius: 9999px;
+  border: 1px solid rgba(1, 118, 211, 0.15);
+  text-transform: none;
 }
 
+/* ─── Salesforce Button Pill (CTA "rounded" variant) ────────────────────── */
+.sf-btn-pill {
+  border-radius: 9999px;
+}
+
+/* ─── Scrollbar Hide (for tab rails & carousels) ─────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* System scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ─── Salesforce Section Divider ─────────────────────────────────────────── */
+/* SF sections often share a subtle bottom border */
+.sf-section-border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}

@@ -129,46 +129,46 @@ const modules = [
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header -->
+    <!-- Hero Header — Salesforce marquee light blade -->
     <section
-      class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80"
+      class="relative pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white sf-section-border"
     >
-      <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
-        <div class="inline-block">
-          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
-            7 MÔ-ĐUN LÕI TOÀN DIỆN
-          </span>
+      <div class="sf-container relative z-10 text-center max-w-4xl mx-auto space-y-6">
+        <div>
+          <span class="sf-eyebrow">7 MÔ-ĐUN LÕI TOÀN DIỆN</span>
         </div>
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
+          class="text-3xl sm:text-4xl lg:text-[2.875rem] xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
         >
           Tính Năng Chuyên Biệt Cho
-          <span class="text-primary block mt-1">
+          <strong class="text-primary block mt-1 font-extrabold">
             Tổng Thầu Xây Dựng Công Nghiệp
-          </span>
+          </strong>
         </h1>
         <p
-          class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
+          class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+          style="color: #54698d;"
         >
           Bao phủ trọn vẹn vòng đời theo đuổi thầu: từ thu thập tín hiệu KCN/FDI đến phê duyệt Go/No-Go, phòng thầu số và bàn giao thi công.
         </p>
 
-        <!-- Quick Jump Links -->
+        <!-- Quick Jump Links — Salesforce context nav pills -->
         <div class="flex flex-wrap justify-center items-center gap-2 pt-2">
           <a
             v-for="mod in modules"
             :key="mod.id"
             :href="`#${mod.id}`"
-            class="px-3.5 py-1.5 text-xs font-bold rounded-full bg-card border border-border/80 text-foreground hover:text-primary hover:border-primary/40 transition-colors"
+            class="px-3.5 py-1.5 text-xs font-bold rounded-full bg-white text-foreground hover:text-primary transition-colors"
+            style="border: 1px solid rgba(0,0,0,0.12); box-shadow: 0 1px 4px rgba(3,45,96,0.06);"
           >
-            {{ mod.title.split('·')[0].trim() }}
+            {{ mod.title.split('·')[0]?.trim() || mod.title }}
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 7 Modules Detail Sections -->
-    <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <!-- 7 Modules Detail Sections — Salesforce light_gradient blade -->
+    <section class="py-16 md:py-24 sf-section-gradient sf-section-border">
       <div class="sf-container space-y-20">
         <div
           v-for="(mod, mIdx) in modules"
@@ -176,12 +176,13 @@ const modules = [
           :id="mod.id"
           :class="[
             'grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-10',
-            mIdx > 0 ? 'border-t border-border/70' : '',
+            mIdx > 0 ? 'pt-12' : '',
           ]"
+          :style="mIdx > 0 ? 'border-top: 1px solid rgba(0,0,0,0.07)' : ''"
         >
           <!-- Left Info Column -->
           <div class="lg:col-span-5 space-y-4">
-            <div class="text-xs font-bold text-primary">
+            <div class="text-xs font-bold uppercase tracking-wider" style="color: #0176d3;">
               {{ mod.eyebrow }}
             </div>
             <h2
@@ -190,7 +191,8 @@ const modules = [
               {{ mod.title }}
             </h2>
             <p
-              class="text-muted-foreground leading-relaxed text-sm sm:text-base font-normal"
+              class="leading-relaxed text-sm sm:text-base"
+              style="color: #54698d;"
             >
               {{ mod.description }}
             </p>
@@ -208,25 +210,32 @@ const modules = [
             </div>
           </div>
 
-          <!-- Right Features Card (Clean Salesforce White Card) -->
+          <!-- Right Features Card — Salesforce white shadow-only card -->
           <div
-            class="lg:col-span-7 sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 p-6 sm:p-8 space-y-5"
+            class="lg:col-span-7 bg-white rounded-xl p-6 sm:p-8 space-y-5 transition-all duration-300 hover:-translate-y-1"
+            style="
+              box-shadow: 0 2px 8px rgba(3,45,96,0.06), 0 4px 20px rgba(3,45,96,0.04);
+              border: 1px solid rgba(0,0,0,0.06);
+            "
           >
-            <div class="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+            <div
+              class="text-[11px] font-bold uppercase tracking-wider"
+              style="color: #54698d;"
+            >
               Tính năng then chốt:
             </div>
             <ul class="space-y-3.5">
               <li
                 v-for="(feat, fIdx) in mod.features"
                 :key="fIdx"
-                class="flex items-start gap-3 text-xs sm:text-sm text-foreground font-medium leading-relaxed"
+                class="flex items-start gap-3 text-xs sm:text-sm font-medium leading-relaxed"
+                style="color: #181818;"
               >
-                <span class="w-5 h-5 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 mt-0.5">
-                  <svg
-                    class="w-3.5 h-3.5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                <span
+                  class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                  style="background: #e8f4fd;"
+                >
+                  <svg class="w-3.5 h-3.5" style="color: #0176d3;" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

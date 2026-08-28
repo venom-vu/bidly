@@ -243,13 +243,6 @@ const currentYear = new Date().getFullYear();
           © {{ currentYear }} Vtechcom. Bidly Preconstruction CRM. Nền tảng
           chuyên biệt cho Tổng thầu Xây dựng Công nghiệp.
         </div>
-        <div class="flex flex-wrap items-center gap-4">
-          <span>Tiếng Việt (Việt Nam)</span>
-          <span>•</span>
-          <span>Tuân thủ Luật PDPA 91/2025/QH15</span>
-          <span>•</span>
-          <span>Cơ sở dữ liệu độc lập 100%</span>
-        </div>
       </div>
     </div>
   </footer>

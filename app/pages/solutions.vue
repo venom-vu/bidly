@@ -95,21 +95,19 @@ const deploymentModels = [
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header -->
-    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80">
-      <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
-        <div class="inline-block">
-          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
-            GIẢI PHÁP CHUYÊN BIỆT THEO PHÂN KHÚC
-          </span>
+    <!-- Hero Header — Salesforce marquee light blade -->
+    <section class="relative pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white sf-section-border">
+      <div class="sf-container relative z-10 text-center max-w-4xl mx-auto space-y-6">
+        <div>
+          <span class="sf-eyebrow">GIẢI PHÁP CHUYÊN BIỆT THEO PHÂN KHÚC</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
+        <h1 class="text-3xl sm:text-4xl lg:text-[2.875rem] xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
           Giải Pháp Bidly Cho Từng
-          <span class="text-primary block mt-1">
+          <strong class="text-primary block mt-1 font-extrabold">
             Phân Khúc Tổng Thầu Xây Dựng
-          </span>
+          </strong>
         </h1>
-        <p class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal">
+        <p class="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style="color: #54698d;">
           Mỗi phân khúc có quy trình đặc thù. Bidly xây dựng 3 mẫu nghiệp vụ chuẩn (EPC, MEP, Thép) giúp triển khai nhanh và hiệu quả tức thì.
         </p>
         <div class="pt-2 flex flex-wrap justify-center items-center gap-4">
@@ -142,8 +140,8 @@ const deploymentModels = [
       </div>
     </section>
 
-    <!-- Segments Details Section -->
-    <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <!-- Segments Details Section — Salesforce light_gradient blade -->
+    <section class="py-16 md:py-24 sf-section-gradient sf-section-border">
       <div class="sf-container space-y-24">
         <div
           v-for="(seg, sIdx) in segments"
@@ -158,7 +156,7 @@ const deploymentModels = [
               <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">{{ seg.title }}</h2>
               <div class="text-xs font-semibold text-muted-foreground mt-1.5 tabular">{{ seg.subtitle }}</div>
             </div>
-            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base font-normal">{{ seg.description }}</p>
+            <p class="leading-relaxed text-sm sm:text-base" style="color: #54698d;">{{ seg.description }}</p>
 
             <!-- Problems -->
             <div class="p-4 sm:p-5 rounded-xl bg-destructive/5 space-y-2.5 border border-destructive/10">

@@ -1,83 +1,97 @@
 <script setup lang="ts">
-import { crmBladesData } from '~/data/crm-blades'
-import SfCard from '~/components/ui/SfCard.vue'
+import { crmBladesData } from "~/data/crm-blades";
+import SfCard from "~/components/ui/SfCard.vue";
 
-const data = crmBladesData.articleCarousels
+const data = crmBladesData.articleCarousels;
 
-const row1Container = ref<HTMLElement | null>(null)
-const row2Container = ref<HTMLElement | null>(null)
+const row1Container = ref<HTMLElement | null>(null);
+const row2Container = ref<HTMLElement | null>(null);
 
-const row1Progress = ref(0)
-const row2Progress = ref(0)
+const row1Progress = ref(0);
+const row2Progress = ref(0);
 
-const updateProgress = (container: HTMLElement | null, targetRef: Ref<number>) => {
-  if (!container) return
-  const maxScroll = container.scrollWidth - container.clientWidth
+const updateProgress = (
+  container: HTMLElement | null,
+  targetRef: Ref<number>
+) => {
+  if (!container) return;
+  const maxScroll = container.scrollWidth - container.clientWidth;
   if (maxScroll <= 0) {
-    targetRef.value = 100
+    targetRef.value = 100;
   } else {
-    targetRef.value = Math.min(100, Math.max(0, (container.scrollLeft / maxScroll) * 100))
+    targetRef.value = Math.min(
+      100,
+      Math.max(0, (container.scrollLeft / maxScroll) * 100)
+    );
   }
-}
+};
 
 const onRow1Scroll = () => {
-  updateProgress(row1Container.value, row1Progress)
-}
+  updateProgress(row1Container.value, row1Progress);
+};
 
 const onRow2Scroll = () => {
-  updateProgress(row2Container.value, row2Progress)
-}
+  updateProgress(row2Container.value, row2Progress);
+};
 
 const scrollNext = (container: HTMLElement | null) => {
-  if (!container) return
-  container.scrollBy({ left: 340, behavior: 'smooth' })
-}
+  if (!container) return;
+  container.scrollBy({ left: 340, behavior: "smooth" });
+};
 
 const scrollPrev = (container: HTMLElement | null) => {
-  if (!container) return
-  container.scrollBy({ left: -340, behavior: 'smooth' })
-}
+  if (!container) return;
+  container.scrollBy({ left: -340, behavior: "smooth" });
+};
 
 onMounted(() => {
-  updateProgress(row1Container.value, row1Progress)
-  updateProgress(row2Container.value, row2Progress)
-})
+  updateProgress(row1Container.value, row1Progress);
+  updateProgress(row2Container.value, row2Progress);
+});
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-background border-b border-border/80 overflow-hidden">
+  <!--
+    Salesforce Article Carousels Blade — theme_variant: "light_gradient"
+    Left title (3 cols) + right horizontal scroll carousel (9 cols)
+    Matches Salesforce "multi-row article" section pattern
+  -->
+  <section class="py-16 md:py-24 sf-section-gradient sf-section-border overflow-hidden">
     <div class="sf-container space-y-16 md:space-y-20">
-      <!-- Main Centered Heading -->
+      <!-- Main Heading -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+        <h2
+          class="text-2xl sm:text-3xl md:text-[2.25rem] font-extrabold text-foreground tracking-tight leading-tight"
+        >
           {{ data.mainHeading }}
         </h2>
       </div>
 
-      <!-- Row 1: Cẩm nang quản trị đấu thầu -->
+      <!-- Row 1 -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Left Title -->
         <div class="lg:col-span-3 space-y-3 pt-2">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
+          <h3
+            class="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight leading-snug"
+          >
             {{ data.row1.leftTitle }}
           </h3>
-          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: #54698d;">
             Bài học thực tiễn nâng cao tỷ lệ trúng thầu cho tổng thầu.
           </p>
         </div>
 
-        <!-- Right Carousel Container -->
+        <!-- Right Carousel -->
         <div class="lg:col-span-9 relative">
-          <!-- Scrollable Cards Row -->
           <div
             ref="row1Container"
-            class="flex items-stretch gap-6 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
+            class="flex items-stretch gap-5 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
             @scroll="onRow1Scroll"
           >
             <div
               v-for="card in data.row1.cards"
               :key="card.id"
-              class="w-[280px] sm:w-[320px] shrink-0 snap-start flex"
+              class="w-[272px] sm:w-[308px] shrink-0 snap-start flex"
             >
               <SfCard
                 :title="card.title"
@@ -90,10 +104,11 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Navigation Arrow Button -->
+          <!-- Nav arrow -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-white text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            style="box-shadow: 0 4px 16px rgba(3,45,96,0.12);"
             aria-label="Xem tiếp"
             @click="scrollNext(row1Container)"
           >
@@ -102,8 +117,11 @@ onMounted(() => {
             </svg>
           </button>
 
-          <!-- Scroll Progress Bar -->
-          <div class="mt-4 w-full max-w-xs bg-secondary h-1.5 rounded-full overflow-hidden">
+          <!-- Scroll progress bar -->
+          <div
+            class="mt-4 w-full max-w-xs h-1.5 rounded-full overflow-hidden"
+            style="background: rgba(3,45,96,0.08);"
+          >
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row1Progress)}%` }"
@@ -112,30 +130,34 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Row 2: Kiến trúc hệ thống & An toàn dữ liệu -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6 border-t border-border/60">
+      <!-- Row 2 -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6"
+        style="border-top: 1px solid rgba(0,0,0,0.07);"
+      >
         <!-- Left Title -->
         <div class="lg:col-span-3 space-y-3 pt-2">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
+          <h3
+            class="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight leading-snug"
+          >
             {{ data.row2.leftTitle }}
           </h3>
-          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: #54698d;">
             Tiêu chuẩn kỹ thuật bảo vệ bí quyết giá thầu doanh nghiệp.
           </p>
         </div>
 
-        <!-- Right Carousel Container -->
+        <!-- Right Carousel -->
         <div class="lg:col-span-9 relative">
-          <!-- Scrollable Cards Row -->
           <div
             ref="row2Container"
-            class="flex items-stretch gap-6 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
+            class="flex items-stretch gap-5 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
             @scroll="onRow2Scroll"
           >
             <div
               v-for="card in data.row2.cards"
               :key="card.id"
-              class="w-[280px] sm:w-[320px] shrink-0 snap-start flex"
+              class="w-[272px] sm:w-[308px] shrink-0 snap-start flex"
             >
               <SfCard
                 :title="card.title"
@@ -148,10 +170,11 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Navigation Arrow Button -->
+          <!-- Nav arrow -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-white text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            style="box-shadow: 0 4px 16px rgba(3,45,96,0.12);"
             aria-label="Xem tiếp"
             @click="scrollNext(row2Container)"
           >
@@ -160,8 +183,11 @@ onMounted(() => {
             </svg>
           </button>
 
-          <!-- Scroll Progress Bar -->
-          <div class="mt-4 w-full max-w-xs bg-secondary h-1.5 rounded-full overflow-hidden">
+          <!-- Scroll progress bar -->
+          <div
+            class="mt-4 w-full max-w-xs h-1.5 rounded-full overflow-hidden"
+            style="background: rgba(3,45,96,0.08);"
+          >
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row2Progress)}%` }"
@@ -172,13 +198,3 @@ onMounted(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-</style>

@@ -50,9 +50,9 @@ const philosophies = [
         <h1
           class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]"
         >
-          {{ pricingData.heading.split(':')[0] }}
+          {{ pricingData.heading.split(':')[0] || pricingData.heading }}
           <span class="text-primary block mt-1">
-            {{ pricingData.heading.includes(':') ? pricingData.heading.split(':')[1].trim() : 'Định Giá Theo Doanh Nghiệp' }}
+            {{ pricingData.heading.includes(':') ? (pricingData.heading.split(':')[1]?.trim() || 'Định Giá Theo Doanh Nghiệp') : 'Định Giá Theo Doanh Nghiệp' }}
           </span>
         </h1>
 
@@ -151,27 +151,26 @@ const philosophies = [
                 : 'shadow-card bg-card border-border/70 hover:shadow-card-hover hover:border-primary/40 hover:-translate-y-1'
             ]"
           >
-            <!-- Popular Badge -->
-            <div
-              v-if="tier.popular"
-              class="absolute top-4 right-4"
-            >
-              <span
-                class="bg-primary text-primary-foreground text-[10.5px] font-extrabold uppercase px-3 py-1 rounded-full tracking-wider shadow-sm select-none"
-              >
-                Khuyến nghị
-              </span>
-            </div>
-
             <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
               <div class="space-y-6">
                 <div>
-                  <div
-                    v-if="tier.badge"
-                    class="text-[11px] font-bold uppercase tracking-widest text-primary mb-1.5"
-                  >
-                    {{ tier.badge }}
+                  <div class="flex items-center justify-between gap-2 min-h-[28px] mb-2">
+                    <span
+                      v-if="tier.badge"
+                      class="text-[11px] font-bold uppercase tracking-widest text-primary"
+                    >
+                      {{ tier.badge }}
+                    </span>
+                    <span v-else />
+
+                    <span
+                      v-if="tier.popular"
+                      class="bg-primary text-primary-foreground text-[10.5px] font-extrabold uppercase px-3 py-1 rounded-full tracking-wider shadow-xs select-none ml-auto shrink-0"
+                    >
+                      Khuyến nghị
+                    </span>
                   </div>
+
                   <h3 class="text-2xl font-extrabold text-foreground tracking-tight">
                     {{ tier.name }}
                   </h3>

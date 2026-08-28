@@ -6,34 +6,39 @@ const businessScale = crmBladesData.businessScale;
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-background border-t border-border/80">
+  <!--
+    Salesforce Scale / Solutions Blade — theme_variant: "light_gradient"
+    Asymmetric layout: 4-col left text + 8-col 2 cards right
+  -->
+  <section class="py-16 md:py-24 sf-section-gradient sf-section-border">
     <div class="sf-container space-y-12 md:space-y-16">
       <!-- Main Centered Top Headline -->
       <div class="text-center max-w-4xl mx-auto space-y-3">
         <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
+          class="text-2xl sm:text-3xl md:text-[2.25rem] font-extrabold text-foreground tracking-tight leading-tight"
         >
           {{ businessScale.mainHeading }}
         </h2>
       </div>
 
-      <!-- Asymmetric Section: Left Title + Right 2 Cards -->
+      <!-- Asymmetric: Left title (4 cols) + Right 2 cards (8 cols) -->
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto"
       >
-        <!-- Left Title -->
+        <!-- Left Title Block -->
         <div class="lg:col-span-4 space-y-4">
           <h3
             class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug"
           >
             {{ businessScale.leftTitle }}
           </h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">
-            Mỗi phân khúc có chu kỳ và đặc thù thầu riêng biệt. Bidly cung cấp các mẫu nghiệp vụ cấu hình sẵn sàng vận hành ngay.
+          <p class="text-sm leading-relaxed" style="color: #54698d">
+            Mỗi phân khúc có chu kỳ và đặc thù thầu riêng biệt. Bidly cung cấp
+            các mẫu nghiệp vụ cấu hình sẵn sàng vận hành ngay.
           </p>
         </div>
 
-        <!-- Right 2 Cards Side-by-Side -->
+        <!-- Right 2 Cards — Salesforce resource card style -->
         <div
           class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 items-stretch"
         >
@@ -51,11 +56,12 @@ const businessScale = crmBladesData.businessScale;
         </div>
       </div>
 
-      <!-- Bottom Centered Action Button -->
+      <!-- Bottom CTA -->
       <div class="text-center pt-2">
         <NuxtLink
           :to="businessScale.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-white font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all active:scale-[0.98] cursor-pointer"
+          style="box-shadow: 0 2px 8px rgba(1, 118, 211, 0.25)"
         >
           {{ businessScale.cta.label }}
         </NuxtLink>
@@ -63,4 +69,3 @@ const businessScale = crmBladesData.businessScale;
     </div>
   </section>
 </template>
-

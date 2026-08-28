@@ -61,6 +61,16 @@ export interface BladeFeatureZ {
   imageUrl: string;
 }
 
+export interface BladeContactPillar {
+  id: string;
+  title: string;
+  description: string;
+  ctaLabel: string;
+  ctaUrl: string;
+  isPrimary: boolean;
+  badge?: string;
+}
+
 export const crmBladesData = {
   // Blade 1: Hero Marquee
   hero: {
@@ -309,7 +319,8 @@ export const crmBladesData = {
         },
         {
           id: "art-3",
-          title: "Kiểm soát chuỗi phiên bản hồ sơ thầu: Loại bỏ rủi ro nhầm file",
+          title:
+            "Kiểm soát chuỗi phiên bản hồ sơ thầu: Loại bỏ rủi ro nhầm file",
           borderColor: "var(--stage-s4, #0284C7)",
           description:
             "Cơ chế bất biến duy nhất 1 bản final kèm dấu thời gian và bằng chứng nộp ở máy chủ.",
@@ -332,7 +343,8 @@ export const crmBladesData = {
       cards: [
         {
           id: "art-5",
-          title: "Tại sao dữ liệu thầu cần cô lập trên Private Cloud / On-premise?",
+          title:
+            "Tại sao dữ liệu thầu cần cô lập trên Private Cloud / On-premise?",
           borderColor: "var(--stage-s8, #04844B)",
           description:
             "Bí mật giá thầu là sống còn. Phân tích sự khác biệt giữa SaaS dùng chung và cơ sở dữ liệu riêng biệt.",
@@ -410,6 +422,77 @@ export const crmBladesData = {
     ] as BladeResourceCard[],
   },
 
+  // Blade: Product Portfolio (6 Core Modules)
+  productPortfolio: {
+    heading: "6 Mô-đun Lõi Trong Hệ Sinh Thái Bidly Preconstruction CRM",
+    cards: [
+      {
+        id: "mod-1",
+        title: "Project Inbox & Dedup",
+        borderColor: "var(--stage-s0, #64748B)",
+        badge: "GIAI ĐOẠN S0",
+        description:
+          "Tập trung tín hiệu dự án KCN/FDI, tự động nhận diện chống trùng lặp và gán người phụ trách.",
+        linkText: "Xem Project Inbox",
+        linkUrl: "/features#project-intel",
+      },
+      {
+        id: "mod-2",
+        title: "Stakeholder Map Dự Án",
+        borderColor: "var(--stage-s1, #475569)",
+        badge: "GIAI ĐOẠN S1",
+        description:
+          "Bản đồ quan hệ 4 vai trò (Decision Maker, Influencer, Champion, Gatekeeper) theo từng cơ hội.",
+        linkText: "Xem Stakeholder Map",
+        linkUrl: "/features#stakeholder",
+      },
+      {
+        id: "mod-3",
+        title: "Scorecard Go/No-Go S2",
+        borderColor: "var(--stage-s2, #7F27FF)",
+        badge: "CỔNG CỨNG S2",
+        description:
+          "Chấm điểm 6 tiêu chí trọng số 0-100, bắt buộc phê duyệt có thẩm quyền và lý do lưu vết máy chủ.",
+        linkText: "Xem Scorecard S2",
+        linkUrl: "/features#gonogo",
+      },
+      {
+        id: "mod-4",
+        title: "Tender Workspace S4",
+        borderColor: "var(--stage-s4, #0284C7)",
+        badge: "CỔNG CỨNG S4",
+        description:
+          "Phòng thầu số điều phối 5 phòng ban, theo dõi hạn chót 7-14-30 ngày và khóa 1 bản final duy nhất.",
+        linkText: "Khám phá Tender Workspace",
+        linkUrl: "/features#tender",
+      },
+      {
+        id: "mod-5",
+        title: "Capability Library",
+        borderColor: "var(--stage-s6, #4F46E5)",
+        badge: "TRI THỨC TỔ CHỨC",
+        description:
+          "Thư viện dự án mẫu (tonnage, diện tích), hồ sơ chuyên gia, chứng chỉ có cảnh báo hết hạn.",
+        linkText: "Xem Capability Library",
+        linkUrl: "/features#capability",
+      },
+      {
+        id: "mod-6",
+        title: "Gói Bàn Giao Handover S8",
+        borderColor: "var(--stage-s8, #04844B)",
+        badge: "CỔNG CỨNG S8",
+        description:
+          "Chuẩn hóa dữ liệu cam kết thương mại, giả định và rủi ro chuyển giao trọn vẹn sang ERP thi công.",
+        linkText: "Xem Gói bàn giao S8",
+        linkUrl: "/features#dashboard",
+      },
+    ] as BladeProductCard[],
+    cta: {
+      label: "Khám phá toàn bộ tính năng",
+      url: "/features",
+    },
+  },
+
   // Blade 10: 3 Action Pillars
   contactPillars: {
     heading: "Sẵn sàng chuẩn hóa quy trình đấu thầu cùng Vtechcom",
@@ -418,6 +501,7 @@ export const crmBladesData = {
     pillars: [
       {
         id: "pil-1",
+        badge: "TRỰC QUAN 45 PHÚT",
         title: "Đặt lịch Demo 45 phút",
         description:
           "Trải nghiệm trực quan trên quy trình thực tế theo phân khúc (EPC, MEP, Kết cấu thép), giải quyết đúng bài toán của bạn.",
@@ -427,6 +511,7 @@ export const crmBladesData = {
       },
       {
         id: "pil-2",
+        badge: "KHẤU TRỪ 100%",
         title: "Design Partner Pilot",
         description:
           "Triển khai thí điểm 8-10 tuần trên dữ liệu thật, kiểm chứng mức độ ứng dụng và hiệu quả trước khi ký chính thức.",
@@ -436,6 +521,7 @@ export const crmBladesData = {
       },
       {
         id: "pil-3",
+        badge: "BẢO MẬT DỮ LIỆU",
         title: "Tư vấn Kỹ thuật & Bảo mật",
         description:
           "Tư vấn chi tiết phương án On-premise, Private Cloud, bảo mật cơ sở dữ liệu và kết nối API với hệ thống ERP sẵn có.",
@@ -443,6 +529,6 @@ export const crmBladesData = {
         ctaUrl: "#demo",
         isPrimary: false,
       },
-    ],
+    ] as BladeContactPillar[],
   },
 };

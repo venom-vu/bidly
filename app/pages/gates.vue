@@ -163,21 +163,19 @@ const comparisonRows = [
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header -->
-    <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-card to-background border-b border-border/80">
-      <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
-        <div class="inline-block">
-          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
-            KIỂM SOÁT TẦNG MÁY CHỦ · HARD GATES
-          </span>
+    <!-- Hero Header — Salesforce marquee light blade -->
+    <section class="relative pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white sf-section-border">
+      <div class="sf-container relative z-10 text-center max-w-4xl mx-auto space-y-6">
+        <div>
+          <span class="sf-eyebrow">KIỂM SOÁT TẦNG MÁY CHỦ · HARD GATES</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
+        <h1 class="text-3xl sm:text-4xl lg:text-[2.875rem] xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
           5 Cổng Cứng Kiểm Soát
           <span class="text-primary block mt-1">
             Bảo Vệ Toàn Vẹn Dữ Liệu Thầu
           </span>
         </h1>
-        <p class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal">
+        <p class="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto" style="color: #54698d;">
           Không kiểm tra hời hợt ở giao diện, 5 cổng cứng của Bidly được thực thi nghiêm ngặt tại máy chủ trong Database Transaction. Loại bỏ hoàn toàn rủi ro lách quy trình, nhầm phiên bản hồ sơ hay lãng phí chi phí làm thầu.
         </p>
 
@@ -201,7 +199,7 @@ const comparisonRows = [
         </div>
 
         <!-- Trust Badges Strip -->
-        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-2xl mx-auto">
+        <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold max-w-2xl mx-auto" style="border-top: 1px solid rgba(0,0,0,0.08); color: #54698d;">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
             <span>5 Cổng cứng (S2, S4, S5, S7, S8)</span>
@@ -234,15 +232,15 @@ const comparisonRows = [
             class="sf-card group bg-card rounded-xl p-6 sm:p-7 border border-border/70 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3 flex flex-col justify-between"
           >
             <div class="space-y-3">
-              <div class="w-10 h-10 rounded-lg bg-brand-soft text-primary flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: #e8f4fd;">
+                <svg class="w-5 h-5" style="color: #0176d3;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="pillar.icon" />
                 </svg>
               </div>
               <h3 class="text-base font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
                 {{ pillar.title }}
               </h3>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+              <p class="text-xs sm:text-sm leading-relaxed" style="color: #54698d;">
                 {{ pillar.desc }}
               </p>
             </div>
