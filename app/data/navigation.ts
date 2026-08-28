@@ -1,154 +1,197 @@
 export interface NavMenuItem {
-  label: string
-  url: string
-  description?: string
-  eyebrow?: string
-  badge?: string
+  label: string;
+  url: string;
+  description?: string;
+  eyebrow?: string;
+  badge?: string;
 }
 
 export interface NavMenuCategory {
-  categoryTitle?: string
-  description?: string
-  hasSeparator?: boolean
-  items: NavMenuItem[]
+  categoryTitle?: string;
+  description?: string;
+  hasSeparator?: boolean;
+  items: NavMenuItem[];
 }
 
 export interface NavMenuGroup {
-  title: string
-  url?: string
-  widthClass?: string
-  categories?: NavMenuCategory[]
+  title: string;
+  url?: string;
+  widthClass?: string;
+  categories?: NavMenuCategory[];
 }
 
 export const navigationData = {
   propertyTitle: {
-    label: 'CRM',
-    url: '/'
+    label: "Bidly Preconstruction CRM",
+    url: "/",
   },
   utilityNavigation: {
     tourCta: {
-      label: 'Khám phá tour',
-      url: '#demo-modal',
-      variant: 'secondary' as const
+      label: "Bản đồ nghiệp vụ",
+      url: "/business-map",
+      variant: "secondary" as const,
     },
     freeTrialCta: {
-      label: 'Bắt đầu miễn phí',
-      url: '/crm/free-trial',
-      variant: 'primary' as const
-    }
+      label: "Đặt lịch Demo",
+      url: "#demo",
+      variant: "primary" as const,
+    },
   },
   mainMenu: [
     {
-      title: 'Tổng quan',
-      url: '/'
-    },
-    {
-      title: 'CRM là gì?',
-      widthClass: 'w-[780px]',
+      title: "Định vị & Bản đồ",
+      widthClass: "w-[680px]",
       categories: [
         {
-          categoryTitle: 'Bắt đầu tại đây',
+          categoryTitle: "Khái niệm Preconstruction",
           hasSeparator: true,
           items: [
             {
-              label: 'CRM là gì?',
-              url: '/crm/what-is-crm',
-              description: 'Xây dựng mối quan hệ vững chắc bằng cách kết nối toàn bộ đội ngũ quanh một góc nhìn khách hàng 360 độ.'
-            }
-          ]
+              label: "Preconstruction CRM là gì?",
+              url: "/crm/what-is-crm",
+              description: "Khác biệt với CRM bán lẻ & chuỗi 6 cấp thực thể.",
+            },
+            {
+              label: "Vì sao chọn Bidly?",
+              url: "/why-bidly",
+              description: "So sánh 5 nhóm giải pháp & 6 chỉ số đo lường ROI.",
+            },
+            {
+              label: "Bản đồ nghiệp vụ",
+              url: "/business-map",
+              description: "9 giai đoạn pipeline & 5 cổng kiểm soát cứng.",
+              badge: "TRỰC QUAN",
+            },
+          ],
         },
         {
-          categoryTitle: 'Nền tảng & Kỹ thuật',
-          hasSeparator: true,
-          items: [
-            { label: 'Phần mềm CRM', url: '/crm/software', description: 'Nền tảng AI CRM số 1 thế giới' },
-            { label: 'Quy trình Triển khai', url: '/crm/crm-implementation', description: 'Lộ trình 5 bước chuẩn quốc tế' },
-            { label: 'Tính năng CRM', url: '/crm/features', description: 'Trọn bộ công cụ bán hàng & CSKH' }
-          ]
-        },
-        {
-          categoryTitle: 'Thực tiễn & Hiệu quả',
+          categoryTitle: "Cơ chế & Chốt chặn Lõi",
           hasSeparator: false,
           items: [
-            { label: 'Thực tiễn Tốt nhất', url: '/crm/best-practices', description: 'Bí quyết tối ưu hóa tỷ lệ chuyển đổi' },
-            { label: 'Lợi ích của CRM', url: '/crm/benefits-of-crm', description: '10 lợi ích cốt lõi cho doanh nghiệp' },
-            { label: 'Câu chuyện Khách hàng', url: '/crm/examples', description: 'Case study thực tế từ các thương hiệu' }
-          ]
-        }
-      ]
+            {
+              label: "5 Cổng kiểm soát (Stage Gates)",
+              url: "/features#pipeline",
+              description: "Kiểm soát chuyển bước & lịch sử bất biến.",
+            },
+            {
+              label: "Scorecard Go/No-Go (S2)",
+              url: "/features#gonogo",
+              description: "Chấm điểm 6 tiêu chí & phê duyệt định lượng.",
+            },
+            {
+              label: "Tender Workspace (S4)",
+              url: "/features#tender",
+              description: "Phối hợp 5 phòng ban & chốt 1 bản nộp final.",
+            },
+          ],
+        },
+      ],
     },
     {
-      title: 'Giải pháp',
-      widthClass: 'w-[960px]',
+      title: "Tính năng & Mô-đun",
+      widthClass: "w-[740px]",
       categories: [
         {
-          categoryTitle: 'Quy mô Doanh nghiệp',
+          categoryTitle: "Sàng lọc cơ hội (M1 - M3)",
           hasSeparator: true,
           items: [
-            { label: 'Doanh nghiệp Nhỏ (SMB)', url: '/crm/solutions/small-business', description: 'Bộ Starter Suite nhanh gọn, dễ dùng' },
-            { label: 'Doanh nghiệp Khởi nghiệp (Startup)', url: '/crm/solutions/startup-crm', description: 'Tối ưu chi phí cho công ty mới' },
-            { label: 'Tập đoàn & Doanh nghiệp Lớn', url: '/crm/solutions/enterprise', description: 'Bảo mật cấp cao & mở rộng quy mô' }
-          ]
+            {
+              label: "M1 · Tín hiệu dự án",
+              url: "/features#project-intel",
+              description: "Thu thập tín hiệu FDI/KCN & tự động lọc trùng.",
+            },
+            {
+              label: "M2 · Pipeline & Go/No-Go",
+              url: "/features#gonogo",
+              description: "Quản lý 9 giai đoạn & chấm điểm dừng thầu sớm.",
+            },
+            {
+              label: "M3 · Stakeholder Map",
+              url: "/features#stakeholder",
+              description: "Bản đồ Decision Maker, Influencer & Champion.",
+            },
+          ],
         },
         {
-          categoryTitle: 'Theo Ngành nghề',
-          hasSeparator: true,
-          items: [
-            { label: 'Bất động sản & Xây dựng', url: '/crm/solutions/real-estate-crm', description: 'Quản lý dự án, giỏ hàng & đấu thầu' },
-            { label: 'Doanh nghiệp B2B', url: '/crm/solutions/b2b-crm', description: 'Chu kỳ bán hàng dài & tài khoản lớn' }
-          ]
-        },
-        {
-          categoryTitle: 'Năng lực Cốt lõi',
-          hasSeparator: true,
-          items: [
-            { label: 'AI CRM (Trí tuệ nhân tạo)', url: '/crm/solutions/ai-crm', description: 'Trợ lý AI tự hành 24/7' },
-            { label: 'Tự động hóa Quy trình', url: '/crm/solutions/automation', description: 'Cắt giảm 80% tác vụ thủ công' },
-            { label: 'Social CRM & Đa kênh', url: '/crm/solutions/social-crm', description: 'Hợp nhất Zalo OA, Chat, Email' },
-            { label: 'Tùy biến Quy trình (Custom)', url: '/crm/solutions/custom-crm', description: 'Hard Gates & linh hoạt theo nhu cầu' }
-          ]
-        },
-        {
-          categoryTitle: 'Mở rộng & Báo cáo',
+          categoryTitle: "Đấu thầu & Vận hành (M4 - M7)",
           hasSeparator: false,
           items: [
-            { label: 'Mobile CRM (Di động)', url: '/crm/solutions/mobile-crm', description: 'Làm việc linh hoạt trên iOS & Android' },
-            { label: 'Cloud CRM (Đám mây)', url: '/crm/solutions/cloud-crm', description: 'Truy cập dữ liệu an toàn mọi nơi' },
-            { label: 'Báo cáo & Phân tích', url: '/crm/solutions/report', description: 'Dashboard trực quan theo thời gian thực' },
-            { label: 'Quản lý Dự án & Bàn giao', url: '/crm/solutions/project-management', description: 'Theo dõi tiến độ & gói bàn giao S8' }
-          ]
-        }
-      ]
+            {
+              label: "M4 · Phòng thầu số (Tender Room)",
+              url: "/features#tender",
+              description: "Checklist liên phòng & kiểm soát hạn nộp thầu.",
+            },
+            {
+              label: "M5 · Thư viện năng lực",
+              url: "/features#capability",
+              description: "Hồ sơ dự án tiêu biểu & chứng chỉ chuyên gia.",
+            },
+            {
+              label: "M6 · Control Tower & Bàn giao",
+              url: "/features#dashboard",
+              description: "Heatmap tiến độ 7-30 ngày & gói bàn giao S8.",
+            },
+            {
+              label: "M7 · Nền tảng & Bảo mật",
+              url: "/features#platform-sec",
+              description: "Triển khai Private Cloud / On-premise cô lập 100%.",
+            },
+          ],
+        },
+      ],
     },
     {
-      title: 'Tài nguyên',
-      widthClass: 'w-[680px]',
+      title: "Giải pháp ngành",
+      widthClass: "w-[680px]",
       categories: [
         {
-          categoryTitle: 'Tài nguyên & Hướng dẫn',
+          categoryTitle: "Mẫu nghiệp vụ theo ngành",
           hasSeparator: true,
           items: [
-            { label: 'CRM Miễn phí', url: '/crm/resources/free-crm', description: 'Khám phá các công cụ và tiện ích miễn phí' },
-            { label: 'CRM Tốt nhất', url: '/crm/resources/best-crm', description: 'Tiêu chí đánh giá hệ thống CRM hàng đầu' },
-            { label: 'Chiến lược CRM Toàn diện', url: '/crm/resources/strategy', description: 'Xây dựng chiến lược lấy khách hàng làm trọng tâm' },
-            { label: 'Tích hợp Hệ thống (API)', url: '/crm/resources/crm-integration', description: 'Kết nối API, ERP & phần mềm kế toán' }
-          ]
+            {
+              label: "Tổng thầu EPC & Công nghiệp",
+              url: "/solutions#epc",
+              description: "Dành cho tổng thầu quy mô lớn nhiều gói thầu.",
+            },
+            {
+              label: "Nhà thầu Cơ điện MEP",
+              url: "/solutions#mep",
+              description: "Quản lý đa gói thầu song song & tiến độ gấp.",
+            },
+            {
+              label: "Kết cấu thép tiền chế",
+              url: "/solutions#steel",
+              description: "Báo giá nhanh, quản lý tonnage & RFQ vật tư.",
+            },
+          ],
         },
         {
-          categoryTitle: 'Chuyên sâu & Khám phá',
+          categoryTitle: "Mô hình triển khai",
           hasSeparator: false,
           items: [
-            { label: 'Cơ sở Dữ liệu CRM', url: '/crm/resources/database', description: 'Quản trị dữ liệu lớn tập trung an toàn' },
-            { label: 'Generative CRM (AI Tạo sinh)', url: '/crm/resources/generative-crm', description: 'Tạo nội dung và hỗ trợ tự động bằng AI' },
-            { label: 'Chứng chỉ & Đào tạo', url: '/crm/resources/certification', description: 'Nâng cao kỹ năng quản trị hệ thống' },
-            { label: 'Dùng thử 30 Ngày Miễn phí', url: '/crm/free-trial', description: 'Trải nghiệm trọn vẹn ngay hôm nay' }
-          ]
-        }
-      ]
+            {
+              label: "Private Cloud Managed",
+              url: "/crm/pricing#professional",
+              description: "Đám mây riêng biệt do Vtechcom vận hành.",
+            },
+            {
+              label: "Enterprise On-premise",
+              url: "/crm/pricing#enterprise",
+              description: "Cài đặt trên máy chủ nội bộ doanh nghiệp.",
+            },
+            {
+              label: "Design Partner Pilot",
+              url: "/crm/pricing#pilot",
+              description: "Gói thí điểm 8-10 tuần hỗ trợ chuyên sâu.",
+              badge: "KHUYẾN NGHỊ",
+            },
+          ],
+        },
+      ],
     },
     {
-      title: 'Bảng giá',
-      url: '/crm/pricing'
-    }
-  ] as NavMenuGroup[]
-}
+      title: "Bảng giá",
+      url: "/crm/pricing",
+    },
+  ] as NavMenuGroup[],
+};

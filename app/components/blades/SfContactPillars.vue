@@ -1,38 +1,52 @@
 <script setup lang="ts">
-import { crmBladesData } from '~/data/crm-blades'
-import SfButton from '~/components/ui/SfButton.vue'
+import { crmBladesData } from "~/data/crm-blades";
+import SfBadge from "~/components/ui/SfBadge.vue";
+import SfButton from "~/components/ui/SfButton.vue";
+import { useDemoModal } from "~/composables/useDemoModal";
 
-const contactUs = crmBladesData.contactUs
+const contactPillars = computed(() => crmBladesData.contactPillars);
+const { openModal } = useDemoModal();
+
+const handleCtaClick = (pillar: { ctaUrl: string; title: string }) => {
+  if (pillar.ctaUrl === "#demo") {
+    openModal(`Đăng ký: ${pillar.title}`);
+  }
+};
 </script>
 
 <template>
   <section class="py-16 md:py-24 sf-gradient-bg border-t border-border">
     <div class="sf-container text-center space-y-12">
       <div class="max-w-3xl mx-auto space-y-3">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
-          {{ contactUs.heading }}
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
+        >
+          {{ contactPillars.heading }}
         </h2>
+        <p
+          v-if="contactPillars.subheading"
+          class="text-sm sm:text-base text-muted-foreground"
+        >
+          {{ contactPillars.subheading }}
+        </p>
       </div>
 
       <!-- 3 Pillars Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto"
+      >
         <div
-          v-for="pillar in contactUs.pillars"
+          v-for="pillar in contactPillars.pillars"
           :key="pillar.id"
-          class="sf-card-hover bg-card p-8 rounded-3xl border border-border shadow-md flex flex-col justify-between space-y-6 text-left"
+          class="sf-card group bg-card p-8 rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between space-y-6 text-left"
+          :class="pillar.isPrimary ? 'ring-2 ring-primary shadow-lg' : ''"
         >
           <div class="space-y-4">
-            <!-- Icon -->
-            <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-text flex items-center justify-center shadow-inner">
-              <svg v-if="pillar.icon === 'trial'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <svg v-else-if="pillar.icon === 'expert'" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
+            <!-- Badge -->
+            <div v-if="pillar.badge" class="flex items-center justify-between">
+              <SfBadge :variant="pillar.isPrimary ? 'green' : 'gray'" size="sm">
+                {{ pillar.badge }}
+              </SfBadge>
             </div>
 
             <h3 class="text-xl font-bold text-foreground">
@@ -44,14 +58,24 @@ const contactUs = crmBladesData.contactUs
             </p>
           </div>
 
-          <div class="pt-4">
+          <div class="pt-4 border-t border-border">
             <SfButton
-              variant="primary"
+              v-if="pillar.ctaUrl === '#demo'"
+              :variant="pillar.isPrimary ? 'primary' : 'secondary'"
+              size="md"
+              block
+              @click="handleCtaClick(pillar)"
+            >
+              {{ pillar.ctaLabel }}
+            </SfButton>
+            <SfButton
+              v-else
+              :variant="pillar.isPrimary ? 'primary' : 'secondary'"
               size="md"
               :to="pillar.ctaUrl"
               block
             >
-              {{ pillar.ctaText }}
+              {{ pillar.ctaLabel }}
             </SfButton>
           </div>
         </div>

@@ -13,89 +13,100 @@ export interface PricingTier {
 }
 
 export const pricingData = {
-  heading: 'Chọn gói giải pháp CRM phù hợp nhất với doanh nghiệp của bạn',
-  subheading: 'Khởi đầu nhanh chóng, dễ dàng mở rộng và tối ưu hóa chi phí với các gói cước linh hoạt từ bidly.',
+  heading: 'Chọn mô hình triển khai phù hợp với quy mô và yêu cầu bảo mật của bạn',
+  subheading: 'Bidly thu phí theo doanh nghiệp (Instance) và mức độ hạ tầng, không tính theo số user. Không giới hạn số lượng tài khoản xem và phê duyệt.',
   tiers: [
     {
-      id: 'free-suite',
-      name: 'Free Suite',
-      badge: 'MIỄN PHÍ TRỌN ĐỜI',
-      price: '0 USD',
-      period: 'người dùng / tháng',
-      description: 'Dành cho cá nhân hoặc đội ngũ khởi nghiệp cần quản lý danh bạ khách hàng cơ bản.',
+      id: 'pilot',
+      name: 'Design Partner Pilot',
+      badge: 'KHỞI ĐẦU ĐƯỢC KHUYẾN NGHỊ',
+      price: '35 - 60 triệu',
+      period: 'trọn gói 8-10 tuần',
+      description: 'Triển khai có hỗ trợ đầy đủ trên dữ liệu thật của bạn. Kiểm chứng adoption và đo KPI trước khi cam kết dài hạn.',
       popular: false,
       features: [
-        'Quản lý tối đa 500 khách hàng tiềm năng',
-        'Lưu trữ lịch sử tương tác và ghi chú',
-        'Bảng theo dõi giao dịch dạng Kanban cơ bản',
-        'Ứng dụng di động iOS & Android',
-        'Hỗ trợ cộng đồng trực tuyến'
+        '1 business unit, 10-20 người tham gia',
+        'Import dữ liệu từ Excel có hỗ trợ kỹ thuật',
+        'Cấu hình quy trình và scorecard theo ngành',
+        'Đào tạo và onboard từng phòng ban',
+        'Đo lường KPI adoption sau 6-8 tuần',
+        'Phí pilot khấu trừ 100% khi ký hợp đồng năm',
+        'Đồng hành trực tiếp từ đội ngũ chuyên gia Vtechcom'
       ],
-      ctaLabel: 'Bắt đầu miễn phí',
-      ctaUrl: '/crm/free-trial',
+      ctaLabel: 'Tìm hiểu gói Pilot',
+      ctaUrl: '#demo',
       ctaVariant: 'secondary'
     },
     {
-      id: 'starter-suite',
-      name: 'Starter Suite',
-      badge: 'PHỔ BIẾN NHẤT CHO SMB',
-      price: '25 USD',
-      period: 'người dùng / tháng (thanh toán hàng năm)',
-      description: 'Giải pháp tất-cả-trong-một cho doanh nghiệp vừa và nhỏ cần kết hợp Bán hàng, Tiếp thị & CSKH.',
+      id: 'essential',
+      name: 'Essential SaaS',
+      badge: 'PHÙ HỢP CHO NHÀ THẦU VỪA',
+      price: '7 - 12 triệu',
+      period: 'tháng + 30-60 triệu onboarding',
+      description: 'Mô-đun lõi trên nền Private Cloud chuẩn. Cho nhà thầu MEP, kết cấu thép và tổng thầu vừa muốn triển khai nhanh.',
       popular: true,
       features: [
-        'Toàn bộ tính năng của gói Free',
-        'Tích hợp Email Marketing tự động',
-        'Chấm điểm cơ hội bán hàng (Lead Scoring)',
-        'Quản lý Ticket chăm sóc khách hàng đa kênh',
-        'Báo cáo doanh số và hiệu suất kinh doanh trực quan',
-        'Tích hợp sẵn AI hỗ trợ soạn thảo & tóm tắt',
-        'Hỗ trợ kỹ thuật tiêu chuẩn 24/5'
+        'Toàn bộ mô-đun M1-M6 lõi',
+        'Pipeline 9 giai đoạn với 5 cổng cứng chuẩn',
+        'Scorecard Go/No-Go cấu hình trọng số',
+        'Tender Workspace kiểm soát phiên bản',
+        'Capability Library M5 quản lý năng lực',
+        'Dashboard forecast và phân tích Win/Loss',
+        'Audit log và phân quyền RBAC ở máy chủ',
+        'Hỗ trợ kỹ thuật tiêu chuẩn'
       ],
-      ctaLabel: 'Dùng thử 30 ngày',
-      ctaUrl: '/crm/free-trial',
+      ctaLabel: 'Đặt lịch Demo',
+      ctaUrl: '#demo',
       ctaVariant: 'primary'
     },
     {
-      id: 'pro-suite',
-      name: 'Pro Suite',
-      badge: 'TĂNG TRƯỞNG MẠNH MẼ',
-      price: '100 USD',
-      period: 'người dùng / tháng (thanh toán hàng năm)',
-      description: 'Dành cho các doanh nghiệp đang mở rộng quy mô cần tự động hóa nâng cao và dự báo AI.',
+      id: 'professional',
+      name: 'Professional Private',
+      badge: 'KHUYẾN NGHỊ CHO TỔNG THẦU LỚN',
+      price: '15 - 30 triệu',
+      period: 'tháng + 80-150 triệu onboarding',
+      description: 'Database và backup riêng biệt, Vtechcom vận hành. Phù hợp với tổng thầu quan tâm bảo mật dữ liệu giá thầu tuyệt đối.',
       popular: false,
       features: [
-        'Toàn bộ tính năng của gói Starter',
-        'Tự động hóa quy trình nghiệp vụ phức tạp (Workflows)',
-        'Dự báo doanh thu thông minh với AI',
-        'Phân quyền người dùng và kiểm soát truy cập nâng cao',
-        'Cổng thanh toán và báo giá trực tuyến',
-        'Kết nối không giới hạn qua REST API',
-        'Hỗ trợ kỹ thuật ưu tiên 24/7'
+        'Toàn bộ tính năng gói Essential',
+        'Database PostgreSQL riêng biệt, cô lập 100%',
+        'Backup định kỳ có kiểm thử restore',
+        'Audit log nâng cao (xem, sửa, tải, xuất)',
+        'Workflow và mẫu thông báo tùy chỉnh',
+        'Quyền hỗ trợ Vtechcom có thời hạn và audit',
+        'Cam kết SLA phản hồi ưu tiên',
+        'Hỗ trợ import và di trú dữ liệu lịch sử'
       ],
-      ctaLabel: 'Dùng thử gói Pro',
-      ctaUrl: '/crm/free-trial',
+      ctaLabel: 'Đặt lịch tư vấn',
+      ctaUrl: '#demo',
       ctaVariant: 'secondary'
     }
   ] as PricingTier[],
 
+  enterpriseTier: {
+    heading: 'Enterprise : On-premise hoặc Customer Cloud',
+    description: 'Dành cho tập đoàn hoặc tổng thầu có chính sách IT nghiêm ngặt. Chạy trực tiếp trên hạ tầng riêng của khách hàng, tích hợp SSO doanh nghiệp, SLA và chính sách vận hành riêng. Giá theo thỏa thuận triển khai.',
+    ctaLabel: 'Liên hệ tư vấn Enterprise',
+    ctaUrl: '#demo'
+  },
+
   successPlans: {
-    heading: 'Đạt được mục tiêu nhanh hơn với các Kế hoạch Đồng hành (Success Plans)',
+    heading: 'Chương trình Design Partner : Đồng hành từ ngày đầu',
     plans: [
       {
-        name: 'Standard Success',
-        description: 'Tài liệu hướng dẫn trực tuyến, bài học Trailhead và hỗ trợ kỹ thuật tiêu chuẩn trong giờ hành chính.',
-        included: 'Đã bao gồm trong mọi giấy phép sản phẩm'
+        name: 'Onboarding & Migration',
+        description: 'Hỗ trợ import dữ liệu từ Excel, mapping cột, dedup và báo cáo đối soát. Cấu hình scorecard và workflow theo đúng quy trình của bạn.',
+        included: 'Bao gồm trong tất cả các gói'
       },
       {
-        name: 'Premier Success',
-        description: 'Hỗ trợ kỹ thuật chuyên sâu 24/7, thời gian phản hồi cam kết dưới 1 giờ cho các sự cố khẩn cấp.',
-        included: 'Bổ sung theo tỷ lệ phần trăm giấy phép'
+        name: 'Đào tạo theo phòng ban',
+        description: 'Đào tạo riêng cho BD, đội thầu, kỹ thuật và lãnh đạo theo vai trò và quyền hạn trong hệ thống.',
+        included: 'Bao gồm trong Professional & Enterprise'
       },
       {
-        name: 'Signature Success',
-        description: 'Chuyên gia tư vấn giải pháp riêng biệt, giám sát chủ động và tối ưu hóa kiến trúc định kỳ.',
-        included: 'Dành cho các tổ chức quy mô lớn và trọng yếu'
+        name: 'Đo lường KPI Adoption',
+        description: 'Sau 6-8 tuần, Vtechcom cùng khách hàng đánh giá các KPI: tỷ lệ pursuit có owner/stage/next-action, tỷ lệ Go/No-Go có ghi nhận, adoption rate theo phòng ban.',
+        included: 'Dành cho Design Partner Pilot'
       }
     ]
   }

@@ -15,9 +15,9 @@ defineProps<Props>();
 </script>
 
 <template>
-  <section class="py-16 md:py-24 bg-card">
+  <section class="py-16 md:py-24 bg-card border-b border-border">
     <div class="sf-container space-y-12">
-      <div v-if="heading" class="text-center max-w-3xl mx-auto space-y-4">
+      <div v-if="heading" class="text-center max-w-3xl mx-auto space-y-3">
         <h2
           class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
         >
@@ -25,13 +25,23 @@ defineProps<Props>();
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch"
+      >
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card-hover bg-card rounded-2xl border border-border overflow-hidden flex flex-col group shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-brand/50 transition-all duration-300"
+          class="sf-card group bg-card rounded-2xl border border-border overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1"
         >
-          <!-- Card Image Container -->
+          <!-- Top Accent Bar: 8px height -->
+          <div
+            class="h-2 w-full shrink-0"
+            :style="{
+              backgroundColor: card.accentColor || 'var(--brand, #74CC55)',
+            }"
+          />
+
+          <!-- Card Image Container (16:9) -->
           <div class="relative aspect-[16/9] bg-muted overflow-hidden">
             <img
               :src="card.imageUrl"
@@ -42,7 +52,9 @@ defineProps<Props>();
           </div>
 
           <!-- Card Content -->
-          <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+          <div
+            class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5"
+          >
             <div class="space-y-3">
               <div v-if="card.badge">
                 <SfBadge variant="green" size="sm">
@@ -55,20 +67,22 @@ defineProps<Props>();
               >
                 {{ card.headline }}
               </h3>
-              <p class="text-sm sm:text-[15px] text-muted-foreground leading-relaxed line-clamp-3">
+              <p
+                class="text-sm sm:text-[14.5px] text-muted-foreground leading-relaxed font-normal"
+              >
                 {{ card.description }}
               </p>
             </div>
 
-            <!-- Card Link -->
+            <!-- Card Link with Animated Arrow -->
             <div class="pt-3 border-t border-border">
               <NuxtLink
                 :to="card.linkUrl"
-                class="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-brand-text underline underline-offset-4 decoration-2 group-hover:text-primary group-hover:decoration-primary transition-all"
+                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-brand-text underline underline-offset-4 decoration-2 hover:text-primary hover:decoration-primary transition-all cursor-pointer"
               >
-                {{ card.linkText }}
+                <span>{{ card.linkText }}</span>
                 <svg
-                  class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 no-underline"
+                  class="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1 no-underline"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -87,10 +101,10 @@ defineProps<Props>();
       </div>
 
       <!-- Optional CTA Button below grid -->
-      <div v-if="ctaButton" class="text-center pt-4">
+      <div v-if="ctaButton" class="text-center pt-2">
         <NuxtLink
           :to="ctaButton.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-bold text-base rounded-xl hover:bg-primary-hover transition-all shadow-md active:scale-[0.98]"
+          class="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ ctaButton.label }}
         </NuxtLink>

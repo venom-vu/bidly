@@ -48,19 +48,25 @@ onMounted(() => {
   <section class="py-16 md:py-24 bg-card border-b border-border overflow-hidden">
     <div class="sf-container space-y-16 md:space-y-20">
       <!-- Main Centered Heading -->
-      <div class="text-center max-w-3xl mx-auto space-y-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold text-foreground tracking-tight leading-tight">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
+          TRI THỨC &amp; BẢO MẬT
+        </div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
           {{ data.mainHeading }}
         </h2>
       </div>
 
-      <!-- Row 1: Explore CRM for Business Types -->
+      <!-- Row 1: Cẩm nang quản trị đấu thầu -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Left Title -->
-        <div class="lg:col-span-3 space-y-4 pt-2">
+        <div class="lg:col-span-3 space-y-3 pt-2">
           <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ data.row1.leftTitle }}
           </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            Bài học thực tiễn nâng cao tỷ lệ trúng thầu cho tổng thầu.
+          </p>
         </div>
 
         <!-- Right Carousel Container -->
@@ -87,10 +93,10 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Navigation Arrow Next Button (Right) -->
+          <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-card shadow-xl border border-border text-foreground hover:text-primary hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-lg border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer"
             aria-label="Xem tiếp"
             @click="scrollNext(row1Container)"
           >
@@ -99,8 +105,8 @@ onMounted(() => {
             </svg>
           </button>
 
-          <!-- Scroll Progress Bar Indicator -->
-          <div class="mt-4 w-full max-w-md bg-secondary h-1 rounded-full overflow-hidden">
+          <!-- Scroll Progress Bar -->
+          <div class="mt-4 w-full max-w-xs bg-secondary h-1 rounded-full overflow-hidden">
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row1Progress)}%` }"
@@ -109,13 +115,16 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Row 2: Learn more about key CRM topics -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6">
+      <!-- Row 2: Kiến trúc hệ thống & An toàn dữ liệu -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6 border-t border-border/60">
         <!-- Left Title -->
-        <div class="lg:col-span-3 space-y-4 pt-2">
+        <div class="lg:col-span-3 space-y-3 pt-2">
           <h3 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">
             {{ data.row2.leftTitle }}
           </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            Tiêu chuẩn kỹ thuật bảo vệ bí quyết giá thầu doanh nghiệp.
+          </p>
         </div>
 
         <!-- Right Carousel Container -->
@@ -142,10 +151,10 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Navigation Arrow Next Button (Right) -->
+          <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-11 h-11 rounded-full bg-card shadow-xl border border-border text-foreground hover:text-primary hover:scale-110 items-center justify-center transition-all z-20 cursor-pointer"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-lg border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer"
             aria-label="Xem tiếp"
             @click="scrollNext(row2Container)"
           >
@@ -154,8 +163,8 @@ onMounted(() => {
             </svg>
           </button>
 
-          <!-- Scroll Progress Bar Indicator -->
-          <div class="mt-4 w-full max-w-md bg-secondary h-1 rounded-full overflow-hidden">
+          <!-- Scroll Progress Bar -->
+          <div class="mt-4 w-full max-w-xs bg-secondary h-1 rounded-full overflow-hidden">
             <div
               class="bg-primary h-full rounded-full transition-all duration-150"
               :style="{ width: `${Math.max(25, row2Progress)}%` }"

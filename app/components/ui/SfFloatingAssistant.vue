@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDemoModal } from '~/composables/useDemoModal'
+
 const { openModal } = useDemoModal()
 </script>
 

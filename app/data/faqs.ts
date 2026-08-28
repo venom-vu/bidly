@@ -6,68 +6,68 @@ export interface FaqItem {
 }
 
 export const faqsData = {
-  heading: 'Câu hỏi thường gặp về phần mềm CRM',
-  subheading: 'Giải đáp những thắc mắc phổ biến nhất về quản trị quan hệ khách hàng, triển khai và bảo mật đám mây.',
+  heading: 'Câu hỏi thường gặp về Bidly Preconstruction CRM',
+  subheading: 'Giải đáp những thắc mắc về hệ thống quản trị đấu thầu, triển khai và bảo mật dữ liệu thầu của Vtechcom.',
   items: [
     {
       id: 'faq-1',
-      question: 'Salesforce CRM là gì và hoạt động như thế nào?',
-      answer: 'Salesforce CRM là hệ thống phần mềm quản trị quan hệ khách hàng tích hợp trí tuệ nhân tạo (AI), giúp doanh nghiệp thu hút khách hàng tiềm năng, chốt nhiều đơn hàng hơn và mang lại dịch vụ khách hàng vượt trội. Nền tảng hợp nhất tất cả dữ liệu từ các bộ phận bán hàng, marketing, dịch vụ và thương mại trên một góc nhìn 360 độ duy nhất.'
+      question: 'Bidly Preconstruction CRM là gì? Khác gì CRM bán hàng thông thường?',
+      answer: 'Bidly là hệ thống quản trị quá trình theo đuổi và giành dự án cho tổng thầu xây dựng công nghiệp, không phải CRM bán lẻ hay quản lý đơn hàng. Đối tượng trung tâm của Bidly là Pursuit (cơ hội đấu thầu), không phải Deal hay Order. Bidly quản lý toàn bộ chuỗi từ tín hiệu dự án đến Go/No-Go, hồ sơ thầu, kết quả và bàn giao tiền thi công (S8).'
     },
     {
       id: 'faq-2',
-      question: 'Hệ thống CRM này có hoạt động trên nền tảng đám mây (Cloud-based) không?',
-      answer: 'Đúng vậy. Đây là nền tảng SaaS (Phần mềm dưới dạng dịch vụ) hoạt động 100% trên nền tảng điện toán đám mây. Bạn có thể truy cập mọi lúc, mọi nơi từ trình duyệt web hoặc ứng dụng di động mà không cần đầu tư máy chủ vật lý hay hạ tầng CNTT phức tạp.'
+      question: 'State machine 9 giai đoạn là gì? Tại sao không thể bỏ qua các giai đoạn?',
+      answer: 'Bidly có 9 giai đoạn cố định: S0 Signal, S1 Qualified, S2 Go/No-Go, S3 Pre-bid, S4 Tender active, S5 Submitted, S6 Clarification, S7 Outcome và S8 Handover. Năm giai đoạn có cổng cứng (S2, S4, S5, S7, S8) bắt buộc có quyết định, lý do và người phê duyệt được ghi nhận trước khi chuyển giai đoạn (kiểm soát ở máy chủ). Điều này đảm bảo dữ liệu pipeline phản ánh đúng thực tế.'
     },
     {
       id: 'faq-3',
-      question: 'Chi phí sử dụng phần mềm CRM là bao nhiêu?',
-      answer: 'Chúng tôi cung cấp nhiều gói cước linh hoạt phù hợp với mọi quy mô: Gói Free Suite miễn phí khởi đầu, Gói Starter Suite chỉ từ 25 USD/người dùng/tháng dành cho doanh nghiệp vừa & nhỏ (SMB), và Gói Pro Suite 100 USD/người dùng/tháng cho các doanh nghiệp đang tăng trưởng mạnh.'
+      question: 'Go/No-Go Scorecard hoạt động như thế nào?',
+      answer: 'Tại giai đoạn S2, người có thẩm quyền điền scorecard với 6 tiêu chí có trọng số (fit kỹ thuật, quan hệ CĐT, năng lực cạnh tranh giá, biên lợi nhuận, rủi ro, nguồn lực). Tổng điểm ra 0-100. Quyết định Go cho phép sang S3; No-Go tự động sang S7 (No-bid). Quyết định và lý do ghi nhận vĩnh viễn vào StageHistory và audit log.'
     },
     {
       id: 'faq-4',
-      question: 'Doanh nghiệp thuộc ngành nghề nào nên sử dụng CRM?',
-      answer: 'Phần mềm được thiết kế tùy biến linh hoạt cho mọi ngành nghề: Bất động sản, Bán lẻ, Thương mại B2B, Tài chính - Ngân hàng, Y tế, Công nghệ thông tin, Sản xuất và Dịch vụ công. Hơn 25 năm kinh nghiệm thực chiến đã được đúc kết thành các bộ quy chuẩn theo ngành.'
+      question: 'Tender Workspace kiểm soát phiên bản hồ sơ như thế nào?',
+      answer: 'Mỗi vòng thầu (TenderRound) có không gian làm việc riêng với checklist 5 phòng ban và lịch sử nộp. Bất biến máy chủ: Chỉ được đánh dấu 1 bản final duy nhất trong một vòng. Chuyển từ S4 sang S5 chỉ được thực hiện khi đã nộp bản final (SUBMITTED) trong vòng thầu đang mở.'
     },
     {
       id: 'faq-5',
-      question: 'Phần mềm CRM giúp đội ngũ kinh doanh (Sales) tăng doanh số ra sao?',
-      answer: 'Sales Cloud giúp nhân viên bán hàng tự động hóa nhập liệu, chấm điểm cơ hội (Lead Scoring) bằng AI, quản lý toàn bộ phễu bán hàng (Pipeline) và dự báo doanh thu chính xác. Nhờ đó, đội ngũ kinh doanh tiết kiệm hàng giờ mỗi tuần và chốt hợp đồng nhanh hơn 30%.'
+      question: 'Bidly phù hợp với những loại nhà thầu nào?',
+      answer: 'Bidly được thiết kế cho ba phân khúc: (1) Tổng thầu EPC công nghiệp (50-500 nhân sự, nhiều phòng ban tham gia thầu, hợp đồng lớn); (2) Nhà thầu MEP, PCCC, xử lý nước (nhiều gói song song, quản lý deadline ngặt nghèo); (3) Kết cấu thép tiền chế (báo giá cạnh tranh, thư viện năng lực tonnage/khẩu độ).'
     },
     {
       id: 'faq-6',
-      question: 'CRM có chỉ dành riêng cho đội ngũ bán hàng không?',
-      answer: 'Hoàn toàn không. Bán hàng chỉ là một phần của hệ thống CRM toàn diện. Nền tảng còn bao gồm Service Cloud (Chăm sóc khách hàng), Marketing Cloud (Tiếp thị tự động), Commerce Cloud (Thương mại số) và Nền tảng dữ liệu Data Cloud, kết nối mọi phòng ban xoay quanh khách hàng.'
+      question: 'Capability Library giúp ích gì trong quá trình lập hồ sơ thầu?',
+      answer: 'Capability Library (M5) lưu trữ dự án tiêu biểu, hồ sơ nhân sự, thiết bị, chứng chỉ và tài liệu năng lực theo tag và hạn hiệu lực. Khi chuẩn bị hồ sơ năng lực, đội thầu tìm kiếm theo ngành, loại công trình hoặc địa điểm. Hệ thống cảnh báo tự động khi chứng chỉ sắp hết hạn và bảo vệ tri thức không mất khi nhân sự nghỉ việc.'
     },
     {
       id: 'faq-7',
-      question: 'Phần mềm có tích hợp được với các ứng dụng hiện có của chúng tôi không?',
-      answer: 'Có. Nền tảng hỗ trợ tích hợp mạnh mẽ thông qua REST APIs, Webhooks và nền tảng MuleSoft. Bạn có thể dễ dàng kết nối dữ liệu với hệ thống ERP, phần mềm kế toán, cổng thanh toán, Google Workspace, Microsoft 365, Slack và hàng trăm ứng dụng bên thứ ba.'
+      question: 'Mô hình triển khai nào phù hợp với doanh nghiệp của tôi?',
+      answer: 'Bidly có ba mô hình: (1) Design Partner Pilot: 8-10 tuần có hỗ trợ đầy đủ để kiểm chứng adoption; (2) Professional Private Cloud: database và backup riêng biệt do Vtechcom vận hành; (3) Enterprise On-premise: chạy trực tiếp trên hạ tầng khách hàng. Dữ liệu giá thầu luôn được cô lập 100%.'
     },
     {
       id: 'faq-8',
-      question: 'Dữ liệu của doanh nghiệp chúng tôi có được bảo mật an toàn không?',
-      answer: 'Bảo mật và Tin cậy là giá trị cốt lõi số 1. Toàn bộ dữ liệu được mã hóa ở trạng thái lưu trữ (Encryption at Rest) và truyền tải (In Transit) chuẩn TLS 1.3, tuân thủ các tiêu chuẩn quốc tế nghiêm ngặt như ISO 27001, SOC 2 Type II và GDPR.'
+      question: 'Chi phí triển khai Bidly như thế nào? Có tính theo số user không?',
+      answer: 'Bidly thu phí theo thực thể doanh nghiệp (Instance), không đếm số user nhằm khuyến khích 100% nhân sự liên phòng tham gia. Gói Design Partner Pilot trọn gói 35-60 triệu đồng (khấu trừ 100% khi ký hợp đồng năm). Các gói Professional và Enterprise theo thỏa thuận hạ tầng.'
     },
     {
       id: 'faq-9',
-      question: 'Tôi có thể dùng thử phần mềm trước khi quyết định mua không?',
-      answer: 'Có, bạn hoàn toàn có thể đăng ký trải nghiệm dùng thử 30 ngày đầy đủ tính năng. Quá trình đăng ký chỉ mất 1 phút, không yêu cầu thẻ tín dụng và không có ràng buộc hợp đồng nào.'
+      question: 'Dữ liệu đấu thầu của chúng tôi có được bảo mật không?',
+      answer: 'Bảo mật giá thầu là ưu tiên số một. Mỗi doanh nghiệp sở hữu cơ sở dữ liệu PostgreSQL độc lập, sao lưu định kỳ, lưu vết audit log append-only và tuân thủ Luật Bảo vệ Dữ liệu Cá nhân 91/2025/QH15 hiệu lực từ 2026.'
     },
     {
       id: 'faq-10',
-      question: 'Thời gian triển khai CRM cho doanh nghiệp mất bao lâu?',
-      answer: 'Với gói Starter Suite cho doanh nghiệp nhỏ, bạn có thể thiết lập và bắt đầu sử dụng ngay trong ngày. Với các gói Enterprise phức tạp có tích hợp đa hệ thống, thời gian triển khai thông thường từ 2 đến 6 tuần với sự đồng hành của chuyên gia.'
+      question: 'Thời gian triển khai và onboard mất bao lâu?',
+      answer: 'Design Partner Pilot: 8-10 tuần có hỗ trợ đầy đủ từ Vtechcom, bao gồm import dữ liệu từ Excel, cấu hình quy trình, đào tạo và đo KPI adoption. Vtechcom hỗ trợ import Excel có preview và mapping cột linh hoạt.'
     },
     {
       id: 'faq-11',
-      question: 'Trí tuệ nhân tạo (Agentic AI) trong CRM hoạt động như thế nào?',
-      answer: 'Agentforce AI là thế hệ AI tự hành thông minh có khả năng hiểu ngữ cảnh dữ liệu CRM, tự động trả lời email hỗ trợ, đề xuất bước hành động tiếp theo cho nhân viên bán hàng và tự động hóa các quy trình làm việc đa bước mà không cần con người can thiệp thủ công.'
+      question: 'Bidly có tích hợp được với ERP hoặc phần mềm quản lý thi công không?',
+      answer: 'Bidly cung cấp API REST và Webhook. Bidly tập trung quản trị giai đoạn trước thi công và kết thúc tại Gói bàn giao S8 (Handover Pack) để chuyển dữ liệu chuẩn sang ERP hoặc phần mềm quản lý dự án công trường.'
     },
     {
       id: 'faq-12',
-      question: 'Làm thế nào để đội ngũ của tôi học cách sử dụng CRM nhanh chóng?',
-      answer: 'Nền tảng sở hữu giao diện trực quan, thân thiện cùng hệ thống học tập Trailhead miễn phí với hàng nghìn bài học tương tác dạng trò chơi hóa (gamification), giúp nhân viên làm quen và thành thạo chỉ sau vài buổi hướng dẫn.'
+      question: 'Làm thế nào để bắt đầu với Bidly?',
+      answer: 'Bước đầu tiên là đặt lịch Demo 45 phút được thiết kế riêng theo ngành của bạn (EPC, MEP hoặc Kết cấu thép). Sau buổi demo, Vtechcom sẽ đồng hành thiết lập gói Pilot kiểm chứng hiệu quả.'
     }
   ] as FaqItem[]
 }

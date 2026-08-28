@@ -6,6 +6,7 @@ export interface BladeResourceCard {
   imageUrl: string
   linkText: string
   linkUrl: string
+  accentColor?: string
 }
 
 export interface BladeProductCard {
@@ -15,6 +16,7 @@ export interface BladeProductCard {
   description: string
   linkText: string
   linkUrl: string
+  badge?: string
 }
 
 export interface BladeScaleCard {
@@ -24,6 +26,7 @@ export interface BladeScaleCard {
   description: string
   linkText: string
   linkUrl: string
+  badge?: string
 }
 
 export interface BladeArticleCard {
@@ -47,364 +50,353 @@ export interface BladeFeatureZ {
 }
 
 export const crmBladesData = {
-  // Blade 1: Marquee Hero
+  // Blade 1: Hero Marquee
   hero: {
-    eyebrow: 'Hệ thống Bidly Preconstruction CRM',
-    headlinePrefix: 'Hệ thống Agentic CRM số 1 Châu Á',
-    headlineHighlight: 'vận hành Doanh nghiệp Tự động hóa bằng AI.',
-    description: 'Thu hút thêm cơ hội tiềm năng, quản lý hồ sơ thầu chuẩn xác và thắt chặt mối quan hệ khách hàng bằng cách hợp nhất bán hàng, tiền dự án, dịch vụ và dữ liệu trên một nền tảng duy nhất.',
+    eyebrow: 'Preconstruction CRM : Vtechcom',
+    headlinePrefix: 'Chuẩn hóa quy trình',
+    headlineHighlight: 'theo đuổi & trúng thầu xây dựng công nghiệp.',
+    description: 'Từ tín hiệu đến bàn giao: Bidly giúp tổng thầu EPC, MEP và kết cấu thép tập trung nguồn lực, chấm điểm Go/No-Go chuẩn xác và bảo vệ tri thức quan hệ tổ chức.',
     primaryCta: {
-      label: 'Xem bản Demo',
+      label: 'Đặt lịch Demo 45 phút',
       url: '#demo'
     },
     secondaryCta: {
-      label: 'Bắt đầu miễn phí',
-      url: '/crm/free-trial'
+      label: 'Xem bản đồ nghiệp vụ',
+      url: '/business-map'
     },
     media: {
-      imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?w=1024',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1024&q=80',
+      videoUrl: ''
     }
   },
 
-  // Blade 2: 3-Up Resource Cards Top (Heading 2)
+  // Blade 2: 3-Up Resource Cards (3 bài toán sống còn)
   resourceGridTop: {
-    heading: 'Giải pháp CRM bứt phá mọi mục tiêu',
+    heading: 'Ba bài toán sống còn của tổng thầu công nghiệp',
     cards: [
       {
         id: 'res-1',
-        badge: 'Tài nguyên',
-        headline: 'CRM là gì và vì sao doanh nghiệp cần?',
-        description: 'Tìm hiểu cách phần mềm quản lý quan hệ khách hàng giúp toàn bộ đội ngũ phối hợp để đặt khách hàng làm trung tâm của mọi tương tác.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/3-up_Image2_CRM_16x9_1x.webp?w=768',
-        linkText: 'Tìm hiểu về CRM',
-        linkUrl: '/crm/what-is-crm'
+        badge: 'Bài toán 1 : Dữ liệu phân mảnh',
+        headline: 'Tín hiệu dự án & quan hệ phân mảnh trên Zalo, Excel',
+        description: 'Khi nhân sự nghỉ việc, quan hệ chủ đầu tư và lịch sử giá dễ thất lạc. Bidly quy tụ về Project Inbox và Stakeholder Map theo dự án.',
+        imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=768&q=80',
+        linkText: 'Xem giải pháp Inbox & Quan hệ',
+        linkUrl: '/features#stakeholder',
+        accentColor: 'var(--stage-s0, #64748B)'
       },
       {
         id: 'res-2',
-        badge: 'Bài viết chuyên sâu',
-        headline: 'Tại sao CRM là nền tảng cốt lõi cho Doanh nghiệp AI Tự động hóa',
-        description: 'Vượt trên việc lưu trữ dữ liệu, CRM cung cấp cho các AI Agent ngữ cảnh và quy tắc để giải quyết công việc thực tế với độ chính xác cao.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/10/TSK-44301_Why_CRM_Is_the_Trusted_Foundation.png?w=768',
-        linkText: 'Đọc bài phân tích',
-        linkUrl: '/crm/what-is-crm#benefits'
+        badge: 'Bài toán 2 : Quyết định cảm tính',
+        headline: 'Quyết định Go/No-Go cảm tính, áp lực doanh số thiếu căn cứ',
+        description: '44,7% doanh nghiệp thiếu hợp đồng do đầu tư dàn trải. Scorecard S2 bắt buộc chấm điểm theo trọng số và lưu vết máy chủ.',
+        imageUrl: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=768&q=80',
+        linkText: 'Xem Scorecard Go/No-Go',
+        linkUrl: '/features#gonogo',
+        accentColor: 'var(--stage-s2, #8B5CF6)'
       },
       {
         id: 'res-3',
-        badge: 'Starter Suite',
-        headline: 'Trải nghiệm CRM tất-cả-trong-một – Miễn phí trong 30 ngày',
-        description: 'Giải pháp CRM kết nối toàn bộ doanh nghiệp với marketing, bán hàng, chăm sóc khách hàng và thương mại – tích hợp AI tự động hóa khi bạn phát triển.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/03/smb-resource-starter-4.jpg?w=768',
-        linkText: 'Dùng thử miễn phí',
-        linkUrl: '/crm/free-trial'
+        badge: 'Bài toán 3 : Rủi ro phiên bản hồ sơ',
+        headline: 'Hồ sơ nộp sai phiên bản, checklist liên phòng sót việc',
+        description: 'Phối hợp 5 phòng ban dễ trễ hạn. Tender Workspace quản lý theo vòng thầu với bất biến 1 bản final duy nhất.',
+        imageUrl: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=768&q=80',
+        linkText: 'Xem Tender Workspace',
+        linkUrl: '/features#tender',
+        accentColor: 'var(--stage-s4, #0284C7)'
       }
     ] as BladeResourceCard[]
   },
 
-  // Blade 3: Section Divider Heading 1 (Heading 3)
+  // Blade 3: Tuyên ngôn định vị
   heading1: {
-    text: 'Tối ưu vận hành, bứt phá năng suất và doanh thu.'
+    text: 'Bidly : Hệ thống chuẩn giúp tổng thầu công nghiệp nâng cao tỷ lệ trúng thầu và bảo vệ tri thức.'
   },
 
-  // Blade 4, 5, 6: Feature Z-Pattern
+  // Blade 4, 5, 6: Z-Pattern 3 năng lực cốt lõi
   featuresZPattern: [
     {
-      id: 'feature-1',
-      layout: 'image-right' as const,
-      eyebrow: 'HỢP NHẤT DỮ LIỆU',
-      headline: 'Xây dựng mối quan hệ bền chặt với góc nhìn 360 độ về từng khách hàng.',
-      description: 'Trao quyền cho nhân viên mang đến trải nghiệm cá nhân hóa vượt trội nhờ góc nhìn toàn diện về mọi tương tác qua từng phòng ban. Biến dữ liệu thô thành ngữ cảnh hữu ích và quy trình làm việc thành trí tuệ thông minh — tất cả trên một nền tảng duy nhất.',
-      linkText: 'Khám phá Agentforce 360',
-      linkUrl: '/crm/what-is-crm',
-      imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/04/nUp_Image2_CRM_16x9_1x.webp?w=1024'
+      id: 'feat-1',
+      layout: 'image-right',
+      eyebrow: 'STATE MACHINE 9 GIAI ĐOẠN & 5 CỔNG CỨNG',
+      headline: 'Pipeline 9 giai đoạn cố định: Không cơ hội nào thiếu quyết định',
+      description: 'Khác với CRM kéo thả tự do, Bidly dùng state machine 9 giai đoạn. 5 cổng cứng kiểm soát ở máy chủ đảm bảo pipeline phản ánh đúng thực tế.',
+      linkText: 'Xem chi tiết 9 giai đoạn',
+      linkUrl: '/business-map',
+      imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80'
     },
     {
-      id: 'feature-2',
-      layout: 'image-left' as const,
-      eyebrow: 'AGENTIC AI',
-      headline: 'Tối ưu hóa chuyển giao giữa AI Agent và nhân viên.',
-      description: 'Hành động nhanh hơn bằng cách cung cấp cho nhân sự và các AI Agent nền tảng cần thiết để làm việc liền mạch và hiệu quả trên mọi mắt xích của doanh nghiệp.',
-      linkText: 'Xem cách thức hoạt động',
-      linkUrl: '/crm/what-is-crm#ai',
-      imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-trusted-ai.jpg?w=1024'
+      id: 'feat-2',
+      layout: 'image-left',
+      eyebrow: 'TENDER WORKSPACE & PHÒNG THẦU SỐ',
+      headline: 'Phối hợp 5 phòng ban: Bất biến 1 bản Final duy nhất',
+      description: 'Không gian số theo từng vòng thầu: phân rã checklist 5 phòng ban, theo dõi hạn chót và chuỗi phiên bản. Nộp bản final là cách duy nhất sang S5, tránh nộp nhầm file.',
+      linkText: 'Khám phá Tender Workspace',
+      linkUrl: '/features#tender',
+      imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80'
     },
     {
-      id: 'feature-3',
-      layout: 'image-right' as const,
-      eyebrow: 'CHUYÊN BIỆT THEO NGÀNH',
-      headline: 'Giải pháp may đo theo từng ngành nghề và quy mô.',
-      description: 'Sở hữu giải pháp CRM được đúc kết từ nhiều năm kinh nghiệm thực chiến, quy chuẩn hàng đầu và yêu cầu chuyên sâu cho xây dựng công nghiệp, y tế, bất động sản, tài chính và nhiều ngành khác.',
-      linkText: 'Xem tất cả các ngành nghề',
-      linkUrl: '/crm/what-is-crm#industries',
-      imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/09/1-up-crm-industry-business-size.webp?w=1024'
+      id: 'feat-3',
+      layout: 'image-right',
+      eyebrow: 'CAPABILITY LIBRARY & BẢO VỆ TRI THỨC',
+      headline: 'Thư viện năng lực tập trung: Tri thức thuộc về tổ chức',
+      description: 'Tập trung hồ sơ dự án tiêu biểu, thông số kỹ thuật, chuyên gia và chứng chỉ. Tự động cảnh báo hạn chứng chỉ giúp lập hồ sơ thầu nhanh chóng.',
+      linkText: 'Tìm hiểu Capability Library',
+      linkUrl: '/features#capability',
+      imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80'
     }
   ] as BladeFeatureZ[],
 
-  // Blade 7 & 8: 5 Core Cloud Product Cards (Portfolio Grid)
+  // Blade 7: 6 Module MVP của Bidly
   productPortfolio: {
-    heading: 'Một nền tảng CRM cho mọi mối quan hệ khách hàng',
-    cta: {
-      label: 'Xem tất cả sản phẩm',
-      url: '/crm/what-is-crm'
-    },
+    heading: 'Bộ 6 Mô-đun Lõi Trọn Vòng Đời Đấu Thầu',
     cards: [
       {
-        id: 'agentforce',
-        title: 'Agentforce AI',
-        borderColor: 'var(--stage-s2)', // Purple
-        description: 'Thúc đẩy năng suất và cá nhân hóa với các AI Agent hoạt động trên toàn bộ hệ thống CRM của bạn.',
-        linkText: 'Khám phá AI',
-        linkUrl: '/crm/what-is-crm#ai'
+        id: 'mod-1',
+        title: 'M1 · Project Intelligence',
+        borderColor: 'var(--stage-s0, #64748B)',
+        badge: 'SÀNG LỌC TÍN HIỆU',
+        description: 'Thu thập tín hiệu KCN, FDI; import Excel preview và mapping cột; kiểm tra trùng lặp, gắn người phụ trách.',
+        linkText: 'Xem mô-đun M1',
+        linkUrl: '/features#project-intel'
       },
       {
-        id: 'sales-cloud',
-        title: 'Sales & Preconstruction',
-        borderColor: 'var(--stage-s3)', // Teal
-        description: 'Tăng tốc độ tăng trưởng và bứt phá doanh số với AI tích hợp sẵn – từ quản lý cơ hội tiềm năng đến dự báo và đấu thầu.',
-        linkText: 'Khám phá Sales Cloud',
-        linkUrl: '/crm/features'
+        id: 'mod-2',
+        title: 'M2 · Pursuit & Go/No-Go',
+        borderColor: 'var(--stage-s2, #8B5CF6)',
+        badge: 'SCORECARD ĐỊNH LƯỢNG',
+        description: 'Pipeline 9 giai đoạn; Scorecard Go/No-Go trọng số 0-100; tính giá trị pipeline theo xác suất thắng.',
+        linkText: 'Xem mô-đun M2',
+        linkUrl: '/features#gonogo'
       },
       {
-        id: 'service-cloud',
-        title: 'Service Cloud',
-        borderColor: 'var(--tone-info)', // Cyan
-        description: 'Chuyển đổi chất lượng dịch vụ để nâng tầm trải nghiệm và sự tương tác của khách hàng với các quy trình tinh gọn, tự động hóa và vận hành dịch vụ.',
-        linkText: 'Khám phá Service Cloud',
-        linkUrl: '/crm/what-is-crm'
+        id: 'mod-3',
+        title: 'M3 · Stakeholder Map',
+        borderColor: 'var(--stage-s3, #0D9488)',
+        badge: 'QUAN HỆ DỰ ÁN',
+        description: 'Bản đồ bên liên quan theo dự án (Decision Maker, Influencer, Champion, Gatekeeper); ghi nhật ký tiếp xúc.',
+        linkText: 'Xem mô-đun M3',
+        linkUrl: '/features#stakeholder'
       },
       {
-        id: 'marketing-cloud',
-        title: 'Marketing Cloud',
-        borderColor: 'var(--tone-warn)', // Amber
-        description: 'Thu hút khách hàng. Tương tác hiệu quả. Tăng trưởng doanh thu. Xây dựng mối quan hệ dài lâu bằng cách đưa AI vào tiếp thị.',
-        linkText: 'Khám phá Marketing Cloud',
-        linkUrl: '/crm/what-is-crm'
+        id: 'mod-4',
+        title: 'M4 · Tender Workspace',
+        borderColor: 'var(--stage-s4, #0284C7)',
+        badge: 'PHÒNG THẦU SỐ',
+        description: 'Không gian làm việc theo vòng thầu; checklist 5 phòng ban; kiểm soát phiên bản và 1 bản final duy nhất.',
+        linkText: 'Xem mô-đun M4',
+        linkUrl: '/features#tender'
       },
       {
-        id: 'commerce-cloud',
-        title: 'Commerce Cloud',
-        borderColor: 'var(--primary)', // Brand Green
-        description: 'Đơn giản hóa mọi quy trình từ thiết lập gian hàng số đến thúc đẩy doanh số tại mọi điểm chạm khách hàng với AI bản địa và tự động hóa.',
-        linkText: 'Khám phá Commerce Cloud',
-        linkUrl: '/crm/what-is-crm'
+        id: 'mod-5',
+        title: 'M5 · Capability Library',
+        borderColor: 'var(--stage-s6, #4F46E5)',
+        badge: 'TRI THỨC NĂNG LỰC',
+        description: 'Thư viện dự án tiêu biểu (tonnage, diện tích), chuyên gia, máy móc và cảnh báo hạn chứng chỉ.',
+        linkText: 'Xem mô-đun M5',
+        linkUrl: '/features#capability'
+      },
+      {
+        id: 'mod-6',
+        title: 'M6 · Dashboard & Handover',
+        borderColor: 'var(--stage-s8, #3F9E25)',
+        badge: 'ĐIỀU HÀNH & BÀN GIAO',
+        description: 'Control Tower điều hành, Deadline Heatmap 7-14-30 ngày, phân tích Win/Loss và Gói bàn giao S8 sang ERP.',
+        linkText: 'Xem mô-đun M6',
+        linkUrl: '/features#dashboard'
       }
-    ] as BladeProductCard[]
+    ] as BladeProductCard[],
+    cta: {
+      label: 'Xem tất cả tính năng chi tiết',
+      url: '/features'
+    }
   },
 
-  // Blade 9 & 10: Scale by Business Size (SMB vs Enterprise)
+  // Blade 8: Cấu hình theo phân khúc tổng thầu
   businessScale: {
-    mainHeading: 'Đồng hành cùng mọi quy mô doanh nghiệp.',
-    leftTitle: 'Giải pháp đúng theo quy mô của bạn',
-    cta: {
-      label: 'Xem bảng giá và các gói CRM',
-      url: '/crm/pricing'
-    },
+    mainHeading: 'Thiết kế chuyên biệt cho từng phân khúc nhà thầu công nghiệp',
+    leftTitle: 'Từ nhà thầu MEP, Thép đến Tổng thầu EPC quy mô lớn',
     cards: [
       {
-        id: 'crm-smb',
-        title: 'CRM cho SMB & Startup',
-        borderColor: 'var(--brand)', // Brand light green
-        description: 'Doanh nghiệp trong mọi ngành nghề phát triển nhanh hơn cùng Bidly CRM. Bắt đầu ngay hôm nay với Starter Suite, giải pháp CRM tinh gọn cho doanh nghiệp vừa và nhỏ.',
-        linkText: 'Khám phá Starter Suite',
-        linkUrl: '/crm/solutions/small-business'
+        id: 'scale-1',
+        title: 'Tổng thầu EPC & Công nghiệp',
+        borderColor: 'var(--stage-s4, #0284C7)',
+        badge: 'TEMPLATE EPC',
+        description: 'Quy mô 50-500 nhân sự, nhiều phòng ban. Quản lý đa gói thầu, phân quyền RBAC và Control Tower theo dõi tiến độ.',
+        linkText: 'Giải pháp cho EPC',
+        linkUrl: '/solutions#epc'
       },
       {
-        id: 'crm-enterprise',
-        title: 'Enterprise CRM',
-        borderColor: 'var(--primary)', // Brand primary green
-        description: 'CRM số 1 tích hợp AI tự hành và là nền tảng đáng tin cậy được thiết kế đáp ứng các nhu cầu phức tạp nhất của tổ chức. Bạn có thể mở rộng quy mô không giới hạn trên một nền tảng duy nhất.',
-        linkText: 'Xem tất cả sản phẩm',
-        linkUrl: '/crm/solutions/enterprise'
+        id: 'scale-2',
+        title: 'Nhà thầu MEP, PCCC & Kết cấu thép',
+        borderColor: 'var(--stage-s3, #0D9488)',
+        badge: 'TEMPLATE MEP & THÉP',
+        description: 'Theo đuổi đồng thời hàng chục gói thầu. Kiểm soát deadline, tra cứu nhanh năng lực và quản lý mạng lưới CĐT/Tổng thầu.',
+        linkText: 'Giải pháp cho MEP & Thép',
+        linkUrl: '/solutions#mep'
       }
-    ] as BladeScaleCard[]
-  },
-
-  // Blade 11: Logo Grid & Case Studies
-  customerLogos: {
-    heading: 'Khách hàng bứt phá cùng CRM, AI và Dữ liệu.',
+    ] as BladeScaleCard[],
     cta: {
-      label: 'Xem tất cả câu chuyện khách hàng',
-      url: '/crm/examples'
-    },
-    logos: [
-      {
-        id: 'good360',
-        name: 'Good360',
-        color: '#70B62C',
-        stat: '+45% năng suất vận hành',
-        quote: 'Giải pháp CRM giúp chúng tôi kết nối hàng nghìn đối tác liền mạch.'
-      },
-      {
-        id: 'nexo',
-        name: 'NEXO',
-        color: '#1A1A1A',
-        stat: 'Gấp đôi tốc độ phản hồi',
-        quote: 'AI tự động hóa đã giảm một nửa thời gian xử lý yêu cầu khách hàng.'
-      },
-      {
-        id: 'precina',
-        name: 'Precina',
-        color: '#0085CA',
-        stat: '+32% tỷ lệ chốt đơn',
-        quote: 'Đội ngũ bán hàng quản lý phễu cơ hội tiềm năng rõ ràng và chính xác hơn.'
-      },
-      {
-        id: 'remarkable',
-        name: 'reMarkable',
-        color: '#111111',
-        stat: 'Trải nghiệm 5 sao',
-        quote: 'Góc nhìn khách hàng 360 độ giúp chúng tôi thấu hiểu từng người dùng.'
-      },
-      {
-        id: 'zota',
-        name: 'zota',
-        color: '#0052CC',
-        stat: '+50% tăng trưởng doanh thu',
-        quote: 'Nền tảng CRM là đòn bẩy quan trọng nhất cho chiến lược mở rộng thị trường.'
-      }
-    ]
+      label: 'Khám phá giải pháp theo phân khúc',
+      url: '/solutions'
+    }
   },
 
-  // Blade 12, 13, 14: Article Carousels (Business Types & Topics)
+  // Blade 9: Bối cảnh thị trường & số liệu
+  customerLogos: {
+    heading: 'Căn cứ thực tế & Khoảng trống số hóa xây dựng công nghiệp',
+    cta: {
+      label: 'Xem phân tích thị trường & giải pháp',
+      url: '/why-bidly'
+    }
+  },
+
+  // Blade 10: Bài viết & Cẩm nang chuyên môn
   articleCarousels: {
-    mainHeading: 'Kiến thức và cẩm nang thực chiến về CRM.',
+    mainHeading: 'Kiến thức thực chiến Quản trị Đấu thầu & Bảo mật Dữ liệu',
     row1: {
-      leftTitle: 'CRM theo loại hình doanh nghiệp',
+      leftTitle: 'Cẩm nang quản trị đấu thầu tiền xây dựng',
       cards: [
         {
-          id: 'art-smb',
-          title: 'CRM cho Doanh nghiệp nhỏ',
-          borderColor: 'var(--brand)',
-          description: 'Vận hành một doanh nghiệp nhỏ chưa bao giờ là dễ dàng, nhưng việc tìm đúng giải pháp CRM có thể tạo nên bước ngoặt lớn.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/solutions/small-business'
+          id: 'art-1',
+          title: '5 dấu hiệu pipeline đấu thầu rò rỉ thông tin và cơ hội',
+          borderColor: 'var(--stage-s0, #64748B)',
+          description: 'Nhận diện lỗ hổng quy trình săn dự án khi vận hành bằng Excel, Zalo và email rời rạc.',
+          linkText: 'Đọc cẩm nang',
+          linkUrl: '/why-bidly'
         },
         {
-          id: 'art-startup',
-          title: 'CRM cho Doanh nghiệp khởi nghiệp',
-          borderColor: 'var(--stage-s3)',
-          description: 'Tìm hiểu cách CRM giúp tinh gọn quy trình, khai phá dữ liệu chi tiết và làm sâu sắc mối quan hệ với khách hàng và các bên liên quan.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/what-is-crm'
+          id: 'art-2',
+          title: 'Thiết lập ma trận Scorecard Go/No-Go chuẩn cho tổng thầu',
+          borderColor: 'var(--stage-s2, #8B5CF6)',
+          description: 'Định lượng 6 tiêu chí: năng lực, quan hệ, giá, biên lợi nhuận, rủi ro và nguồn lực.',
+          linkText: 'Xem hướng dẫn',
+          linkUrl: '/features#gonogo'
         },
         {
-          id: 'art-real-estate',
-          title: 'CRM cho Bất động sản & Xây dựng',
-          borderColor: 'var(--tone-info)',
-          description: 'Chuyển đổi hoạt động kinh doanh bằng cách tổ chức danh bạ tập trung, tự động hóa tác vụ và cải thiện việc ra quyết định.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/what-is-crm'
+          id: 'art-3',
+          title: 'Kiểm soát phiên bản hồ sơ thầu: Tránh nộp nhầm file',
+          borderColor: 'var(--stage-s4, #0284C7)',
+          description: 'Bất biến 1 bản final và nộp có timestamp giúp loại bỏ hoàn toàn rủi ro nộp nhầm hồ sơ.',
+          linkText: 'Xem quy trình',
+          linkUrl: '/features#tender'
         },
         {
-          id: 'art-b2b',
-          title: 'CRM cho B2B & Tổng thầu',
-          borderColor: 'var(--stage-s2)',
-          description: 'Tìm hiểu cách các tính năng CRM đóng vai trò then chốt trong quy trình bán hàng B2B đặc thù và mở rộng quy mô.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/features'
+          id: 'art-4',
+          title: 'Bản đồ bên liên quan (Stakeholder Map) theo dự án',
+          borderColor: 'var(--stage-s3, #0D9488)',
+          description: 'Phân loại 4 vai trò stakeholder và bảo vệ dữ liệu quan hệ doanh nghiệp.',
+          linkText: 'Xem phương pháp',
+          linkUrl: '/features#stakeholder'
         }
       ] as BladeArticleCard[]
     },
     row2: {
-      leftTitle: 'Các chủ đề CRM then chốt',
+      leftTitle: 'Kiến trúc hệ thống & An toàn dữ liệu thầu',
       cards: [
         {
-          id: 'art-best-practices',
-          title: 'Thực tiễn CRM Tốt nhất',
-          borderColor: 'var(--primary)',
-          description: 'Khai thác tối đa tiềm năng CRM và thiết lập nền tảng thành công cho doanh nghiệp của bạn với 8 bước tối ưu này.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/what-is-crm#best-practices'
+          id: 'art-5',
+          title: 'Tại sao dữ liệu đấu thầu cần cô lập Private Cloud / On-premise?',
+          borderColor: 'var(--stage-s8, #3F9E25)',
+          description: 'Giá dự thầu là tài sản tối mật. Phân tích khác biệt SaaS dùng chung và Database riêng biệt.',
+          linkText: 'Xem so sánh bảo mật',
+          linkUrl: '/crm/pricing'
         },
         {
-          id: 'art-database',
-          title: 'Cơ sở Dữ liệu CRM',
-          borderColor: 'var(--stage-s3)',
-          description: 'Sử dụng dữ liệu khách hàng để thắt chặt mối quan hệ và tinh gọn hiệu suất làm việc trên tất cả kênh và phòng ban.',
-          linkText: 'Đọc bài viết',
+          id: 'art-6',
+          title: 'Chuỗi thực thể chuẩn: Project → Pursuit → Package → Round → Submission',
+          borderColor: 'var(--stage-s5, #2563EB)',
+          description: 'Tại sao không thể gom quy trình thầu phức tạp vào một "Deal" của CRM bán lẻ.',
+          linkText: 'Xem mô hình dữ liệu',
           linkUrl: '/crm/what-is-crm'
         },
         {
-          id: 'art-strategy',
-          title: 'Chiến lược CRM',
-          borderColor: 'var(--tone-info)',
-          description: 'Làm theo các bước chỉ dẫn để xây dựng kế hoạch triển khai và ứng dụng CRM toàn diện nhất.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/crm-implementation'
+          id: 'art-7',
+          title: 'Gói bàn giao tiền thi công (S8): Cầu nối CRM và ERP',
+          borderColor: 'var(--stage-s6, #4F46E5)',
+          description: 'Chuẩn hóa phạm vi, cam kết thương mại, giả định và rủi ro trước khi chuyển giao công trường.',
+          linkText: 'Xem quy trình bàn giao',
+          linkUrl: '/features#dashboard'
         },
         {
-          id: 'art-automation',
-          title: 'Tự động hóa CRM',
-          borderColor: 'var(--stage-s2)',
-          description: 'Tự động hóa các tác vụ lặp đi lặp lại để đội ngũ của bạn tập trung vào điều quan trọng nhất: khách hàng.',
-          linkText: 'Đọc bài viết',
-          linkUrl: '/crm/features'
+          id: 'art-8',
+          title: 'Tuân thủ Luật Dữ liệu Cá nhân 91/2025/QH15 trong quản trị hồ sơ',
+          borderColor: 'var(--stage-s1, #475569)',
+          description: 'Quản lý thông tin nhân sự, chuyên gia và đối tác trong hồ sơ năng lực theo luật mới.',
+          linkText: 'Xem tiêu chuẩn PDPA',
+          linkUrl: '/crm/what-is-crm'
         }
       ] as BladeArticleCard[]
     }
   },
 
-  // Blade 15: Resource Grid Bottom (Guides & Insights)
+  // Blade 11: 3-Up Resource Cards Bottom
   resourceGridBottom: {
-    heading: 'Xu hướng CRM, cẩm nang và báo cáo chuyên sâu.',
+    heading: 'Tài nguyên quan trọng về Bidly',
     cards: [
       {
-        id: 'guide-1',
-        badge: 'Cẩm nang',
-        headline: 'Biến tiềm năng AI thành hiện thực kinh doanh với hướng dẫn từng bước chi tiết',
-        description: 'Khám phá lộ trình triển khai Agentic AI thực tế để tối ưu hóa quy trình bán hàng và chăm sóc khách hàng.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2026/08/BecomeAnAgenticEn_Hero-NewInsights4.webp?w=768',
-        linkText: 'Tải cẩm nang miễn phí',
-        linkUrl: '/crm/what-is-crm'
+        id: 'res-bot-1',
+        badge: 'Khái niệm & Định vị',
+        headline: 'Preconstruction CRM là gì? Khác biệt với CRM & ERP',
+        description: 'Vì sao tổng thầu công nghiệp cần hệ thống quản trị chuyên biệt từ tín hiệu đến bàn giao tiền thi công.',
+        imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=768&q=80',
+        linkText: 'Đọc bài phân tích',
+        linkUrl: '/crm/what-is-crm',
+        accentColor: 'var(--stage-s2, #8B5CF6)'
       },
       {
-        id: 'guide-2',
-        badge: 'Bản Demo',
-        headline: 'Trải nghiệm trực quan nền tảng CRM qua bản tương tác đa tính năng',
-        description: 'Tự mình thử nghiệm các tình huống quản lý khách hàng, giao dịch và phân tích báo cáo trực tiếp.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/09/portfolio_interactive_demo_resource_card.png?w=768',
-        linkText: 'Thử nghiệm ngay',
-        linkUrl: '/crm/what-is-crm'
+        id: 'res-bot-2',
+        badge: 'So sánh & Lợi ích',
+        headline: 'Vì sao chọn Bidly? So sánh 5 giải pháp thay thế',
+        description: 'So sánh chi tiết Bidly với CRM phổ thông, CRM quốc tế, ERP xây dựng và tự phát triển.',
+        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=768&q=80',
+        linkText: 'Xem bảng so sánh',
+        linkUrl: '/why-bidly',
+        accentColor: 'var(--stage-s4, #0284C7)'
       },
       {
-        id: 'guide-3',
-        badge: 'Báo cáo',
-        headline: 'Tìm hiểu cách CRM kết nối các đội ngũ để tạo góc nhìn khách hàng 360 độ',
-        description: 'Phân tích chi tiết về việc phá vỡ các rào cản phòng ban và nâng cao hiệu quả phối hợp nội bộ.',
-        imageUrl: 'https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/07/n-up-resource-crm-bring-teams-together.jpg?w=768',
-        linkText: 'Đọc báo cáo',
-        linkUrl: '/crm/what-is-crm'
+        id: 'res-bot-3',
+        badge: 'Mô hình & Bảng giá',
+        headline: 'Chương trình Design Partner Pilot & Bảng giá triển khai',
+        description: 'Chương trình pilot 8-10 tuần trên dữ liệu thật cùng các gói Essential, Professional, Enterprise.',
+        imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=768&q=80',
+        linkText: 'Xem bảng giá chi tiết',
+        linkUrl: '/crm/pricing',
+        accentColor: 'var(--stage-s8, #3F9E25)'
       }
     ] as BladeResourceCard[]
   },
 
-  // Blade 16: Contact Us (3 Action Pillars)
-  contactUs: {
-    heading: 'Khám phá sức mạnh của Bidly Preconstruction CRM.',
+  // Blade 12: Contact Us 3 Action Pillars
+  contactPillars: {
+    heading: 'Chuyển đổi quy trình đấu thầu cùng Vtechcom',
+    subheading: 'Chuyên gia Vtechcom sẵn sàng tư vấn giải pháp phù hợp quy mô và đặc thù doanh nghiệp.',
     pillars: [
       {
-        id: 'pillar-trial',
-        title: 'Bắt đầu dùng thử ngay',
-        description: 'Trải nghiệm đầy đủ tính năng CRM miễn phí trong 30 ngày. Không yêu cầu thẻ tín dụng. Không cần cài đặt phần mềm phức tạp.',
-        ctaText: 'Đăng ký dùng thử miễn phí',
-        ctaUrl: '/crm/free-trial',
-        icon: 'trial'
+        id: 'pil-1',
+        badge: 'CÁ NHÂN HÓA',
+        title: 'Đặt lịch Demo 45 phút',
+        description: 'Trải nghiệm demo trực tiếp trên quy trình thực tế ngành bạn (EPC, MEP, Thép), không demo chung chung.',
+        ctaLabel: 'Đăng ký Demo',
+        ctaUrl: '#demo',
+        isPrimary: true
       },
       {
-        id: 'pillar-expert',
-        title: 'Trao đổi với chuyên gia',
-        description: 'Tìm hiểu chi tiết về các gói giải pháp, bảng giá, quy trình triển khai hoặc các câu hỏi riêng cho mô hình kinh doanh của bạn.',
-        ctaText: 'Gặp chuyên viên tư vấn',
-        ctaUrl: '/crm/free-trial',
-        icon: 'expert'
+        id: 'pil-2',
+        badge: 'KIỂM CHỨNG TRƯỚC',
+        title: 'Design Partner Pilot',
+        description: 'Thử nghiệm 8-10 tuần trên dữ liệu thật. Đo lường KPI adoption trước khi cam kết dài hạn.',
+        ctaLabel: 'Tìm hiểu gói Pilot',
+        ctaUrl: '/crm/pricing',
+        isPrimary: false
       },
       {
-        id: 'pillar-newsletter',
-        title: 'Đăng ký nhận bản tin',
-        description: 'Cập nhật những phân tích thị trường mới nhất, góc nhìn từ các chuyên gia hàng đầu và tính năng sản phẩm mới trực tiếp qua email.',
-        ctaText: 'Đăng ký nhận tin',
-        ctaUrl: '/crm/free-trial',
-        icon: 'email'
+        id: 'pil-3',
+        badge: 'TƯ VẤN HẠ TẦNG',
+        title: 'Tư vấn Kỹ thuật & Bảo mật',
+        description: 'Giải đáp triển khai On-premise, Private Cloud, bảo mật cơ sở dữ liệu và tích hợp ERP sẵn có.',
+        ctaLabel: 'Liên hệ chuyên gia',
+        ctaUrl: '#demo',
+        isPrimary: false
       }
     ]
   }

@@ -42,122 +42,173 @@ const currentYear = new Date().getFullYear();
             </div>
           </div>
           <p class="text-xs text-brand-panel-muted max-w-sm leading-relaxed">
-            Hệ thống Preconstruction & Agentic CRM hàng đầu. Hợp nhất cơ hội kinh doanh, đấu thầu, khách hàng và dữ liệu doanh nghiệp trên một nền tảng duy nhất.
+            Preconstruction CRM cho Tổng thầu Xây dựng Công nghiệp Việt Nam (EPC, MEP, Kết cấu thép). Từ tín hiệu dự án đến bàn giao tiền thi công: kiểm soát chuyển bước có chốt chặn ở máy chủ, Go/No-Go định lượng và bảo vệ tri thức quan hệ của tổ chức.
           </p>
-          <div class="text-xs text-brand-panel-muted">
-            Hotline: <span class="text-brand-panel-foreground font-bold">+84 912 349 901</span>
+          <div class="text-xs text-brand-panel-muted space-y-1">
+            <div>Hotline: <span class="text-brand-panel-foreground font-bold tabular">+84 912 349 901</span></div>
+            <div>Email: <span class="text-brand-panel-foreground font-bold">contact@vtechcom.vn</span></div>
           </div>
         </div>
 
-        <!-- Col 2: Sản phẩm -->
+        <!-- Col 2: Mô-đun Lõi -->
         <div class="space-y-3">
           <div
             class="text-xs font-bold uppercase tracking-wider text-brand"
           >
-            Sản phẩm & Giải pháp
+            Mô-đun Lõi (M1 - M7)
+          </div>
+          <ul class="space-y-2 text-xs text-brand-panel-muted">
+            <li>
+              <NuxtLink
+                to="/features#project-intel"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M1 · Project Intelligence</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#gonogo"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M2 · Pursuit &amp; Go/No-Go</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#stakeholder"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M3 · Stakeholder Map</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#tender"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M4 · Tender Workspace</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#capability"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M5 · Capability Library</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#dashboard"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M6 · Dashboard &amp; Handover</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/features#platform-sec"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >M7 · Nền tảng &amp; Bảo mật</NuxtLink
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Định vị & Tài nguyên -->
+        <div class="space-y-3">
+          <div
+            class="text-xs font-bold uppercase tracking-wider text-brand"
+          >
+            Tổng quan &amp; So sánh
           </div>
           <ul class="space-y-2 text-xs text-brand-panel-muted">
             <li>
               <NuxtLink
                 to="/crm/what-is-crm"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Agentforce AI</NuxtLink
+                >Preconstruction CRM là gì?</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
-                to="/crm/what-is-crm"
+                to="/why-bidly"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Sales Cloud</NuxtLink
+                >Vì sao chọn Bidly?</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
-                to="/crm/what-is-crm"
+                to="/business-map"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Service Cloud</NuxtLink
+                >Bản đồ nghiệp vụ</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
-                to="/crm/what-is-crm"
+                to="/solutions"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Marketing Cloud</NuxtLink
+                >3 Mẫu giải pháp ngành</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
                 to="/crm/pricing"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Bảng giá sản phẩm</NuxtLink
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Tài nguyên -->
-        <div class="space-y-3">
-          <div
-            class="text-xs font-bold uppercase tracking-wider text-brand"
-          >
-            Tài nguyên
-          </div>
-          <ul class="space-y-2 text-xs text-brand-panel-muted">
-            <li>
-              <NuxtLink
-                to="/crm/what-is-crm"
-                class="hover:text-brand-panel-foreground transition-colors"
-                >Khái niệm CRM</NuxtLink
-              >
-            </li>
-            <li>
-              <NuxtLink
-                to="/crm/what-is-crm#benefits"
-                class="hover:text-brand-panel-foreground transition-colors"
-                >Lợi ích & Hiệu quả ROI</NuxtLink
-              >
-            </li>
-            <li>
-              <NuxtLink
-                to="/crm/free-trial"
-                class="hover:text-brand-panel-foreground transition-colors"
-                >Đăng ký dùng thử</NuxtLink
+                >Bảng giá & Triển khai</NuxtLink
               >
             </li>
             <li>
               <NuxtLink to="/#faq" class="hover:text-brand-panel-foreground transition-colors"
-                >Câu hỏi thường gặp</NuxtLink
+                >Câu hỏi thường gặp (FAQ)</NuxtLink
               >
             </li>
           </ul>
         </div>
 
-        <!-- Col 4: Pháp lý -->
+        <!-- Col 4: Mô hình & Bảo mật -->
         <div class="space-y-3">
           <div
             class="text-xs font-bold uppercase tracking-wider text-brand"
           >
-            Pháp lý & Bảo mật
+            Mô hình & Bảo mật
           </div>
           <ul class="space-y-2 text-xs text-brand-panel-muted">
             <li>
-              <a href="#" class="hover:text-brand-panel-foreground transition-colors"
-                >Chính sách bảo mật</a
+              <NuxtLink
+                to="/solutions#epc"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Tổng thầu EPC & Công nghiệp</NuxtLink
               >
             </li>
             <li>
-              <a href="#" class="hover:text-brand-panel-foreground transition-colors"
-                >Điều khoản dịch vụ</a
+              <NuxtLink
+                to="/solutions#mep"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Nhà thầu Cơ điện MEP</NuxtLink
               >
             </li>
             <li>
-              <a href="#" class="hover:text-brand-panel-foreground transition-colors"
-                >Bảo mật chuẩn ISO/SOC2</a
+              <NuxtLink
+                to="/solutions#steel"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Kết cấu thép tiền chế</NuxtLink
               >
             </li>
             <li>
-              <a href="#" class="hover:text-brand-panel-foreground transition-colors"
-                >Tùy chọn Cookie</a
+              <NuxtLink
+                to="/crm/pricing#pilot"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Design Partner Pilot</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/crm/pricing#professional"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Private Cloud Managed</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/crm/pricing#enterprise"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Enterprise On-premise</NuxtLink
               >
             </li>
           </ul>
@@ -169,12 +220,14 @@ const currentYear = new Date().getFullYear();
         class="pt-8 border-t border-brand-panel-border flex flex-col sm:flex-row items-center justify-between text-xs text-brand-panel-muted gap-4"
       >
         <div>
-          © {{ currentYear }} Bidly CRM. Tất cả quyền được bảo lưu.
+          © {{ currentYear }} Vtechcom. Bidly Preconstruction CRM. Nền tảng chuyên biệt cho Tổng thầu Xây dựng Công nghiệp.
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-wrap items-center gap-4">
           <span>Tiếng Việt (Việt Nam)</span>
           <span>•</span>
-          <span>Bảo mật dữ liệu 100%</span>
+          <span>Tuân thủ Luật PDPA 91/2025/QH15</span>
+          <span>•</span>
+          <span>Cơ sở dữ liệu độc lập 100%</span>
         </div>
       </div>
     </div>

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bidly — Design System Showcase (Salesforce Standard × Preconstruction CRM)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_nuxt/app/assets/css/tokens.css">
+
+<style>
+  /* ── Reset & Khung Trang ─────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+  :root {
+    --bg-page: var(--background, #F4F6F4);
+    --fg-page: var(--foreground, #1B211C);
+    --card-bg: var(--card, #FFFFFF);
+    --border-color: var(--border, #E3E8E3);
+    --primary-color: var(--primary, #3F9E25);
+    --primary-hover: var(--primary-hover, #2E7D1A);
+    --brand-gate: var(--brand-gate, #74CC55);
+    --brand-text: var(--brand-text, #277A14);
+    --brand-soft: var(--brand-soft, #EBF7E8);
+    --panel-dark: var(--brand-panel, #171C18);
+  }
+
+  body {
+    background: var(--bg-page);
+    color: var(--fg-page);
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 120px;
+  }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px }
+
+  /* ── Sticky Topbar ──────────────────────────────────────────────────────── */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .topbar-in {
+    max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand-lockup {
+    display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800;
+    color: var(--fg-page); text-decoration: none; letter-spacing: -0.02em;
+  }
+  .badge-tag {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 8px; border-radius: 9999px; background: var(--brand-soft); color: var(--brand-text);
+  }
+
+  /* ── Headings & Prose ───────────────────────────────────────────────────── */
+  .hero-banner {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+  }
+  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px; line-height: 1.2 }
+  h2 {
+    font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #5C665D; margin: 56px 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color);
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--primary-color) }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 12px; color: var(--fg-page); letter-spacing: -0.015em }
+  p { color: #5C665D; margin-bottom: 16px }
+  p.lead { font-size: 16px; color: var(--fg-page); max-width: 80ch; line-height: 1.6 }
+
+  .panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(27, 33, 28, 0.04);
+  }
+  .panel + .panel { margin-top: 20px }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px }
+  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px }
+
+  /* ── Code snippet / use box ─────────────────────────────────────────────── */
+  .use {
+    margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+    background: #EFF2EF; color: #404A42;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+    line-height: 1.65; overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+    border-left: 3px solid var(--primary-color);
+  }
+  .use b { color: var(--fg-page); font-weight: 700 }
+
+  /* ── Swatches ───────────────────────────────────────────────────────────── */
+  .swatch {
+    display: flex; align-items: center; gap: 12px; padding: 10px;
+    border: 1px solid var(--border-color); border-radius: 10px; background: #FFF;
+  }
+  .chip {
+    width: 42px; height: 42px; border-radius: 8px; flex: none;
+    border: 1px solid rgba(0,0,0,0.08); box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .sw-meta { min-width: 0 }
+  .sw-meta .n { font-size: 13px; font-weight: 700; color: var(--fg-page) }
+  .sw-meta .v { font-size: 11.5px; color: #5C665D; font-family: ui-monospace, monospace }
+
+  /* ── Buttons (Live Demo) ────────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 40px; padding: 0 18px; border-radius: 8px; font-family: inherit;
+    font-size: 14px; font-weight: 700; border: 0; cursor: pointer; text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); user-select: none;
+  }
+  .btn:active { transform: scale(0.98) }
+  .btn.primary { background: var(--primary-color); color: #FFF; box-shadow: 0 2px 6px rgba(63, 158, 37, 0.2) }
+  .btn.primary:hover { background: var(--primary-hover); box-shadow: 0 4px 12px rgba(63, 158, 37, 0.3) }
+  .btn.secondary { background: #FFF; color: var(--brand-text); border: 2px solid var(--primary-color) }
+  .btn.secondary:hover { background: var(--brand-soft) }
+  .btn.outline { background: transparent; color: var(--fg-page); border: 1px solid #C4CDC4 }
+  .btn.outline:hover { background: #EFF2EF }
+  .btn.navy { background: var(--panel-dark); color: #F4F6F4 }
+  .btn.navy:hover { background: #262E27 }
+  .btn.ghost { background: transparent; color: var(--brand-text) }
+  .btn.ghost:hover { background: var(--brand-soft) }
+  .btn.pill { border-radius: 9999px }
+  .btn.lg { height: 48px; padding: 0 28px; font-size: 15px }
+  .btn.sm { height: 32px; padding: 0 12px; font-size: 12.5px }
+
+  /* ── Badges (Live Demo) ─────────────────────────────────────────────────── */
+  .badge-ui {
+    display: inline-flex; align-items: center; gap: 4px; border-radius: 9999px;
+    padding: 3px 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .badge-stage {
+    display: inline-flex; align-items: center; gap: 6px;
+    border-radius: 6px; padding: 3px 8px; font-size: 12px; font-weight: 700;
+  }
+  .badge-stage .code { opacity: 0.8; font-variant-numeric: tabular-nums }
+
+  /* ── Salesforce Style Card (Live Demo) ─────────────────────────────────── */
+  .sf-card-demo {
+    background: #FFF; border: 1px solid var(--border-color); border-radius: 16px;
+    overflow: hidden; box-shadow: 0 4px 16px rgba(27, 33, 28, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .sf-card-demo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(27, 33, 28, 0.08);
+  }
+  .sf-card-accent { height: 8px; width: 100% }
+  .sf-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 16px }
+  .sf-card-title { font-size: 18px; font-weight: 800; color: var(--fg-page); letter-spacing: -0.015em }
+  .sf-card-desc { font-size: 14px; color: #5C665D; line-height: 1.55 }
+  .sf-card-link {
+    font-size: 14px; font-weight: 700; color: var(--brand-text); text-decoration: underline;
+    text-underline-offset: 4px; text-decoration-thickness: 2px;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .sf-card-link:hover { color: var(--primary-color); text-decoration-color: var(--primary-color) }
+
+  /* ── Form Inputs (Live Demo) ────────────────────────────────────────────── */
+  .form-group { display: flex; flex-direction: column; gap: 6px }
+  .form-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-page) }
+  .form-label span.req { color: #DC2626 }
+  .input-field {
+    height: 42px; width: 100%; border-radius: 8px; border: 1px solid #D4DDD4;
+    background: #FFF; padding: 0 14px; font-family: inherit; font-size: 14px; color: var(--fg-page);
+    transition: all 0.2s ease;
+  }
+  .input-field:focus {
+    outline: none; border-color: var(--brand-gate);
+    box-shadow: 0 0 0 3px rgba(116, 204, 85, 0.25);
+  }
+  .input-field::placeholder { color: #8E9B8F }
+
+  /* ── 3-Layer Modal Preview (Live Demo) ─────────────────────────────────── */
+  .modal-preview {
+    background: #FFF; border-radius: 20px; border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(27, 33, 28, 0.25);
+    overflow: hidden; max-width: 600px; margin: 0 auto;
+    display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+  .modal-header {
+    padding: 18px 24px; border-bottom: 1px solid var(--border-color); background: #FAFBF9;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .modal-header h4 { font-size: 16px; font-weight: 800; color: var(--fg-page) }
+  .modal-body { padding: 24px; overflow-y: auto; max-height: 240px; display: flex; flex-direction: column; gap: 14px }
+  .modal-footer {
+    padding: 16px 24px; border-top: 1px solid var(--border-color); background: #FAFBF9;
+    display: flex; justify-content: flex-end; gap: 10px;
+  }
+
+  /* ── Tabular Data Numbers ───────────────────────────────────────────────── */
+  .tabular { font-variant-numeric: tabular-nums }
+  table.demo-tbl { width: 100%; border-collapse: collapse; margin-top: 8px }
+  table.demo-tbl th {
+    text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #5C665D; padding: 10px 12px; border-bottom: 2px solid var(--border-color);
+  }
+  table.demo-tbl td { padding: 12px; border-bottom: 1px solid var(--border-color); font-size: 13.5px }
+
+  /* ── Spacing Ruler ──────────────────────────────────────────────────────── */
+  .ruler { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-top: 12px }
+  .ruler-unit { text-align: center }
+  .ruler-bar { background: var(--primary-color); border-radius: 3px; height: 12px }
+  .ruler-label { font-size: 11px; color: #5C665D; margin-top: 6px }
+  .ruler-label b { display: block; font-family: ui-monospace, monospace; color: var(--fg-page) }
+</style>
+</head>
+
+<body>
+
+<!-- ── Topbar ── -->
+<div class="topbar">
+  <div class="topbar-in">
+    <a href="/" class="brand-lockup">
+      <svg width="34" height="34" viewBox="4 3 23 26" fill="none">
+        <g style="fill: var(--fg-page)">
+          <path d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"/>
+          <path d="M5 28H19.25A4.75 4.75 0 0 0 24 23.25V18.5H19V23H10V18.5H5Z"/>
+        </g>
+        <path d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z" style="fill: var(--brand-gate)"/>
+      </svg>
+      <span>Bidly Design System</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="badge-tag">Salesforce CRM Standard</span>
+      <a href="/" class="btn primary sm">Về Trang Chủ Bidly</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ── Hero Banner ── -->
+  <div class="hero-banner">
+    <h1>Bản Chuẩn Trực Quan Giao Diện</h1>
+    <p class="lead">
+      Trang tham chiếu sống (Living Styleguide) cho toàn bộ hệ thống <b>Bidly Preconstruction CRM</b>.
+      Mọi màu sắc, thành phần thẻ, ô nhập, hộp thoại popup và nút bấm dưới đây được xây dựng theo chuẩn mực 
+      <b>Salesforce Enterprise UX</b> kết hợp với bộ nhận diện công nghiệp <b>Vtechcom / Bidly</b>.
+    </p>
+  </div>
+
+  <!-- ── 1. Color System ── -->
+  <h2>1 · Bảng Màu Chuẩn (Color System & Tokens)</h2>
+  
+  <h3>Lớp 1: Màu Giao Diện Bề Mặt (Surfaces & Actions)</h3>
+  <div class="grid4">
+    <div class="swatch"><span class="chip" style="background:#3F9E25"></span><div class="sw-meta"><div class="n">Primary</div><div class="v">#3F9E25 · Hành động</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#2E7D1A"></span><div class="sw-meta"><div class="n">Primary Hover</div><div class="v">#2E7D1A · Hover nút</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#74CC55"></span><div class="sw-meta"><div class="n">Brand Gate</div><div class="v">#74CC55 · Cổng logo & Ring</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#277A14"></span><div class="sw-meta"><div class="n">Brand Text</div><div class="v">#277A14 · Chữ xanh WCAG</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#F4F6F4"></span><div class="sw-meta"><div class="n">Background</div><div class="v">#F4F6F4 · Giấy lạnh</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#FFFFFF"></span><div class="sw-meta"><div class="n">Card</div><div class="v">#FFFFFF · Trắng thẻ</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#1B211C"></span><div class="sw-meta"><div class="n">Foreground</div><div class="v">#1B211C · Mực đen than</div></div></div>
+    <div class="swatch"><span class="chip" style="background:#171C18"></span><div class="sw-meta"><div class="n">Dark Panel</div><div class="v">#171C18 · Footer & Dark</div></div></div>
+  </div>
+
+  <h3>Lớp 2: Ngữ Nghĩa Nghiệp Vụ Stage S0–S8 (Bất Biến)</h3>
+  <div class="panel">
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span class="badge-stage" style="background:#F1F5F9;color:#64748B"><span class="code">S0</span>Tín hiệu</span>
+      <span class="badge-stage" style="background:#F1F5F9;color:#475569"><span class="code">S1</span>Sàng lọc</span>
+      <span class="badge-stage" style="background:#F5F3FF;color:#8B5CF6"><span class="code">S2</span>Go/No-Go</span>
+      <span class="badge-stage" style="background:#F0FDFA;color:#0D9488"><span class="code">S3</span>Chuẩn bị</span>
+      <span class="badge-stage" style="background:#F0F9FF;color:#0284C7"><span class="code">S4</span>Đấu thầu</span>
+      <span class="badge-stage" style="background:#EFF6FF;color:#2563EB"><span class="code">S5</span>Chờ kết quả</span>
+      <span class="badge-stage" style="background:#EEF2FF;color:#4F46E5"><span class="code">S6</span>Thương thảo</span>
+      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25"><span class="code">S8</span>Bàn giao</span>
+      <span class="badge-stage" style="background:#EBF7E8;color:#3F9E25">Thắng (WON)</span>
+      <span class="badge-stage" style="background:#FEE2E2;color:#DC2626">Thua (LOST)</span>
+    </div>
+    <div class="use"><b>&lt;SfBadge&gt;</b> quy chuẩn: <b>Nền Soft + Chữ Đặc</b> — tránh dùng màu bão hòa đặc gây chói mắt trên bảng dữ liệu dày.</div>
+  </div>
+
+  <!-- ── 2. Salesforce Cards ── -->
+  <h2>2 · Hệ Thống Thẻ Chuẩn Salesforce (Cards & Top Accent)</h2>
+  <div class="grid3">
+    <div class="sf-card-demo">
+      <div class="sf-card-accent" style="background:#0284C7"></div>
+      <div class="sf-card-body">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="badge-tag" style="background:#F0F9FF;color:#0284C7;align-self:flex-start">MÔ-ĐUN M4</div>
+          <div class="sf-card-title">Tender Workspace</div>
+          <p class="sf-card-desc">Không gian số hiệp đồng 5 phòng ban, kiểm soát tiến độ làm hồ sơ và bất biến tối đa 1 bản Final mỗi vòng thầu.</p>
+        </div>
+        <a href="/features#tender" class="sf-card-link">Tìm hiểu tính năng →</a>
+      </div>
+    </div>
+
+    <div class="sf-card-demo">
+      <div class="sf-card-accent" style="background:#8B5CF6"></div>
+      <div class="sf-card-body">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="badge-tag" style="background:#F5F3FF;color:#8B5CF6;align-self:flex-start">HARD GATE S2</div>
+          <div class="sf-card-title">Scorecard Go/No-Go</div>
+          <p class="sf-card-desc">Chấm điểm 6 tiêu chí trọng số 0–100, ép buộc phán quyết có căn cứ và lưu vết lý do vĩnh viễn ở máy chủ.</p>
+        </div>
+        <a href="/features#gonogo" class="sf-card-link">Khám phá cơ chế →</a>
+      </div>
+    </div>
+
+    <div class="sf-card-demo">
+      <div class="sf-card-accent" style="background:#3F9E25"></div>
+      <div class="sf-card-body">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="badge-tag" style="background:#EBF7E8;color:#277A14;align-self:flex-start">BÀN GIAO S8</div>
+          <div class="sf-card-title">Handover Pack</div>
+          <p class="sf-card-desc">Đóng gói cam kết hồ sơ thầu, bàn giao thông suốt sang Ban chỉ huy công trường tránh thất thoát thông tin.</p>
+        </div>
+        <a href="/business-map" class="sf-card-link">Xem gói bàn giao →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="use"><b>Class Tailwind thật cho Salesforce Card:</b>
+class="bg-card rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"</div>
+
+  <!-- ── 3. Buttons & Actions ── -->
+  <h2>3 · Nút Bấm & Tương Tác (Buttons & Controls)</h2>
+  <div class="panel">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+      <button class="btn primary">Đặt lịch Demo (Primary)</button>
+      <button class="btn secondary">Bản đồ nghiệp vụ (Secondary)</button>
+      <button class="btn outline">Xem tài liệu (Outline)</button>
+      <button class="btn navy">Trang quản trị (Navy)</button>
+      <button class="btn ghost">Đọc tiếp → (Ghost)</button>
+      <button class="btn primary pill">Dùng thử 30 ngày (Pill)</button>
+    </div>
+    <div class="use"><b>&lt;SfButton variant="primary" size="md"&gt;</b> — variant: primary · secondary · outline · navy · ghost | size: sm · md · lg</div>
+  </div>
+
+  <!-- ── 4. Form Inputs ── -->
+  <h2>4 · Ô Nhập Liệu Chuẩn Nhận Diện Cao (High Affordance Inputs)</h2>
+  <div class="panel">
+    <div class="grid2">
+      <div class="form-group">
+        <label class="form-label" for="demo-name">Tên Tổng Thầu / Doanh Nghiệp <span class="req">*</span></label>
+        <input id="demo-name" class="input-field" type="text" placeholder="Ví dụ: Công ty Cổ phần Xây dựng AZB">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="demo-scale">Quy Mô Gói Thầu Bình Quân</label>
+        <input id="demo-scale" class="input-field tabular" type="text" placeholder="Ví dụ: 150 tỷ — 500 tỷ VND">
+      </div>
+    </div>
+    <div class="use"><b>Class chuẩn Input:</b>
+class="w-full h-10 px-3.5 bg-card rounded-lg border border-input text-foreground text-sm focus:ring-2 focus:ring-ring focus:border-ring transition-all"</div>
+  </div>
+
+  <!-- ── 5. Popup Modal ── -->
+  <h2>5 · Kiến Trúc Popup / Modal 3 Lớp (Modal Architecture)</h2>
+  <div class="panel" style="background:#EEF2EE">
+    <div class="modal-preview">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--primary-color)"></span>
+          <h4>Đăng ký Trải Nghiệm Bidly Preconstruction CRM</h4>
+        </div>
+        <button style="border:0;background:transparent;cursor:pointer;font-size:18px;color:#5C665D">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:13.5px;color:#5C665D;margin:0">Điền thông tin doanh nghiệp để chuyên viên giải pháp thiết lập môi trường dữ liệu mẫu phù hợp với loại hình tổng thầu của bạn.</p>
+        <div class="form-group">
+          <label class="form-label">Email Doanh Nghiệp</label>
+          <input class="input-field" type="email" placeholder="giamdoc.duan@tongthau.vn">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Số Điện Thoại / Zalo</label>
+          <input class="input-field tabular" type="tel" placeholder="0912 345 678">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn outline sm">Đóng</button>
+        <button class="btn primary sm">Gửi Yêu Cầu</button>
+      </div>
+    </div>
+    <div class="use"><b>Cấu trúc 3 lớp:</b> Header (Cố định) + Body cuộn an toàn (`max-h-[calc(100dvh-8rem)]`, `overflow-y-auto`, `min-h-0`) + Footer (Cố định).</div>
+  </div>
+
+  <!-- ── 6. Typography & Tabular Numbers ── -->
+  <h2>6 · Typography & Định Dạng Số Liệu Bảng (.tabular)</h2>
+  <div class="panel">
+    <table class="demo-tbl">
+      <thead>
+        <tr>
+          <th>Tên Dự Án Cơ Hội</th>
+          <th>Giai Đoạn</th>
+          <th style="text-align:right">Dự Toán Giá Trị</th>
+          <th style="text-align:right">Hạn Nộp Hồ Sơ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700">Nhà máy Công nghệ Cao Amkor Phân kỳ 3</td>
+          <td><span class="badge-stage" style="background:#F0F9FF;color:#0284C7"><span class="code">S4</span>Đấu thầu</span></td>
+          <td class="tabular" style="text-align:right;font-weight:700">1.450.000.000.000 đ</td>
+          <td class="tabular" style="text-align:right;color:#5C665D">15/09/2026</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">Trung tâm Dữ liệu Viettel Cloud IDC</td>
+          <td><span class="badge-stage" style="background:#F5F3FF;color:#8B5CF6"><span class="code">S2</span>Go/No-Go</span></td>
+          <td class="tabular" style="text-align:right;font-weight:700">680.000.000.000 đ</td>
+          <td class="tabular" style="text-align:right;color:#5C665D">28/08/2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="use"><b>Bắt buộc class .tabular:</b> Chữ số có cùng độ rộng giúp cột tiền và ngày tháng căn thẳng tắp khi cuộn danh sách.</div>
+  </div>
+
+  <!-- ── 7. Spacing Ruler ── -->
+  <h2>7 · Thang Khoảng Cách (Spacing Scale Modular 4px/8px)</h2>
+  <div class="panel">
+    <div class="ruler">
+      <div class="ruler-unit"><div class="ruler-bar" style="width:8px"></div><div class="ruler-label"><b>gap-2</b>8px · Chips/Tags</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:12px"></div><div class="ruler-label"><b>gap-3</b>12px · Sub-items</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:16px"></div><div class="ruler-label"><b>gap-4</b>16px · Form rhythm</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:24px"></div><div class="ruler-label"><b>gap-6 / p-6</b>24px · Card body</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:32px"></div><div class="ruler-label"><b>gap-8 / p-8</b>32px · Grid columns</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:64px"></div><div class="ruler-label"><b>py-16</b>64px · Section tablet</div></div>
+      <div class="ruler-unit"><div class="ruler-bar" style="width:96px"></div><div class="ruler-label"><b>py-24</b>96px · Section desktop</div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

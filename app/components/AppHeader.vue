@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { navigationData } from "~/data/navigation";
 import SfButton from "~/components/ui/SfButton.vue";
+import { useDemoModal } from "~/composables/useDemoModal";
 
 const isMobileMenuOpen = ref(false);
 const activeDropdown = ref<string | null>(null);
@@ -39,7 +40,7 @@ const closeAllDropdowns = () => {
               aria-hidden="true"
               class="shrink-0"
             >
-              <g style="fill: var(--logo-tile, #1B211C)">
+              <g style="fill: var(--logo-tile, #1b211c)">
                 <path
                   d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"
                 />
@@ -50,7 +51,7 @@ const closeAllDropdowns = () => {
               <!-- Gate cutting through B -->
               <path
                 d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"
-                style="fill: var(--logo-gate, #74CC55)"
+                style="fill: var(--logo-gate, #74cc55)"
               />
             </svg>
             <div class="min-w-0">
@@ -78,7 +79,7 @@ const closeAllDropdowns = () => {
             <NuxtLink
               v-if="menu.url"
               :to="menu.url"
-              class="px-3.5 py-2 text-sm font-semibold text-foreground hover:text-brand-text rounded-lg hover:bg-background transition-colors inline-flex items-center gap-1"
+              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-brand-text rounded-lg hover:bg-background transition-colors inline-flex items-center gap-1"
             >
               {{ menu.title }}
             </NuxtLink>
@@ -86,7 +87,7 @@ const closeAllDropdowns = () => {
             <button
               v-else
               type="button"
-              class="px-3.5 py-2 text-sm font-semibold text-foreground hover:text-brand-text rounded-lg hover:bg-background transition-colors inline-flex items-center gap-1 cursor-pointer"
+              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-brand-text rounded-lg hover:bg-background transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none"
               @click="toggleDropdown(menu.title)"
             >
               <span>{{ menu.title }}</span>
@@ -114,54 +115,59 @@ const closeAllDropdowns = () => {
             <div
               v-if="menu.categories && activeDropdown === menu.title"
               :class="[
-                'absolute top-full left-0 mt-2 bg-card rounded-2xl shadow-2xl border border-border p-6 z-50 animate-fade-in',
-                menu.widthClass || 'w-[640px]'
+                'absolute top-full left-0 mt-1.5 bg-card rounded-2xl shadow-dropdown border border-border p-5 z-50 transition-all duration-200',
+                menu.widthClass || 'w-[640px]',
               ]"
             >
               <div
                 :class="[
-                  'grid gap-6',
+                  'grid gap-5',
                   menu.categories.length === 2 ? 'grid-cols-2' : '',
                   menu.categories.length === 3 ? 'grid-cols-3' : '',
-                  menu.categories.length >= 4 ? 'grid-cols-4' : ''
+                  menu.categories.length >= 4 ? 'grid-cols-4' : '',
                 ]"
               >
                 <div
                   v-for="(cat, cIdx) in menu.categories"
                   :key="cIdx"
                   :class="[
-                    'space-y-3',
-                    cat.hasSeparator ? 'border-r border-border pr-5' : ''
+                    'space-y-2.5',
+                    cat.hasSeparator ? 'border-r border-border/80 pr-5' : '',
                   ]"
                 >
                   <div
                     v-if="cat.categoryTitle"
-                    class="text-[11px] font-bold text-muted-foreground uppercase tracking-wider px-2"
+                    class="text-[11px] font-extrabold text-muted-foreground uppercase tracking-wider px-2 pb-1.5 border-b border-border/50"
                   >
                     {{ cat.categoryTitle }}
                   </div>
-                  <div class="space-y-1">
+                  <div class="space-y-0.5">
                     <NuxtLink
                       v-for="(item, iIdx) in cat.items"
                       :key="iIdx"
                       :to="item.url"
-                      class="block px-2.5 py-2 rounded-xl hover:bg-background transition-colors group"
+                      class="block px-2.5 py-2 rounded-xl hover:bg-brand-soft/60 transition-all duration-150 group"
                       @click="closeAllDropdowns"
                     >
                       <div
-                        class="text-sm font-bold text-foreground group-hover:text-brand-text flex items-center justify-between"
+                        class="text-[13.5px] font-bold text-foreground group-hover:text-brand-text flex items-center justify-between"
                       >
-                        <span>{{ item.label }}</span>
+                        <span class="flex items-center gap-1.5">
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-brand-gate opacity-0 group-hover:opacity-100 transition-opacity"
+                          />
+                          {{ item.label }}
+                        </span>
                         <span
                           v-if="item.badge"
-                          class="text-[10px] font-bold bg-brand-soft text-brand-text px-1.5 py-0.5 rounded"
+                          class="text-[10px] font-extrabold bg-brand-soft text-brand-text px-1.5 py-0.5 rounded tracking-tight"
                         >
                           {{ item.badge }}
                         </span>
                       </div>
                       <div
                         v-if="item.description"
-                        class="text-xs text-muted-foreground line-clamp-2 mt-0.5 leading-relaxed"
+                        class="text-xs text-muted-foreground line-clamp-1 mt-0.5 leading-snug pl-3 group-hover:text-foreground/80 transition-colors"
                       >
                         {{ item.description }}
                       </div>
@@ -176,18 +182,18 @@ const closeAllDropdowns = () => {
 
       <!-- Utility CTAs (Right) -->
       <div class="hidden sm:flex items-center gap-3">
-        <SfButton
+        <!-- <SfButton
           variant="secondary"
           size="sm"
-          @click="openModal('Tour Khám phá Giải pháp CRM')"
+          :to="navigationData.utilityNavigation.tourCta.url"
         >
           {{ navigationData.utilityNavigation.tourCta.label }}
-        </SfButton>
+        </SfButton> -->
 
         <SfButton
           variant="primary"
-          size="sm"
-          :to="navigationData.utilityNavigation.freeTrialCta.url"
+          size="md"
+          @click="openModal('Demo Bidly Preconstruction CRM')"
         >
           {{ navigationData.utilityNavigation.freeTrialCta.label }}
         </SfButton>
@@ -263,7 +269,10 @@ const closeAllDropdowns = () => {
               :key="cIdx"
               class="pl-2 space-y-2 pt-1"
             >
-              <div v-if="cat.categoryTitle" class="text-[11px] font-bold text-brand-text uppercase">
+              <div
+                v-if="cat.categoryTitle"
+                class="text-[11px] font-bold text-brand-text uppercase"
+              >
                 {{ cat.categoryTitle }}
               </div>
               <NuxtLink
@@ -283,23 +292,23 @@ const closeAllDropdowns = () => {
       <div class="pt-4 border-t border-border flex flex-col gap-3">
         <SfButton
           variant="primary"
-          to="/crm/free-trial"
-          block
-          @click="isMobileMenuOpen = false"
-        >
-          Bắt đầu miễn phí 30 ngày
-        </SfButton>
-        <SfButton
-          variant="secondary"
           block
           @click="
             () => {
-              openModal('Tour Khám phá');
+              openModal('Demo Bidly Preconstruction CRM');
               isMobileMenuOpen = false;
             }
           "
         >
-          Khám phá tour
+          Đặt lịch Demo
+        </SfButton>
+        <SfButton
+          variant="secondary"
+          to="/features"
+          block
+          @click="isMobileMenuOpen = false"
+        >
+          Xem tính năng
         </SfButton>
       </div>
     </div>
