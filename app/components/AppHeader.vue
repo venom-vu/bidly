@@ -40,7 +40,7 @@ const closeAllDropdowns = () => {
               aria-hidden="true"
               class="shrink-0"
             >
-              <g style="fill: var(--logo-tile, #032D60)">
+              <g style="fill: var(--logo-tile, #032d60)">
                 <path
                   d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"
                 />
@@ -51,7 +51,7 @@ const closeAllDropdowns = () => {
               <!-- Gate cutting through B -->
               <path
                 d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"
-                style="fill: var(--logo-gate, #0176D3)"
+                style="fill: var(--logo-gate, #0176d3)"
               />
             </svg>
             <div class="min-w-0">
@@ -79,7 +79,7 @@ const closeAllDropdowns = () => {
             <NuxtLink
               v-if="menu.url"
               :to="menu.url"
-              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-xl hover:bg-background transition-colors inline-flex items-center gap-1"
+              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-[4px] hover:bg-background transition-colors inline-flex items-center gap-1"
             >
               {{ menu.title }}
             </NuxtLink>
@@ -87,7 +87,7 @@ const closeAllDropdowns = () => {
             <button
               v-else
               type="button"
-              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-xl hover:bg-background transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none"
+              class="px-3.5 py-2 text-sm font-bold text-foreground hover:text-primary rounded-[4px] hover:bg-background transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none"
               @click="toggleDropdown(menu.title)"
             >
               <span>{{ menu.title }}</span>
@@ -115,13 +115,14 @@ const closeAllDropdowns = () => {
             <div
               v-if="menu.categories && activeDropdown === menu.title"
               :class="[
-                'absolute top-full left-0 mt-1.5 bg-card rounded-2xl shadow-dropdown border border-border/80 p-5 z-50 transition-all duration-200',
+                'absolute top-full left-0 mt-1.5 bg-card rounded-xl shadow-dropdown border border-border/80 p-5 z-50 transition-all duration-200',
                 menu.widthClass || 'w-[640px]',
               ]"
             >
               <div
                 :class="[
                   'grid gap-5',
+                  menu.categories.length === 1 ? 'grid-cols-1' : '',
                   menu.categories.length === 2 ? 'grid-cols-2' : '',
                   menu.categories.length === 3 ? 'grid-cols-3' : '',
                   menu.categories.length >= 4 ? 'grid-cols-4' : '',
@@ -146,28 +147,17 @@ const closeAllDropdowns = () => {
                       v-for="(item, iIdx) in cat.items"
                       :key="iIdx"
                       :to="item.url"
-                      class="block px-2.5 py-2 rounded-xl hover:bg-brand-soft/80 transition-all duration-150 group"
+                      class="block px-3 py-2 rounded-[4px] hover:bg-brand-soft/80 transition-all duration-150 group"
                       @click="closeAllDropdowns"
                     >
                       <div
-                        class="text-[13.5px] font-bold text-foreground group-hover:text-primary flex items-center justify-between"
+                        class="text-[13.5px] font-bold text-foreground group-hover:text-primary transition-colors"
                       >
-                        <span class="flex items-center gap-1.5">
-                          <span
-                            class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
-                          />
-                          {{ item.label }}
-                        </span>
-                        <span
-                          v-if="item.badge"
-                          class="text-[10px] font-extrabold bg-brand-soft text-brand-text px-1.5 py-0.5 rounded tracking-tight border border-brand-text/15"
-                        >
-                          {{ item.badge }}
-                        </span>
+                        {{ item.label }}
                       </div>
                       <div
                         v-if="item.description"
-                        class="text-xs text-muted-foreground line-clamp-1 mt-0.5 leading-snug pl-3 group-hover:text-foreground/80 transition-colors font-normal"
+                        class="text-xs text-muted-foreground line-clamp-1 mt-0.5 leading-snug group-hover:text-foreground/80 transition-colors font-normal"
                       >
                         {{ item.description }}
                       </div>

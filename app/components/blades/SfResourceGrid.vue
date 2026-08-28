@@ -31,10 +31,11 @@ defineProps<Props>();
         <div
           v-for="card in cards"
           :key="card.id"
-          class="sf-card group bg-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 border border-border/70 hover:border-primary/40"
+          class="sf-card group bg-card rounded-xl overflow-hidden flex flex-col justify-between shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1"
         >
-          <!-- Top Accent Bar: 8px height with single solid color -->
+          <!-- Top Accent Bar: 8px height with single solid color (only shown when card has NO image) -->
           <div
+            v-if="!card.imageUrl"
             class="h-2 w-full shrink-0"
             :style="{
               backgroundColor: card.accentColor || 'var(--primary, #0176D3)',
@@ -78,22 +79,9 @@ defineProps<Props>();
             <div class="pt-1">
               <NuxtLink
                 :to="card.linkUrl"
-                class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
+                class="inline-flex items-center text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
               >
                 <span>{{ card.linkText }}</span>
-                <svg
-                  class="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1 no-underline"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
               </NuxtLink>
             </div>
           </div>
@@ -104,7 +92,7 @@ defineProps<Props>();
       <div v-if="ctaButton" class="text-center pt-2">
         <NuxtLink
           :to="ctaButton.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ ctaButton.label }}
         </NuxtLink>

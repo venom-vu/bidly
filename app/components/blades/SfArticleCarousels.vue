@@ -96,7 +96,7 @@ onMounted(() => {
           <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
             aria-label="Xem tiếp"
             @click="scrollNext(row1Container)"
           >
@@ -154,7 +154,7 @@ onMounted(() => {
           <!-- Navigation Arrow Button -->
           <button
             type="button"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover border border-border text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-card shadow-card hover:shadow-card-hover text-foreground hover:text-primary hover:scale-105 items-center justify-center transition-all z-20 cursor-pointer select-none"
             aria-label="Xem tiếp"
             @click="scrollNext(row2Container)"
           >

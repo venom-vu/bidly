@@ -107,7 +107,7 @@ const { openModal } = useDemoModal();
           <div class="relative mx-auto max-w-md lg:max-w-none">
             <!-- Floating Pipeline Badge 1 -->
             <div
-              class="absolute -top-4 -left-4 z-20 bg-card/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-dropdown border border-border/80 flex items-center gap-3 animate-float"
+              class="absolute -top-4 -left-4 z-20 bg-card/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-dropdown flex items-center gap-3 animate-float"
             >
               <span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping" />
               <div>
@@ -124,9 +124,9 @@ const { openModal } = useDemoModal();
 
             <!-- Floating Badge 2 -->
             <div
-              class="absolute -bottom-4 -right-4 z-20 bg-card/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-dropdown border border-border/80 flex items-center gap-2.5"
+              class="absolute -bottom-4 -right-4 z-20 bg-card/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-dropdown flex items-center gap-2.5"
             >
-              <div class="p-1.5 bg-brand-soft text-primary rounded-xl">
+              <div class="p-1.5 bg-brand-soft text-primary rounded-[4px]">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
@@ -146,7 +146,7 @@ const { openModal } = useDemoModal();
 
             <!-- Media Preview Container -->
             <div
-              class="relative rounded-2xl overflow-hidden shadow-modal border-4 border-card group cursor-pointer aspect-[4/3] bg-muted"
+              class="relative rounded-xl overflow-hidden shadow-modal group cursor-pointer aspect-[4/3] bg-muted"
               @click="openModal('Trải nghiệm Giải pháp Bidly CRM')"
             >
               <img

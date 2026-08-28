@@ -18,7 +18,7 @@ const portfolio = crmBladesData.productPortfolio;
           {{ portfolio.heading }}
         </h2>
         <p class="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-          Mô hình hóa từ sàng lọc tín hiệu đến bàn giao thi công với các chốt chặn kiểm soát ở máy chủ.
+          Số hóa toàn diện từ tiếp nhận tín hiệu đến bàn giao thi công với các chốt chặn kiểm soát cứng ở máy chủ.
         </p>
       </div>
 
@@ -43,7 +43,7 @@ const portfolio = crmBladesData.productPortfolio;
       <div class="text-center pt-2">
         <NuxtLink
           :to="portfolio.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ portfolio.cta.label }}
         </NuxtLink>

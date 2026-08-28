@@ -6,6 +6,7 @@ interface Props {
   linkText: string;
   linkUrl: string;
   badge?: string;
+  imageUrl?: string;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -15,13 +16,24 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="sf-card group bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full border border-border/70 hover:border-primary/40"
+    class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between overflow-hidden h-full"
   >
-    <!-- Top Accent Bar: 8px height with single solid color -->
+    <!-- Top Accent Bar: 8px height with single solid color (only shown when card has NO image) -->
     <div
+      v-if="!imageUrl"
       class="h-2 w-full shrink-0"
       :style="{ backgroundColor: borderColor }"
     />
+
+    <!-- Card Image Container (if imageUrl provided) -->
+    <div v-if="imageUrl" class="relative aspect-[16/9] bg-muted overflow-hidden">
+      <img
+        :src="imageUrl"
+        :alt="title"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
 
     <!-- Card Body -->
     <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
@@ -29,7 +41,7 @@ withDefaults(defineProps<Props>(), {
         <!-- Optional Category Badge -->
         <div v-if="badge">
           <span
-            class="inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-soft text-brand-text border border-brand-text/15 select-none"
+            class="inline-flex px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-soft text-brand-text select-none"
           >
             {{ badge }}
           </span>
@@ -51,22 +63,9 @@ withDefaults(defineProps<Props>(), {
       <div class="pt-1">
         <NuxtLink
           :to="linkUrl"
-          class="group/link inline-flex items-center gap-1.5 text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
+          class="inline-flex items-center text-sm sm:text-[14.5px] font-bold text-primary underline underline-offset-4 decoration-1 hover:text-primary-hover hover:decoration-2 transition-all cursor-pointer"
         >
           <span>{{ linkText }}</span>
-          <svg
-            class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform no-underline"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2.5"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
         </NuxtLink>
       </div>
     </div>

@@ -2,11 +2,14 @@
 import SfBadge from '~/components/ui/SfBadge.vue'
 import SfButton from '~/components/ui/SfButton.vue'
 import SfContactPillars from '~/components/blades/SfContactPillars.vue'
+import { useDemoModal } from '~/composables/useDemoModal'
 
 useSeoMeta({
   title: 'Giải pháp Bidly theo ngành: EPC, MEP, Kết cấu thép | Preconstruction CRM',
   description: 'Giải pháp quản trị đấu thầu chuyên biệt cho tổng thầu EPC công nghiệp, nhà thầu MEP/PCCC và kết cấu thép tại Việt Nam. 3 mẫu nghiệp vụ chuẩn hóa và mô hình triển khai on-premise.'
 })
+
+const { openModal } = useDemoModal()
 
 const segments = [
   {
@@ -70,46 +73,79 @@ const deploymentModels = [
     name: 'Design Partner Pilot',
     target: 'Dành cho doanh nghiệp muốn kiểm chứng adoption',
     desc: 'Triển khai có hỗ trợ đầy đủ 8-10 tuần trên dữ liệu thật. Chi phí khấu trừ 100% khi ký hợp đồng năm.',
-    ctaUrl: '/crm/pricing#pilot'
+    ctaUrl: '/crm/pricing#pilot',
+    accentColor: 'var(--primary, #0176D3)'
   },
   {
     name: 'Private Cloud Managed',
     target: 'Khuyến nghị cho Tổng thầu vừa & lớn',
     desc: 'Database PostgreSQL riêng biệt, backup độc lập, Vtechcom vận hành và cam kết SLA 99.9%.',
-    ctaUrl: '/crm/pricing#professional'
+    ctaUrl: '/crm/pricing#professional',
+    accentColor: 'var(--brand, #00A1E0)'
   },
   {
     name: 'Enterprise On-premise',
     target: 'Dành cho tập đoàn có chính sách IT nghiêm ngặt',
     desc: 'Cài đặt trực tiếp trên máy chủ nội bộ hoặc Customer Cloud, tích hợp SSO doanh nghiệp, tùy biến sâu.',
-    ctaUrl: '/crm/pricing#enterprise'
+    ctaUrl: '/crm/pricing#enterprise',
+    accentColor: 'var(--brand-panel, #032D60)'
   }
 ]
 </script>
 
 <template>
   <div class="space-y-0">
-    <!-- Hero Header -->
-    <section class="py-16 md:py-24 sf-gradient-bg border-b border-border">
-      <div class="sf-container text-center max-w-4xl space-y-6">
+    <!-- Hero Header with Ambient Glow -->
+    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden sf-gradient-bg border-b border-border">
+      <!-- Background subtle ambient glow -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
+      <div class="absolute top-1/2 -left-32 w-80 h-80 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
           <SfBadge variant="green" size="md">
             GIẢI PHÁP CHUYÊN BIỆT THEO PHÂN KHÚC
           </SfBadge>
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2]">
-          Bidly Cho Từng Phân Khúc Tổng Thầu Xây Dựng
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+          Giải Pháp Bidly Cho Từng
+          <span class="text-primary block mt-1">
+            Phân Khúc Tổng Thầu Xây Dựng
+          </span>
         </h1>
         <p class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal">
           Mỗi phân khúc có quy trình đặc thù. Bidly xây dựng 3 mẫu nghiệp vụ chuẩn (EPC, MEP, Thép) giúp triển khai nhanh và hiệu quả tức thì.
         </p>
-        <div class="pt-2 flex flex-wrap justify-center gap-4">
-          <SfButton variant="primary" size="lg" to="#demo">
+        <div class="pt-2 flex flex-wrap justify-center items-center gap-4">
+          <SfButton
+            variant="primary"
+            size="lg"
+            @click="openModal('Đặt lịch Demo Giải pháp Bidly theo ngành')"
+          >
+            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+            </svg>
             Đặt lịch Demo theo ngành của bạn
           </SfButton>
           <SfButton variant="secondary" size="lg" to="/features">
             Xem 7 Mô-đun Lõi
           </SfButton>
+        </div>
+
+        <!-- Trust Badges Strip -->
+        <div class="flex flex-wrap items-center justify-center gap-6 pt-3 text-xs font-semibold text-muted-foreground border-t border-border/80 max-w-xl mx-auto">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>3 Mẫu nghiệp vụ chuẩn hóa</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Triển khai thí điểm 8-10 tuần</span>
+          </div>
         </div>
       </div>
     </section>
@@ -121,53 +157,63 @@ const deploymentModels = [
           v-for="(seg, sIdx) in segments"
           :key="seg.id"
           :id="seg.id"
-          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
         >
           <!-- Left Column -->
           <div :class="['lg:col-span-6 space-y-6', sIdx % 2 === 1 ? 'lg:order-2' : '']">
             <div>
               <div class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ seg.badge }}</div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground">{{ seg.title }}</h2>
-              <div class="text-xs font-semibold text-muted-foreground mt-1 tabular">{{ seg.subtitle }}</div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-snug">{{ seg.title }}</h2>
+              <div class="text-xs font-semibold text-muted-foreground mt-1.5 tabular">{{ seg.subtitle }}</div>
             </div>
             <p class="text-muted-foreground leading-relaxed text-sm sm:text-base font-normal">{{ seg.description }}</p>
 
             <!-- Problems -->
-            <div class="space-y-2.5">
-              <div class="text-xs font-bold uppercase tracking-wider text-destructive">Bài toán thách thức:</div>
+            <div class="p-4 sm:p-5 rounded-xl bg-destructive/5 space-y-2.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-destructive flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-destructive shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                <span>Bài toán thách thức:</span>
+              </div>
               <ul class="space-y-2">
                 <li
                   v-for="problem in seg.problems"
                   :key="problem"
-                  class="flex items-start gap-2.5 text-xs sm:text-sm text-muted-foreground"
+                  class="flex items-start gap-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal"
                 >
-                  <svg class="w-4 h-4 text-destructive shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-destructive font-bold">•</span>
                   <span>{{ problem }}</span>
                 </li>
               </ul>
             </div>
 
             <!-- Solutions -->
-            <div class="space-y-2.5 pt-2">
-              <div class="text-xs font-bold uppercase tracking-wider text-primary">Giải pháp với Bidly:</div>
+            <div class="p-4 sm:p-5 rounded-xl bg-brand-soft/70 space-y-2.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-primary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Giải pháp với Bidly:</span>
+              </div>
               <ul class="space-y-2">
                 <li
                   v-for="sol in seg.solutions"
                   :key="sol"
-                  class="flex items-start gap-2.5 text-xs sm:text-sm text-foreground font-medium"
+                  class="flex items-start gap-2.5 text-xs sm:text-sm text-foreground font-semibold leading-relaxed"
                 >
-                  <svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-primary font-bold">✓</span>
                   <span>{{ sol }}</span>
                 </li>
               </ul>
             </div>
 
-            <div class="pt-4">
-              <SfButton variant="primary" size="md" to="#demo">
+            <div class="pt-2">
+              <SfButton
+                variant="primary"
+                size="md"
+                @click="openModal(`Đăng ký Demo Giải pháp: ${seg.title}`)"
+              >
                 Đăng ký Demo chuyên biệt
               </SfButton>
             </div>
@@ -175,11 +221,11 @@ const deploymentModels = [
 
           <!-- Right Image Column -->
           <div :class="['lg:col-span-6', sIdx % 2 === 1 ? 'lg:order-1' : '']">
-            <div class="rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all aspect-[4/3] bg-background border border-border/80">
+            <div class="sf-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 aspect-[4/3] bg-muted group">
               <img
                 :src="seg.imageUrl"
                 :alt="seg.title"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               >
             </div>
@@ -190,32 +236,44 @@ const deploymentModels = [
 
     <!-- Deployment Models Selection -->
     <section class="py-16 md:py-24 bg-secondary/40 border-b border-border">
-      <div class="sf-container space-y-12">
+      <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
-          <SfBadge variant="green">HẠ TẦNG &amp; TRIỂN KHAI</SfBadge>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
+          <div class="text-xs font-bold uppercase tracking-wider text-brand-text">
+            HẠ TẦNG &amp; TRIỂN KHAI
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             Lựa Chọn Mô Hình Triển Khai Linh Hoạt
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal">
-            Từ thí điểm nhanh đến cài đặt trên máy chủ riêng của doanh nghiệp với độ bảo mật tuyệt đối.
+          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
+            Từ thí điểm nhanh 8-10 tuần đến cài đặt trên máy chủ riêng của doanh nghiệp với độ bảo mật tuyệt đối.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
           <div
             v-for="(mod, mIdx) in deploymentModels"
             :key="mIdx"
-            class="sf-card bg-card p-6 sm:p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between border border-border/70 hover:border-primary/40"
+            class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between"
           >
-            <div class="space-y-2">
-              <h3 class="text-lg font-extrabold text-foreground tracking-tight">{{ mod.name }}</h3>
-              <div class="text-xs font-bold text-primary">{{ mod.target }}</div>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ mod.desc }}</p>
-            </div>
-            <div class="pt-2">
-              <SfButton variant="secondary" size="sm" :to="mod.ctaUrl" block>
-                Xem chi tiết &amp; Báo giá
-              </SfButton>
+            <!-- Top Accent Bar -->
+            <div
+              class="h-2 w-full shrink-0"
+              :style="{ backgroundColor: mod.accentColor }"
+            />
+
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+              <div class="space-y-3">
+                <h3 class="text-xl font-extrabold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
+                  {{ mod.name }}
+                </h3>
+                <div class="text-xs font-bold text-primary">{{ mod.target }}</div>
+                <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">{{ mod.desc }}</p>
+              </div>
+              <div class="pt-2">
+                <SfButton variant="secondary" size="md" :to="mod.ctaUrl" block>
+                  Xem chi tiết &amp; Báo giá
+                </SfButton>
+              </div>
             </div>
           </div>
         </div>
@@ -226,3 +284,4 @@ const deploymentModels = [
     <SfContactPillars />
   </div>
 </template>
+

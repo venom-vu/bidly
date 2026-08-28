@@ -53,7 +53,7 @@ const sizeClasses = computed(() => {
     :to="to"
     :class="[
       'inline-flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer text-center select-none font-bold',
-      pill ? 'rounded-full' : 'rounded-xl',
+      pill ? 'rounded-full' : 'rounded-[4px]',
       block ? 'w-full' : '',
       variantClasses,
       sizeClasses,
@@ -67,7 +67,7 @@ const sizeClasses = computed(() => {
     :href="href"
     :class="[
       'inline-flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer text-center select-none font-bold',
-      pill ? 'rounded-full' : 'rounded-xl',
+      pill ? 'rounded-full' : 'rounded-[4px]',
       block ? 'w-full' : '',
       variantClasses,
       sizeClasses,
@@ -81,7 +81,7 @@ const sizeClasses = computed(() => {
     :disabled="disabled"
     :class="[
       'inline-flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer text-center select-none disabled:opacity-50 disabled:cursor-not-allowed font-bold',
-      pill ? 'rounded-full' : 'rounded-xl',
+      pill ? 'rounded-full' : 'rounded-[4px]',
       block ? 'w-full' : '',
       variantClasses,
       sizeClasses,

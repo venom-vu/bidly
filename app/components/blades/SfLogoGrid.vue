@@ -18,7 +18,7 @@ const marketEvidence = crmBladesData.customerLogos;
           {{ marketEvidence.heading }}
         </h2>
         <p class="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-          Thống kê ngành: lý do tổng thầu cần chuyển đổi từ phân mảnh sang Preconstruction CRM chuẩn mực.
+          Số liệu thực tế: lý do nhà thầu công nghiệp cần chuyển đổi từ vận hành phân mảnh sang Preconstruction CRM chuẩn mực.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ const marketEvidence = crmBladesData.customerLogos;
       >
         <!-- Stat 1 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border border-border/70 hover:border-primary/40"
+          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -49,7 +49,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 2 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border border-border/70 hover:border-primary/40"
+          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -70,7 +70,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 3 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border border-border/70 hover:border-destructive/40"
+          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-destructive tracking-tight tabular"
@@ -91,7 +91,7 @@ const marketEvidence = crmBladesData.customerLogos;
 
         <!-- Stat 4 -->
         <div
-          class="bg-card p-6 sm:p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4 border border-border/70 hover:border-primary/40"
+          class="bg-card p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between text-left space-y-4"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight tabular"
@@ -115,7 +115,7 @@ const marketEvidence = crmBladesData.customerLogos;
       <div class="pt-2">
         <NuxtLink
           :to="marketEvidence.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ marketEvidence.cta.label }}
         </NuxtLink>

@@ -20,10 +20,8 @@ const features = crmBladesData.featuresZPattern
             feature.layout === 'image-left' ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6 lg:order-1'
           ]"
         >
-          <div class="inline-block">
-            <SfBadge variant="green" size="md">
-              {{ feature.eyebrow }}
-            </SfBadge>
+          <div class="text-xs font-bold uppercase tracking-wider text-primary">
+            {{ feature.eyebrow }}
           </div>
 
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-[1.2]">
@@ -37,7 +35,7 @@ const features = crmBladesData.featuresZPattern
           <div class="pt-2">
             <NuxtLink
               :to="feature.linkUrl"
-              class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+              class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
             >
               <span>{{ feature.linkText }}</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +52,7 @@ const features = crmBladesData.featuresZPattern
             feature.layout === 'image-left' ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6 lg:order-2'
           ]"
         >
-          <div class="relative rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-300 border border-border/80 bg-background group aspect-[16/10]">
+          <div class="relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-300 bg-background group aspect-[16/10]">
             <img
               :src="feature.imageUrl"
               :alt="feature.headline"

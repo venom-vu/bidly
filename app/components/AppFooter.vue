@@ -3,7 +3,9 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="bg-brand-panel text-brand-panel-foreground pt-16 pb-12 border-t border-brand-panel-border">
+  <footer
+    class="bg-brand-panel text-brand-panel-foreground pt-16 pb-12 border-t border-brand-panel-border"
+  >
     <div class="sf-container space-y-12">
       <!-- Main Footer Links Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
@@ -20,7 +22,7 @@ const currentYear = new Date().getFullYear();
               aria-hidden="true"
               class="shrink-0"
             >
-              <g style="fill: var(--logo-glyph, #FFFFFF)">
+              <g style="fill: var(--logo-glyph, #ffffff)">
                 <path
                   d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"
                 />
@@ -30,7 +32,7 @@ const currentYear = new Date().getFullYear();
               </g>
               <path
                 d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"
-                style="fill: var(--logo-gate, #0176D3)"
+                style="fill: var(--logo-gate, #0176d3)"
               />
             </svg>
             <div class="min-w-0">
@@ -41,20 +43,33 @@ const currentYear = new Date().getFullYear();
               </div>
             </div>
           </div>
-          <p class="text-xs text-brand-panel-muted max-w-sm leading-relaxed font-normal">
-            Preconstruction CRM cho Tổng thầu Xây dựng Công nghiệp Việt Nam (EPC, MEP, Kết cấu thép). Từ tín hiệu dự án đến bàn giao tiền thi công: kiểm soát chuyển bước có chốt chặn ở máy chủ, Go/No-Go định lượng và bảo vệ tri thức quan hệ của tổ chức.
+          <p
+            class="text-xs text-brand-panel-muted max-w-sm leading-relaxed font-normal"
+          >
+            Preconstruction CRM cho Tổng thầu Xây dựng Công nghiệp Việt Nam
+            (EPC, MEP, Kết cấu thép). Từ tín hiệu dự án đến bàn giao tiền thi
+            công: kiểm soát chuyển bước có chốt chặn ở máy chủ, Go/No-Go định
+            lượng và bảo vệ tri thức quan hệ của tổ chức.
           </p>
           <div class="text-xs text-brand-panel-muted space-y-1">
-            <div>Hotline: <span class="text-brand-panel-foreground font-bold tabular">+84 912 349 901</span></div>
-            <div>Email: <span class="text-brand-panel-foreground font-bold">contact@vtechcom.vn</span></div>
+            <div>
+              Hotline:
+              <span class="text-brand-panel-foreground font-bold tabular"
+                >+84 912 349 901</span
+              >
+            </div>
+            <div>
+              Email:
+              <span class="text-brand-panel-foreground font-bold"
+                >contact@vtechcom.vn</span
+              >
+            </div>
           </div>
         </div>
 
         <!-- Col 2: Mô-đun Lõi -->
         <div class="space-y-3">
-          <div
-            class="text-xs font-bold uppercase tracking-wider text-brand"
-          >
+          <div class="text-xs font-bold uppercase tracking-wider text-brand">
             Mô-đun Lõi (M1 - M7)
           </div>
           <ul class="space-y-2 text-xs text-brand-panel-muted">
@@ -112,12 +127,31 @@ const currentYear = new Date().getFullYear();
 
         <!-- Col 3: Định vị & Tài nguyên -->
         <div class="space-y-3">
-          <div
-            class="text-xs font-bold uppercase tracking-wider text-brand"
-          >
-            Tổng quan &amp; So sánh
+          <div class="text-xs font-bold uppercase tracking-wider text-brand">
+            Tổng quan &amp; Quy trình
           </div>
           <ul class="space-y-2 text-xs text-brand-panel-muted">
+            <li>
+              <NuxtLink
+                to="/stages"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >9 Giai đoạn cố định (S0-S8)</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/gates"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >5 Cổng kiểm soát cứng</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="/business-map"
+                class="hover:text-brand-panel-foreground transition-colors"
+                >Bản đồ nghiệp vụ 5 làn</NuxtLink
+              >
+            </li>
             <li>
               <NuxtLink
                 to="/crm/what-is-crm"
@@ -134,13 +168,6 @@ const currentYear = new Date().getFullYear();
             </li>
             <li>
               <NuxtLink
-                to="/business-map"
-                class="hover:text-brand-panel-foreground transition-colors"
-                >Bản đồ nghiệp vụ</NuxtLink
-              >
-            </li>
-            <li>
-              <NuxtLink
                 to="/solutions"
                 class="hover:text-brand-panel-foreground transition-colors"
                 >3 Mẫu giải pháp ngành</NuxtLink
@@ -150,12 +177,7 @@ const currentYear = new Date().getFullYear();
               <NuxtLink
                 to="/crm/pricing"
                 class="hover:text-brand-panel-foreground transition-colors"
-                >Bảng giá & Triển khai</NuxtLink
-              >
-            </li>
-            <li>
-              <NuxtLink to="/#faq" class="hover:text-brand-panel-foreground transition-colors"
-                >Câu hỏi thường gặp (FAQ)</NuxtLink
+                >Bảng giá &amp; Triển khai</NuxtLink
               >
             </li>
           </ul>
@@ -163,9 +185,7 @@ const currentYear = new Date().getFullYear();
 
         <!-- Col 4: Mô hình & Bảo mật -->
         <div class="space-y-3">
-          <div
-            class="text-xs font-bold uppercase tracking-wider text-brand"
-          >
+          <div class="text-xs font-bold uppercase tracking-wider text-brand">
             Mô hình & Bảo mật
           </div>
           <ul class="space-y-2 text-xs text-brand-panel-muted">
@@ -220,7 +240,8 @@ const currentYear = new Date().getFullYear();
         class="pt-8 border-t border-brand-panel-border flex flex-col sm:flex-row items-center justify-between text-xs text-brand-panel-muted gap-4"
       >
         <div>
-          © {{ currentYear }} Vtechcom. Bidly Preconstruction CRM. Nền tảng chuyên biệt cho Tổng thầu Xây dựng Công nghiệp.
+          © {{ currentYear }} Vtechcom. Bidly Preconstruction CRM. Nền tảng
+          chuyên biệt cho Tổng thầu Xây dựng Công nghiệp.
         </div>
         <div class="flex flex-wrap items-center gap-4">
           <span>Tiếng Việt (Việt Nam)</span>

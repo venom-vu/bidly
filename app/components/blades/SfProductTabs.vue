@@ -32,7 +32,7 @@ const activeCloud = computed(() => {
             :key="cloud.id"
             type="button"
             :class="[
-              'px-5 py-3 font-bold text-sm sm:text-base rounded-t-xl transition-all whitespace-nowrap relative cursor-pointer select-none',
+              'px-5 py-3 font-bold text-sm sm:text-base rounded-t-[4px] transition-all whitespace-nowrap relative cursor-pointer select-none',
               activeTabId === cloud.id
                 ? 'text-primary bg-card border-t-2 border-primary shadow-xs'
                 : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60'
@@ -44,7 +44,7 @@ const activeCloud = computed(() => {
         </div>
 
         <!-- Tab Content View (Transition Fade) -->
-        <div class="bg-card rounded-3xl p-6 sm:p-10 md:p-12 shadow-card border border-border/80">
+        <div class="bg-card rounded-xl p-6 sm:p-10 md:p-12 shadow-card">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <!-- Content Left -->
             <div class="lg:col-span-6 space-y-6">
@@ -81,7 +81,7 @@ const activeCloud = computed(() => {
               <div class="pt-4">
                 <NuxtLink
                   :to="activeCloud.linkUrl"
-                  class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+                  class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
                 >
                   {{ activeCloud.linkText }}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const activeCloud = computed(() => {
 
             <!-- Image Right -->
             <div class="lg:col-span-6">
-              <div class="rounded-2xl overflow-hidden shadow-card border border-border/80 bg-background aspect-[16/10]">
+              <div class="rounded-xl overflow-hidden shadow-card bg-background aspect-[16/10]">
                 <img
                   :src="activeCloud.imageUrl"
                   :alt="activeCloud.headline"

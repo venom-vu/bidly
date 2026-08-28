@@ -32,8 +32,7 @@ const businessScale = crmBladesData.businessScale;
             {{ businessScale.leftTitle }}
           </h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Mỗi loại hình nhà thầu có chu kỳ thầu riêng biệt. Bidly cung cấp
-            template cấu hình sẵn sàng triển khai.
+            Mỗi phân khúc có chu kỳ và đặc thù thầu riêng biệt. Bidly cung cấp các mẫu nghiệp vụ cấu hình sẵn sàng vận hành ngay.
           </p>
         </div>
 
@@ -59,7 +58,7 @@ const businessScale = crmBladesData.businessScale;
       <div class="text-center pt-2">
         <NuxtLink
           :to="businessScale.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-xl hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all shadow-sm hover:shadow active:scale-[0.98] cursor-pointer"
         >
           {{ businessScale.cta.label }}
         </NuxtLink>

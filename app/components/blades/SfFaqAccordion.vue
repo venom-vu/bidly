@@ -32,8 +32,8 @@ const toggleFaq = (index: number) => {
         <div
           v-for="(faq, idx) in faqsData.items"
           :key="faq.id"
-          class="border rounded-2xl overflow-hidden transition-all duration-200"
-          :class="openIndex === idx ? 'border-primary/60 shadow-card bg-brand-soft/20' : 'border-border hover:border-muted-foreground/30 bg-card'"
+          class="rounded-xl overflow-hidden transition-all duration-200"
+          :class="openIndex === idx ? 'shadow-card bg-brand-soft/30' : 'shadow-xs hover:shadow-card bg-card'"
         >
           <button
             type="button"
