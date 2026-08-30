@@ -13,63 +13,225 @@ useSeoMeta({
 
 const { openModal } = useDemoModal();
 
-const marketData = [
+interface MarketStat {
+  value: string;
+  target: number;
+  prefix?: string;
+  suffix?: string;
+  decimals: number;
+  label: string;
+  desc: string;
+  accentColor: string;
+}
+
+const marketData: MarketStat[] = [
   {
     value: "+10,28%",
+    target: 10.28,
+    prefix: "+",
+    suffix: "%",
+    decimals: 2,
     label: "Tăng trưởng xây dựng Q2/2026",
-    desc: "Ngành xây dựng duy trì đà tăng trưởng cao theo Tổng cục Thống kê (+7,87% năm 2024 và +10,28% Q2/2026). Nhu cầu quản trị pipeline thầu tăng nhanh.",
+    desc: "Ngành xây dựng tăng trưởng cao, thúc đẩy nhu cầu cấp thiết về chuẩn hóa quản trị thầu.",
     accentColor: "var(--primary, #0176D3)",
   },
   {
     value: "34,65 tỷ $",
+    target: 34.65,
+    prefix: "",
+    suffix: " tỷ $",
+    decimals: 2,
     label: "Tổng vốn FDI 6T/2026 (+61%)",
-    desc: "Dòng vốn FDI vào nhà máy, KCN bùng nổ; khối chế biến, chế tạo chiếm 56,5%, mở ra cơ hội lớn cho tổng thầu EPC, MEP, PCCC và kết cấu thép.",
+    desc: "Vốn FDI công nghiệp bùng nổ, mở ra làn sóng dự án quy mô lớn cho các nhà thầu.",
     accentColor: "var(--brand, #00A1E0)",
   },
   {
     value: "44,7%",
+    target: 44.7,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
     label: "Doanh nghiệp thiếu hợp đồng mới",
-    desc: "Khảo sát ngành: 44,7% doanh nghiệp đối mặt thiếu hợp đồng; 11,6% bỏ lỡ thông tin thầu. Sàng lọc và chọn đúng cơ hội là bài toán sống còn.",
+    desc: "Áp lực cạnh tranh gia tăng; sàng lọc và bắt đúng cơ hội thầu là bài toán sống còn.",
     accentColor: "var(--destructive, #EA001E)",
   },
   {
     value: "2,6 / 5",
+    target: 2.6,
+    prefix: "",
+    suffix: " / 5",
+    decimals: 1,
     label: "Mức độ số hóa ngành xây dựng",
-    desc: "Quy trình theo đuổi thầu còn phân mảnh giữa Zalo, Excel, Drive. Số hóa với hệ thống chuẩn ngành mang lại lợi thế cạnh tranh vượt trội.",
+    desc: "Vận hành còn phân mảnh qua Excel, Zalo; số hóa chuẩn ngành tạo lợi thế vượt trội.",
     accentColor: "var(--stage-s2, #7F27FF)",
   },
 ];
 
-const asIsToBe = [
+const statsSectionRef = ref<HTMLElement | null>(null);
+const animatedValues = ref<string[]>(
+  marketData.map(
+    (s) =>
+      `${s.prefix || ""}${(0).toFixed(s.decimals).replace(".", ",")}${s.suffix || ""}`,
+  ),
+);
+
+let hasAnimated = false;
+
+const startCountAnimation = () => {
+  if (hasAnimated) return;
+  hasAnimated = true;
+
+  const duration = 1600;
+  const startTime = performance.now();
+
+  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+  const step = (currentTime: number) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOutCubic(progress);
+
+    animatedValues.value = marketData.map((stat) => {
+      const currentVal = stat.target * easedProgress;
+      const formatted = currentVal.toFixed(stat.decimals).replace(".", ",");
+      return `${stat.prefix || ""}${formatted}${stat.suffix || ""}`;
+    });
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      animatedValues.value = marketData.map((stat) => stat.value);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+  if (typeof IntersectionObserver !== "undefined" && statsSectionRef.value) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          startCountAnimation();
+          observer?.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(statsSectionRef.value);
+  } else {
+    animatedValues.value = marketData.map((s) => s.value);
+  }
+});
+
+onUnmounted(() => {
+  observer?.disconnect();
+});
+
+interface TransformationItem {
+  number: string;
+  stageCode: string;
+  stageLabel: string;
+  area: string;
+  shortDesc: string;
+  asIs: string;
+  asIsPain: string;
+  toBe: string;
+  highlights: string[];
+}
+
+const asIsToBe: TransformationItem[] = [
   {
-    area: "Tín hiệu dự án & Hộp thư cơ hội (Project Inbox)",
+    number: "01",
+    stageCode: "S0",
+    stageLabel: "Phát hiện cơ hội",
+    area: "Tín hiệu dự án & Hộp thư cơ hội",
+    shortDesc: "Project Inbox & FDI Intelligence",
     asIs: "Thu thập rải rác qua Zalo, KCN, báo chí; không rõ ai đang phụ trách, dễ trùng lặp hoặc bỏ sót dự án tiềm năng.",
+    asIsPain: "Phân mảnh nguồn tin, mất dấu cơ hội",
     toBe: "Một Project Inbox tập trung duy nhất, tự động lọc trùng (dedup), phân loại FDI/KCN/ngành và gán người phụ trách rõ ràng.",
+    highlights: [
+      "Lọc trùng (Dedup) tự động",
+      "Phân loại FDI / KCN",
+      "Gán đầu mối tức thì",
+    ],
   },
   {
-    area: "Đánh giá & Lựa chọn cơ hội (Scorecard Go/No-Go)",
+    number: "02",
+    stageCode: "S2",
+    stageLabel: "Sàng lọc & Quyết định",
+    area: "Đánh giá & Lựa chọn cơ hội",
+    shortDesc: "Scorecard Go/No-Go Gate",
     asIs: "Quyết định theo cảm tính hoặc áp lực doanh số; đầu tư nguồn lực vào dự án rủi ro cao hoặc không đúng năng lực lõi.",
+    asIsPain: "Cảm tính, lãng phí chi phí lập hồ sơ",
     toBe: "Scorecard Go/No-Go định lượng 6 tiêu chí trọng số (0-100); bắt buộc người duyệt, quyết định và lý do lưu vết máy chủ.",
+    highlights: [
+      "Ma trận 6 tiêu chí trọng số",
+      "Khóa gate trên máy chủ",
+      "Lưu vết thẩm định",
+    ],
   },
   {
-    area: "Mạng lưới bên liên quan (Stakeholder Map)",
+    number: "03",
+    stageCode: "S3",
+    stageLabel: "Nuôi dưỡng & Quan hệ",
+    area: "Mạng lưới bên liên quan",
+    shortDesc: "Stakeholder Relationship Mapping",
     asIs: "Lưu trong danh bạ cá nhân; khi nhân sự nghỉ việc, doanh nghiệp mất toàn bộ thông tin quan hệ và lịch sử tương tác.",
+    asIsPain: "Tri thức rời đi cùng nhân sự",
     toBe: "Bản đồ Stakeholder Map theo dự án (Decision Maker, Influencer, Champion, Gatekeeper); dữ liệu thuộc về tổ chức.",
+    highlights: [
+      "4 Vai trò ảnh hưởng",
+      "Dữ liệu thuộc tổ chức",
+      "Nhật ký tương tác sâu",
+    ],
   },
   {
-    area: "Phối hợp lập hồ sơ thầu (Tender Workspace)",
+    number: "04",
+    stageCode: "S4-S5",
+    stageLabel: "Hồ sơ & Đấu thầu",
+    area: "Phối hợp lập hồ sơ thầu",
+    shortDesc: "Tender Workspace & Submission Gate",
     asIs: "Checklist và tệp tin nằm rải rác trên Drive, Zalo; dễ trễ hạn, sót đầu việc hoặc nộp nhầm phiên bản giá cũ.",
+    asIsPain: "Rủi ro nộp nhầm giá, trễ deadline",
     toBe: "Tender Workspace theo vòng thầu; phân rã checklist cho 5 phòng ban, theo dõi hạn chót và bất biến duy nhất 1 bản final.",
+    highlights: [
+      "Checklist 5 phòng ban",
+      "Khóa bất biến 1 bản Final",
+      "Kiểm soát 100% hạn chót",
+    ],
   },
   {
-    area: "Thư viện hồ sơ năng lực (Capability Library)",
+    number: "05",
+    stageCode: "S6",
+    stageLabel: "Đàm phán & Thương thảo",
+    area: "Thư viện hồ sơ năng lực",
+    shortDesc: "Centralized Capability Library",
     asIs: "Mỗi lần đấu thầu lại hỏi xin CV, ảnh dự án và chứng chỉ; chứng chỉ hết hạn không được phát hiện kịp thời.",
+    asIsPain: "Tìm kiếm thủ công, rủi ro chứng chỉ hết hạn",
     toBe: "Capability Library tập trung: dự án tiêu biểu (tonnage, diện tích), hồ sơ chuyên gia, thiết bị có tag và cảnh báo hết hạn tự động.",
+    highlights: [
+      "Thư viện số tập trung",
+      "Cảnh báo chứng chỉ hết hạn",
+      "Truy xuất tức thì",
+    ],
   },
   {
-    area: "Bàn giao sau trúng thầu (Handover Pack S8)",
+    number: "06",
+    stageCode: "S8",
+    stageLabel: "Bàn giao thi công",
+    area: "Bàn giao sau trúng thầu",
+    shortDesc: "Handover Pack to ERP / PM",
     asIs: "Bàn giao sang ban điều hành dự án bằng họp miệng hoặc email; thất lạc cam kết thương mại, giả định và rủi ro.",
+    asIsPain: "Đứt gãy thông tin khi chuyển giao thi công",
     toBe: "Gói bàn giao Handover Pack (S8) chuẩn hóa toàn bộ dữ liệu trước khi chuyển giao sang hệ thống ERP/PM thi công.",
+    highlights: [
+      "Khép kín chuỗi Precon",
+      "100% Cam kết được chuyển giao",
+      "Tương thích ERP / PM",
+    ],
   },
 ];
 
@@ -154,7 +316,9 @@ const kpiMetrics = [
     >
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
+          <span
+            class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary"
+          >
             ĐỊNH VỊ GIẢI PHÁP
           </span>
         </div>
@@ -171,7 +335,9 @@ const kpiMetrics = [
         <p
           class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
         >
-          Bidly lấp đầy khoảng trống giữa CRM bán hàng và ERP thi công: giúp tổng thầu tập trung đúng cơ hội, nộp đúng hồ sơ và giữ trọn tri thức quan hệ của tổ chức.
+          Bidly lấp đầy khoảng trống giữa CRM bán hàng và ERP thi công: giúp
+          tổng thầu tập trung đúng cơ hội, nộp đúng hồ sơ và giữ trọn tri thức
+          quan hệ của tổ chức.
         </p>
 
         <div class="pt-2 flex flex-wrap justify-center items-center gap-4">
@@ -197,11 +363,15 @@ const kpiMetrics = [
           class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
         >
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
+            <span
+              class="w-2 h-2 rounded-full bg-primary inline-block shrink-0"
+            />
             <span>Khấu trừ 100% chi phí Pilot</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0"
+            />
             <span>Bảo mật dữ liệu On-premise</span>
           </div>
         </div>
@@ -217,30 +387,36 @@ const kpiMetrics = [
           >
             Vì Sao Cần Bidly Ngay Lúc Này?
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Thị trường bùng nổ vốn FDI nhà máy, nhưng cũng đối mặt áp lực cạnh tranh giá gay gắt.
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Thị trường bùng nổ vốn FDI nhà máy, nhưng cũng đối mặt áp lực cạnh
+            tranh giá gay gắt.
           </p>
         </div>
 
         <div
+          ref="statsSectionRef"
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch"
         >
           <div
             v-for="(stat, sIdx) in marketData"
             :key="sIdx"
-            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-4 flex flex-col justify-between text-left"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col text-left"
           >
             <div
-              class="text-3xl sm:text-4xl font-extrabold tabular tracking-tight text-primary"
+              class="text-3xl sm:text-4xl font-extrabold tabular-nums tracking-tight text-primary mb-3 sm:mb-4"
             >
-              {{ stat.value }}
+              {{ animatedValues[sIdx] || stat.value }}
             </div>
-            <div>
-              <div class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors">
+            <div class="flex-1 flex flex-col">
+              <div
+                class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors min-h-[2.5rem] sm:min-h-[2.75rem] flex items-start leading-snug"
+              >
                 {{ stat.label }}
               </div>
               <p
-                class="text-xs sm:text-[13px] text-muted-foreground leading-relaxed mt-1.5 font-normal"
+                class="text-xs sm:text-[13px] text-muted-foreground leading-relaxed mt-2 font-normal"
               >
                 {{ stat.desc }}
               </p>
@@ -251,77 +427,142 @@ const kpiMetrics = [
     </section>
 
     <!-- AS-IS vs TO-BE Transformation Table -->
-    <section class="py-16 md:py-24 bg-background border-b border-border/80">
-      <div class="sf-container space-y-12 md:space-y-16">
+    <section
+      class="py-20 md:py-28 bg-gradient-to-b from-background via-section-gradient-to/20 to-background border-b border-border/80 relative overflow-hidden"
+    >
+      <!-- Ambient light backdrop -->
+      <div
+        class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand/5 blur-[120px] rounded-full pointer-events-none"
+      />
+
+      <div class="sf-container relative z-10 space-y-10 md:space-y-14">
         <div class="text-center max-w-3xl mx-auto space-y-3">
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
           >
-            6 Điểm Chuyển Đổi: Từ Thủ Công sang Chuẩn Hóa
+            6 Điểm Chuyển Đổi: Từ Vận Hành Rời Rạc
+            <span class="text-primary block sm:inline"> Sang Chuẩn Hóa</span>
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            So sánh vận hành phân mảnh hiện tại (AS-IS) với mô hình quản trị số của Bidly (TO-BE).
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Xóa bỏ tình trạng phân mảnh trên Zalo & Excel — Thiết lập luồng dữ
+            liệu chuẩn hóa, kiểm soát toàn diện từng chặng tiền xây dựng.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 gap-6 max-w-5xl mx-auto">
+        <!-- Transformation Matrix List -->
+        <div
+          class="bg-card border border-border/80 rounded-lg shadow-card divide-y divide-border/60 overflow-hidden max-w-5xl mx-auto"
+        >
           <div
             v-for="(item, idx) in asIsToBe"
             :key="idx"
-            class="sf-card group bg-card border border-border/70 rounded-xl p-6 sm:p-8 shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 space-y-4"
+            class="p-6 sm:p-8 lg:p-9 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-brand-soft/20 group relative"
           >
-            <div class="flex items-center gap-3">
-              <span
-                class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center font-extrabold text-xs tabular shrink-0"
-              >
-                {{ idx + 1 }}
-              </span>
-              <h3 class="text-lg sm:text-xl font-extrabold text-foreground tracking-tight">
-                {{ item.area }}
-              </h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-              <!-- AS-IS -->
-              <div class="p-4 sm:p-5 rounded-lg bg-destructive/5 space-y-2 border border-destructive/10">
-                <div
-                  class="text-xs font-bold uppercase tracking-wider text-destructive flex items-center gap-1.5"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  <span>Hiện tại (AS-IS)</span>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start"
+            >
+              <!-- Left: Stage Header & Info -->
+              <div class="lg:col-span-4 space-y-2 lg:pr-2">
+                <div class="flex items-center gap-2.5">
+                  <span
+                    class="text-2xl sm:text-3xl font-extrabold text-primary/40 group-hover:text-primary transition-colors tabular tracking-tight font-mono"
+                  >
+                    {{ item.number }}
+                  </span>
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-brand-soft text-primary border border-primary/15"
+                  >
+                    {{ item.stageCode }}: {{ item.stageLabel }}
+                  </span>
                 </div>
-                <p
-                  class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal"
+                <h3
+                  class="text-base sm:text-lg font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors leading-snug"
                 >
-                  {{ item.asIs }}
+                  {{ item.area }}
+                </h3>
+                <p
+                  class="text-xs text-muted-foreground font-medium leading-relaxed"
+                >
+                  {{ item.shortDesc }}
                 </p>
               </div>
 
-              <!-- TO-BE -->
-              <div class="p-4 sm:p-5 rounded-lg bg-brand-soft/70 space-y-2 border border-brand/20">
+              <!-- Right: AS-IS vs TO-BE Flow (No Box-in-Box) -->
+              <div class="lg:col-span-8">
                 <div
-                  class="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5"
+                  class="grid grid-cols-1 md:grid-cols-11 gap-4 lg:gap-6 items-start"
                 >
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  <span>Với Bidly (TO-BE)</span>
+                  <!-- AS-IS Column -->
+                  <div class="md:col-span-5 space-y-2">
+                    <div
+                      class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-destructive/90"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-destructive" />
+                      <span>Hiện tại (AS-IS)</span>
+                    </div>
+                    <p
+                      class="text-xs sm:text-[13px] text-muted-foreground leading-relaxed font-normal"
+                    >
+                      {{ item.asIs }}
+                    </p>
+                    <div class="pt-0.5">
+                      <span
+                        class="inline-flex items-center gap-1 text-[11px] font-medium text-destructive bg-destructive/5 px-2 py-0.5 rounded border border-destructive/10"
+                      >
+                        <span>⚠</span> {{ item.asIsPain }}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Transformation Arrow Connector -->
+                  <div
+                    class="md:col-span-1 hidden md:flex items-center justify-center pt-5"
+                  >
+                    <div
+                      class="w-7 h-7 rounded-full bg-secondary text-muted-foreground group-hover:text-primary group-hover:bg-brand-soft group-hover:border-primary/30 border border-border/80 flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-xs shrink-0"
+                    >
+                      <svg
+                        class="w-3.5 h-3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- TO-BE Column -->
+                  <div class="md:col-span-5 space-y-2">
+                    <div
+                      class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-primary"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span>Với Bidly (TO-BE)</span>
+                    </div>
+                    <p
+                      class="text-xs sm:text-[13px] text-foreground font-semibold leading-relaxed"
+                    >
+                      {{ item.toBe }}
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                      <span
+                        v-for="(hl, hIdx) in item.highlights"
+                        :key="hIdx"
+                        class="inline-flex items-center gap-1 text-[11px] font-bold text-primary bg-brand-soft/80 border border-primary/15 px-2 py-0.5 rounded-full"
+                      >
+                        <span class="text-[9px] text-primary">✓</span> {{ hl }}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <p
-                  class="text-xs sm:text-sm text-foreground font-semibold leading-relaxed"
-                >
-                  {{ item.toBe }}
-                </p>
               </div>
             </div>
           </div>
@@ -338,8 +579,11 @@ const kpiMetrics = [
           >
             So Sánh Bidly với 5 Nhóm Giải Pháp Thay Thế
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Tại sao CRM bán lẻ, ERP hay tự phát triển không giải quyết được bài toán thầu xây dựng công nghiệp?
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Tại sao CRM bán lẻ, ERP hay tự phát triển không giải quyết được bài
+            toán thầu xây dựng công nghiệp?
           </p>
         </div>
 
@@ -360,13 +604,17 @@ const kpiMetrics = [
               <div class="space-y-3 text-xs sm:text-[13px]">
                 <div>
                   <span class="font-bold text-primary">Điểm mạnh:</span>
-                  <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
+                  <span
+                    class="text-muted-foreground ml-1 font-normal leading-relaxed"
+                  >
                     {{ comp.pros }}
                   </span>
                 </div>
                 <div>
                   <span class="font-bold text-destructive">Khoảng trống:</span>
-                  <span class="text-muted-foreground ml-1 font-normal leading-relaxed">
+                  <span
+                    class="text-muted-foreground ml-1 font-normal leading-relaxed"
+                  >
                     {{ comp.cons }}
                   </span>
                 </div>
@@ -386,29 +634,36 @@ const kpiMetrics = [
           >
             6 Chỉ Số Đo Lường Hiệu Quả Chương Trình Pilot
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Vtechcom cùng khách hàng theo dõi các chỉ số đo lường rõ ràng trong 8-10 tuần thí điểm.
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Vtechcom cùng khách hàng theo dõi các chỉ số đo lường rõ ràng trong
+            8-10 tuần thí điểm.
           </p>
         </div>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch"
         >
           <div
             v-for="(kpi, kIdx) in kpiMetrics"
             :key="kIdx"
-            class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 p-6 sm:p-8 space-y-2 text-left flex flex-col justify-between"
+            class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col text-left"
           >
-            <div class="space-y-2">
+            <div
+              class="text-3xl sm:text-4xl font-extrabold tabular-nums tracking-tight text-primary mb-3 sm:mb-4"
+            >
+              {{ kpi.metric }}
+            </div>
+            <div class="flex-1 flex flex-col">
               <div
-                class="text-3xl sm:text-4xl font-extrabold text-primary tabular tracking-tight"
+                class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors min-h-[2.5rem] sm:min-h-[2.75rem] flex items-start leading-snug"
               >
-                {{ kpi.metric }}
-              </div>
-              <div class="text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
                 {{ kpi.label }}
               </div>
-              <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+              <p
+                class="text-xs sm:text-[13px] text-muted-foreground leading-relaxed mt-2 font-normal"
+              >
                 {{ kpi.desc }}
               </p>
             </div>
@@ -421,4 +676,3 @@ const kpiMetrics = [
     <SfContactPillars />
   </div>
 </template>
-

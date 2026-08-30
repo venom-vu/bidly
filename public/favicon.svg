@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1.5 35 35" width="35" height="35">
+  <!--
+    Favicon Bidly — cùng hình học với app/components/BrandMark.vue.
+    Sửa một bên phải sửa bên kia: file này KHÔNG đọc được CSS var của app (nó
+    được trình duyệt render ngoài trang), nên màu buộc phải viết cứng bằng hex
+    lấy từ token oklch trong app/assets/css/main.css.
+
+    Màu theo bảng `clean` (mặc định), KHÔNG theo `soft`:
+      mực #1B211C · giấy #FFFFFF · xanh cổng #74CC55 (light) / #3F9E25 (dark)
+    Bản triển khai chạy theme `soft` mà muốn favicon khớp thì sửa tay file này —
+    trình duyệt không đọc được NUXT_PUBLIC_THEME.
+
+    prefers-color-scheme ở đây theo THEME HỆ ĐIỀU HÀNH, không theo lựa chọn
+    trong app: trình duyệt vẽ tab, nó không biết class `dark` trên <html>. Chấp
+    nhận lệch trong trường hợp người dùng đặt theme ngược hệ thống — đổi lại tab
+    không bao giờ là một ô mực chìm nghỉm trên thanh tab tối.
+  -->
+  <style>
+    .tile { fill: #1B211C }
+    .glyph { fill: #FFFFFF }
+    .gate { fill: #74CC55 }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #E8EEE9 }
+      .glyph { fill: #171C18 }
+      .gate { fill: #3F9E25 }
+    }
+  </style>
+  <rect class="tile" x="-2" y="-1.5" width="35" height="35" rx="8.2"/>
+  <path class="glyph" d="M5 4H17.25A4.75 4.75 0 0 1 22 8.75V13.5H17V9H10V13.5H5Z"/>
+  <path class="glyph" d="M5 28H19.25A4.75 4.75 0 0 0 24 23.25V18.5H19V23H10V18.5H5Z"/>
+  <path class="gate" d="M5 13.5H23.5A2.5 2.5 0 0 1 23.5 18.5H5Z"/>
+</svg>

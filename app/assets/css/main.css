@@ -125,43 +125,48 @@
 }
 
 /* ─── Base Reset ─────────────────────────────────────────────────────────── */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5.25rem;
-  font-family: var(--font-sans);
-  color: var(--foreground);
-  /* Salesforce uses #ffffff as page background, NOT grey */
-  background-color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.25rem;
+    font-family: var(--font-sans);
+    color: var(--foreground);
+    /* Salesforce uses #ffffff as page background, NOT grey */
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+    scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
+    scrollbar-width: thin;
+  }
 
-body {
-  background-color: #ffffff;
-  color: #181818;  /* Salesforce body text — near-black, not navy */
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    background-color: #ffffff;
+    color: #181818;  /* Salesforce body text — near-black, not navy */
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* Salesforce heading font stack — ITC Avant Garde / Manrope */
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: var(--font-heading) !important;
-  letter-spacing: -0.02em;
-  color: var(--foreground);  /* #032D60 Deep Navy */
-}
+  /* Salesforce heading font stack — ITC Avant Garde / Manrope */
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: var(--foreground);  /* #032D60 Deep Navy */
+  }
 
-/* Paragraphs & UI body: Salesforce Sans / Inter */
-p, .font-sans, .font-body {
-  font-family: var(--font-sans);
-  color: #181818;
-}
+  /* Paragraphs & UI body: Salesforce Sans / Inter */
+  p, .font-sans, .font-body {
+    font-family: var(--font-sans);
+  }
 
-/* Tabular numbers for money/dates */
-.tabular {
-  font-variant-numeric: tabular-nums;
+  /* Tabular numbers for money/dates */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 /* ─── Container — Salesforce PBC (max-width 1280px, generous horizontal pad) */
@@ -281,10 +286,6 @@ p, .font-sans, .font-body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* System scrollbar */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
 
 /* ─── Salesforce Section Divider ─────────────────────────────────────────── */
 /* SF sections often share a subtle bottom border */

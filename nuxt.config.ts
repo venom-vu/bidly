@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: { lang: "vi" },
       title:
         "Bidly — Preconstruction CRM cho Tổng thầu Xây dựng Công nghiệp | Vtechcom",
       meta: [
@@ -31,9 +32,21 @@ export default defineNuxtConfig({
             "Từ tín hiệu dự án đến bàn giao tiền thi công — thay thế Excel, Zalo và email rời rạc bằng pipeline stage gate chuẩn cho tổng thầu công nghiệp Việt Nam.",
         },
         { property: "og:type", content: "website" },
+        {
+          name: "theme-color",
+          content: "#F4F6F4",
+          media: "(prefers-color-scheme: light)",
+        },
+        {
+          name: "theme-color",
+          content: "#0F120F",
+          media: "(prefers-color-scheme: dark)",
+        },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "icon", sizes: "48x48", href: "/favicon.ico" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
