@@ -1,164 +1,184 @@
 <script setup lang="ts">
 import { crmBladesData } from "~/data/crm-blades";
+import SfButton from "~/components/ui/SfButton.vue";
 
 const marketEvidence = crmBladesData.customerLogos;
+
+interface MarketStat {
+  value: string;
+  target: number;
+  prefix?: string;
+  suffix?: string;
+  decimals: number;
+  label: string;
+  desc: string;
+}
+
+const marketData: MarketStat[] = [
+  {
+    value: "+10,28%",
+    target: 10.28,
+    prefix: "+",
+    suffix: "%",
+    decimals: 2,
+    label: "Tăng trưởng xây dựng Q2/2026",
+    desc: "Ngành xây dựng tăng trưởng cao, thúc đẩy nhu cầu cấp thiết về chuẩn hóa quản trị thầu.",
+  },
+  {
+    value: "34,65 tỷ $",
+    target: 34.65,
+    prefix: "",
+    suffix: " tỷ $",
+    decimals: 2,
+    label: "Tổng vốn FDI 6T/2026 (+61%)",
+    desc: "Vốn FDI công nghiệp bùng nổ, mở ra làn sóng dự án quy mô lớn cho các nhà thầu.",
+  },
+  {
+    value: "44,7%",
+    target: 44.7,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "Doanh nghiệp thiếu hợp đồng mới",
+    desc: "Áp lực cạnh tranh gia tăng; sàng lọc và bắt đúng cơ hội thầu là bài toán sống còn.",
+  },
+  {
+    value: "2,6 / 5",
+    target: 2.6,
+    prefix: "",
+    suffix: " / 5",
+    decimals: 1,
+    label: "Mức độ số hóa ngành xây dựng",
+    desc: "Vận hành còn phân mảnh qua Excel, Zalo; số hóa chuẩn ngành tạo lợi thế vượt trội.",
+  },
+];
+
+const statsSectionRef = ref<HTMLElement | null>(null);
+const animatedValues = ref<string[]>(
+  marketData.map(
+    (s) =>
+      `${s.prefix || ""}${(0).toFixed(s.decimals).replace(".", ",")}${s.suffix || ""}`,
+  ),
+);
+
+let hasAnimated = false;
+
+const startCountAnimation = () => {
+  if (hasAnimated) return;
+  hasAnimated = true;
+
+  const duration = 1600;
+  const startTime = performance.now();
+
+  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+  const step = (currentTime: number) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOutCubic(progress);
+
+    animatedValues.value = marketData.map((stat) => {
+      const currentVal = stat.target * easedProgress;
+      const formatted = currentVal.toFixed(stat.decimals).replace(".", ",");
+      return `${stat.prefix || ""}${formatted}${stat.suffix || ""}`;
+    });
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      animatedValues.value = marketData.map((stat) => stat.value);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
+let statsObserver: IntersectionObserver | null = null;
+
+onMounted(() => {
+  if (typeof IntersectionObserver !== "undefined") {
+    if (statsSectionRef.value) {
+      statsObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) {
+            startCountAnimation();
+            statsObserver?.disconnect();
+          }
+        },
+        { threshold: 0.25 },
+      );
+      statsObserver.observe(statsSectionRef.value);
+    } else {
+      animatedValues.value = marketData.map((s) => s.value);
+    }
+  } else {
+    animatedValues.value = marketData.map((s) => s.value);
+  }
+});
+
+onUnmounted(() => {
+  statsObserver?.disconnect();
+});
 </script>
 
 <template>
-  <!--
-    Salesforce Stats / Logo Grid Blade — theme_variant: "light" (pure white)
-    4-column stat cards, shadow-only cards, centered heading
-  -->
-  <section class="py-16 md:py-24 bg-white sf-section-border">
-    <div class="sf-container text-center space-y-12 md:space-y-16">
+  <!-- Market Context & Stats Blade -->
+  <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <div class="sf-container space-y-12 md:space-y-16">
       <!-- Section Heading -->
-      <div class="max-w-3xl mx-auto space-y-3">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
         <h2
-          class="text-2xl sm:text-3xl md:text-[2.25rem] font-extrabold text-foreground tracking-tight leading-tight"
+          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight leading-tight"
         >
           {{ marketEvidence.heading }}
         </h2>
         <p
-          class="text-sm sm:text-base max-w-2xl mx-auto"
-          style="color: #54698d"
+          class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
         >
-          Dữ liệu thống kê: lý do nhà thầu công nghiệp cần chuyển đổi từ vận
-          hành phân mảnh sang Preconstruction CRM chuẩn mực.
+          Thị trường bùng nổ vốn FDI nhà máy, nhưng cũng đối mặt áp lực cạnh tranh giá gay gắt.
         </p>
       </div>
 
-      <!-- 4 Stat Cards — Salesforce large-number stat cards -->
+      <!-- 4 Stat Cards -->
       <div
+        ref="statsSectionRef"
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch"
       >
-        <!-- Stat 1 -->
         <div
-          class="sf-stat-card group bg-white p-6 sm:p-7 rounded-xl flex flex-col justify-between text-left space-y-4 cursor-default transition-all duration-300 hover:-translate-y-1"
+          v-for="(stat, sIdx) in marketData"
+          :key="sIdx"
+          class="sf-card group bg-card border border-border/70 p-6 sm:p-7 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col text-left"
         >
           <div
-            class="text-3xl sm:text-4xl font-extrabold tracking-tight tabular"
-            style="color: #0176d3"
+            class="text-3xl sm:text-4xl font-extrabold tabular-nums tracking-tight text-primary mb-3 sm:mb-4"
           >
-            +10,28%
+            {{ animatedValues[sIdx] || stat.value }}
           </div>
-          <div>
+          <div class="flex-1 flex flex-col">
             <div
-              class="text-sm sm:text-[15px] font-bold tracking-tight group-hover:text-primary transition-colors"
-              style="color: #181818"
+              class="text-sm sm:text-[15px] font-bold text-foreground group-hover:text-primary transition-colors min-h-[2.5rem] sm:min-h-[2.75rem] flex items-start leading-snug"
             >
-              Tăng trưởng xây dựng Q2/2026
+              {{ stat.label }}
             </div>
-            <div
-              class="text-xs sm:text-[13px] mt-1.5 leading-relaxed"
-              style="color: #54698d"
+            <p
+              class="text-xs sm:text-[13px] text-muted-foreground leading-relaxed mt-2 font-normal"
             >
-              Duy trì đà mở rộng theo Tổng cục Thống kê (năm 2024 tăng 7,87%).
-            </div>
-          </div>
-        </div>
-
-        <!-- Stat 2 -->
-        <div
-          class="sf-stat-card group bg-white p-6 sm:p-7 rounded-xl flex flex-col justify-between text-left space-y-4 cursor-default transition-all duration-300 hover:-translate-y-1"
-        >
-          <div
-            class="text-3xl sm:text-4xl font-extrabold tracking-tight tabular"
-            style="color: #0176d3"
-          >
-            34,65 tỷ $
-          </div>
-          <div>
-            <div
-              class="text-sm sm:text-[15px] font-bold tracking-tight group-hover:text-primary transition-colors"
-              style="color: #181818"
-            >
-              Tổng FDI đăng ký 6T/2026
-            </div>
-            <div
-              class="text-xs sm:text-[13px] mt-1.5 leading-relaxed"
-              style="color: #54698d"
-            >
-              Tăng 61% YoY; khối chế biến chế tạo chiếm 56,5% vốn mới.
-            </div>
-          </div>
-        </div>
-
-        <!-- Stat 3 -->
-        <div
-          class="sf-stat-card group bg-white p-6 sm:p-7 rounded-xl flex flex-col justify-between text-left space-y-4 cursor-default transition-all duration-300 hover:-translate-y-1"
-        >
-          <div
-            class="text-3xl sm:text-4xl font-extrabold tracking-tight tabular"
-            style="color: #ea001e"
-          >
-            44,7%
-          </div>
-          <div>
-            <div
-              class="text-sm sm:text-[15px] font-bold tracking-tight"
-              style="color: #181818"
-            >
-              DN xây dựng thiếu hợp đồng mới
-            </div>
-            <div
-              class="text-xs sm:text-[13px] mt-1.5 leading-relaxed"
-              style="color: #54698d"
-            >
-              Khảo sát ngành; 11,6% doanh nghiệp lỡ thông tin mời thầu.
-            </div>
-          </div>
-        </div>
-
-        <!-- Stat 4 -->
-        <div
-          class="sf-stat-card group bg-white p-6 sm:p-7 rounded-xl flex flex-col justify-between text-left space-y-4 cursor-default transition-all duration-300 hover:-translate-y-1"
-        >
-          <div
-            class="text-3xl sm:text-4xl font-extrabold tracking-tight tabular"
-            style="color: #0176d3"
-          >
-            2,6 / 5
-          </div>
-          <div>
-            <div
-              class="text-sm sm:text-[15px] font-bold tracking-tight group-hover:text-primary transition-colors"
-              style="color: #181818"
-            >
-              Mức sẵn sàng số hóa hiện tại
-            </div>
-            <div
-              class="text-xs sm:text-[13px] mt-1.5 leading-relaxed"
-              style="color: #54698d"
-            >
-              Quy trình theo đuổi thầu còn rời rạc trên Zalo, email và Excel.
-            </div>
+              {{ stat.desc }}
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Action CTA -->
-      <div class="pt-2">
-        <NuxtLink
+      <div v-if="marketEvidence.cta" class="pt-2 flex justify-center">
+        <SfButton
+          variant="primary"
+          size="lg"
           :to="marketEvidence.cta.url"
-          class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-white font-extrabold text-sm sm:text-base rounded-[4px] hover:bg-primary-hover transition-all active:scale-[0.98] cursor-pointer"
-          style="box-shadow: 0 2px 8px rgba(1, 118, 211, 0.25)"
         >
           {{ marketEvidence.cta.label }}
-        </NuxtLink>
+        </SfButton>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.sf-stat-card {
-  box-shadow: 0 2px 8px rgba(3, 45, 96, 0.06), 0 4px 20px rgba(3, 45, 96, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  will-change: transform, box-shadow;
-}
-
-.sf-stat-card:hover {
-  box-shadow: 0 8px 28px rgba(3, 45, 96, 0.12), 0 16px 40px rgba(3, 45, 96, 0.07);
-  border-color: rgba(1, 118, 211, 0.18);
-}
-</style>

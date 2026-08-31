@@ -114,12 +114,12 @@ const modules = [
     eyebrow: "AN TOÀN THÔNG TIN CẤP DOANH NGHIỆP",
     accentColor: "var(--brand-panel, #032D60)",
     description:
-      "Kiến trúc On-premise Single-tenant hoặc Private Cloud. Mỗi doanh nghiệp sở hữu database PostgreSQL độc lập, tuyệt đối không chia sẻ dữ liệu giá thầu. Phân quyền RBAC 5 vai trò và audit log append-only.",
+      "Triển khai độc lập tại máy chủ riêng (On-premise) hoặc Đám mây riêng (Private Cloud). Mỗi doanh nghiệp sở hữu cơ sở dữ liệu hoàn toàn biệt lập, tuyệt đối không chia sẻ dữ liệu giá thầu. Phân quyền 5 vai trò và tự động lưu vết nhật ký minh bạch.",
     features: [
-      "Cơ sở dữ liệu PostgreSQL độc lập cho từng khách hàng (Database Isolation)",
-      "Phân quyền RBAC 5 vai trò (CEO, BD Director, BD, Tender Lead, Admin) ở máy chủ",
-      "Nhật ký kiểm toán (Audit Log) ghi nhận append-only đồng thời trong transaction",
-      "Khoá lạc quan (Optimistic Concurrency) qua trường version chống ghi đè dữ liệu",
+      "Cơ sở dữ liệu độc lập cho từng khách hàng (Bảo mật tối đa)",
+      "Phân quyền chặt chẽ 5 vai trò (Tổng Giám Đốc, Giám Đốc Kinh Doanh, BD, Trưởng phòng Đấu thầu, Quản trị viên)",
+      "Nhật ký kiểm toán lưu vết vĩnh viễn mọi thao tác người dùng",
+      "Tự động chống ghi đè dữ liệu khi nhiều phòng ban cùng thao tác",
       "Mã hóa đường truyền TLS và mã hóa lưu trữ tài liệu nhạy cảm",
       "Tuân thủ Luật Bảo vệ Dữ liệu Cá nhân 91/2025/QH15 và Nghị định 356/2025/NĐ-CP",
     ],

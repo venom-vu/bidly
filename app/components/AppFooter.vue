@@ -61,7 +61,7 @@ const currentYear = new Date().getFullYear();
             <div>
               Email:
               <span class="text-brand-panel-foreground font-bold"
-                >contact@vtechcom.vn</span
+                >info@vtechcom.org</span
               >
             </div>
           </div>

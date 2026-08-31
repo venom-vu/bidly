@@ -20,23 +20,23 @@ const { openModal } = useDemoModal();
 const serverPillars = [
   {
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    title: "Giao Dịch Đơn Khối",
-    desc: "Đổi stage, cập nhật dữ liệu và ghi log trong 1 transaction duy nhất. Tự động rollback khi có lỗi, chống phân mảnh trạng thái.",
+    title: "Xử Lý Đồng Bộ An Toàn",
+    desc: "Chuyển bước, cập nhật dữ liệu và ghi lịch sử đồng thời. Tự động hoàn tác nếu phát sinh lỗi, đảm bảo dữ liệu luôn nhất quán và chính xác.",
   },
   {
     icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-    title: "Khóa Lạc Quan",
-    desc: "Kiểm soát phiên bản qua cột version. Báo lỗi 409 Conflict nếu dữ liệu bị sửa cùng lúc, chống ghi đè dữ liệu thầu.",
+    title: "Chống Ghi Đè Dữ Liệu",
+    desc: "Kiểm soát phiên bản theo thời gian thực. Tự động cảnh báo và ngăn chặn khi nhiều người cùng chỉnh sửa một cơ hội, bảo vệ an toàn dữ liệu hồ sơ.",
   },
   {
     icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-    title: "Nhật Ký Bất Biến",
-    desc: "Lưu vết vĩnh viễn StageHistory và Audit Log trong transaction. Không thể chỉnh sửa hay xóa bỏ lịch sử phê duyệt.",
+    title: "Lịch Sử Minh Bạch",
+    desc: "Tự động lưu vết vĩnh viễn mọi hành động phê duyệt, người thực hiện và lý do. Không thể chỉnh sửa hay xóa bỏ lịch sử đã chốt.",
   },
   {
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
     title: "Phân Quyền Chặt Chẽ",
-    desc: "Thực thi ma trận 5 vai trò trực tiếp tại máy chủ qua PermissionsGuard. Chặn ngay từ API các thao tác vượt quyền hạn.",
+    desc: "Thực thi ma trận 5 vai trò trực tiếp từ hệ thống lõi. Ngăn chặn tuyệt đối các thao tác vượt quyền hoặc nhầm lẫn giữa các phòng ban.",
   },
 ];
 
@@ -51,10 +51,10 @@ const hardGates = [
     ruleHeadline:
       "Bắt buộc có quyết định Scorecard hợp lệ được lãnh đạo phê duyệt",
     enforcingMechanism: [
-      "Rời S2 duy nhất qua ScorecardService.decide — máy chủ từ chối lệnh đổi stage trần.",
+      "Chỉ chuyển bước khi có quyết định Scorecard chính thức từ lãnh đạo — hệ thống từ chối các thao tác kéo thả tự do.",
       "Tự động tính lại điểm (0–100) theo 6 tiêu chí trọng số tại thời điểm duyệt.",
       "Phân luồng tự động: Duyệt GO sang S3, duyệt NO_GO sang S7 (No-bid kèm lý do).",
-      "Bắt buộc nhập lý do và lưu định danh người phê duyệt vào StageHistory.",
+      "Bắt buộc nhập lý do và tự động lưu vết định danh người phê duyệt vào lịch sử.",
     ],
     riskEliminated:
       "Loại bỏ tình trạng làm thầu theo cảm tính; tiết kiệm chi phí và tập trung nguồn lực vào cơ hội có tỷ lệ thắng cao.",
@@ -71,15 +71,15 @@ const hardGates = [
     ruleHeadline:
       "Kích hoạt Tender Workspace, phân rã checklist 5 phòng ban và ấn định hạn chốt",
     enforcingMechanism: [
-      "Tự động khởi tạo WorkPackage (Gói thầu) và TenderRound (Vòng thầu 1).",
-      "Kích hoạt Tender Workspace với checklist chuẩn ngành cho 5 bộ phận: Pháp lý, Kỹ thuật, MEP, Dự toán, HSE.",
-      "Ấn định mốc nộp thầu (Deadline) và kích hoạt cảnh báo đếm ngược 7-14-30 ngày.",
+      "Tự động khởi tạo Gói thầu và Vòng thầu chính thức đầu tiên.",
+      "Kích hoạt phòng thầu số với checklist chuẩn ngành cho 5 bộ phận: Pháp lý, Kỹ thuật, MEP, Dự toán, HSE.",
+      "Ấn định mốc nộp thầu và kích hoạt cảnh báo đếm ngược 7-14-30 ngày.",
       "Khóa ngân sách làm thầu và phân quyền truy cập tài liệu bảo mật theo vai trò.",
     ],
     riskEliminated:
       "Tránh làm hồ sơ tự phát, đùn đẩy trách nhiệm giữa các phòng ban, thất lạc tài liệu và trễ hạn nộp thầu.",
     dataArtifacts:
-      "Gói thầu WorkPackage, Vòng thầu TenderRound 1, Checklist 5 phòng ban, Lịch tiến độ nộp thầu.",
+      "Gói thầu, Vòng thầu 1, Checklist 5 phòng ban, Lịch tiến độ nộp thầu.",
   },
   {
     number: "03",
@@ -89,16 +89,16 @@ const hardGates = [
     position: "S4 (Đang đấu thầu) ➔ S5 (Đã nộp hồ sơ)",
     authority: "Tender Lead & Chuyên Viên BD",
     ruleHeadline:
-      "Sang S5 duy nhất bằng bản nộp Final ở trạng thái SUBMITTED kèm bằng chứng",
+      "Sang S5 duy nhất bằng bản nộp Final chính thức kèm bằng chứng nộp",
     enforcingMechanism: [
-      "Máy chủ chặn lệnh đổi stage trần — chỉ cho phép sang S5 khi có BidSubmission (isFinal = true & status = SUBMITTED) trong round mở.",
-      "Bất biến duy nhất 1 bản Final: Mỗi round chỉ có tối đa 1 bản nộp Final, tự động gỡ cờ bản cũ khi cập nhật.",
-      "Thao tác submitFinal bọc đồng thời: xác nhận SUBMITTED + ghi Audit Log + chuyển S5 trong một transaction.",
+      "Chỉ cho phép chuyển sang giai đoạn Đã nộp khi đã chọn duy nhất 1 bản nộp Final và có bằng chứng nộp thực tế.",
+      "Nguyên tắc duy nhất 1 bản Final: Mỗi vòng thầu chỉ có tối đa 1 bản nộp Final, tự động gỡ cờ bản cũ khi cập nhật.",
+      "Thao tác nộp hồ sơ được đồng bộ tự động: xác nhận nộp thành công, lưu vết nhật ký và chuyển sang giai đoạn Đã nộp.",
     ],
     riskEliminated:
       "Triệt tiêu rủi ro nộp nhầm file giá cũ, hồ sơ chưa hoàn thiện hoặc lệch phiên bản kỹ thuật - thương mại.",
     dataArtifacts:
-      "Bản nộp BidSubmission Final, Dấu thời gian / Biên nhận nộp thầu, Chuỗi lịch sử phiên bản (revision chain).",
+      "Bản nộp Final chính thức, Dấu thời gian / Biên nhận nộp thầu, Lịch sử các phiên bản hồ sơ.",
   },
   {
     number: "04",
@@ -108,17 +108,17 @@ const hardGates = [
     position: "S4 / S5 / S6 hoặc dừng sớm ➔ S7 (Kết quả)",
     authority: "CEO / Giám Đốc Kinh Doanh",
     ruleHeadline:
-      "Bắt buộc chọn Outcome (WON / LOST / NO_BID) & Khóa cứng nếu không trúng thầu",
+      "Bắt buộc chọn kết quả (Thắng / Trượt / Dừng thầu) & Khóa cứng nếu không trúng thầu",
     enforcingMechanism: [
-      "Bắt buộc cập nhật 1 trong 3 trạng thái outcome: WON (Trúng thầu), LOST (Trượt thầu), NO_BID (Rút lui).",
-      "Bắt buộc nhập lý do, đối thủ thắng và giá trúng thực tế để phục vụ Win/Loss Analysis.",
-      "Khóa trạng thái Terminal: Chặn 100% lệnh chuyển tiếp sang S8 nếu outcome là LOST hoặc NO_BID.",
-      "Quy trình Re-bid: Mở TenderRound mới kế thừa round cũ khi CĐT yêu cầu đấu lại, không sửa đè kết quả đã chốt.",
+      "Bắt buộc cập nhật 1 trong 3 trạng thái kết quả: Thắng thầu (WON), Trượt thầu (LOST), Dừng thầu (NO_BID).",
+      "Bắt buộc nhập lý do, đối thủ thắng và giá trúng thực tế để phục vụ phân tích rút kinh nghiệm.",
+      "Khóa chuyển bước: Chặn 100% lệnh chuyển tiếp sang Bàn giao nếu kết quả là Trượt hoặc Dừng thầu.",
+      "Quy trình Đấu lại: Mở vòng thầu mới kế thừa vòng cũ khi chủ đầu tư yêu cầu đấu lại, không sửa đè kết quả đã chốt.",
     ],
     riskEliminated:
       "Xóa sổ pipeline ảo, ngăn việc tự ý mở lại cơ hội đã đóng trái quy trình và tích lũy tri thức cạnh tranh.",
     dataArtifacts:
-      "Thư trúng thầu (LOA) / Thông báo kết quả, Báo cáo Win/Loss Analysis, Dữ liệu cập nhật Win Rate.",
+      "Thông báo kết quả / Thư trao thầu, Báo cáo phân tích Thắng/Thua, Dữ liệu cập nhật tỷ lệ trúng thầu.",
   },
   {
     number: "05",
@@ -128,54 +128,54 @@ const hardGates = [
     position: "S7 (Dự án WON) ➔ S8 (Bàn giao thi công)",
     authority: "GĐKD, Đấu Thầu ➔ Ban Chỉ Huy",
     ruleHeadline:
-      "Chỉ mở cho dự án WON & Bắt buộc đầy đủ 4 cấu phần gói bàn giao chuẩn hóa",
+      "Chỉ mở cho dự án Trúng thầu & Bắt buộc đầy đủ 4 cấu phần gói bàn giao chuẩn hóa",
     enforcingMechanism: [
-      "Kiểm tra canEnterHandover ở máy chủ: Chặn tuyệt đối mọi cơ hội có outcome khác WON.",
-      "Gác cổng requireReason: Từ chối lệnh chuyển sang S8 nếu thiếu lý do và biên bản bàn giao.",
-      "Chuẩn hóa Handover Pack 4 cấu phần: Phạm vi cam kết, Giả định định mức chi phí, Danh mục rủi ro & File Final.",
-      "Lưu vết người bàn giao - tiếp nhận vào Audit Log, sẵn sàng đẩy dữ liệu qua API sang ERP/PM.",
+      "Kiểm tra điều kiện bàn giao: Chỉ cho phép bàn giao các dự án đã có kết quả Trúng thầu (WON).",
+      "Yêu cầu đầy đủ hồ sơ: Bắt buộc đính kèm lý do phê duyệt và biên bản bàn giao trước khi hoàn tất chuyển bước.",
+      "Chuẩn hóa Handover Pack 4 cấu phần: Phạm vi cam kết, Giả định định mức chi phí, Danh mục rủi ro & File nộp chính thức.",
+      "Lưu vết người bàn giao - tiếp nhận vào nhật ký hệ thống, sẵn sàng đồng bộ dữ liệu sang phần mềm quản lý thi công (ERP).",
     ],
     riskEliminated:
       "Xóa bỏ khoảng trống thông tin và tranh chấp trách nhiệm giữa Đấu thầu và Công trường; ngăn phát sinh vượt dự toán.",
     dataArtifacts:
-      "Gói bàn giao Handover Pack 4 cấu phần, Biên bản bàn giao ký duyệt, Payload dữ liệu chuẩn hóa sang ERP/PM.",
+      "Gói bàn giao Handover Pack 4 cấu phần, Biên bản bàn giao ký duyệt, Dữ liệu chuẩn hóa bàn giao sang ERP.",
   },
 ];
 
 const comparisonRows = [
   {
-    feature: "Vị trí kiểm soát & Enforce",
-    genericCrm: "Chủ yếu ở Giao diện người dùng (dễ bị vượt qua)",
-    bidlyHardGate: "Enforce nghiêm ngặt ở tầng Máy chủ (Database Transaction)",
+    feature: "Cơ chế kiểm soát quy trình",
+    genericCrm: "Chủ yếu ở Giao diện người dùng (dễ bị kéo thả tùy tiện)",
+    bidlyHardGate: "Kiểm soát bắt buộc từ hệ thống (Tự động & An toàn tuyệt đối)",
   },
   {
     feature: "Chuyển giai đoạn sai điều kiện",
     genericCrm: "Cho phép kéo thả tự do, tạo dữ liệu ảo và nhảy cóc bước",
     bidlyHardGate:
-      "Máy chủ trả về HTTP 400/409, chặn 100% lệnh chuyển sai luật",
+      "Hệ thống tự động ngăn chặn 100% thao tác sai quy trình",
   },
   {
     feature: "Kiểm soát hồ sơ nộp thầu",
     genericCrm: "Không có khái niệm bản Final; dễ nộp nhầm file giá cũ",
     bidlyHardGate:
-      "Bất biến: Tối đa 1 bản Final duy nhất mỗi round, khóa khi Submit",
+      "Quy tắc cứng: Tối đa 1 bản Final duy nhất mỗi vòng, khóa khi nộp",
   },
   {
     feature: "Phê duyệt Go/No-Go (S2)",
     genericCrm: "Duyệt bằng miệng, email hoặc tích ô check đơn giản",
     bidlyHardGate:
-      "Scorecard 6 tiêu chí trọng số 0-100 tính lại realtime tại máy chủ",
+      "Scorecard 6 tiêu chí trọng số 0-100 tự động tính toán minh bạch",
   },
   {
     feature: "Bàn giao sang thi công (S8)",
     genericCrm: "Không có cấu phần Handover, chuyển giao qua họp miệng",
-    bidlyHardGate: "Handover Pack 4 cấu phần chuẩn hóa, chỉ mở cho cơ hội WON",
+    bidlyHardGate: "Handover Pack 4 cấu phần chuẩn hóa, chỉ mở cho dự án Thắng",
   },
   {
-    feature: "Nhật ký chuyển bước & Kiểm toán",
+    feature: "Nhật ký chuyển bước & Lịch sử",
     genericCrm: "Log đơn giản, dễ bị ghi đè hoặc không đồng bộ",
     bidlyHardGate:
-      "StageHistory & Audit Log append-only ghi trong cùng transaction",
+      "Lưu vết lịch sử tự động, minh bạch và không thể sửa xóa",
   },
 ];
 </script>
@@ -190,7 +190,7 @@ const comparisonRows = [
         class="sf-container relative z-10 text-center max-w-4xl mx-auto space-y-6"
       >
         <div>
-          <span class="sf-eyebrow">KIỂM SOÁT TẦNG MÁY CHỦ · HARD GATES</span>
+          <span class="sf-eyebrow">KIỂM SOÁT HỆ THỐNG · 5 CHỐT CHẶN CỨNG</span>
         </div>
         <h1
           class="text-3xl sm:text-4xl lg:text-[2.875rem] xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]"
@@ -204,10 +204,7 @@ const comparisonRows = [
           class="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
           style="color: #54698d"
         >
-          Không kiểm tra hời hợt ở giao diện, 5 cổng cứng của Bidly được thực
-          thi nghiêm ngặt tại máy chủ trong Database Transaction. Loại bỏ hoàn
-          toàn rủi ro lách quy trình, nhầm phiên bản hồ sơ hay lãng phí chi phí
-          làm thầu.
+          Không kiểm tra hời hợt ở giao diện, 5 cổng cứng của Bidly được kiểm soát tự động và nghiêm ngặt từ hệ thống lõi. Loại bỏ hoàn toàn rủi ro lách quy trình, nhầm phiên bản hồ sơ hay lãng phí chi phí làm thầu.
         </p>
       </div>
     </section>
@@ -289,65 +286,66 @@ const comparisonRows = [
           </p>
         </div>
 
-        <div class="relative max-w-5xl mx-auto space-y-12">
-          <!-- Continuous Vertical Background Line -->
+        <div class="max-w-5xl mx-auto space-y-0">
           <div
-            class="hidden md:block absolute top-8 bottom-8 left-[39px] w-1 bg-border/80 rounded-full z-0"
-          />
-
-          <div
-            v-for="gate in hardGates"
+            v-for="(gate, gIdx) in hardGates"
             :key="gate.number"
-            class="relative z-10 flex flex-col md:flex-row items-start gap-6 md:gap-8 group"
+            :id="`gate-${gate.number}`"
+            class="flex items-stretch gap-4 sm:gap-6 md:gap-8 group"
           >
             <!-- Gate Number Badge (Left Node on Timeline) -->
-            <div class="shrink-0 flex items-center md:flex-col gap-3">
+            <div class="flex flex-col items-center shrink-0 w-11 sm:w-14">
               <div
-                class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex flex-col items-center justify-center font-black shadow-card transition-transform duration-300 group-hover:scale-105"
-                :style="{ backgroundColor: gate.accentColor, color: '#ffffff' }"
+                class="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-brand-soft text-primary font-extrabold text-sm sm:text-base md:text-lg flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
               >
-                <span class="text-xl md:text-2xl font-black tracking-tight">{{
-                  gate.stageCode
-                }}</span>
-                <span
-                  class="text-[9px] md:text-[9.5px] uppercase font-bold tracking-wider opacity-90"
-                  >Gate {{ gate.number }}</span
-                >
+                {{ gate.stageCode }}
               </div>
+              <div
+                v-if="gIdx < hardGates.length - 1"
+                class="w-0.5 flex-1 bg-border/80 my-2.5 sm:my-3 group-hover:bg-primary/30 transition-colors"
+              />
             </div>
 
             <!-- Gate Card (Right Content) -->
-            <div
-              class="flex-1 sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70"
-            >
-              <div class="p-6 sm:p-8 space-y-6">
-                <!-- Header Info -->
-                <div
-                  class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2.5 border-b border-border/70 pb-4"
-                >
-                  <div class="space-y-1">
-                    <h3
-                      class="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight"
-                    >
-                      {{ gate.stageName }}
-                    </h3>
-                    <p
-                      class="text-xs sm:text-sm text-muted-foreground flex items-center gap-1.5 font-medium"
-                    >
-                      <span class="text-primary font-semibold">Lộ trình:</span>
-                      <span>{{ gate.position }}</span>
-                    </p>
-                  </div>
-
+            <div class="flex-1 pb-8 sm:pb-10">
+              <div
+                class="sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70"
+              >
+                <div class="p-6 sm:p-8 space-y-6">
+                  <!-- Header Info -->
                   <div
-                    class="text-xs text-muted-foreground shrink-0 bg-secondary/60 px-2.5 py-1 rounded-md"
+                    class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2.5 border-b border-border/70 pb-4"
                   >
-                    Thẩm quyền:
-                    <strong class="text-foreground">{{
-                      gate.authority
-                    }}</strong>
+                    <div class="space-y-1">
+                      <div class="flex items-center gap-2.5 flex-wrap">
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-bold bg-brand-soft text-primary border border-primary/20"
+                        >
+                          CỔNG #{{ gate.number }}
+                        </span>
+                        <h3
+                          class="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight"
+                        >
+                          {{ gate.stageName }}
+                        </h3>
+                      </div>
+                      <p
+                        class="text-xs sm:text-sm text-muted-foreground flex items-center gap-1.5 font-medium"
+                      >
+                        <span class="text-primary font-semibold">Lộ trình:</span>
+                        <span>{{ gate.position }}</span>
+                      </p>
+                    </div>
+
+                    <div
+                      class="text-xs text-muted-foreground shrink-0 bg-secondary/60 px-2.5 py-1 rounded-md"
+                    >
+                      Thẩm quyền:
+                      <strong class="text-foreground">{{
+                        gate.authority
+                      }}</strong>
+                    </div>
                   </div>
-                </div>
 
                 <!-- Rule Headline -->
                 <div
@@ -471,7 +469,8 @@ const comparisonRows = [
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Comparison Table: Bidly Hard Gates vs Generic CRM -->
     <section class="py-16 md:py-24 bg-card border-b border-border/80">

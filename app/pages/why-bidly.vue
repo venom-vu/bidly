@@ -107,29 +107,6 @@ const startCountAnimation = () => {
   requestAnimationFrame(step);
 };
 
-let observer: IntersectionObserver | null = null;
-
-onMounted(() => {
-  if (typeof IntersectionObserver !== "undefined" && statsSectionRef.value) {
-    observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          startCountAnimation();
-          observer?.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
-    observer.observe(statsSectionRef.value);
-  } else {
-    animatedValues.value = marketData.map((s) => s.value);
-  }
-});
-
-onUnmounted(() => {
-  observer?.disconnect();
-});
-
 interface TransformationItem {
   number: string;
   stageCode: string;
@@ -268,44 +245,164 @@ const competitiveMatrix = [
   },
 ];
 
-const kpiMetrics = [
+interface KpiMetric {
+  metric: string;
+  target: number;
+  prefix?: string;
+  suffix?: string;
+  decimals: number;
+  label: string;
+  desc: string;
+  accentColor: string;
+}
+
+const kpiMetrics: KpiMetric[] = [
   {
     metric: ">= 85%",
+    target: 85,
+    prefix: ">= ",
+    suffix: "%",
+    decimals: 0,
     label: "Độ phủ quản trị (Coverage Rate)",
     desc: "Tỷ lệ cơ hội đang theo đuổi có đầy đủ người phụ trách, giai đoạn chuẩn và việc tiếp theo (next action).",
     accentColor: "var(--primary, #0176D3)",
   },
   {
     metric: "100%",
+    target: 100,
+    prefix: "",
+    suffix: "%",
+    decimals: 0,
     label: "Kiểm soát hạn chót (Deadline Control)",
     desc: "Mọi mốc tiến độ và hạn nộp hồ sơ thầu đều có người chịu trách nhiệm và cảnh báo thời gian thực.",
     accentColor: "var(--stage-s8, #04844B)",
   },
   {
     metric: "0 lỗi",
+    target: 0,
+    prefix: "",
+    suffix: " lỗi",
+    decimals: 0,
     label: "Chất lượng phiên bản (Version Quality)",
     desc: "Loại bỏ hoàn toàn sự cố nộp nhầm phiên bản hồ sơ giá nhờ cơ chế khóa bất biến ở tầng máy chủ.",
     accentColor: "var(--brand, #00A1E0)",
   },
   {
     metric: ">= 70%",
+    target: 70,
+    prefix: ">= ",
+    suffix: "%",
+    decimals: 0,
     label: "Độ sâu quan hệ (Stakeholder Depth)",
     desc: "Các dự án ưu tiên xác định rõ Decision Maker, Influencer và Champion với nhật ký tương tác đầy đủ.",
     accentColor: "var(--stage-s3, #0D9488)",
   },
   {
     metric: "+30%",
+    target: 30,
+    prefix: "+",
+    suffix: "%",
+    decimals: 0,
     label: "Tái sử dụng năng lực (Capability Reuse)",
     desc: "Tiết kiệm tối thiểu 30% thời gian tìm kiếm dự án tiêu biểu, CV chuyên gia và chứng chỉ khi làm hồ sơ thầu.",
     accentColor: "var(--stage-s6, #4F46E5)",
   },
   {
     metric: ">= 70%",
+    target: 70,
+    prefix: ">= ",
+    suffix: "%",
+    decimals: 0,
     label: "Tỷ lệ ứng dụng thực tế (Adoption Rate)",
     desc: "Tỷ lệ nhân sự các phòng ban tích cực sử dụng hệ thống hàng tuần sau 6-8 tuần triển khai thí điểm.",
     accentColor: "var(--primary, #0176D3)",
   },
 ];
+
+const kpiSectionRef = ref<HTMLElement | null>(null);
+const animatedKpiValues = ref<string[]>(
+  kpiMetrics.map(
+    (s) =>
+      `${s.prefix || ""}${(0).toFixed(s.decimals).replace(".", ",")}${s.suffix || ""}`,
+  ),
+);
+
+let hasKpiAnimated = false;
+
+const startKpiCountAnimation = () => {
+  if (hasKpiAnimated) return;
+  hasKpiAnimated = true;
+
+  const duration = 1600;
+  const startTime = performance.now();
+
+  const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+  const step = (currentTime: number) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOutCubic(progress);
+
+    animatedKpiValues.value = kpiMetrics.map((stat) => {
+      const currentVal = stat.target * easedProgress;
+      const formatted = currentVal.toFixed(stat.decimals).replace(".", ",");
+      return `${stat.prefix || ""}${formatted}${stat.suffix || ""}`;
+    });
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      animatedKpiValues.value = kpiMetrics.map((stat) => stat.metric);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
+let statsObserver: IntersectionObserver | null = null;
+let kpiObserver: IntersectionObserver | null = null;
+
+onMounted(() => {
+  if (typeof IntersectionObserver !== "undefined") {
+    if (statsSectionRef.value) {
+      statsObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) {
+            startCountAnimation();
+            statsObserver?.disconnect();
+          }
+        },
+        { threshold: 0.25 },
+      );
+      statsObserver.observe(statsSectionRef.value);
+    } else {
+      animatedValues.value = marketData.map((s) => s.value);
+    }
+
+    if (kpiSectionRef.value) {
+      kpiObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) {
+            startKpiCountAnimation();
+            kpiObserver?.disconnect();
+          }
+        },
+        { threshold: 0.25 },
+      );
+      kpiObserver.observe(kpiSectionRef.value);
+    } else {
+      animatedKpiValues.value = kpiMetrics.map((s) => s.metric);
+    }
+  } else {
+    animatedValues.value = marketData.map((s) => s.value);
+    animatedKpiValues.value = kpiMetrics.map((s) => s.metric);
+  }
+});
+
+onUnmounted(() => {
+  statsObserver?.disconnect();
+  kpiObserver?.disconnect();
+});
 </script>
 
 <template>
@@ -356,24 +453,6 @@ const kpiMetrics = [
           <SfButton variant="secondary" size="lg" to="/crm/pricing">
             Tìm hiểu gói Pilot 8-10 tuần
           </SfButton>
-        </div>
-
-        <!-- Trust Badges -->
-        <div
-          class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
-        >
-          <div class="flex items-center gap-2">
-            <span
-              class="w-2 h-2 rounded-full bg-primary inline-block shrink-0"
-            />
-            <span>Khấu trừ 100% chi phí Pilot</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span
-              class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0"
-            />
-            <span>Bảo mật dữ liệu On-premise</span>
-          </div>
         </div>
       </div>
     </section>
@@ -643,6 +722,7 @@ const kpiMetrics = [
         </div>
 
         <div
+          ref="kpiSectionRef"
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch"
         >
           <div
@@ -653,7 +733,7 @@ const kpiMetrics = [
             <div
               class="text-3xl sm:text-4xl font-extrabold tabular-nums tracking-tight text-primary mb-3 sm:mb-4"
             >
-              {{ kpi.metric }}
+              {{ animatedKpiValues[kIdx] || kpi.metric }}
             </div>
             <div class="flex-1 flex flex-col">
               <div

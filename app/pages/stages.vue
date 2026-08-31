@@ -29,13 +29,13 @@ const principles = [
   },
   {
     icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-    title: "Khóa lạc quan (Version)",
-    desc: "Kiểm soát phiên bản qua trường version, chống hoàn toàn nguy cơ ghi đè dữ liệu khi nhiều phòng ban cùng làm thầu.",
+    title: "Chống Ghi Đè Dữ Liệu",
+    desc: "Tự động kiểm soát phiên bản theo thời gian thực, chống hoàn toàn nguy cơ ghi đè dữ liệu khi nhiều phòng ban cùng làm thầu.",
   },
   {
     icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-    title: "Audit Log append-only",
-    desc: "Mọi thao tác chuyển stage và cập nhật được ghi đồng thời trong Database Transaction, lưu vết vĩnh viễn.",
+    title: "Nhật Ký Lưu Vết Vĩnh Viễn",
+    desc: "Mọi thao tác chuyển bước và cập nhật được ghi nhận tự động, minh bạch và không thể sửa xóa.",
   },
 ];
 
@@ -214,12 +214,12 @@ const stageList = [
       "Kích hoạt đồng hồ đếm ngược thời hạn nộp thầu",
     ],
     systemActions: [
-      "Khởi tạo WorkPackage và TenderRound (Vòng 1, Đấu lại)",
-      "Phân bổ 50+ TenderChecklistItem cho 5 bộ phận chuyên môn",
-      "Quản lý chuỗi phiên bản qua supersedesId; đánh dấu isFinal = true khi chốt giá",
+      "Khởi tạo Gói thầu và Vòng đấu thầu (Vòng 1, Đấu lại)",
+      "Phân bổ danh mục công việc checklist cho 5 bộ phận chuyên môn",
+      "Quản lý chuỗi phiên bản hồ sơ; chốt duy nhất 1 bản Final chính thức khi phê duyệt giá",
     ],
     serverRules:
-      "CỔNG CỨNG: Tối đa 1 bản nộp isFinal = true mỗi round, tự động gỡ cờ bản cũ trong transaction.",
+      "CỔNG CỨNG: Tối đa 1 bản nộp Final chính thức trong mỗi vòng thầu, tự động cập nhật và lưu vết lịch sử.",
     exitCriteria:
       "Hoàn thành toàn bộ checklist 5 ban; bản hồ sơ Final được duyệt đầy đủ chữ ký/con dấu.",
     transitions: [
@@ -537,42 +537,34 @@ const nonLinearFlows = [
         </div>
 
         <!-- Vertical Timeline Spine -->
-        <div class="relative max-w-5xl mx-auto space-y-12">
-          <!-- Continuous Vertical Background Line -->
-          <div
-            class="hidden md:block absolute top-8 bottom-8 left-[39px] w-1 bg-border/80 rounded-full z-0"
-          />
-
+        <div class="max-w-5xl mx-auto space-y-0">
           <div
             v-for="(stg, sIdx) in stageList"
             :key="stg.code"
             :id="stg.code.toLowerCase()"
-            class="relative z-10 flex flex-col md:flex-row items-start gap-6 md:gap-8 group"
+            class="flex items-stretch gap-4 sm:gap-6 md:gap-8 group"
           >
-            <!-- Stage Number Badge (Left Node on Timeline) -->
-            <div class="shrink-0 flex items-center md:flex-col gap-3">
+            <!-- Left Col: Circular Node & Connecting Line -->
+            <div class="flex flex-col items-center shrink-0 w-11 sm:w-14">
               <div
-                class="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex flex-col items-center justify-center font-black shadow-card transition-transform duration-300 group-hover:scale-105 text-white"
-                :style="{ backgroundColor: stg.color }"
+                class="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-brand-soft text-primary font-extrabold text-sm sm:text-base md:text-lg flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
               >
-                <span class="text-xl md:text-2xl font-black tracking-tight">{{
-                  stg.code
-                }}</span>
-                <span
-                  class="text-[9px] md:text-[9.5px] uppercase font-bold tracking-wider opacity-90"
-                >
-                  {{ stg.isHard ? "Hard Gate" : "Soft Gate" }}
-                </span>
+                {{ stg.code }}
               </div>
+              <div
+                v-if="sIdx < stageList.length - 1"
+                class="w-0.5 flex-1 bg-border/80 my-2.5 sm:my-3 group-hover:bg-primary/30 transition-colors"
+              />
             </div>
 
             <!-- Detailed Stage Card (Right Content) -->
-            <div
-              :class="[
-                'flex-1 sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70',
-                stg.isHard ? 'border-primary/50' : '',
-              ]"
-            >
+            <div class="flex-1 pb-8 sm:pb-10">
+              <div
+                :class="[
+                  'sf-card group bg-card rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 overflow-hidden w-full border border-border/70',
+                  stg.isHard ? 'border-primary/50' : '',
+                ]"
+              >
               <div class="p-6 sm:p-8 space-y-6">
                 <!-- Header Info -->
                 <div
@@ -746,7 +738,8 @@ const nonLinearFlows = [
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- 5 Non-Linear Transitions Section -->
     <section class="py-16 md:py-24 bg-card border-b border-border/80">

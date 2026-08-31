@@ -7,10 +7,15 @@ export default <RouterConfig>{
     }
 
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            top: 88,
+            behavior: 'smooth',
+          })
+        }, 100)
+      })
     }
 
     // Cuộn tức thì lên đầu trang khi chuyển giữa các trang khác nhau

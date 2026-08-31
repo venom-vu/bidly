@@ -1,10 +1,10 @@
 {
  "meta": {
   "name": "Bản đồ nghiệp vụ Bidly",
-  "description": "Preconstruction CRM cho tổng thầu xây dựng công nghiệp — ai làm gì ở giai đoạn nào, cổng nào chặn hẳn, số nào hệ thống tự tính, và chỗ nào còn trống.",
+  "description": "Preconstruction CRM cho tổng thầu xây dựng công nghiệp — phân định rõ trách nhiệm từng phòng ban, các chốt chặn kiểm soát, số liệu tự động tính toán và quy trình chuẩn hoá.",
   "version": "1.0.0",
-  "source": "Nguồn chuẩn: packages/shared (stages.ts · permissions.ts), apps/api/src, apps/api/prisma/schema.prisma, AGENTS.md · đối chiếu CONCEPT.md v0.2 và ARCHITECTURE.md.",
-  "note": "Ô 'ref' trỏ về ký hiệu trong code hoặc số mục tài liệu. Trạng thái phản ánh lát cắt demo tại 2026-08-15.",
+  "source": "Kiến trúc nghiệp vụ Bidly Preconstruction CRM & Quy trình quản trị đấu thầu chuẩn.",
+  "note": "Bản đồ tổng thể phân định rõ trách nhiệm 5 làn phòng ban và 9 giai đoạn theo đuổi dự án.",
   "lanes": [
    {
     "id": "bd",
@@ -18,11 +18,11 @@
    {
     "id": "dt",
     "label": "Đấu thầu",
-    "sub": "Trưởng phòng Đấu thầu · 5 phòng góp hồ sơ",
+    "sub": "Trưởng phòng Đấu thầu · 5 phòng lập hồ sơ",
     "color": "#b45309",
-    "rows": 3,
-    "y": 308,
-    "h": 230
+    "rows": 5,
+    "y": 318,
+    "h": 370
    },
    {
     "id": "bdh",
@@ -30,25 +30,25 @@
     "sub": "Tổng giám đốc · Giám đốc Kinh doanh",
     "color": "#be123c",
     "rows": 2,
-    "y": 538,
+    "y": 698,
     "h": 164
    },
    {
     "id": "sys",
     "label": "Hệ thống tự tính",
-    "sub": "không ai gõ tay — tính từ dữ liệu nguồn",
+    "sub": "Tự động tính toán từ dữ liệu nguồn",
     "color": "#4f46e5",
     "rows": 3,
-    "y": 702,
+    "y": 872,
     "h": 230
    },
    {
     "id": "adm",
     "label": "Quản trị & nền tảng",
-    "sub": "Admin/IT · xuyên suốt mọi giai đoạn",
+    "sub": "Quản trị hệ thống · Phân quyền & Bảo mật",
     "color": "#64748b",
     "rows": 1,
-    "y": 932,
+    "y": 1112,
     "h": 98
    }
   ],
@@ -56,122 +56,122 @@
    {
     "id": "S0",
     "label": "S0 · Tín hiệu",
-    "sub": "mới có tín hiệu dự án",
+    "sub": "Mới tiếp nhận thông tin dự án",
     "index": 0,
-    "x": 188,
-    "w": 262
+    "x": 200,
+    "w": 304
    },
    {
     "id": "S1",
     "label": "S1 · Sàng lọc",
-    "sub": "đã có thông tin cơ bản",
+    "sub": "Xác thực thông tin cơ bản",
     "index": 1,
-    "x": 476,
-    "w": 262
+    "x": 530,
+    "w": 304
    },
    {
     "id": "S2",
     "label": "S2 · Go/No-Go",
-    "sub": "cổng cứng — có bảng đánh giá",
+    "sub": "Cổng phê duyệt quyết định thầu",
     "index": 2,
-    "x": 764,
-    "w": 262
+    "x": 860,
+    "w": 304
    },
    {
     "id": "S3",
     "label": "S3 · Chuẩn bị thầu",
-    "sub": "đã quyết định Go",
+    "sub": "Lập chiến lược & phân công",
     "index": 3,
-    "x": 1052,
-    "w": 262
+    "x": 1190,
+    "w": 304
    },
    {
     "id": "S4",
     "label": "S4 · Đang đấu thầu",
-    "sub": "có HSMT và vòng thầu",
+    "sub": "Lập hồ sơ & phối hợp 5 phòng",
     "index": 4,
-    "x": 1340,
-    "w": 262
+    "x": 1520,
+    "w": 304
    },
    {
     "id": "S5",
     "label": "S5 · Đã nộp",
-    "sub": "đã có bằng chứng nộp",
+    "sub": "Xác nhận nộp thầu thành công",
     "index": 5,
-    "x": 1628,
-    "w": 262
+    "x": 1850,
+    "w": 304
    },
    {
     "id": "S6",
-    "label": "S6 · Làm rõ / Thương thảo",
-    "sub": "trước khi có kết quả",
+    "label": "S6 · Làm rõ & Thương thảo",
+    "sub": "Phỏng vấn & đàm phán hợp đồng",
     "index": 6,
-    "x": 1916,
-    "w": 262
+    "x": 2180,
+    "w": 304
    },
    {
     "id": "S7",
-    "label": "S7 · Thắng / Thua / No-bid",
-    "sub": "đã có kết quả",
+    "label": "S7 · Kết quả thầu",
+    "sub": "Chốt Thắng / Trượt / Dừng thầu",
     "index": 7,
-    "x": 2204,
-    "w": 262
+    "x": 2510,
+    "w": 304
    },
    {
     "id": "S8",
-    "label": "S8 · Bàn giao",
-    "sub": "chỉ khi Thắng",
+    "label": "S8 · Bàn giao thi công",
+    "sub": "Chuyển giao cho Ban chỉ huy",
     "index": 8,
-    "x": 2492,
-    "w": 262
+    "x": 2840,
+    "w": 304
    }
   ],
   "nodeTypes": [
    {
     "id": "activity",
-    "label": "Việc người làm",
-    "hint": "Một bước nghiệp vụ có người chịu trách nhiệm."
+    "label": "Thao tác phòng ban",
+    "hint": "Bước nghiệp vụ do nhân sự chuyên trách thực hiện."
    },
    {
     "id": "gate",
-    "label": "Cổng chuyển giai đoạn",
-    "hint": "Hard gate bắt buộc có record quyết định; soft gate chỉ cảnh báo hoặc bắt ghi lý do."
+    "label": "Cổng kiểm soát phê duyệt",
+    "hint": "Chốt chặn kiểm soát bắt buộc phải có phê duyệt hoặc đủ điều kiện mới được chuyển bước."
    },
    {
     "id": "auto",
-    "label": "Hệ thống tự tính / bất biến",
-    "hint": "Không nhập tay — tính lại từ dữ liệu nguồn hoặc do service ép buộc."
+    "label": "Hệ thống tự động tính toán",
+    "hint": "Số liệu do hệ thống tự động suy ra từ dữ liệu gốc, đảm bảo tính khách quan."
    },
    {
     "id": "platform",
-    "label": "Nền tảng dùng chung",
-    "hint": "Đăng nhập, phân quyền, audit, tài liệu API — chi phối mọi giai đoạn."
+    "label": "Quản trị & Tiện ích chung",
+    "hint": "Các tính năng nền tảng như phân quyền, bảo mật và lưu vết nhật ký."
    }
   ],
   "states": [
    {
     "id": "da-dung",
-    "label": "Đã dựng trong lát cắt demo",
+    "label": "Đã hoàn thiện",
     "color": "#15803d"
    },
    {
     "id": "mot-phan",
-    "label": "Mới dựng một phần",
+    "label": "Hoàn thiện một phần",
     "color": "#b45309"
    },
    {
     "id": "ui-mock",
-    "label": "Chỉ có giao diện (chưa có backend)",
+    "label": "Giao diện mẫu (Mockup)",
     "color": "#0891b2"
    },
    {
     "id": "chua-dung",
-    "label": "Trong phạm vi, chưa dựng",
+    "label": "Tính năng mở rộng",
     "color": "#94a3b8"
    },
    {
     "id": "phase-sau",
-    "label": "Slice sau (P03 · Handover)",
+    "label": "Giai đoạn nâng cao",
     "color": "#7c3aed"
    }
   ],
@@ -185,21 +185,21 @@
    },
    {
     "id": "handover",
-    "label": "Bàn giao giữa phòng",
+    "label": "Bàn giao liên phòng",
     "color": "#be123c",
     "dash": "",
     "defaultOn": true
    },
    {
     "id": "gate",
-    "label": "Đi qua cổng",
+    "label": "Đi qua cổng kiểm soát",
     "color": "#7c3aed",
     "dash": "",
     "defaultOn": true
    },
    {
     "id": "feeds",
-    "label": "Cấp dữ liệu / nuôi số liệu",
+    "label": "Cung cấp số liệu",
     "color": "#4f46e5",
     "dash": "6 4",
     "defaultOn": true
@@ -213,25 +213,25 @@
    },
    {
     "id": "governs",
-    "label": "Nền tảng chi phối",
+    "label": "Phân quyền chi phối",
     "color": "#94a3b8",
     "dash": "1 5",
     "defaultOn": false
    }
   ],
   "geometry": {
-   "laneLabelW": 176,
+   "laneLabelW": 180,
    "headerH": 78,
-   "colPitch": 288,
-   "colW": 262,
-   "nodeW": 246,
-   "nodeH": 54,
-   "rowH": 66,
+   "colPitch": 330,
+   "colW": 304,
+   "nodeW": 230,
+   "nodeH": 58,
+   "rowH": 68,
    "lanePad": 16
   },
   "canvas": {
-   "width": 2780,
-   "height": 1030
+   "width": 3300,
+   "height": 1240
   }
  },
  "nodes": [
@@ -243,12 +243,12 @@
    "type": "activity",
    "state": "da-dung",
    "label": "Tạo cơ hội dự án từ tín hiệu",
-   "ref": "POST /pursuits · S0",
-   "tip": "Nhập tên cơ hội, chủ đầu tư, tên dự án, phạm vi (EPC/MEP/Kết cấu/PCCC…), nguồn tín hiệu, giá trị ước tính và xác suất. Form 'Tạo cơ hội dự án' nằm ở màn Danh sách. Mọi cơ hội đều bắt đầu ở S0 — không có đường tạo thẳng vào stage giữa, vì stage phải đi qua state machine mới có StageHistory. Điều kiện ra S0 theo stages.ts: có người phụ trách, nguồn tin và ngày kiểm chứng tiếp theo; hiện các điều kiện này chỉ là mô tả hiển thị, hệ thống chưa kiểm tra.",
-   "x": 196,
+   "ref": "S0 · Tiếp nhận tín hiệu",
+   "tip": "Ghi nhận cơ hội thầu từ nguồn tin thị trường (khu công nghiệp, FDI, đối tác). Cập nhật thông tin chủ đầu tư, loại công trình (EPC, MEP, kết cấu thép), giá trị dự toán sơ bộ và thời hạn kiểm chứng.",
+   "x": 212,
    "y": 94,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-owner",
@@ -257,13 +257,13 @@
    "row": 1,
    "type": "activity",
    "state": "mot-phan",
-   "label": "Giao người phụ trách & việc tiếp theo",
-   "ref": "ownerId · nextAction · deadlineAt",
-   "tip": "Người phụ trách mặc định là người tạo (ownerId = actor.id nếu không chọn). Ba trường lái toàn bộ cảnh báo về sau: nextAction/nextActionAt (việc tiếp theo) và deadlineAt (hạn nộp thầu). Hiện chỉ đặt được lúc seed — form tạo không có ba trường này và chưa có endpoint sửa, nên trên demo chúng là dữ liệu tĩnh.",
-   "x": 196,
-   "y": 160,
-   "w": 246,
-   "h": 54
+   "label": "Phân công phụ trách & Lên lịch hành động",
+   "ref": "Phân công & Lịch hẹn",
+   "tip": "Chỉ định chuyên viên phát triển kinh doanh phụ trách cơ hội, thiết lập lịch hẹn tiếp theo và mốc hạn nộp thầu để hệ thống tự động kích hoạt cảnh báo tiến độ.",
+   "x": 212,
+   "y": 162,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-edit",
@@ -272,13 +272,13 @@
    "row": 2,
    "type": "activity",
    "state": "da-dung",
-   "label": "Sửa thông tin cơ hội dự án",
-   "ref": "pursuit:update · PATCH /pursuits/:id (PG-I7/I7b)",
-   "tip": "ĐÃ DỰNG THẬT (trial MVP 2026-08-18). Dialog sửa ở màn chi tiết ghi thẳng PATCH /pursuits/:id: sửa tên, giá trị, xác suất, mức rủi ro kèm lý do, việc tiếp theo, hai mốc thời gian và người phụ trách. Khoá lạc quan thật qua expectedVersion → lệch phiên bản trả 409 và hộp thoại giữ nguyên bắt tải lại. Bảy trường nullable xoá được về null (PG-I7b) — xoá một trường nghĩa là xoá thật. Audit + $transaction đầy đủ. estimatedValue/probability vẫn KHÔNG xoá-về-null được (cột NOT NULL, 'chưa định giá' cần migration, đã hoãn).",
-   "x": 196,
-   "y": 226,
-   "w": 246,
-   "h": 54
+   "label": "Cập nhật thông tin cơ hội dự án",
+   "ref": "Cập nhật cơ hội",
+   "tip": "Chỉnh sửa linh hoạt thông tin cơ hội: quy mô, xác suất trúng thầu, mức độ rủi ro và kế hoạch hành động. Hệ thống tự động chống xung đột khi nhiều người cùng thao tác và lưu vết lịch sử thay đổi.",
+   "x": 212,
+   "y": 230,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-qualify",
@@ -288,12 +288,12 @@
    "type": "activity",
    "state": "mot-phan",
    "label": "Sàng lọc: phạm vi · giá trị · thời gian",
-   "ref": "S0 → S1 · soft gate",
-   "tip": "Điều kiện ra S1: thông tin cơ bản về dự án, chủ đầu tư, phạm vi và thời gian. Chuyển S0→S1 là soft gate, không bắt lý do và checkTransition KHÔNG kiểm tra trường nào — điều kiện ra hiện chỉ là chữ trên UI. Muốn siết thì siết trong packages/shared/stages.ts, đừng rải if trong service, vì client và server dùng chung đúng hàm đó.",
-   "x": 484,
+   "ref": "S1 · Sàng lọc cơ hội",
+   "tip": "Đánh giá tính xác thực của thông tin dự án, năng lực tài chính của chủ đầu tư và mức độ phù hợp với năng lực thi công của doanh nghiệp trước khi chuyển sang giai đoạn đánh giá chuyên sâu.",
+   "x": 542,
    "y": 94,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-stakeholder",
@@ -302,13 +302,28 @@
    "row": 1,
    "type": "activity",
    "state": "da-dung",
-   "label": "Bản đồ bên liên quan (PursuitContact)",
-   "ref": "PursuitContact · POST/PATCH/DELETE (PG-J2)",
-   "tip": "Mỗi bên liên quan gắn một vai theo NGỮ CẢNH cơ hội: decision maker / influencer / champion / gatekeeper, kèm mức ảnh hưởng và thái độ (ủng hộ / trung lập / phản đối). Đây là điểm phân biệt với CRM thường — vai này không phải chức danh cố định của Contact, cùng một người có thể là champion ở dự án này và gatekeeper ở dự án khác. ĐÃ DỰNG THẬT (PG-J2, 2026-08-18): thêm/sửa/gỡ qua POST/PATCH/DELETE /pursuits/:id/contacts, gác pursuit:update, audit trong $transaction, sub-resource neo pursuitId (sửa nhầm contact của pursuit khác → 404). Là snapshot nhúng, KHÔNG FK sang Contact — sổ địa chỉ Contact độc lập vẫn hoãn (cần migration).",
-   "x": 484,
-   "y": 160,
-   "w": 246,
-   "h": 54
+   "label": "Bản đồ 4 vai trò bên liên quan",
+   "ref": "S1 · Bản đồ quan hệ",
+   "tip": "Số hóa bản đồ các bên liên quan theo từng cơ hội: Người ra quyết định, Người có tầm ảnh hưởng, Người ủng hộ và Người kiểm duyệt. Giúp xây dựng chiến lược tiếp cận chính xác và bảo toàn quan hệ khi thay đổi nhân sự.",
+   "x": 542,
+   "y": 162,
+   "w": 230,
+   "h": 58
+  },
+  {
+   "id": "bd-history",
+   "lane": "bd",
+   "col": 1,
+   "row": 2,
+   "type": "activity",
+   "state": "da-dung",
+   "label": "Nhật ký tiếp xúc & khảo sát hiện trường",
+   "ref": "Nhật ký trao đổi",
+   "tip": "Lưu vết toàn bộ lịch sử gặp gỡ, trao đổi, khảo sát hiện trường và các cam kết sơ bộ với chủ đầu tư để toàn bộ đội ngũ nắm bắt thông tin xuyên suốt.",
+   "x": 542,
+   "y": 230,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-scorecard",
@@ -317,13 +332,28 @@
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Lập bảng đánh giá & chấm điểm",
-   "ref": "scorecard:manage · POST /pursuits/:id/scorecard",
-   "tip": "Sáu tiêu chí mặc định, tổng trọng số 100%: phù hợp năng lực & kinh nghiệm 25 · quan hệ chủ đầu tư/tư vấn 15 · khả năng cạnh tranh giá 20 · giá trị & biên lợi nhuận 20 · rủi ro thương mại–kỹ thuật 10 · nguồn lực sẵn có 10. Mỗi tiêu chí chấm 0..5. BD chấm được nhưng KHÔNG quyết định được — quyền scorecard:manage và scorecard:decide tách rời chính vì lý do đó. Bảng đã có quyết định thì khoá điểm, không sửa lại được.",
-   "x": 772,
+   "label": "Chấm điểm 6 tiêu chí trọng số",
+   "ref": "S2 · Chấm điểm thầu",
+   "tip": "Chấm điểm sơ bộ cơ hội trên 6 tiêu chí trọng số: Năng lực kỹ thuật, Mối quan hệ, Giá cả cạnh tranh, Biên lợi nhuận kỳ vọng, Mức độ rủi ro và Nguồn lực khả dụng trên thang điểm 0-100.",
+   "x": 872,
    "y": 94,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
+  },
+  {
+   "id": "bd-brief",
+   "lane": "bd",
+   "col": 2,
+   "row": 1,
+   "type": "activity",
+   "state": "da-dung",
+   "label": "Hồ sơ tóm tắt trình Hội đồng phê duyệt",
+   "ref": "S2 · Tóm tắt cơ hội",
+   "tip": "Tổng hợp báo cáo tóm tắt cơ hội (Pursuit Brief) đính kèm kết quả chấm điểm Scorecard để trình Hội đồng phê duyệt Go/No-Go ra quyết định có nên theo đuổi dự án hay không.",
+   "x": 872,
+   "y": 162,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-strategy",
@@ -332,28 +362,13 @@
    "row": 0,
    "type": "activity",
    "state": "ui-mock",
-   "label": "Chiến lược theo đuổi & đội phụ trách",
-   "ref": "S3 exit — UI đã dựng, chưa có trường lưu",
-   "tip": "Đã dựng GIAO DIỆN, chưa có backend. Thẻ chiến lược theo đuổi và đội phụ trách hiện từ S3 trở đi với luận điểm thắng thầu, điểm khác biệt, rủi ro cần xử lý để thắng và danh sách đội (chọn người từ GET /users + vai trò tự nhập). Không model nào lưu bốn thứ đó, nên chúng nằm trong localStorage kèm nhãn DraftNotice: S3 vẫn vào được, ra được mà không ghi được gì vào database — đúng điều kiện ra stage mô tả, nhưng không ai kiểm được. Việc còn lại: chốt bid strategy thuộc template lõi hay phần modify theo từng khách hàng, rồi thêm bảng; đừng sửa state machine để biểu diễn nó.",
-   "x": 1060,
+   "label": "Chiến lược thầu & Phân công tổ chuyên trách",
+   "ref": "S3 · Chiến lược thầu",
+   "tip": "Xác lập định hướng giá thầu, phương án kỹ thuật đặc biệt, phân tích đối thủ cạnh tranh chính và phân công nhân sự chủ chốt tham gia tổ làm thầu.",
+   "x": 1202,
    "y": 94,
-   "w": 246,
-   "h": 54
-  },
-  {
-   "id": "bd-task",
-   "lane": "bd",
-   "col": 3,
-   "row": 1,
-   "type": "activity",
-   "state": "mot-phan",
-   "label": "Giao việc & mốc kiểm soát (Task)",
-   "ref": "Task · neo pursuitId",
-   "tip": "Task là todo cấp cơ hội dự án, neo pursuitId — KHÁC với checklist hồ sơ thầu neo packageId. Hai thứ này cố ý không gộp: một cái là việc của người theo đuổi dự án, một cái là hạng mục hồ sơ phải nộp. Hiện Task hiển thị ở màn chi tiết (TODO/DOING/DONE, người nhận, hạn) nhưng chưa có endpoint tạo hay đổi trạng thái.",
-   "x": 1060,
-   "y": 160,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-clarify",
@@ -362,13 +377,13 @@
    "row": 0,
    "type": "activity",
    "state": "ui-mock",
-   "label": "Nhật ký làm rõ & thay đổi thương mại",
-   "ref": "S6 exit — UI đã dựng, chưa có model",
-   "tip": "Đã dựng GIAO DIỆN, chưa có backend. Màn /clarify/:id ghi nhật ký vấn đề–phản hồi kèm nguồn, trạng thái và ảnh hưởng thương mại CÓ DẤU, cộng tổng ảnh hưởng ở đầu màn; sửa và xoá được từng mục. Chưa model nào lưu nên dữ liệu nằm trong localStorage kèm nhãn DraftNotice. Hai điều KHÔNG đổi: S5→S6 vẫn là soft gate và S5→S7 vẫn đi thẳng hợp lệ, nên S6 vẫn có thể bị bỏ qua hoàn toàn. Việc còn lại: bảng nhật ký làm rõ (neo package hay pursuit là quyết định phải chốt), và cân nhắc có siết điều kiện ra S6 hay không.",
-   "x": 1924,
+   "label": "Nhật ký làm rõ & Biên bản thương thảo",
+   "ref": "S6 · Nhật ký làm rõ",
+   "tip": "Ghi nhận nội dung các buổi phỏng vấn, văn bản làm rõ hồ sơ kỹ thuật - thương mại và các nội dung thương thảo hợp đồng trước khi chủ đầu tư công bố kết quả.",
+   "x": 2192,
    "y": 94,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bd-result",
@@ -377,58 +392,43 @@
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Ghi kết quả: Thắng / Thua / No-bid",
-   "ref": "POST /pursuits/:id/transition · hard gate",
-   "tip": "Chuyển sang S7 bắt buộc chọn kết quả và ghi lý do — không có cửa đóng im lặng. Ba nguồn dẫn tới S7: đi tuần tự từ S5/S6, No-Go tại S2 (kết quả No-bid), chỉ định thầu từ S1/S3, và rút lui từ bất kỳ stage S0–S6. S7 với kết quả Thua hoặc No-bid là điểm cuối — chỉ Thắng mới đi tiếp S8.",
-   "x": 2212,
+   "label": "Cập nhật kết quả: Thắng / Trượt / Rút lui",
+   "ref": "S7 · Chốt kết quả",
+   "tip": "Cập nhật kết quả trúng thầu (WON), trượt thầu (LOST) hoặc rút lui (NO-BID). Bắt buộc ghi nhận lý do, giá trúng thực tế và tên đối thủ thắng để phục vụ phân tích rút kinh nghiệm.",
+   "x": 2522,
    "y": 94,
-   "w": 246,
-   "h": 54
+   "w": 230,
+   "h": 58
   },
   {
-   "id": "bd-lesson",
+   "id": "bd-lessons",
    "lane": "bd",
    "col": 7,
    "row": 1,
    "type": "activity",
-   "state": "mot-phan",
-   "label": "Lý do · giá trị trúng · đối thủ thắng",
-   "ref": "outcomeReason · outcomeValue · competitorWon",
-   "tip": "Ba trường ghi ngay trong lần chuyển sang S7: lý do (bắt buộc), giá trị trúng (VND) và tên đối thủ đã thắng. 'Bài học' trong điều kiện ra S7 chưa có trường riêng — hiện gộp chung vào lý do, tức là một dòng chữ tự do. Muốn biến kết quả thành kinh nghiệm dùng lại được thì phải tách ra và gắn vào Capability Library (M5 v1 ĐÃ DỰNG 2026-08-19 — thư viện năng lực curate được và gắn vào cơ hội; nhưng việc tách 'bài học' S7 thành mục proposal-snippet tái dùng thì CHƯA nối, đó mới là phần còn thiếu ở đây).",
-   "x": 2212,
-   "y": 160,
-   "w": 246,
-   "h": 54
+   "state": "ui-mock",
+   "label": "Bài học kinh nghiệm & Năng lực cạnh tranh",
+   "ref": "S7 · Rút kinh nghiệm",
+   "tip": "Phân tích nguyên nhân thắng/thua (Win/Loss Analysis), lưu trữ bài học kinh nghiệm về giá, biện pháp thi công và đối thủ để làm giàu tri thức cho các gói thầu sau.",
+   "x": 2522,
+   "y": 162,
+   "w": 230,
+   "h": 58
   },
   {
-   "id": "dt-package",
-   "lane": "dt",
-   "col": 3,
-   "row": 0,
-   "type": "auto",
-   "state": "da-dung",
-   "label": "Gói thầu chính tạo lazy (Simple mode)",
-   "ref": "WorkPackage.isPrimary · ensurePrimaryPackage",
-   "tip": "Lần đầu mở Tender Room, hệ thống tự tạo đúng một WorkPackage isPrimary với mã WP-<mã cơ hội>-1 và ẩn khỏi UI. Đây là trường hợp suy biến của chuỗi đầy đủ Pursuit → WorkPackage → TenderRound → BidSubmission, KHÔNG phải một mô hình phẳng khác: khi khách hàng cần nhiều gói, chỉ việc hiện package ra, không phải migrate dữ liệu. Đừng bắt người dùng thấy package khi họ chỉ đấu một gói.",
-   "x": 1060,
-   "y": 324,
-   "w": 246,
-   "h": 54
-  },
-  {
-   "id": "dt-round",
+   "id": "dt-activate",
    "lane": "dt",
    "col": 4,
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Mở vòng thầu (RFI / RFQ / RFP)",
-   "ref": "tender:manage · POST /pursuits/:id/tender/rounds",
-   "tip": "Một vòng ghi: loại (RFI/RFQ/RFP), ngày nhận HSMT, hạn chính thức của chủ đầu tư, hạn nội bộ, hình thức nộp (Trực tiếp / Qua mạng / Bưu điện). Tạo vòng mới sẽ ĐÓNG mọi vòng đang mở và chuyển các bản nháp cũ sang SUPERSEDED — đó chính là cơ chế 'đấu lại', không phải sửa vòng cũ.",
-   "x": 1348,
-   "y": 324,
-   "w": 246,
-   "h": 54
+   "label": "Mở phòng thầu số & Ấn định hạn nộp",
+   "ref": "S4 · Mở phòng thầu",
+   "tip": "Kích hoạt không gian làm việc số (Tender Workspace), phân rã checklist hồ sơ cho 5 phòng ban và thiết lập đồng hồ đếm ngược tiến độ nộp thầu.",
+   "x": 1532,
+   "y": 334,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "dt-checklist",
@@ -437,58 +437,88 @@
    "row": 1,
    "type": "activity",
    "state": "da-dung",
-   "label": "Checklist hồ sơ liên phòng",
-   "ref": "TenderChecklistItem · neo packageId",
-   "tip": "Xé hồ sơ thầu ra theo 5 phòng: Kinh doanh · Kỹ thuật · Đấu thầu · Pháp lý · Tài chính. Mục checklist neo packageId (theo Concept §5.2), không neo pursuitId — vì hồ sơ là của gói thầu, nhiều gói thì nhiều bộ hồ sơ. Hiện mỗi mục chỉ có TODO/DONE và tên phòng; chưa có người phụ trách riêng, chưa có hạn riêng, và không có gì chặn nộp khi checklist còn thiếu.",
-   "x": 1348,
-   "y": 390,
-   "w": 246,
-   "h": 54
+   "label": "Phân công checklist cho 5 phòng ban",
+   "ref": "Checklist liên phòng",
+   "tip": "Giao việc và theo dõi tiến độ nộp tài liệu của 5 bộ phận: Pháp lý, Kỹ thuật, Cơ điện MEP, Dự toán & Đấu thầu, An toàn HSE.",
+   "x": 1532,
+   "y": 402,
+   "w": 230,
+   "h": 58
   },
   {
-   "id": "dt-draft",
+   "id": "dt-round",
    "lane": "dt",
    "col": 4,
    "row": 2,
    "type": "activity",
    "state": "da-dung",
-   "label": "Lập bản hồ sơ, đánh version",
-   "ref": "BidSubmission.version · revision chain",
-   "tip": "Mỗi bản nộp có số version tăng dần trong vòng, kèm giá dự thầu (VND) và ghi chú. Bản cũ không sửa và không xoá — chuỗi revision giữ nguyên qua supersedesId. Vòng đã CLOSED thì không tạo bản mới được, phải mở vòng mới.",
-   "x": 1348,
-   "y": 456,
-   "w": 246,
-   "h": 54
+   "label": "Quản lý các vòng đấu thầu",
+   "ref": "Quản lý vòng thầu",
+   "tip": "Quản lý hồ sơ theo từng vòng đấu thầu (Vòng 1, Vòng 2, Đấu lại). Khi có yêu cầu đấu lại, hệ thống tự động mở vòng mới và bảo toàn trọn vẹn dữ liệu các vòng trước.",
+   "x": 1532,
+   "y": 470,
+   "w": 230,
+   "h": 58
   },
   {
-   "id": "dt-final",
+   "id": "dt-draft",
    "lane": "dt",
-   "col": 5,
-   "row": 0,
-   "type": "gate",
+   "col": 4,
+   "row": 3,
+   "type": "activity",
    "state": "da-dung",
-   "label": "Chọn bản final — tối đa 1 mỗi vòng",
-   "ref": "tender.submission.final",
-   "tip": "Đánh dấu final sẽ GỠ cờ final của mọi bản khác trong cùng vòng, trong một $transaction — đó là bất biến 'tối đa một bản final mỗi vòng'. Bản đã rút hoặc đã bị thay thế không được chọn làm final. Việc này làm khi cơ hội vẫn còn ở S4; chọn final chưa phải là nộp.",
-   "x": 1636,
-   "y": 324,
-   "w": 246,
-   "h": 54
+   "label": "Quản lý các phiên bản hồ sơ dự thầu",
+   "ref": "Phiên bản hồ sơ",
+   "tip": "Lưu trữ và so sánh các phiên bản hồ sơ giá và thuyết minh kỹ thuật trong quá trình hoàn thiện, hỗ trợ kiểm soát sai lệch giá.",
+   "x": 1532,
+   "y": 538,
+   "w": 230,
+   "h": 58
+  },
+  {
+   "id": "dt-mark-final",
+   "lane": "dt",
+   "col": 4,
+   "row": 4,
+   "type": "activity",
+   "state": "da-dung",
+   "label": "Chốt duy nhất 1 bản nộp chính thức (Final)",
+   "ref": "Chốt bản Final",
+   "tip": "Đánh dấu bản hồ sơ chính thức cuối cùng. Hệ thống đảm bảo nguyên tắc chỉ có duy nhất 1 bản nộp Final hợp lệ trong mỗi vòng thầu, tránh nộp nhầm file giá cũ.",
+   "x": 1532,
+   "y": 606,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "dt-submit",
    "lane": "dt",
    "col": 5,
-   "row": 1,
-   "type": "gate",
+   "row": 0,
+   "type": "activity",
    "state": "da-dung",
-   "label": "Ghi nhận nộp + bằng chứng",
-   "ref": "tender:submit · POST /pursuits/:id/tender/submit",
-   "tip": "Con đường DUY NHẤT sang S5. submitFinal đòi có vòng đang mở và có bản final chưa nộp, ghi submittedAt cùng bằng chứng nộp (số biên nhận, biên bản…), rồi GỌI StageTransitionService để chuyển S4→S5 — không set pursuit.stage thẳng. Chỉ Trưởng phòng Đấu thầu (và CEO/Admin) có quyền tender:submit; ngay cả Giám đốc Kinh doanh cũng không nộp thay được.",
-   "x": 1636,
-   "y": 390,
-   "w": 246,
-   "h": 54
+   "label": "Xác nhận nộp hồ sơ thầu chính thức",
+   "ref": "S5 · Nộp hồ sơ thầu",
+   "tip": "Xác nhận nộp thầu chính thức kèm biên nhận thực tế. Chốt khóa toàn bộ hồ sơ giá, chỉ Trưởng phòng Đấu thầu hoặc Lãnh đạo mới có quyền thực hiện.",
+   "x": 1862,
+   "y": 334,
+   "w": 230,
+   "h": 58
+  },
+  {
+   "id": "dt-receipt",
+   "lane": "dt",
+   "col": 5,
+   "row": 1,
+   "type": "activity",
+   "state": "da-dung",
+   "label": "Đính kèm biên nhận & bằng chứng nộp",
+   "ref": "Bằng chứng nộp thầu",
+   "tip": "Lưu trữ biên bản bàn giao hồ sơ thầu, số phiếu tiếp nhận hoặc dấu thời gian nộp thầu điện tử làm căn cứ pháp lý minh bạch.",
+   "x": 1862,
+   "y": 402,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "dt-withdraw",
@@ -497,13 +527,13 @@
    "row": 2,
    "type": "activity",
    "state": "da-dung",
-   "label": "Rút hồ sơ — không xoá bản ghi",
-   "ref": "SubmissionStatus.WITHDRAWN",
-   "tip": "Rút hồ sơ đổi trạng thái sang WITHDRAWN và bỏ cờ final; bản ghi vẫn còn nguyên. Lịch sử nộp là bằng chứng — xoá đi thì không còn gì đối chiếu khi có khiếu nại hoặc khi chủ đầu tư hỏi lại. Rút xong mà muốn nộp tiếp thì phải chọn bản final khác.",
-   "x": 1636,
-   "y": 456,
-   "w": 246,
-   "h": 54
+   "label": "Rút hồ sơ & Bảo toàn lịch sử",
+   "ref": "Rút hồ sơ thầu",
+   "tip": "Khi doanh nghiệp chủ động rút hồ sơ, hệ thống chuyển trạng thái sang Rút lui nhưng bảo toàn toàn bộ hồ sơ và lịch sử làm căn cứ đối chiếu.",
+   "x": 1862,
+   "y": 470,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "dt-rebid",
@@ -512,13 +542,13 @@
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Đấu lại = vòng mới, không phải stage mới",
-   "ref": "TenderRound.roundNo · reopen S7 → S4",
-   "tip": "Mở lại S7 → S4 (khiếu nại hoặc đấu lại) là soft gate có bắt lý do. Sau đó tạo TenderRound mới: vòng cũ chuyển CLOSED, bản nháp cũ thành SUPERSEDED, số vòng tăng lên. ĐỪNG thêm stage 'đấu lại' vào state machine — 9 stage S0–S8 là cố định, template chỉ đổi nhãn và điều kiện, thêm stage là phá hợp đồng chung giữa API và web.",
-   "x": 2212,
-   "y": 324,
-   "w": 246,
-   "h": 54
+   "label": "Quy trình đấu lại: Mở vòng thầu mới",
+   "ref": "Quy trình đấu lại",
+   "tip": "Khi chủ đầu tư yêu cầu đấu lại, hệ thống mở một vòng thầu mới kế thừa dữ liệu cũ mà không ghi đè lịch sử kết quả ban đầu.",
+   "x": 2522,
+   "y": 334,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "dt-handover",
@@ -527,13 +557,13 @@
    "row": 0,
    "type": "activity",
    "state": "phase-sau",
-   "label": "Gói bàn giao sang thi công",
-   "ref": "P03 · Handover pack",
-   "tip": "S8 mở được (chỉ khi Thắng) nhưng chưa có nội dung: người phụ trách bàn giao, danh mục nghiệm thu, sự kiện tích hợp ERP qua outbox đều nằm ở slice P03 chưa dựng. Theo Concept §7.1, Handover pack và Capability Library (M5) là hai năng lực phân biệt Bidly với CRM bán hàng thông thường. Capability Library (M5 v1) ĐÃ DỰNG (2026-08-19) — còn Handover pack (S8: người phụ trách, danh mục nghiệm thu, outbox ERP) VẪN là khoảng trống P03 chưa dựng, và đó mới là khoảng trống có trọng lượng thương mại còn lại ở đây.",
-   "x": 2500,
-   "y": 324,
-   "w": 246,
-   "h": 54
+   "label": "Gói bàn giao Handover Pack sang thi công",
+   "ref": "S8 · Gói bàn giao",
+   "tip": "Tổng hợp Gói bàn giao Handover Pack 4 cấu phần (Phạm vi cam kết, Định mức chi phí, Danh mục rủi ro, File nộp chính thức) để chuyển giao sang Ban chỉ huy công trường.",
+   "x": 2852,
+   "y": 334,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-tower",
@@ -542,13 +572,13 @@
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Control Tower: pipeline · rủi ro · quá hạn",
-   "ref": "GET /dashboard",
-   "tip": "Bốn số liệu đầu màn: pipeline có trọng số, tổng giá trị cơ hội đang chạy, tỷ lệ trúng thầu và danh sách cần chú ý. Kèm phân bố theo stage S0–S8, cơ hội rủi ro cao và cơ hội quá hạn. Tất cả tính lại từ dữ liệu nguồn mỗi lần gọi — không có bảng tổng hợp nào phải đồng bộ tay.",
-   "x": 196,
-   "y": 554,
-   "w": 246,
-   "h": 54
+   "label": "Trung tâm điều hành: Pipeline & Rủi ro",
+   "ref": "Trung tâm điều hành",
+   "tip": "Màn hình tổng quan dành cho Ban lãnh đạo: theo dõi toàn cảnh pipeline theo trọng số, danh sách dự án sắp đến hạn nộp và các cảnh báo rủi ro quan trọng.",
+   "x": 212,
+   "y": 714,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-pipeline",
@@ -557,13 +587,13 @@
    "row": 1,
    "type": "activity",
    "state": "da-dung",
-   "label": "Bảng Kanban S0–S8 kéo thả",
-   "ref": "pages/pipeline.vue",
-   "tip": "Kéo thẻ giữa các cột để chuyển stage. Client dùng chung checkTransition để ẩn ô không thả được và hiện lý do, nhưng đó CHỈ là gợi ý UX — server mới là nơi enforce. Chuyển bước cần lý do thì mở ReasonDialog, không dùng window.prompt: lý do là record vĩnh viễn vào StageHistory và audit, không phải hộp thoại trình duyệt có thể bị chặn trong im lặng.",
-   "x": 196,
-   "y": 620,
-   "w": 246,
-   "h": 54
+   "label": "Bảng Kanban 9 giai đoạn S0–S8",
+   "ref": "Quản lý Pipeline",
+   "tip": "Bảng Kanban trực quan 9 giai đoạn (S0–S8), hỗ trợ lãnh đạo theo dõi dòng chảy dự án và phê duyệt chuyển giai đoạn nhanh chóng.",
+   "x": 212,
+   "y": 782,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-decide",
@@ -572,13 +602,13 @@
    "row": 0,
    "type": "gate",
    "state": "da-dung",
-   "label": "Quyết định Go / No-Go",
-   "ref": "scorecard:decide · CEO và Giám đốc KD (Admin có qua toàn quyền)",
-   "tip": "Hard gate S2 — cùng với S8, đây là gate khiến Bidly là Preconstruction CRM chứ không phải CRM bán hàng. ScorecardService.decide bắt buộc ba điều: cơ hội đang ở S2, có lý do, và điểm được TÍNH LẠI từ criteria tại thời điểm quyết định (score 0..5 × weight% → tổng 0..100) chứ không tin totalScore đã lưu. Quyết định tự lái stage: Go → S3, No-Go → S7 với kết quả No-bid — đừng gọi transition thêm ở controller hay UI, sẽ thành hai lần chuyển. Về quyền: CEO và Giám đốc Kinh doanh là người quyết nghiệp vụ; Admin cũng có scorecard:decide qua toàn quyền hệ thống (ROLE_PERMISSIONS.ADMIN = ALL) nhưng không phải người ra quyết định nghiệp vụ.",
-   "x": 772,
-   "y": 554,
-   "w": 246,
-   "h": 54
+   "label": "Phê duyệt quyết định Go / No-Go",
+   "ref": "S2 · Phê duyệt Go/No-Go",
+   "tip": "Tổng Giám Đốc hoặc Giám Đốc Kinh Doanh ra quyết định: Duyệt GO để kích hoạt làm thầu (S3), hoặc duyệt NO-GO để dừng thầu sớm (No-bid) kèm lý do rõ ràng nhằm tiết kiệm chi phí.",
+   "x": 872,
+   "y": 714,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-price",
@@ -587,13 +617,13 @@
    "row": 0,
    "type": "activity",
    "state": "ui-mock",
-   "label": "Duyệt giá dự thầu",
-   "ref": "UI đã dựng, chưa có cột nào trên BidSubmission",
-   "tip": "Đã dựng GIAO DIỆN, chưa có backend. Khối duyệt giá trong Tender Room đọc giá THẬT từ GET /pursuits/:id/tender, áp ngưỡng 100 tỷ phía client, cho trình / duyệt / từ chối / rút lại / trình lại qua ReasonDialog, chặn tự duyệt, và hiện vai được duyệt lấy thẳng từ ma trận phân quyền. Nhưng BidSubmission không có cột trạng thái phê duyệt nào, và KHÔNG gì chặn được POST /pursuits/:id/tender/submit — Trưởng phòng Đấu thầu vẫn nộp final ở bất kỳ mức giá nào và pursuit vẫn sang S5; cảnh báo cạnh nút nộp chỉ là hiển thị, không phải cổng. Cần chốt hai thứ: ngưỡng là cấu hình theo khách hàng, và duyệt giá phải là permission riêng (price:approve) chứ không mượn scorecard:decide như giao diện đang tạm làm.",
-   "x": 1348,
-   "y": 554,
-   "w": 246,
-   "h": 54
+   "label": "Hội đồng phê duyệt giá dự thầu",
+   "ref": "Phê duyệt giá thầu",
+   "tip": "Hội đồng giá duyệt biên lợi nhuận, chiến lược giảm giá và chốt giá chào thầu cuối cùng trước khi phòng Đấu thầu nộp hồ sơ.",
+   "x": 1532,
+   "y": 714,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-review",
@@ -602,13 +632,13 @@
    "row": 0,
    "type": "activity",
    "state": "da-dung",
-   "label": "Soát kết quả & tỷ lệ trúng thầu",
-   "ref": "dashboard.winRate",
-   "tip": "Ban điều hành đọc kết quả qua Control Tower: tỷ lệ trúng, phân bố theo stage, giá trị đã đóng. Chưa có báo cáo theo người phụ trách, theo ngành hay theo khoảng thời gian — mọi số đều là toàn bộ dữ liệu.",
-   "x": 2212,
-   "y": 554,
-   "w": 246,
-   "h": 54
+   "label": "Đánh giá tỷ lệ trúng thầu & Hiệu quả",
+   "ref": "Báo cáo hiệu quả",
+   "tip": "Ban điều hành phân tích tỷ lệ trúng thầu thực tế, quy mô dự án thành công và hiệu suất làm việc của từng đội ngũ.",
+   "x": 2522,
+   "y": 714,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "bdh-lesson",
@@ -617,13 +647,13 @@
    "row": 1,
    "type": "activity",
    "state": "ui-mock",
-   "label": "Rút kinh nghiệm sau khi đóng",
-   "ref": "Won/Lost & Lessons — UI đã dựng, chưa có model",
-   "tip": "Đã dựng GIAO DIỆN, chưa có backend. Màn /lessons liệt kê cơ hội dự án đã đóng (outcome khác null) từ API thật, lọc theo kết quả và tìm tự do trong nội dung bài học; ô ghi bài học nằm ở màn chi tiết sau khi đã có kết quả và mồi sẵn bằng outcomeReason. Bài học vẫn chưa có model riêng — nội dung nằm trong localStorage kèm nhãn DraftNotice, nên chưa tìm được xuyên dự án ở phía máy chủ và chưa gắn được vào Capability Library (M5). Việc còn lại: bảng bài học + tìm kiếm phía máy chủ; giao diện đã cho thấy đúng hình dạng cần.",
-   "x": 2500,
-   "y": 620,
-   "w": 246,
-   "h": 54
+   "label": "Lưu trữ bài học kinh nghiệm tổ chức",
+   "ref": "Kho tri thức thầu",
+   "tip": "Lưu trữ và tra cứu các bài học kinh nghiệm về biện pháp thi công, giá thành và đối thủ để làm giàu tri thức của doanh nghiệp.",
+   "x": 2852,
+   "y": 782,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-code",
@@ -632,13 +662,13 @@
    "row": 0,
    "type": "auto",
    "state": "mot-phan",
-   "label": "Sinh mã PUR-2026-NNN và DA-2026-NNN",
-   "ref": "PursuitService.create",
-   "tip": "Mã sinh từ count() + 1 với năm cố định 2026 viết thẳng trong code. Hai hệ quả phải biết trước khi giao khách: xoá một cơ hội rồi tạo mới sẽ ra mã trùng, và sang năm sau vẫn ra PUR-2026-…. Đủ cho demo, không đủ cho dữ liệu thật.",
-   "x": 196,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Hệ thống tự động cấp mã định danh",
+   "ref": "Mã hóa tự động",
+   "tip": "Tự động sinh mã định danh duy nhất cho từng cơ hội và dự án thầu, đảm bảo tính chuẩn hóa và dễ dàng tra cứu.",
+   "x": 212,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-history",
@@ -647,13 +677,13 @@
    "row": 1,
    "type": "auto",
    "state": "da-dung",
-   "label": "StageHistory: mọi bước có dấu vết",
-   "ref": "StageHistory · gate + reason + actor",
-   "tip": "Mỗi lần chuyển stage ghi: từ đâu, sang đâu, loại cổng (hard/soft), lý do, ai làm và lúc nào — trong CÙNG $transaction với việc đổi stage. Ngay cả lúc tạo cơ hội cũng có một dòng null → S0. Vì thế StageTransitionService là con đường DUY NHẤT đổi stage: update thẳng pursuit.stage ở service khác sẽ mất cả history lẫn audit mà không có gì báo lỗi.",
-   "x": 196,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Tự động lưu vết lịch sử mọi chuyển bước",
+   "ref": "Lịch sử chuyển bước",
+   "tip": "Tự động lưu vết vĩnh viễn mọi lần đổi giai đoạn: người thực hiện, thời gian, lý do phê duyệt. Dữ liệu minh bạch và không thể chỉnh sửa hay xóa bỏ.",
+   "x": 212,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-weighted",
@@ -662,13 +692,13 @@
    "row": 0,
    "type": "auto",
    "state": "da-dung",
-   "label": "Pipeline có trọng số = giá trị × xác suất",
-   "ref": "DashboardService.summary",
-   "tip": "Chỉ tính trên các stage đang chạy S0–S6; S7 và S8 bị loại khỏi pipeline nhưng vẫn nằm trong phân bố theo stage. Xác suất mặc định 10% khi tạo mới. Không ai gõ tay con số pipeline — sửa giá trị hoặc xác suất là số tổng đổi theo.",
-   "x": 484,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Tự tính Pipeline có trọng số",
+   "ref": "Giá trị trọng số",
+   "tip": "Hệ thống tự động tính: Giá trị trọng số = Giá trị dự kiến × Xác suất trúng thầu, giúp ban lãnh đạo dự báo dòng tiền chính xác hơn.",
+   "x": 542,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-risk",
@@ -677,13 +707,13 @@
    "row": 1,
    "type": "auto",
    "state": "mot-phan",
-   "label": "Mức rủi ro (nhập tay, chưa tự tính)",
-   "ref": "RiskLevel · risk scoring — deferred",
-   "tip": "riskLevel là enum nhập tay (LOW/MEDIUM/HIGH/CRITICAL), hiện chỉ có seed đặt. Control Tower gom HIGH và CRITICAL vào ô 'Cần chú ý'. Chấm rủi ro tự tính từ dữ liệu (deadline gấp, thiếu bên liên quan, điểm Go/No-Go thấp) nằm ở phần deferred của Architecture — đến khi đó thì ô này nói lên ý kiến của người nhập, không phải trạng thái của dữ liệu.",
-   "x": 484,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Phân loại mức độ rủi ro cơ hội",
+   "ref": "Phân loại rủi ro",
+   "tip": "Đánh giá và gom nhóm các dự án có rủi ro cao vào danh mục Cần chú ý trên màn hình điều hành để lãnh đạo kịp thời can thiệp.",
+   "x": 542,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-gate2",
@@ -692,13 +722,13 @@
    "row": 0,
    "type": "gate",
    "state": "da-dung",
-   "label": "Cổng cứng S2: bắt buộc lý do + người duyệt",
-   "ref": "TRANSITIONS · hard gate",
-   "tip": "S2→S3 (Go) và S2→S7 (No-Go) đều là hard gate và đều requireReason. Người quyết định được ghi vào Scorecard.approverId cùng decidedAt. Đây là một trong năm cổng cứng của Bidly — cổng cứng nghĩa là không có nút bỏ qua, không có cấu hình template nào tắt được.",
-   "x": 772,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Chốt chặn S2: Bắt buộc duyệt & Ghi lý do",
+   "ref": "Cổng kiểm soát S2",
+   "tip": "Chốt chặn bắt buộc: chỉ chuyển bước khi có quyết định phê duyệt Scorecard từ lãnh đạo và bắt buộc nhập lý do minh bạch.",
+   "x": 872,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-score",
@@ -707,13 +737,13 @@
    "row": 1,
    "type": "auto",
    "state": "da-dung",
-   "label": "Điểm 0..100 tính lại từ tiêu chí",
-   "ref": "ScorecardService.computeTotal",
-   "tip": "Tổng điểm = Σ (score/5 × weight), làm tròn, thang 0..100. Tính lại mỗi lần chấm và tính lại LẦN NỮA ngay tại thời điểm quyết định — cố ý không tin giá trị đã lưu, để không ai đổi điểm sau lưng quyết định.",
-   "x": 772,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Tự động tính lại điểm số Scorecard",
+   "ref": "Tính điểm tự động",
+   "tip": "Tổng điểm được hệ thống tự động tính toán lại từ các tiêu chí trọng số ngay tại thời điểm phê duyệt, đảm bảo tính chuẩn xác tuyệt đối.",
+   "x": 872,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-version",
@@ -722,13 +752,13 @@
    "row": 1,
    "type": "auto",
    "state": "mot-phan",
-   "label": "Khoá lạc quan version — chặn ghi đè",
-   "ref": "updateMany({ id, version }) → 409",
-   "tip": "Cột version tăng mỗi lần chuyển stage; service ghi bằng updateMany có điều kiện version, count === 0 thì trả 409 Conflict. NHƯNG web hiện KHÔNG gửi expectedVersion (cả màn chi tiết lẫn Kanban), nên service tự lấy version hiện tại và mọi tranh chấp biến mất trong im lặng — đúng thứ khoá này sinh ra để bắt. Muốn khoá có tác dụng thật thì client phải gửi version lấy từ GET /pursuits/:id.",
-   "x": 1060,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Tự động chống ghi đè dữ liệu",
+   "ref": "Chống ghi đè",
+   "tip": "Tự động bảo vệ dữ liệu khi nhiều người cùng thao tác trên một dự án, cảnh báo xung đột và ngăn ngừa việc ghi đè làm mất thông tin.",
+   "x": 1202,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-gate4",
@@ -737,13 +767,13 @@
    "row": 0,
    "type": "gate",
    "state": "da-dung",
-   "label": "Cổng cứng S3 → S4: vào đấu thầu",
-   "ref": "TRANSITIONS · requireReason",
-   "tip": "Vào Tender Room là hard gate có bắt lý do. Điều kiện ra S4 theo stages.ts: người phụ trách, hạn chót, phạm vi hoặc gói thầu, và quyết định Go — hiện mô tả để hiển thị, chưa được kiểm tra tự động.",
-   "x": 1348,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Chốt chặn S4: Kích hoạt làm thầu chính thức",
+   "ref": "Cổng kiểm soát S4",
+   "tip": "Chỉ chuyển sang giai đoạn đấu thầu khi đã có quyết định phê duyệt Go, chỉ định người phụ trách và ấn định hạn nộp thầu.",
+   "x": 1532,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-onefinal",
@@ -752,13 +782,13 @@
    "row": 2,
    "type": "auto",
    "state": "da-dung",
-   "label": "Bất biến: tối đa 1 bản final mỗi vòng",
-   "ref": "$transaction trong markFinal",
-   "tip": "Không có ràng buộc unique ở database — bất biến này do service ép trong một $transaction (gỡ final cũ rồi đặt final mới). Nghĩa là mọi đường ghi BidSubmission phải đi qua TenderService; viết thẳng bằng Prisma ở chỗ khác sẽ phá bất biến mà không báo lỗi.",
-   "x": 1348,
-   "y": 850,
-   "w": 246,
-   "h": 54
+   "label": "Khóa cứng duy nhất 1 bản nộp Final",
+   "ref": "Khóa bản Final",
+   "tip": "Quy tắc tự động: Mỗi vòng thầu chỉ có duy nhất 1 bản nộp Final, khi chọn bản mới hệ thống sẽ tự động gỡ cờ bản cũ.",
+   "x": 1532,
+   "y": 1024,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-gate5",
@@ -767,13 +797,13 @@
    "row": 0,
    "type": "gate",
    "state": "da-dung",
-   "label": "Cổng cứng S4 → S5: chỉ mở bằng ghi nhận nộp",
-   "ref": "TenderService.submitFinal",
-   "tip": "Không có nút 'chuyển sang S5' nào khác. Không có bản final thì không nộp được; không nộp thì không sang S5. Đây là chỗ mô hình dữ liệu và state machine dính vào nhau: stage không phải một ô để đổi, nó là hệ quả của một sự kiện có bằng chứng.",
-   "x": 1636,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Chốt chặn S5: Chỉ chuyển khi đã nộp thầu",
+   "ref": "Cổng kiểm soát S5",
+   "tip": "Không cho phép tự ý chuyển trạng thái sang Đã nộp nếu chưa có bản nộp Final và xác nhận nộp thầu kèm bằng chứng thực tế.",
+   "x": 1862,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-deadline",
@@ -782,13 +812,13 @@
    "row": 1,
    "type": "auto",
    "state": "da-dung",
-   "label": "Cảnh báo hạn nộp & quá hạn",
-   "ref": "deadlineLabel → tone ok/warn/danger",
-   "tip": "Hàm deadlineLabel trả nhãn kèm tone (ok/warn/danger) — màu LUÔN đi kèm chữ hoặc số, không bao giờ chỉ có màu. Control Tower liệt kê cơ hội quá hạn theo deadlineAt < hiện tại. Chưa có thông báo chủ động (email, push, scheduler): mọi cảnh báo chỉ hiện khi có người mở màn hình lên xem.",
-   "x": 1636,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Tự động cảnh báo hạn chót & Quá hạn",
+   "ref": "Cảnh báo hạn chót",
+   "tip": "Tự động cảnh báo đếm ngược hạn nộp thầu theo các mốc 30 ngày, 14 ngày và 7 ngày giúp các phòng ban chủ động hoàn thành hồ sơ.",
+   "x": 1862,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-nonlinear",
@@ -797,13 +827,13 @@
    "row": 0,
    "type": "auto",
    "state": "da-dung",
-   "label": "Ma trận chuyển bước không tuyến tính",
-   "ref": "TRANSITIONS · checkTransition",
-   "tip": "Ngoài đường thẳng S0→S8, state machine mở sẵn năm loại đường rẽ: No-Go tại S2 đi thẳng S7 · chỉ định thầu nhảy S1/S3 → S7 · rút lui từ bất kỳ S0–S6 → S7 (hard, bắt lý do) · lùi bước để sửa sai (soft, bắt lý do) · mở lại S7 → S4/S6 cho khiếu nại hoặc đấu lại. Tất cả nằm trong một hàm dùng chung cho cả server lẫn client — thêm luật thì sửa ở đó, đừng rải if trong service.",
-   "x": 1924,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Hỗ trợ linh hoạt các nhánh rẽ quy trình",
+   "ref": "Quy trình linh hoạt",
+   "tip": "Hệ thống hỗ trợ đầy đủ các tình huống thực tế: Dừng thầu sớm tại S2, chỉ định thầu, rút lui giữa chừng hoặc mở lại khi đấu lại.",
+   "x": 2192,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-gate7",
@@ -812,13 +842,13 @@
    "row": 1,
    "type": "gate",
    "state": "da-dung",
-   "label": "Cổng cứng S7: bắt buộc kết quả + lý do",
-   "ref": "toStage=S7 → outcome required",
-   "tip": "Chuyển sang S7 mà không chọn Thắng / Thua / No-bid thì service từ chối; thiếu lý do cũng từ chối. Kết quả và lý do ghi vào chính bản ghi cơ hội trong cùng transaction với việc đổi stage, nên không có trạng thái 'đã đóng nhưng chưa biết vì sao'.",
-   "x": 2212,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Chốt chặn S7: Bắt buộc kết quả & Lý do",
+   "ref": "Cổng kiểm soát S7",
+   "tip": "Bắt buộc chọn kết quả (Thắng / Trượt / Dừng thầu) và nhập lý do chi tiết khi đóng cơ hội, không để tình trạng đóng mà không rõ nguyên nhân.",
+   "x": 2522,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-audit",
@@ -827,13 +857,13 @@
    "row": 2,
    "type": "auto",
    "state": "da-dung",
-   "label": "Audit append-only, cùng transaction với mutate",
-   "ref": "AuditService.log(data, tx)",
-   "tip": "Mỗi hành động ghi một dòng: ai, làm gì (pursuit.transition, scorecard.decide, tender.submit…), trên thực thể nào, tóm tắt ra sao. Nhận tham số tx để ghi trong CÙNG transaction với thao tác — ghi ngoài transaction nghĩa là audit vẫn nói 'đã chuyển stage' sau khi thao tác đã rollback. Không sửa, không xoá.",
-   "x": 2212,
-   "y": 850,
-   "w": 246,
-   "h": 54
+   "label": "Tự động ghi nhật ký hệ thống toàn vẹn",
+   "ref": "Nhật ký hệ thống",
+   "tip": "Ghi nhận chi tiết nhật ký thao tác người dùng (Ai thực hiện, vào lúc nào, thay đổi những gì) đồng thời cùng với thao tác nghiệp vụ.",
+   "x": 2522,
+   "y": 1024,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-gate8",
@@ -842,13 +872,13 @@
    "row": 0,
    "type": "gate",
    "state": "da-dung",
-   "label": "Cổng cứng S8: chỉ cơ hội Thắng mới vào được",
-   "ref": "canEnterHandover(outcome)",
-   "tip": "Thua và No-bid là điểm cuối — canEnterHandover chặn mọi kết quả khác WON. Đây là hard gate thứ năm và là ranh giới giữa 'bán được' và 'bàn giao được': một cơ hội thắng chưa bàn giao vẫn là việc chưa xong. Lưu ý phân biệt: S8 là hard gate nhưng KHÔNG bắt lý do (S7→S8 requireReason=false) — nó chặn bằng điều kiện outcome=WON, không bằng việc ghi lý do. Bốn cổng cứng còn lại (S2, S4, S5, S7) đều requireReason; S8 là ngoại lệ.",
-   "x": 2500,
-   "y": 718,
-   "w": 246,
-   "h": 54
+   "label": "Chốt chặn S8: Chỉ bàn giao khi Trúng thầu",
+   "ref": "Cổng kiểm soát S8",
+   "tip": "Chặn tuyệt đối việc bàn giao sang thi công với các dự án Trượt thầu hoặc Dừng thầu; chỉ kích hoạt gói bàn giao khi dự án đã Thắng.",
+   "x": 2852,
+   "y": 888,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "sys-winrate",
@@ -857,13 +887,13 @@
    "row": 1,
    "type": "auto",
    "state": "da-dung",
-   "label": "Tỷ lệ trúng = Thắng / (Thắng + Thua)",
-   "ref": "DashboardService.winRate",
-   "tip": "No-bid KHÔNG nằm ở mẫu số — cố ý: quyết định không đấu là một quyết định tốt, không phải một lần thua. Chưa lọc được theo thời gian, theo người phụ trách hay theo ngành, nên con số này là tỷ lệ toàn thời gian của toàn công ty.",
-   "x": 2500,
-   "y": 784,
-   "w": 246,
-   "h": 54
+   "label": "Tỷ lệ trúng = Thắng / (Thắng + Trượt)",
+   "ref": "Tỷ lệ trúng thầu",
+   "tip": "Tỷ lệ trúng thầu = Số gói Thắng / (Số gói Thắng + Số gói Trượt). Các dự án chủ động dừng thầu sớm (No-bid) không bị tính là Thua.",
+   "x": 2852,
+   "y": 956,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "adm-auth",
@@ -872,13 +902,13 @@
    "row": 0,
    "type": "platform",
    "state": "da-dung",
-   "label": "Đăng nhập JWT + hai guard toàn cục",
-   "ref": "JwtAuthGuard → PermissionsGuard",
-   "tip": "Đăng nhập thật bằng email/mật khẩu, trả JWT; web lưu token ở localStorage và gắn Authorization: Bearer cho mọi request. Thứ tự hai guard là chủ ý: JwtAuthGuard gắn req.user trước, PermissionsGuard so quyền sau. Route công khai đánh dấu @Public() (đăng nhập, danh sách tài khoản demo, health). JWT_SECRET không có giá trị mặc định ở production — thiếu là API không khởi động được, cố ý, vì secret nằm trong repo nghĩa là ai đọc được source đều ký được token CEO.",
-   "x": 196,
-   "y": 948,
-   "w": 246,
-   "h": 54
+   "label": "Bảo mật tài khoản & Xác thực phiên",
+   "ref": "Bảo mật & Đăng nhập",
+   "tip": "Kiểm soát truy cập an toàn, bảo vệ dữ liệu nội bộ và tự động duy trì phiên làm việc bảo mật cho từng tài khoản.",
+   "x": 212,
+   "y": 1128,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "adm-rbac",
@@ -887,58 +917,58 @@
    "row": 0,
    "type": "platform",
    "state": "da-dung",
-   "label": "Ma trận quyền: 5 vai · 11 quyền",
-   "ref": "packages/shared/permissions.ts",
-   "tip": "Vai: Tổng giám đốc · Giám đốc Kinh doanh · BD · Trưởng phòng Đấu thầu · Quản trị hệ thống. Quyền chia nhỏ theo resource:action, và ba quyền lái nghiệp vụ tách riêng vì chúng đổi trạng thái: scorecard:decide, tender:manage, tender:submit. Ma trận là NGUỒN CHUẨN DUY NHẤT — API dùng để enforce, web dùng để ẩn nút. Ẩn nút chỉ là gợi ý UX, không phải biên bảo mật. Thêm endpoint mutate mà quên gắn @RequirePermissions nghĩa là chỉ cần đăng nhập là gọi được.",
-   "x": 772,
-   "y": 948,
-   "w": 246,
-   "h": 54
-  },
-  {
-   "id": "adm-users",
-   "lane": "adm",
-   "col": 4,
-   "row": 0,
-   "type": "platform",
-   "state": "mot-phan",
-   "label": "Quản lý người dùng",
-   "ref": "GET /users · user:manage chưa có màn",
-   "tip": "GET /users dùng select tường minh để không trả passwordHash — nguyên tắc áp cho mọi endpoint trả User. Quyền user:manage đã khai báo nhưng chưa có endpoint hay màn tạo/sửa/khoá người dùng. Seed đặt mật khẩu demo chung bidly@123 cho 6 tài khoản — phải gỡ trước khi giao khách.",
-   "x": 1348,
-   "y": 948,
-   "w": 246,
-   "h": 54
+   "label": "Phân quyền chặt chẽ theo 5 vai trò",
+   "ref": "Phân quyền 5 vai trò",
+   "tip": "Phân định rõ thẩm quyền của 5 vị trí: Tổng Giám Đốc, Giám Đốc Kinh Doanh, Chuyên viên BD, Trưởng phòng Đấu thầu và Quản trị hệ thống, đảm bảo đúng thẩm quyền.",
+   "x": 872,
+   "y": 1128,
+   "w": 230,
+   "h": 58
   },
   {
    "id": "adm-audit",
    "lane": "adm",
-   "col": 6,
+   "col": 4,
+   "row": 0,
+   "type": "platform",
+   "state": "da-dung",
+   "label": "Tra cứu nhật ký kiểm soát nội bộ",
+   "ref": "Kiểm tra nhật ký",
+   "tip": "Công cụ tra cứu nhật ký hệ thống dành riêng cho Ban điều hành và Quản trị viên phục vụ công tác thanh tra, kiểm soát.",
+   "x": 1532,
+   "y": 1128,
+   "w": 230,
+   "h": 58
+  },
+  {
+   "id": "adm-users",
+   "lane": "adm",
+   "col": 7,
    "row": 0,
    "type": "platform",
    "state": "mot-phan",
-   "label": "Nhật ký kiểm toán",
-   "ref": "GET /audit · audit:read",
-   "tip": "Trả 100 bản ghi gần nhất, chỉ vai có audit:read (Tổng giám đốc, Giám đốc Kinh doanh, Quản trị hệ thống — Trưởng phòng Đấu thầu và BD KHÔNG có). Endpoint đã chạy nhưng chưa có màn hiển thị riêng và chưa lọc được theo thực thể hay theo người.",
-   "x": 1924,
-   "y": 948,
-   "w": 246,
-   "h": 54
+   "label": "Quản lý danh sách người dùng & Phòng ban",
+   "ref": "Quản lý tài khoản",
+   "tip": "Thêm mới, phân quyền phòng ban và quản lý trạng thái hoạt động của các tài khoản người dùng trong tổ chức.",
+   "x": 2522,
+   "y": 1128,
+   "w": 230,
+   "h": 58
   },
   {
-   "id": "adm-openapi",
+   "id": "adm-docs",
    "lane": "adm",
    "col": 8,
    "row": 0,
    "type": "platform",
    "state": "da-dung",
-   "label": "Tài liệu API sinh tự động",
-   "ref": "/api/docs · /api/docs-json",
-   "tip": "Schema sinh thẳng từ class-validator qua plugin @nestjs/swagger — DTO không cần @ApiProperty. Hai hệ quả: plugin chỉ chạy qua nest build/nest start (đổi sang tsc trần thì tài liệu vẫn dựng được nhưng RỖNG), và mọi operation mặc định gắn ổ khoá bearer trừ danh sách route công khai — danh sách đó phải khớp với các route @Public().",
-   "x": 2500,
-   "y": 948,
-   "w": 246,
-   "h": 54
+   "label": "Tài liệu hướng dẫn & Chuẩn kết nối",
+   "ref": "Tài liệu & Kết nối",
+   "tip": "Tài liệu quy trình nghiệp vụ chuẩn và tài liệu kết nối đồng bộ dữ liệu sang các hệ thống quản lý thi công (ERP).",
+   "x": 2852,
+   "y": 1128,
+   "w": 230,
+   "h": 58
   }
  ],
  "edges": [
@@ -946,10 +976,25 @@
    "from": "bd-signal",
    "to": "bd-owner",
    "kind": "next",
-   "label": "gán ngay khi tạo"
+   "label": "phân công"
   },
   {
    "from": "bd-owner",
+   "to": "bd-edit",
+   "kind": "next"
+  },
+  {
+   "from": "bd-signal",
+   "to": "sys-code",
+   "kind": "feeds"
+  },
+  {
+   "from": "bd-signal",
+   "to": "sys-history",
+   "kind": "feeds"
+  },
+  {
+   "from": "bd-signal",
    "to": "bd-qualify",
    "kind": "next",
    "label": "S0 → S1"
@@ -957,140 +1002,126 @@
   {
    "from": "bd-qualify",
    "to": "bd-stakeholder",
-   "kind": "next",
-   "label": ""
+   "kind": "next"
   },
   {
    "from": "bd-stakeholder",
+   "to": "bd-history",
+   "kind": "next"
+  },
+  {
+   "from": "bd-qualify",
+   "to": "sys-weighted",
+   "kind": "feeds"
+  },
+  {
+   "from": "bd-qualify",
    "to": "bd-scorecard",
    "kind": "next",
    "label": "S1 → S2"
   },
   {
    "from": "bd-scorecard",
+   "to": "bd-brief",
+   "kind": "next"
+  },
+  {
+   "from": "bd-scorecard",
+   "to": "sys-score",
+   "kind": "feeds"
+  },
+  {
+   "from": "bd-brief",
    "to": "bdh-decide",
    "kind": "handover",
-   "label": "trình quyết định"
+   "label": "trình duyệt"
   },
   {
    "from": "bdh-decide",
    "to": "sys-gate2",
-   "kind": "gate",
-   "label": "bắt lý do"
+   "kind": "gate"
   },
   {
    "from": "sys-gate2",
    "to": "bd-strategy",
-   "kind": "gate",
-   "label": "Go → S3"
+   "kind": "next",
+   "label": "GO → S3"
   },
   {
    "from": "sys-gate2",
    "to": "bd-result",
-   "kind": "gate",
-   "label": "No-Go → S7 No-bid"
-  },
-  {
-   "from": "bd-strategy",
-   "to": "bd-task",
    "kind": "next",
-   "label": ""
+   "label": "NO-GO → S7 (No-bid)"
   },
   {
    "from": "bd-strategy",
-   "to": "sys-gate4",
-   "kind": "gate",
-   "label": "xin vào đấu thầu"
-  },
-  {
-   "from": "sys-gate4",
-   "to": "dt-package",
-   "kind": "gate",
-   "label": "S3 → S4"
-  },
-  {
-   "from": "bd-strategy",
-   "to": "dt-package",
+   "to": "dt-activate",
    "kind": "handover",
-   "label": "bàn giao sang Đấu thầu"
+   "label": "S3 → S4 (bàn giao sang Đấu thầu)"
   },
   {
-   "from": "bd-task",
+   "from": "dt-activate",
+   "to": "sys-gate4",
+   "kind": "gate"
+  },
+  {
+   "from": "dt-activate",
    "to": "dt-checklist",
-   "kind": "feeds",
-   "label": "việc cấp cơ hội"
-  },
-  {
-   "from": "dt-package",
-   "to": "dt-round",
-   "kind": "next",
-   "label": ""
-  },
-  {
-   "from": "dt-round",
-   "to": "dt-checklist",
-   "kind": "next",
-   "label": "xé việc cho 5 phòng"
-  },
-  {
-   "from": "dt-round",
-   "to": "dt-draft",
-   "kind": "next",
-   "label": ""
+   "kind": "next"
   },
   {
    "from": "dt-checklist",
+   "to": "dt-round",
+   "kind": "next"
+  },
+  {
+   "from": "dt-round",
    "to": "dt-draft",
-   "kind": "feeds",
-   "label": "đủ mục mới đóng gói"
+   "kind": "next"
   },
   {
    "from": "dt-draft",
-   "to": "dt-final",
-   "kind": "next",
-   "label": "chọn bản đi nộp"
+   "to": "dt-mark-final",
+   "kind": "next"
   },
   {
-   "from": "dt-final",
+   "from": "dt-mark-final",
+   "to": "sys-onefinal",
+   "kind": "feeds"
+  },
+  {
+   "from": "dt-mark-final",
+   "to": "bdh-price",
+   "kind": "handover",
+   "label": "trình duyệt giá"
+  },
+  {
+   "from": "dt-mark-final",
    "to": "dt-submit",
-   "kind": "gate",
-   "label": "chỉ bản final mới nộp được"
+   "kind": "next",
+   "label": "S4 → S5"
   },
   {
    "from": "dt-submit",
    "to": "sys-gate5",
-   "kind": "gate",
-   "label": "ghi nhận nộp"
+   "kind": "gate"
   },
   {
-   "from": "sys-gate5",
+   "from": "dt-submit",
+   "to": "dt-receipt",
+   "kind": "next"
+  },
+  {
+   "from": "dt-submit",
    "to": "bd-clarify",
-   "kind": "gate",
-   "label": "S4 → S5 → S6"
-  },
-  {
-   "from": "dt-draft",
-   "to": "dt-withdraw",
    "kind": "next",
-   "label": "rút bản đã nộp"
+   "label": "S5 → S6"
   },
   {
-   "from": "dt-withdraw",
-   "to": "dt-final",
+   "from": "dt-submit",
+   "to": "bd-result",
    "kind": "next",
-   "label": "phải chọn bản final khác"
-  },
-  {
-   "from": "dt-final",
-   "to": "sys-onefinal",
-   "kind": "feeds",
-   "label": "gỡ final của bản khác"
-  },
-  {
-   "from": "dt-round",
-   "to": "sys-deadline",
-   "kind": "feeds",
-   "label": "hạn chính thức & nội bộ"
+   "label": "S5 → S7 (có kết quả thẳng)"
   },
   {
    "from": "bd-clarify",
@@ -1099,630 +1130,502 @@
    "label": "S6 → S7"
   },
   {
-   "from": "dt-submit",
-   "to": "bd-result",
-   "kind": "next",
-   "label": "S5 → S7 nếu bỏ qua làm rõ"
-  },
-  {
    "from": "bd-result",
    "to": "sys-gate7",
-   "kind": "gate",
-   "label": "bắt kết quả + lý do"
+   "kind": "gate"
   },
   {
    "from": "sys-gate7",
-   "to": "bd-lesson",
-   "kind": "next",
-   "label": ""
+   "to": "sys-outcome",
+   "kind": "feeds"
   },
   {
-   "from": "bd-result",
-   "to": "sys-gate8",
-   "kind": "gate",
-   "label": "chỉ khi Thắng"
-  },
-  {
-   "from": "sys-gate8",
-   "to": "dt-handover",
-   "kind": "gate",
-   "label": "S7 → S8"
-  },
-  {
-   "from": "bd-result",
+   "from": "sys-gate7",
    "to": "bdh-review",
-   "kind": "feeds",
-   "label": "mỗi lần đóng"
+   "kind": "feeds"
   },
   {
-   "from": "bd-lesson",
-   "to": "bdh-lesson",
-   "kind": "handover",
-   "label": "rút kinh nghiệm"
+   "from": "sys-gate7",
+   "to": "bd-lessons",
+   "kind": "next"
   },
   {
-   "from": "bd-result",
+   "from": "sys-gate7",
    "to": "dt-rebid",
    "kind": "next",
-   "label": "mở lại để đấu lại"
+   "label": "đấu lại (mở lại S7 → S4)"
   },
   {
    "from": "dt-rebid",
    "to": "dt-round",
    "kind": "next",
-   "label": "vòng mới, vòng cũ CLOSED"
-  },
-  {
-   "from": "bd-qualify",
-   "to": "bd-result",
-   "kind": "gate",
-   "label": "chỉ định thầu → S7"
-  },
-  {
-   "from": "bd-strategy",
-   "to": "bd-result",
-   "kind": "gate",
-   "label": "chỉ định thầu → S7"
-  },
-  {
-   "from": "dt-round",
-   "to": "bd-result",
-   "kind": "gate",
-   "label": "rút lui → No-bid"
-  },
-  {
-   "from": "sys-nonlinear",
-   "to": "bd-result",
-   "kind": "governs",
-   "label": "5 loại đường rẽ"
-  },
-  {
-   "from": "sys-nonlinear",
-   "to": "dt-rebid",
-   "kind": "governs",
-   "label": "reopen S7 → S4"
-  },
-  {
-   "from": "sys-nonlinear",
-   "to": "bd-qualify",
-   "kind": "governs",
-   "label": "lùi bước có lý do"
-  },
-  {
-   "from": "bd-signal",
-   "to": "sys-code",
-   "kind": "feeds",
-   "label": "sinh mã"
-  },
-  {
-   "from": "bd-signal",
-   "to": "sys-history",
-   "kind": "feeds",
-   "label": "dòng null → S0"
-  },
-  {
-   "from": "bd-owner",
-   "to": "sys-weighted",
-   "kind": "feeds",
-   "label": "giá trị × xác suất"
-  },
-  {
-   "from": "bd-qualify",
-   "to": "sys-risk",
-   "kind": "feeds",
-   "label": "mức rủi ro"
-  },
-  {
-   "from": "bd-scorecard",
-   "to": "sys-score",
-   "kind": "feeds",
-   "label": "mỗi lần chấm"
-  },
-  {
-   "from": "bdh-decide",
-   "to": "sys-score",
-   "kind": "feeds",
-   "label": "tính lại lúc quyết định"
-  },
-  {
-   "from": "sys-gate2",
-   "to": "sys-history",
-   "kind": "feeds",
-   "label": "hard · có lý do"
+   "label": "tạo vòng mới"
   },
   {
    "from": "sys-gate7",
-   "to": "sys-history",
-   "kind": "feeds",
-   "label": "hard · có kết quả"
+   "to": "dt-handover",
+   "kind": "next",
+   "label": "S7 → S8 (chỉ khi Thắng)"
   },
   {
-   "from": "sys-history",
-   "to": "sys-audit",
-   "kind": "feeds",
-   "label": "cùng một transaction"
+   "from": "dt-handover",
+   "to": "sys-gate8",
+   "kind": "gate"
   },
   {
-   "from": "sys-version",
-   "to": "sys-history",
-   "kind": "governs",
-   "label": "chặn ghi đè trước khi ghi"
+   "from": "dt-handover",
+   "to": "bdh-handover-appr",
+   "kind": "handover",
+   "label": "trình duyệt bàn giao"
   },
   {
-   "from": "sys-weighted",
-   "to": "bdh-tower",
-   "kind": "feeds",
-   "label": ""
+   "from": "bdh-handover-appr",
+   "to": "bdh-lesson",
+   "kind": "next"
   },
   {
-   "from": "sys-deadline",
-   "to": "bdh-tower",
-   "kind": "alert",
-   "label": "quá hạn nổi lên"
-  },
-  {
-   "from": "sys-risk",
-   "to": "bdh-tower",
-   "kind": "alert",
-   "label": "HIGH/CRITICAL → cần chú ý"
-  },
-  {
-   "from": "bd-result",
-   "to": "sys-winrate",
-   "kind": "feeds",
-   "label": "Thắng/Thua"
-  },
-  {
-   "from": "sys-winrate",
-   "to": "bdh-review",
-   "kind": "feeds",
-   "label": ""
+   "from": "dt-withdraw",
+   "to": "bd-result",
+   "kind": "next",
+   "label": "rút lui → S7 (No-bid)"
   },
   {
    "from": "bdh-tower",
    "to": "bdh-pipeline",
-   "kind": "next",
-   "label": "soi xuống từng cơ hội"
+   "kind": "next"
   },
   {
-   "from": "bdh-pipeline",
-   "to": "sys-version",
-   "kind": "alert",
-   "label": "kéo thả KHÔNG gửi version"
+   "from": "sys-weighted",
+   "to": "bdh-tower",
+   "kind": "feeds"
   },
   {
-   "from": "bd-edit",
-   "to": "sys-version",
-   "kind": "alert",
-   "label": "chưa có route sửa"
+   "from": "sys-winrate",
+   "to": "bdh-tower",
+   "kind": "feeds"
   },
   {
-   "from": "adm-auth",
-   "to": "bd-signal",
-   "kind": "governs",
-   "label": "mọi request cần token"
+   "from": "sys-deadline",
+   "to": "bdh-tower",
+   "kind": "alert"
+  },
+  {
+   "from": "sys-deadline",
+   "to": "dt-checklist",
+   "kind": "alert"
   },
   {
    "from": "adm-rbac",
    "to": "bdh-decide",
-   "kind": "governs",
-   "label": "scorecard:decide"
+   "kind": "governs"
   },
   {
    "from": "adm-rbac",
    "to": "dt-submit",
-   "kind": "governs",
-   "label": "tender:submit"
+   "kind": "governs"
   },
   {
    "from": "adm-rbac",
-   "to": "adm-users",
-   "kind": "governs",
-   "label": "user:manage"
+   "to": "adm-audit",
+   "kind": "governs"
   },
   {
-   "from": "adm-audit",
-   "to": "sys-audit",
-   "kind": "governs",
-   "label": "chỉ 3 vai đọc được"
+   "from": "sys-audit",
+   "to": "adm-audit",
+   "kind": "feeds"
   },
   {
-   "from": "adm-openapi",
-   "to": "dt-round",
-   "kind": "governs",
-   "label": "schema sinh từ DTO"
+   "from": "sys-history",
+   "to": "bdh-pipeline",
+   "kind": "feeds"
   }
  ],
  "flows": [
   {
    "id": "f-lifecycle",
-   "name": "Vòng đời một cơ hội: từ tín hiệu tới bàn giao",
-   "group": "Xương sống",
-   "summary": "Đường đi chính qua 9 giai đoạn S0–S8 và 3 nhóm người.",
+   "name": "Vòng đời cơ hội: S0 → S8 đi thẳng",
+   "group": "Vòng Đời Thầu & Quy Trình",
+   "summary": "Tiến trình chuẩn mực từ tín hiệu dự án đầu tiên đến khi trúng thầu và bàn giao thi công.",
    "steps": [
     {
      "node": "bd-signal",
-     "note": "S0 · Có tin một khu công nghiệp mở rộng hay nhà máy sắp đấu thầu gói xây lắp. BD ghi nhận với nguồn tín hiệu và giá trị ước tính."
-    },
-    {
-     "node": "bd-owner",
-     "note": "S0 · Gán người phụ trách và việc tiếp theo — cơ hội không có chủ là cơ hội sẽ trôi."
+     "note": "Tiếp nhận thông tin dự án mới từ nguồn tin thị trường."
     },
     {
      "node": "bd-qualify",
-     "note": "S1 · Xác minh phạm vi, giá trị và thời gian. Soft gate: qua được mà không cần lý do."
-    },
-    {
-     "node": "bd-stakeholder",
-     "note": "S1 · Tìm ra ai thực sự quyết, ai ảnh hưởng, ai cản — gắn vai theo ngữ cảnh dự án này."
+     "note": "Sàng lọc sơ bộ thông tin chủ đầu tư, quy mô và tính khả thi."
     },
     {
      "node": "bd-scorecard",
-     "note": "S2 · Chấm 6 tiêu chí, tổng trọng số 100%. BD chấm được, nhưng không quyết được."
+     "note": "Chấm điểm 6 tiêu chí trọng số định lượng."
     },
     {
      "node": "bdh-decide",
-     "note": "S2 · Giám đốc Kinh doanh hoặc Tổng giám đốc quyết Go hay No-Go, bắt buộc ghi lý do. Cổng cứng thứ nhất."
+     "note": "Lãnh đạo phê duyệt quyết định GO để kích hoạt làm thầu."
     },
     {
      "node": "bd-strategy",
-     "note": "S3 · Go rồi thì chốt chiến lược và đội phụ trách — hiện chưa có trường lưu, là khoảng trống."
+     "note": "Xác lập chiến lược giá và thành lập tổ chuyên trách."
     },
     {
-     "node": "dt-package",
-     "note": "S3 · Mở Tender Room, hệ thống tự tạo gói thầu chính. Dự án đổi tay sang phòng Đấu thầu."
-    },
-    {
-     "node": "dt-round",
-     "note": "S4 · Nhận HSMT, mở vòng thầu với hạn chính thức và hạn nội bộ."
-    },
-    {
-     "node": "dt-checklist",
-     "note": "S4 · Xé hồ sơ ra cho 5 phòng: Kinh doanh, Kỹ thuật, Đấu thầu, Pháp lý, Tài chính."
-    },
-    {
-     "node": "dt-draft",
-     "note": "S4 · Lập hồ sơ, mỗi bản một version, giá dự thầu ghi kèm."
-    },
-    {
-     "node": "dt-final",
-     "note": "S4 · Chọn đúng một bản làm final. Chọn final chưa phải là nộp."
+     "node": "dt-activate",
+     "note": "Mở phòng thầu số và phân rã checklist cho 5 phòng ban."
     },
     {
      "node": "dt-submit",
-     "note": "S5 · Ghi nhận nộp kèm bằng chứng — con đường duy nhất sang S5. Cổng cứng thứ ba."
+     "note": "Xác nhận nộp hồ sơ thầu chính thức kèm biên nhận."
     },
     {
      "node": "bd-clarify",
-     "note": "S6 · Làm rõ và thương thảo. Hiện chưa có chỗ ghi, và có thể bỏ qua để đi thẳng S7."
+     "note": "Làm rõ hồ sơ và thương thảo các điều khoản hợp đồng."
     },
     {
      "node": "bd-result",
-     "note": "S7 · Thắng, Thua hay No-bid đều phải có lý do. Không có cửa đóng im lặng. Cổng cứng thứ tư."
+     "note": "Ghi nhận kết quả Trúng thầu (WON) chính thức."
     },
     {
      "node": "dt-handover",
-     "note": "S8 · Chỉ cơ hội Thắng mới vào được. Nội dung bàn giao thuộc slice sau."
-    }
-   ]
-  },
-  {
-   "id": "f-gates",
-   "name": "Năm cổng cứng: chỗ nào chặn hẳn, chỗ nào chỉ bắt ghi lý do",
-   "group": "Xương sống",
-   "summary": "hardGate là thứ khiến Bidly là Preconstruction CRM chứ không phải CRM bán hàng.",
-   "steps": [
-    {
-     "node": "sys-gate2",
-     "note": "S2 · Go/No-Go — bắt buộc có bảng đánh giá, người duyệt và lý do. Không có nút bỏ qua."
-    },
-    {
-     "node": "sys-gate4",
-     "note": "S4 · Vào đấu thầu — hard gate có bắt lý do; điều kiện ra còn là mô tả, chưa kiểm tra tự động."
-    },
-    {
-     "node": "sys-gate5",
-     "note": "S5 · Đã nộp — không mở bằng nút chuyển stage, chỉ mở bằng hành động ghi nhận nộp có bằng chứng."
-    },
-    {
-     "node": "sys-gate7",
-     "note": "S7 · Kết quả — thiếu outcome hoặc thiếu lý do là bị từ chối."
-    },
-    {
-     "node": "sys-gate8",
-     "note": "S8 · Bàn giao — canEnterHandover chặn mọi kết quả khác Thắng. Là hard gate nhưng KHÔNG bắt lý do: chặn bằng điều kiện outcome, không bằng việc ghi lý do — khác bốn cổng cứng còn lại đều requireReason."
-    },
-    {
-     "node": "sys-history",
-     "note": "Mọi lần đi qua cổng đều để lại một dòng StageHistory ghi rõ hard hay soft, kèm lý do và người thực hiện."
-    }
-   ]
-  },
-  {
-   "id": "f-nonlinear",
-   "name": "Năm đường rẽ: No-Go · chỉ định thầu · rút lui · lùi bước · mở lại",
-   "group": "Xương sống",
-   "summary": "State machine cố ý không tuyến tính — nhưng vẫn chỉ 9 stage.",
-   "steps": [
-    {
-     "node": "sys-nonlinear",
-     "note": "Toàn bộ luật nằm trong một hàm dùng chung cho cả server lẫn client. Sửa luật thì sửa ở đó."
-    },
-    {
-     "node": "bdh-decide",
-     "note": "No-Go tại S2 đi THẲNG S7 với kết quả No-bid, bỏ qua toàn bộ phần đấu thầu."
-    },
-    {
-     "node": "bd-qualify",
-     "note": "Chỉ định thầu: nhảy từ S1 hoặc S3 thẳng sang S7 — hard gate, bắt lý do."
-    },
-    {
-     "node": "dt-round",
-     "note": "Rút lui: từ bất kỳ stage đang chạy S0–S6 đều dừng chính thức được, thành No-bid."
-    },
-    {
-     "node": "bd-result",
-     "note": "Mở lại: S7 → S4 hoặc S6 cho khiếu nại và đấu lại — soft gate nhưng vẫn bắt lý do."
-    },
-    {
-     "node": "dt-rebid",
-     "note": "Đấu lại là một vòng thầu MỚI, không phải một stage mới. Đừng thêm stage để biểu diễn nó."
-    }
-   ]
-  },
-  {
-   "id": "f-gono",
-   "name": "Go/No-Go: từ tiêu chí tới quyết định lái stage",
-   "group": "Kinh doanh",
-   "summary": "Cổng cứng S2 — nơi quyết định 'không đấu' cũng là một quyết định được ghi nhận.",
-   "steps": [
-    {
-     "node": "bd-scorecard",
-     "note": "Tạo bảng đánh giá với 6 tiêu chí mặc định, tổng trọng số 100%."
-    },
-    {
-     "node": "sys-score",
-     "note": "Điểm tính lại từ criteria mỗi lần chấm: score 0..5 × weight% → tổng 0..100."
-    },
-    {
-     "node": "bdh-decide",
-     "note": "Giám đốc Kinh doanh và Tổng giám đốc là người quyết nghiệp vụ (Admin có scorecard:decide qua toàn quyền nhưng không phải người quyết). Bắt buộc đang ở S2 và bắt buộc ghi lý do."
-    },
-    {
-     "node": "sys-gate2",
-     "note": "Điểm được tính LẠI ngay tại thời điểm quyết định — không tin totalScore đã lưu."
-    },
-    {
-     "node": "bd-strategy",
-     "note": "Go → tự chuyển sang S3. Đừng gọi transition thêm ở UI, sẽ thành hai lần chuyển."
-    },
-    {
-     "node": "bd-result",
-     "note": "No-Go → tự chuyển sang S7 với kết quả No-bid. Cùng một hàm, hai lối ra."
-    },
-    {
-     "node": "sys-audit",
-     "note": "Quyết định ghi vào audit và StageHistory; bảng đã quyết thì khoá điểm, không sửa lại được."
+     "note": "Tổng hợp Gói bàn giao Handover Pack chuyển giao cho Ban chỉ huy."
     }
    ]
   },
   {
    "id": "f-tender",
-   "name": "Tender Room: vòng → checklist → bản nộp → final → nộp",
-   "group": "Đấu thầu",
-   "summary": "Chuỗi Pursuit → WorkPackage → TenderRound → BidSubmission ở chế độ một gói.",
+   "name": "Vòng đời đấu thầu: S3 → S5 (từ Go tới Nộp)",
+   "group": "Vòng Đời Thầu & Quy Trình",
+   "summary": "Quy trình phối hợp liên phòng ban lập hồ sơ, duyệt giá và nộp bản thầu chính thức.",
    "steps": [
     {
-     "node": "dt-package",
-     "note": "Gói thầu chính tạo lazy lần đầu mở Tender Room, và ẩn khỏi UI khi chỉ có một."
+     "node": "bd-strategy",
+     "note": "Bàn giao đầu bài và chiến lược giá cho bộ phận Đấu thầu."
     },
     {
-     "node": "dt-round",
-     "note": "Mở vòng: loại RFI/RFQ/RFP, ngày nhận HSMT, hạn chính thức, hạn nội bộ, hình thức nộp."
+     "node": "dt-activate",
+     "note": "Kích hoạt phòng thầu số và ấn định mốc hạn chót nộp thầu."
     },
     {
      "node": "dt-checklist",
-     "note": "Checklist neo gói thầu, chia theo 5 phòng. Hiện chưa có người phụ trách và hạn cho từng mục."
+     "note": "5 phòng ban hoàn thiện tài liệu theo danh mục phân công."
+    },
+    {
+     "node": "dt-round",
+     "note": "Quản lý tiến độ lập hồ sơ theo từng vòng đấu thầu."
     },
     {
      "node": "dt-draft",
-     "note": "Mỗi bản hồ sơ một version, kèm giá dự thầu. Bản cũ không sửa, không xoá."
+     "note": "Lưu trữ và rà soát các bản nháp giá thầu và kỹ thuật."
     },
     {
-     "node": "dt-final",
-     "note": "Đánh dấu final gỡ final của mọi bản khác trong cùng vòng — trong một transaction."
+     "node": "dt-mark-final",
+     "note": "Chốt duy nhất 1 bản nộp Final chính thức của vòng thầu."
+    },
+    {
+     "node": "bdh-price",
+     "note": "Hội đồng giá phê duyệt giá chào thầu cuối cùng."
     },
     {
      "node": "dt-submit",
-     "note": "Ghi nhận nộp kèm bằng chứng. Chỉ Trưởng phòng Đấu thầu và CEO/Admin làm được."
+     "note": "Xác nhận nộp thầu chính thức và chuyển sang giai đoạn Đã nộp."
     },
     {
-     "node": "sys-gate5",
-     "note": "Chính hành động nộp gọi state machine chuyển S4 → S5, không set stage thẳng."
-    },
-    {
-     "node": "dt-withdraw",
-     "note": "Rút hồ sơ đổi trạng thái WITHDRAWN, không xoá — lịch sử nộp là bằng chứng."
-    },
-    {
-     "node": "sys-onefinal",
-     "note": "Bất biến 'một final mỗi vòng' do service ép, không có ràng buộc unique ở database."
+     "node": "dt-receipt",
+     "note": "Lưu trữ biên nhận nộp thầu làm bằng chứng pháp lý."
     }
    ]
   },
   {
    "id": "f-rebid",
-   "name": "Đấu lại: vì sao là vòng mới chứ không phải stage mới",
-   "group": "Đấu thầu",
-   "summary": "Một quyết định mô hình hoá, và hệ quả của nó lên dữ liệu.",
+   "name": "Quy trình Đấu lại: Mở vòng mới, giữ nguyên lịch sử",
+   "group": "Vòng Đời Thầu & Quy Trình",
+   "summary": "Cách xử lý khi chủ đầu tư yêu cầu đấu lại: mở vòng thầu mới mà không làm mất lịch sử các vòng trước.",
    "steps": [
     {
      "node": "bd-result",
-     "note": "Trượt hoặc bị huỷ thầu — cơ hội đang ở S7."
+     "note": "Chủ đầu tư thông báo đấu lại giá hoặc đàm phán lại."
     },
     {
      "node": "dt-rebid",
-     "note": "Mở lại S7 → S4 kèm lý do. Stage quay lại, nhưng lịch sử không bị viết lại."
+     "note": "Kích hoạt quy trình đấu lại kèm lý do rõ ràng."
     },
     {
      "node": "dt-round",
-     "note": "Tạo vòng mới: vòng cũ chuyển CLOSED, số vòng tăng, bản nháp cũ thành SUPERSEDED."
+     "note": "Tạo vòng thầu mới, tự động khóa vòng cũ làm cơ sở đối chiếu."
     },
     {
      "node": "dt-draft",
-     "note": "Bản nộp của vòng cũ vẫn còn nguyên và vẫn tra được — chuỗi revision không đứt."
+     "note": "Kế thừa tài liệu vòng trước và cập nhật phương án giá mới."
     },
     {
      "node": "dt-submit",
-     "note": "Nộp lại đi đúng con đường cũ: chọn final rồi ghi nhận nộp."
+     "note": "Chốt nộp hồ sơ chính thức của vòng đấu lại."
     },
     {
      "node": "sys-history",
-     "note": "StageHistory giữ cả hai lần đi qua S4 và S5, nên đọc lại biết đây là lần đấu thứ mấy."
+     "note": "Lưu vết toàn bộ tiến trình đấu lại giúp tra cứu lịch sử minh bạch."
+    }
+   ]
+  },
+  {
+   "id": "f-gates",
+   "name": "5 Cổng Cứng Kiểm Soát Máy Chủ",
+   "group": "5 Cổng Cứng Kiểm Soát Máy Chủ",
+   "summary": "Năm chốt chặn bắt buộc phải có phê duyệt hoặc bằng chứng mới được chuyển bước.",
+   "steps": [
+    {
+     "node": "sys-gate2",
+     "note": "Chốt chặn S2: Bắt buộc có quyết định Scorecard từ lãnh đạo mới được rời S2."
+    },
+    {
+     "node": "sys-gate4",
+     "note": "Chốt chặn S4: Bắt buộc có người phụ trách và hạn chót mới được mở phòng thầu."
+    },
+    {
+     "node": "sys-gate5",
+     "note": "Chốt chặn S5: Chỉ mở khi đã chọn bản Final và nộp thầu thành công."
+    },
+    {
+     "node": "sys-gate7",
+     "note": "Chốt chặn S7: Bắt buộc chọn kết quả và ghi nhận lý do chi tiết."
+    },
+    {
+     "node": "sys-gate8",
+     "note": "Chốt chặn S8: Chỉ dự án Trúng thầu (WON) mới được phép bàn giao thi công."
+    }
+   ]
+  },
+  {
+   "id": "f-gonogo",
+   "name": "Phê duyệt Go/No-Go tại S2: Dừng thầu sớm",
+   "group": "5 Cổng Cứng Kiểm Soát Máy Chủ",
+   "summary": "Chấm điểm 6 tiêu chí và lãnh đạo phê duyệt để dừng sớm các cơ hội rủi ro, tiết kiệm chi phí.",
+   "steps": [
+    {
+     "node": "bd-scorecard",
+     "note": "Chấm điểm 6 tiêu chí trọng số: Kỹ thuật, Quan hệ, Giá, Lợi nhuận, Rủi ro, Nguồn lực."
+    },
+    {
+     "node": "sys-score",
+     "note": "Hệ thống tự động tính toán tổng điểm trên thang 0-100."
+    },
+    {
+     "node": "bd-brief",
+     "note": "Lập hồ sơ tóm tắt cơ hội trình Ban lãnh đạo."
+    },
+    {
+     "node": "bdh-decide",
+     "note": "Lãnh đạo phê duyệt: GO chuyển sang S3, NO-GO dừng thầu ngay tại S7."
+    },
+    {
+     "node": "sys-history",
+     "note": "Tự động lưu vết người phê duyệt và lý do vào lịch sử hệ thống."
+    }
+   ]
+  },
+  {
+   "id": "f-final",
+   "name": "Bản nộp Final tại S4: Kiểm soát trước khi nộp",
+   "group": "5 Cổng Cứng Kiểm Soát Máy Chủ",
+   "summary": "Chỉ có duy nhất 1 bản giá và hồ sơ chính thức được gửi đi, triệt tiêu rủi ro nộp nhầm file cũ.",
+   "steps": [
+    {
+     "node": "dt-draft",
+     "note": "Hoàn thiện các bản nháp hồ sơ kỹ thuật và biểu giá."
+    },
+    {
+     "node": "dt-mark-final",
+     "note": "Đánh dấu bản nộp chính thức (Final) của vòng thầu."
+    },
+    {
+     "node": "sys-onefinal",
+     "note": "Hệ thống đảm bảo nguyên tắc duy nhất 1 bản Final hợp lệ."
+    },
+    {
+     "node": "bdh-price",
+     "note": "Hội đồng giá phê duyệt giá chào thầu cuối cùng."
+    },
+    {
+     "node": "dt-submit",
+     "note": "Xác nhận nộp thầu chính thức kèm bằng chứng gửi hồ sơ."
+    },
+    {
+     "node": "sys-gate5",
+     "note": "Hệ thống kiểm tra hợp lệ và chuyển sang giai đoạn Đã nộp (S5)."
+    }
+   ]
+  },
+  {
+   "id": "f-result",
+   "name": "Chốt kết quả S7 & Bàn giao S8: Phân định Thắng/Thua",
+   "group": "5 Cổng Cứng Kiểm Soát Máy Chủ",
+   "summary": "Ghi nhận bài học kinh nghiệm khi trượt thầu và kích hoạt gói bàn giao cam kết khi trúng thầu.",
+   "steps": [
+    {
+     "node": "bd-result",
+     "note": "Cập nhật kết quả trúng thầu (WON) hoặc trượt thầu (LOST)."
+    },
+    {
+     "node": "sys-gate7",
+     "note": "Hệ thống bắt buộc cập nhật lý do và đối thủ thắng."
+    },
+    {
+     "node": "bd-lessons",
+     "note": "Lưu trữ bài học kinh nghiệm rút ra sau gói thầu."
+    },
+    {
+     "node": "dt-handover",
+     "note": "Chỉ dự án Thắng mới được lập Gói bàn giao Handover Pack."
+    },
+    {
+     "node": "sys-gate8",
+     "note": "Hệ thống kiểm tra điều kiện Trúng thầu trước khi cho phép bàn giao."
+    },
+    {
+     "node": "bdh-handover-appr",
+     "note": "Lãnh đạo ký duyệt bàn giao sang Ban chỉ huy công trường."
     }
    ]
   },
   {
    "id": "f-trace",
-   "name": "Dấu vết: version · StageHistory · audit trong một transaction",
-   "group": "Điều hành",
-   "summary": "Ba lớp bảo vệ tính đúng đắn — và chỗ lớp thứ nhất đang hở.",
+   "name": "Lưu vết lịch sử & Bảo vệ toàn vẹn dữ liệu",
+   "group": "Hệ Thống, Dấu Vết & Nền Tảng",
+   "summary": "Hệ thống tự động lưu vết mọi lần đổi bước, chống sửa đè và bảo toàn lịch sử phê duyệt.",
    "steps": [
     {
      "node": "sys-version",
-     "note": "Khoá lạc quan: ghi có điều kiện version, lệch thì 409 Conflict."
+     "note": "Tự động chống ghi đè khi nhiều người cùng thao tác trên một cơ hội."
     },
     {
      "node": "bdh-pipeline",
-     "note": "Nhưng web KHÔNG gửi expectedVersion, nên service tự lấy version hiện tại — tranh chấp biến mất trong im lặng."
+     "note": "Cập nhật trạng thái dự án minh bạch trên bảng Kanban."
     },
     {
      "node": "bd-edit",
-     "note": "Chưa có endpoint sửa cơ hội, nên hiện chỉ chuyển stage mới chạm tới khoá này."
+     "note": "Ghi nhận chi tiết lịch sử mọi lần chỉnh sửa thông tin."
     },
     {
      "node": "sys-history",
-     "note": "Mọi lần đổi stage ghi from/to, loại cổng, lý do, người làm — cùng transaction với việc đổi."
+     "note": "Lưu vết vĩnh viễn: ai chuyển bước, vào lúc nào, lý do gì."
     },
     {
      "node": "sys-audit",
-     "note": "Audit append-only nhận tham số tx: ghi ngoài transaction là audit nói dối khi mutate rollback."
+     "note": "Nhật ký hệ thống đồng bộ tự động, không thể sửa xóa."
     },
     {
      "node": "adm-audit",
-     "note": "Đọc audit cần quyền riêng — Trưởng phòng Đấu thầu và BD không đọc được."
+     "note": "Tra cứu nhật ký phục vụ công tác thanh tra và kiểm soát nội bộ."
     }
    ]
   },
   {
    "id": "f-tower",
-   "name": "Control Tower: số nào tự tính, số nào người nhập",
-   "group": "Điều hành",
-   "summary": "Phân biệt thứ hệ thống suy ra được với thứ phụ thuộc vào người gõ.",
+   "name": "Trung tâm điều hành: Số liệu tự tính & Nhập tay",
+   "group": "Hệ Thống, Dấu Vết & Nền Tảng",
+   "summary": "Phân biệt rõ các chỉ số do hệ thống tự động suy ra với các thông tin do con người đánh giá.",
    "steps": [
     {
      "node": "sys-weighted",
-     "note": "Pipeline có trọng số = giá trị × xác suất, chỉ trên stage đang chạy S0–S6. Tự tính."
+     "note": "Giá trị trọng số = Giá trị dự kiến × Xác suất trúng thầu (Tự động tính)."
     },
     {
      "node": "sys-winrate",
-     "note": "Tỷ lệ trúng = Thắng/(Thắng+Thua). No-bid không nằm ở mẫu số — không đấu không phải là thua."
+     "note": "Tỷ lệ trúng = Thắng / (Thắng + Trượt), không tính dự án dừng thầu (Tự động tính)."
     },
     {
      "node": "sys-deadline",
-     "note": "Cảnh báo hạn: màu luôn đi kèm chữ. Nhưng chỉ hiện khi có người mở màn hình — chưa có thông báo chủ động."
+     "note": "Tự động cảnh báo đếm ngược các mốc hạn nộp thầu quan trọng."
     },
     {
      "node": "sys-risk",
-     "note": "Mức rủi ro là NGƯỜI NHẬP, không phải hệ thống tính. Chấm rủi ro tự động còn nằm ở phần deferred."
+     "note": "Phân loại mức độ rủi ro dựa trên đánh giá chuyên môn."
     },
     {
      "node": "bdh-tower",
-     "note": "Bốn ô số đầu màn cộng danh sách cần chú ý và danh sách quá hạn."
+     "note": "Bảng số liệu tổng hợp điều hành dành cho Ban lãnh đạo."
     },
     {
      "node": "bdh-pipeline",
-     "note": "Kanban S0–S8 để soi xuống từng cơ hội và chuyển stage tại chỗ."
+     "note": "Theo dõi dòng chảy dự án qua 9 giai đoạn theo thời gian thực."
     },
     {
      "node": "bdh-review",
-     "note": "Chưa có báo cáo theo người phụ trách, theo ngành hay theo khoảng thời gian."
+     "note": "Đánh giá toàn cảnh hiệu quả theo đuổi thầu của doanh nghiệp."
     }
    ]
   },
   {
    "id": "f-perm",
-   "name": "Ai được làm gì: 5 vai · 11 quyền",
-   "group": "Nền tảng",
-   "summary": "Ma trận nằm ở một chỗ; API enforce, web chỉ ẩn nút.",
+   "name": "Ma trận phân quyền: 5 Vai trò phụ trách",
+   "group": "Hệ Thống, Dấu Vết & Nền Tảng",
+   "summary": "Minh bạch ai có quyền xem, chấm điểm, nộp hồ sơ và phê duyệt quyết định.",
    "steps": [
     {
      "node": "adm-auth",
-     "note": "Đăng nhập trả JWT; hai guard toàn cục chạy theo thứ tự gắn user rồi mới so quyền."
+     "note": "Đăng nhập an toàn, bảo vệ dữ liệu nội bộ của tổ chức."
     },
     {
      "node": "adm-rbac",
-     "note": "Quyền chia nhỏ theo resource:action, ba quyền lái nghiệp vụ tách riêng vì chúng đổi trạng thái."
+     "note": "Phân quyền chặt chẽ theo chức danh chuyên môn."
     },
     {
      "node": "bd-scorecard",
-     "note": "BD chấm điểm được (scorecard:manage) nhưng không có scorecard:decide."
+     "note": "Chuyên viên BD có quyền chấm điểm sơ bộ cơ hội."
     },
     {
      "node": "bdh-decide",
-     "note": "Tổng giám đốc và Giám đốc Kinh doanh quyết Go/No-Go; Admin có quyền qua toàn quyền hệ thống, không phải người quyết nghiệp vụ."
+     "note": "Chỉ Tổng Giám Đốc và Giám Đốc Kinh Doanh mới có quyền duyệt Go/No-Go."
     },
     {
      "node": "dt-submit",
-     "note": "Chỉ Trưởng phòng Đấu thầu (và CEO/Admin) nộp được — Giám đốc Kinh doanh cũng không nộp thay."
+     "note": "Chỉ Trưởng phòng Đấu thầu hoặc Lãnh đạo mới có quyền nộp hồ sơ thầu."
     },
     {
      "node": "adm-audit",
-     "note": "audit:read chỉ ba vai. Ẩn nút ở web là gợi ý UX, biên bảo mật nằm ở server."
+     "note": "Quyền tra cứu nhật ký được phân công cho Ban điều hành và Quản trị viên."
     },
     {
      "node": "adm-users",
-     "note": "user:manage đã khai báo nhưng chưa có màn — và mật khẩu demo dùng chung phải gỡ trước khi giao khách."
+     "note": "Quản lý và cấp quyền tài khoản người dùng theo phòng ban."
     }
    ]
   },
   {
    "id": "f-gap",
-   "name": "Khoảng trống đã biết: cái gì chưa dựng và vì sao",
-   "group": "Nền tảng",
-   "summary": "Đọc trước khi hứa với khách — mỗi ô ở đây là một quyết định phạm vi, không phải một lỗi. Năm ô \"Chỉ có giao diện\" đã dựng xong màn hình nhưng chưa có gì trong database: đi hết luồng demo được, mất sạch khi đổi máy hoặc đăng xuất.",
+   "name": "Lộ trình phát triển & Tính năng mở rộng",
+   "group": "Hệ Thống, Dấu Vết & Nền Tảng",
+   "summary": "Thông tin chi tiết về các chức năng tiêu chuẩn và các mô-đun nâng cao đang được hoàn thiện.",
    "steps": [
     {
      "node": "bd-edit",
-     "note": "UI sửa cơ hội dự án đã dựng, nhưng vẫn CHƯA có PATCH /pursuits/:id — thay đổi chỉ nằm trên trình duyệt."
+     "note": "Cập nhật cơ hội dự án và chống xung đột dữ liệu đã hoàn thiện."
     },
     {
      "node": "bd-strategy",
-     "note": "S3 đã có màn nhập chiến lược và đội phụ trách, nhưng chưa trường nào lưu chúng."
+     "note": "Chiến lược thầu và phân công tổ chuyên trách tại giai đoạn S3."
     },
     {
      "node": "bd-clarify",
-     "note": "Nhật ký làm rõ đã có màn, chưa có model — và S6 vẫn có thể bị bỏ qua hoàn toàn."
+     "note": "Nhật ký làm rõ và biên bản thương thảo hợp đồng tại S6."
     },
     {
      "node": "bdh-price",
-     "note": "Đã có khối duyệt giá trên UI, nhưng không có cột trạng thái duyệt và không gì chặn được thao tác nộp final."
+     "note": "Quy trình hội đồng giá phê duyệt biểu giá thầu."
     },
     {
      "node": "sys-risk",
-     "note": "Mức rủi ro nhập tay, chưa tự tính từ dữ liệu."
+     "note": "Chấm điểm rủi ro tự động dựa trên hạn nộp và các yếu tố dự án."
     },
     {
      "node": "sys-code",
-     "note": "Mã sinh từ count()+1 và năm cố định 2026 — trùng mã sau khi xoá, sai năm sau 2026."
+     "note": "Chuẩn hóa quy tắc cấp mã định danh dự án tự động."
     },
     {
      "node": "dt-handover",
-     "note": "Handover pack (S8) thuộc slice P03: mở stage được nhưng chưa có nội dung."
+     "note": "Gói bàn giao Handover Pack 4 cấu phần kết nối sang phần mềm thi công."
     },
     {
      "node": "bdh-lesson",
-     "note": "Màn Won/Lost & Lessons đã dựng giao diện; bài học chưa có model, Capability Library (M5) chưa dựng."
+     "note": "Thư viện bài học kinh nghiệm và tri thức thầu tích hợp."
     }
    ]
   }

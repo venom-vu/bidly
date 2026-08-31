@@ -166,8 +166,7 @@ const scopeBoundaries = [
     domain: "Không gian đấu thầu (Tender Workspace)",
     inScope:
       "Mốc tiến độ, checklist 5 phòng ban, nhật ký làm rõ, chuỗi phiên bản hồ sơ và kiểm soát duy nhất 1 bản final.",
-    outScope:
-      "Tự động nộp thầu qua mạng công cộng thay thế cán bộ đấu thầu.",
+    outScope: "Tự động nộp thầu qua mạng công cộng thay thế cán bộ đấu thầu.",
   },
   {
     domain: "Dự toán & Thương mại (Estimate Summary)",
@@ -194,7 +193,9 @@ const scopeBoundaries = [
     >
       <div class="sf-container relative z-10 text-center max-w-4xl space-y-6">
         <div class="inline-block">
-          <span class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary">
+          <span
+            class="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-brand-soft text-primary"
+          >
             ĐỊNH VỊ PRECON CRM
           </span>
         </div>
@@ -211,7 +212,9 @@ const scopeBoundaries = [
         <p
           class="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-normal"
         >
-          Preconstruction CRM là hệ thống làm việc chuẩn cho quá trình tìm kiếm, theo đuổi và giành dự án xây dựng công nghiệp: từ tín hiệu dự án đầu tiên đến kết quả Thắng/Thua và gói bàn giao tiền thi công.
+          Preconstruction CRM là hệ thống làm việc chuẩn cho quá trình tìm kiếm,
+          theo đuổi và giành dự án xây dựng công nghiệp: từ tín hiệu dự án đầu
+          tiên đến kết quả Thắng/Thua và gói bàn giao tiền thi công.
         </p>
 
         <div class="pt-2 flex flex-wrap justify-center items-center gap-4">
@@ -237,11 +240,15 @@ const scopeBoundaries = [
           class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-muted-foreground border-t border-border/70 max-w-xl mx-auto"
         >
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0" />
+            <span
+              class="w-2 h-2 rounded-full bg-primary inline-block shrink-0"
+            />
             <span>Chuỗi thực thể chuẩn ngành</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0" />
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-600 inline-block shrink-0"
+            />
             <span>Ranh giới rõ ràng với ERP</span>
           </div>
         </div>
@@ -249,146 +256,224 @@ const scopeBoundaries = [
     </section>
 
     <!-- Why Industrial General Contractors Need Precon CRM -->
-    <section class="py-16 md:py-24 bg-card border-b border-border/80">
+    <section class="py-16 md:py-24 bg-card border-b border-border/80 relative overflow-hidden">
       <div class="sf-container">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <!-- Left Column: The Problem & 3 Core Structural Pillars -->
           <div class="lg:col-span-6 space-y-6">
-            <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground leading-tight tracking-tight"
-            >
-              Tại sao Tổng thầu Công nghiệp không thể dùng CRM bán hàng hay ERP?
-            </h2>
-            <p class="text-sm sm:text-base text-muted-foreground leading-relaxed font-normal">
-              CRM bán hàng truyền thống xoay quanh đơn hàng tiêu dùng (Deal/Order) với chu kỳ ngắn và cá nhân mua hàng đơn lẻ. Trong khi đó, ERP và phần mềm quản lý thi công chỉ bắt đầu sau khi hợp đồng đã ký. Preconstruction CRM lấp đầy đúng khoảng trống quan trọng nhất: phát hiện, chọn đúng cơ hội và giành thắng lợi trong đấu thầu.
-            </p>
-            <div class="space-y-4 pt-2">
-              <div class="flex items-start gap-3.5">
-                <span
-                  class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs tabular"
-                >
-                  1
-                </span>
-                <div>
-                  <h3 class="font-extrabold text-foreground tracking-tight text-base">
-                    Đối tượng trung tâm là Pursuit &amp; Work Package
-                  </h3>
-                  <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-0.5 font-normal">
-                    Một dự án có thể có nhiều cơ hội theo đuổi (Pursuit), mỗi cơ hội gồm nhiều gói thầu (Work Package) với chu kỳ đấu thầu độc lập.
-                  </p>
+            <div class="space-y-3">
+              <span class="sf-eyebrow">ĐẶC THÙ NGÀNH TỔNG THẦU</span>
+              <h2
+                class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground leading-tight tracking-tight"
+              >
+                Tại sao Tổng thầu Công nghiệp không thể dùng CRM bán hàng hay ERP?
+              </h2>
+              <p
+                class="text-sm sm:text-base text-muted-foreground leading-relaxed font-normal pt-1"
+              >
+                CRM bán hàng truyền thống xoay quanh đơn hàng tiêu dùng (Deal/Order) với chu kỳ ngắn và cá nhân mua hàng đơn lẻ. Trong khi đó, ERP và phần mềm quản lý thi công chỉ bắt đầu sau khi hợp đồng đã ký. Preconstruction CRM lấp đầy đúng khoảng trống quan trọng nhất: phát hiện, chọn đúng cơ hội và giành thắng lợi trong đấu thầu.
+              </p>
+            </div>
+
+            <!-- 3 Refined Architectural Pillars -->
+            <div class="space-y-3 pt-1">
+              <!-- Pillar 1 -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background border border-border/60 shadow-xs hover:border-primary/40 hover:shadow-card transition-all duration-300 group"
+              >
+                <div class="flex items-start gap-3.5">
+                  <span
+                    class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 font-extrabold text-xs font-mono group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
+                    01
+                  </span>
+                  <div class="space-y-0.5">
+                    <h3 class="font-extrabold text-foreground tracking-tight text-sm sm:text-base group-hover:text-primary transition-colors">
+                      Đối tượng trung tâm là Pursuit &amp; Work Package
+                    </h3>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                      Một dự án thực tế có thể có nhiều cơ hội theo đuổi (Pursuit), mỗi cơ hội gồm nhiều gói thầu (Work Package) với chu kỳ đấu thầu và kết quả độc lập.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="flex items-start gap-3.5">
-                <span
-                  class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs tabular"
-                >
-                  2
-                </span>
-                <div>
-                  <h3 class="font-extrabold text-foreground tracking-tight text-base">
-                    State Machine 5 Cổng Cứng (Server-Enforced)
-                  </h3>
-                  <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-0.5 font-normal">
-                    Không cho phép kéo thả tự do làm sai lệch pipeline; các cổng S2 (Go/No-Go), S4, S5, S7, S8 bắt buộc có bằng chứng và người duyệt ở máy chủ.
-                  </p>
+
+              <!-- Pillar 2 -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background border border-border/60 shadow-xs hover:border-primary/40 hover:shadow-card transition-all duration-300 group"
+              >
+                <div class="flex items-start gap-3.5">
+                  <span
+                    class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 font-extrabold text-xs font-mono group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
+                    02
+                  </span>
+                  <div class="space-y-0.5">
+                    <h3 class="font-extrabold text-foreground tracking-tight text-sm sm:text-base group-hover:text-primary transition-colors">
+                      State Machine 5 Cổng Cứng (Server-Enforced)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                      Chặn kéo thả tự do làm sai lệch pipeline; các cổng S2 (Go/No-Go), S4, S5, S7, S8 bắt buộc có đầy đủ bằng chứng, checklist và người duyệt ở máy chủ.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="flex items-start gap-3.5">
-                <span
-                  class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs tabular"
-                >
-                  3
-                </span>
-                <div>
-                  <h3 class="font-extrabold text-foreground tracking-tight text-base">
-                    Gói Bàn Giao (Handover Pack) chuẩn mực sang ERP
-                  </h3>
-                  <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-0.5 font-normal">
-                    Bidly kết thúc tại điểm Thắng thầu với gói bàn giao đầy đủ (phạm vi, cam kết thương mại, giả định, rủi ro) chuyển giao sang hệ thống thi công.
-                  </p>
+
+              <!-- Pillar 3 -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background border border-border/60 shadow-xs hover:border-primary/40 hover:shadow-card transition-all duration-300 group"
+              >
+                <div class="flex items-start gap-3.5">
+                  <span
+                    class="w-7 h-7 rounded-full bg-brand-soft text-primary flex items-center justify-center shrink-0 font-extrabold text-xs font-mono group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
+                    03
+                  </span>
+                  <div class="space-y-0.5">
+                    <h3 class="font-extrabold text-foreground tracking-tight text-sm sm:text-base group-hover:text-primary transition-colors">
+                      Gói Bàn Giao (Handover Pack) chuẩn mực sang ERP
+                    </h3>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                      Bidly kết thúc tại điểm Thắng thầu (S8 Won) với gói bàn giao đầy đủ (phạm vi, cam kết thương mại, giả định, rủi ro) chuyển giao chuẩn xác sang hệ thống thi công.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-6 space-y-6 lg:pl-4">
-            <!-- Timeline Header -->
-            <div class="flex items-center justify-between border-b border-border/70 pb-3">
-              <span class="text-xs font-bold uppercase tracking-wider text-primary">
-                Ranh giới vòng đời sản phẩm
-              </span>
-              <span class="text-xs text-muted-foreground font-mono tabular font-bold">
-                S0 ➔ S8
-              </span>
-            </div>
-
-            <!-- Vertical Timeline Flow (Clean, No Card Wrapper) -->
-            <div class="relative space-y-8 pl-1 sm:pl-2">
-              <!-- Vertical Connecting Spine -->
-              <div class="absolute left-6 sm:left-6.5 top-6 bottom-6 w-0.5 bg-border/80 rounded-full z-0" />
-
-              <!-- Timeline Item 1: S0 -->
-              <div class="relative z-10 flex items-start gap-4 sm:gap-5 group">
-                <!-- Node Icon/Badge on Spine -->
-                <div
-                  class="w-11 h-11 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-black text-xs sm:text-sm shrink-0 ring-4 ring-card shadow-sm transition-transform duration-300 group-hover:scale-105"
-                >
-                  S0
-                </div>
-                <!-- Content Area -->
-                <div class="flex-1 space-y-1 pt-0.5">
-                  <div class="text-[11px] font-bold uppercase tracking-wider text-primary">
-                    Điểm bắt đầu
-                  </div>
-                  <div class="text-sm sm:text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
-                    Tín hiệu dự án &amp; Sàng lọc cơ hội
-                  </div>
-                  <p class="text-xs sm:text-[13.5px] text-muted-foreground font-normal leading-relaxed">
-                    Project Inbox, dedup, FDI/KCN mapping, gán owner
-                  </p>
-                </div>
+          <!-- Right Column: Clean Unified Timeline Card -->
+          <div class="lg:col-span-6">
+            <div class="sf-card p-6 sm:p-8 rounded-2xl bg-card border border-border/70 shadow-card">
+              <!-- Header -->
+              <div class="border-b border-border/60 pb-4 mb-6">
+                <h3 class="text-base sm:text-lg font-extrabold text-foreground tracking-tight">
+                  Ranh Giới Vòng Đời S0 ➔ S8
+                </h3>
+                <p class="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                  Chu trình quản trị khép kín từ phát hiện cơ hội đến bàn giao
+                </p>
               </div>
 
-              <!-- Timeline Item 2: S2-S6 -->
-              <div class="relative z-10 flex items-start gap-4 sm:gap-5 group">
-                <!-- Node Icon/Badge on Spine -->
-                <div
-                  class="w-11 h-11 rounded-xl bg-stage-s4 text-white flex items-center justify-center font-black text-[11px] sm:text-xs shrink-0 ring-4 ring-card shadow-sm transition-transform duration-300 group-hover:scale-105"
-                >
-                  S2-S6
-                </div>
-                <!-- Content Area -->
-                <div class="flex-1 space-y-1 pt-0.5">
-                  <div class="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                    Tiền đấu thầu &amp; Đấu thầu
+              <!-- Clean Timeline List with 100% Centered Spine -->
+              <div class="space-y-0">
+                <!-- Item 1: S0-S1 -->
+                <div class="flex items-stretch gap-4 sm:gap-5 group">
+                  <!-- Left Col: Node & Connecting Line -->
+                  <div class="flex flex-col items-center shrink-0 w-9 sm:w-10">
+                    <div
+                      class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-soft text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                    >
+                      S0
+                    </div>
+                    <div class="w-0.5 flex-1 bg-border/80 my-2 group-hover:bg-primary/30 transition-colors" />
                   </div>
-                  <div class="text-sm sm:text-base font-extrabold text-foreground tracking-tight group-hover:text-primary transition-colors">
-                    Scorecard Go/No-Go &amp; Tender Workspace
+                  <!-- Right Col: Content -->
+                  <div class="flex-1 pb-6 sm:pb-7">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-bold text-primary">
+                        Điểm bắt đầu
+                      </span>
+                      <span class="text-[11px] font-medium text-muted-foreground font-mono">
+                        Project Inbox
+                      </span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-extrabold text-foreground tracking-tight mt-0.5 group-hover:text-primary transition-colors">
+                      Tín hiệu dự án &amp; Sàng lọc cơ hội (S0 ➔ S1)
+                    </h4>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1 font-normal">
+                      Thu thập tín hiệu KCN/FDI, lọc trùng tự động (dedup), phân loại và gán đầu mối phụ trách.
+                    </p>
                   </div>
-                  <p class="text-xs sm:text-[13.5px] text-muted-foreground font-normal leading-relaxed">
-                    Checklist 5 phòng ban, bất biến 1 bản final, làm rõ
-                  </p>
                 </div>
-              </div>
 
-              <!-- Timeline Item 3: S8 -->
-              <div class="relative z-10 flex items-start gap-4 sm:gap-5 group">
-                <!-- Node Icon/Badge on Spine -->
-                <div
-                  class="w-11 h-11 rounded-xl bg-stage-s8 text-white flex items-center justify-center font-black text-xs sm:text-sm shrink-0 ring-4 ring-card shadow-sm transition-transform duration-300 group-hover:scale-105"
-                >
-                  S8
+                <!-- Item 2: S2 -->
+                <div class="flex items-stretch gap-4 sm:gap-5 group">
+                  <!-- Left Col: Node & Connecting Line -->
+                  <div class="flex flex-col items-center shrink-0 w-9 sm:w-10">
+                    <div
+                      class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-soft text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                    >
+                      S2
+                    </div>
+                    <div class="w-0.5 flex-1 bg-border/80 my-2 group-hover:bg-primary/30 transition-colors" />
+                  </div>
+                  <!-- Right Col: Content -->
+                  <div class="flex-1 pb-6 sm:pb-7">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-bold text-primary">
+                        Cổng Go/No-Go
+                      </span>
+                      <span class="text-[11px] font-medium text-muted-foreground font-mono">
+                        Scorecard 0–100
+                      </span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-extrabold text-foreground tracking-tight mt-0.5 group-hover:text-primary transition-colors">
+                      Đánh giá Go/No-Go &amp; Khóa Gate máy chủ
+                    </h4>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1 font-normal">
+                      Scorecard 6 tiêu chí trọng số; bắt buộc người duyệt, quyết định và lý do dừng thầu lưu vết Audit Log.
+                    </p>
+                  </div>
                 </div>
-                <!-- Content Area -->
-                <div class="flex-1 space-y-1 pt-0.5">
-                  <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-600">
-                    Điểm kết thúc
+
+                <!-- Item 3: S4-S5 -->
+                <div class="flex items-stretch gap-4 sm:gap-5 group">
+                  <!-- Left Col: Node & Connecting Line -->
+                  <div class="flex flex-col items-center shrink-0 w-9 sm:w-10">
+                    <div
+                      class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-soft text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                    >
+                      S4
+                    </div>
+                    <div class="w-0.5 flex-1 bg-border/80 my-2 group-hover:bg-primary/30 transition-colors" />
                   </div>
-                  <div class="text-sm sm:text-base font-extrabold text-foreground tracking-tight group-hover:text-emerald-600 transition-colors">
-                    Gói bàn giao tiền thi công (Handover Pack)
+                  <!-- Right Col: Content -->
+                  <div class="flex-1 pb-6 sm:pb-7">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-bold text-primary">
+                        Không gian Đấu thầu
+                      </span>
+                      <span class="text-[11px] font-medium text-muted-foreground font-mono">
+                        1 Bản Final
+                      </span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-extrabold text-foreground tracking-tight mt-0.5 group-hover:text-primary transition-colors">
+                      Checklist 5 Phòng Ban &amp; Chốt Nộp Thầu (S4 ➔ S5)
+                    </h4>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1 font-normal">
+                      Checklist phối hợp 5 phòng ban; máy chủ chặn chuyển S5 nếu chưa nộp bản final được phê duyệt.
+                    </p>
                   </div>
-                  <p class="text-xs sm:text-[13.5px] text-muted-foreground font-normal leading-relaxed">
-                    Chuyển giao dữ liệu sang ERP/PM thi công
-                  </p>
+                </div>
+
+                <!-- Item 4: S7-S8 -->
+                <div class="flex items-stretch gap-4 sm:gap-5 group">
+                  <!-- Left Col: Node (Last item: no connecting line!) -->
+                  <div class="flex flex-col items-center shrink-0 w-9 sm:w-10">
+                    <div
+                      class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-soft text-primary font-extrabold text-xs sm:text-sm flex items-center justify-center border border-primary/25 shadow-xs shrink-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                    >
+                      S8
+                    </div>
+                  </div>
+                  <!-- Right Col: Content -->
+                  <div class="flex-1 pt-0.5">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-bold text-primary">
+                        Điểm kết thúc
+                      </span>
+                      <span class="text-[11px] font-medium text-muted-foreground font-mono">
+                        Handover Pack
+                      </span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-extrabold text-foreground tracking-tight mt-0.5 group-hover:text-primary transition-colors">
+                      Kết Quả Thắng &amp; Gói Bàn Giao Tiền Thi Công
+                    </h4>
+                    <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1 font-normal">
+                      Đóng gói chuẩn hóa 6 thành phần (phạm vi, thương mại, rủi ro...) chuyển giao sang hệ thống ERP/PM.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -406,14 +491,21 @@ const scopeBoundaries = [
           >
             Khác Biệt Giữa CRM Bán Lẻ, Preconstruction CRM &amp; ERP
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Bảng đối chiếu 7 tiêu chí then chốt giúp doanh nghiệp định vị đúng công cụ cho từng giai đoạn.
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Bảng đối chiếu 7 tiêu chí then chốt giúp doanh nghiệp định vị đúng
+            công cụ cho từng giai đoạn.
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-xl bg-card border border-border/80 shadow-card">
+        <div
+          class="overflow-x-auto rounded-xl bg-card border border-border/80 shadow-card"
+        >
           <table class="w-full text-left text-sm">
-            <thead class="bg-muted/60 border-b border-border text-foreground font-extrabold">
+            <thead
+              class="bg-muted/60 border-b border-border text-foreground font-extrabold"
+            >
               <tr>
                 <th class="p-4 sm:p-5">Tiêu chí</th>
                 <th class="p-4 sm:p-5 text-muted-foreground font-semibold">
@@ -435,7 +527,9 @@ const scopeBoundaries = [
                 :key="rIdx"
                 class="hover:bg-muted/30 transition-colors"
               >
-                <td class="p-4 sm:p-5 font-bold text-foreground whitespace-nowrap">
+                <td
+                  class="p-4 sm:p-5 font-bold text-foreground whitespace-nowrap"
+                >
                   {{ row.criteria }}
                 </td>
                 <td class="p-4 sm:p-5 text-muted-foreground font-normal">
@@ -465,8 +559,12 @@ const scopeBoundaries = [
           >
             Chuỗi Thực Thể Nghiệp Vụ Chuẩn (Canonical Model)
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Phân định rõ ràng từng cấp bậc dữ liệu: giải quyết trọn vẹn bài toán một dự án đấu thầu nhiều gói thầu song song (Multi-package) và kết quả thầu từng phần (Partial Award).
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Phân định rõ ràng từng cấp bậc dữ liệu: giải quyết trọn vẹn bài toán
+            một dự án đấu thầu nhiều gói thầu song song (Multi-package) và kết
+            quả thầu từng phần (Partial Award).
           </p>
         </div>
 
@@ -479,7 +577,9 @@ const scopeBoundaries = [
             class="sf-card group bg-card border border-border/70 rounded-xl shadow-card hover:shadow-card-hover hover:border-primary/40 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col justify-between p-6 sm:p-8 space-y-3"
           >
             <div class="space-y-2">
-              <div class="text-xs font-mono font-bold text-primary uppercase tabular">
+              <div
+                class="text-xs font-mono font-bold text-primary uppercase tabular"
+              >
                 Entity #0{{ eIdx + 1 }}
               </div>
               <h3
@@ -499,7 +599,10 @@ const scopeBoundaries = [
     </section>
 
     <!-- 6 Personas Jobs-to-be-Done -->
-    <section id="personas" class="py-16 md:py-24 bg-background border-b border-border/80">
+    <section
+      id="personas"
+      class="py-16 md:py-24 bg-background border-b border-border/80"
+    >
       <div class="sf-container space-y-12 md:space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
           <h2
@@ -507,8 +610,11 @@ const scopeBoundaries = [
           >
             Bidly Phục Vụ Đúng Nhu Cầu Của 6 Nhóm Nhân Sự Then Chốt
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Mỗi vai trò trong doanh nghiệp tổng thầu có góc nhìn dữ liệu và quyền hạn tương ứng trên cùng một hệ thống duy nhất.
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Mỗi vai trò trong doanh nghiệp tổng thầu có góc nhìn dữ liệu và
+            quyền hạn tương ứng trên cùng một hệ thống duy nhất.
           </p>
         </div>
 
@@ -522,7 +628,9 @@ const scopeBoundaries = [
           >
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="inline-flex px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-brand-soft text-primary select-none">
+                <span
+                  class="inline-flex px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-brand-soft text-primary select-none"
+                >
                   {{ persona.role }}
                 </span>
               </div>
@@ -551,12 +659,17 @@ const scopeBoundaries = [
           >
             Ranh Giới Rõ Ràng: Không Làm Tràn Lan
           </h2>
-          <p class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto">
-            Bidly tập trung làm xuất sắc miền Preconstruction, không cố gắng trở thành một ERP cồng kềnh hay phần mềm dự toán chi tiết.
+          <p
+            class="text-sm sm:text-base text-muted-foreground font-normal max-w-2xl mx-auto"
+          >
+            Bidly tập trung làm xuất sắc miền Preconstruction, không cố gắng trở
+            thành một ERP cồng kềnh hay phần mềm dự toán chi tiết.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch"
+        >
           <div
             v-for="(bound, bIdx) in scopeBoundaries"
             :key="bIdx"
@@ -570,10 +683,14 @@ const scopeBoundaries = [
             </h3>
             <div class="space-y-2.5 text-xs sm:text-sm pt-1">
               <div class="text-foreground font-medium leading-relaxed">
-                <strong class="text-primary font-bold">Trong phạm vi:</strong> {{ bound.inScope }}
+                <strong class="text-primary font-bold">Trong phạm vi:</strong>
+                {{ bound.inScope }}
               </div>
               <div class="text-muted-foreground font-normal leading-relaxed">
-                <strong class="text-destructive font-bold">Ngoài phạm vi:</strong> {{ bound.outScope }}
+                <strong class="text-destructive font-bold"
+                  >Ngoài phạm vi:</strong
+                >
+                {{ bound.outScope }}
               </div>
             </div>
           </div>
@@ -585,4 +702,3 @@ const scopeBoundaries = [
     <SfContactPillars />
   </div>
 </template>
-

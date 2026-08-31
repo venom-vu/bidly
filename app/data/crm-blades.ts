@@ -105,7 +105,7 @@ export const crmBladesData = {
         description:
           "Thông tin chủ đầu tư và lịch sử tiếp xúc dễ thất lạc khi nhân sự biến động. Bidly tập trung toàn bộ vào Project Inbox và Stakeholder Map theo dự án.",
         imageUrl:
-          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=768&q=80",
+          "https://images.unsplash.com/photo-1783115259399-3a5a3e0e4592?w=768&q=80",
         linkText: "Khám phá Project Inbox & Quan hệ",
         linkUrl: "/features#stakeholder",
       },
@@ -116,7 +116,7 @@ export const crmBladesData = {
         description:
           "Theo đuổi dự án rủi ro gây lãng phí hàng trăm triệu đồng chi phí thầu. Scorecard S2 chuẩn hóa 6 tiêu chí trọng số giúp dừng thầu sớm có căn cứ xác thực.",
         imageUrl:
-          "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=768&q=80",
+          "https://images.unsplash.com/photo-1588600878108-578307a3cc9d?w=768&q=80",
         linkText: "Xem Scorecard Go/No-Go",
         linkUrl: "/features#gonogo",
       },
@@ -127,7 +127,7 @@ export const crmBladesData = {
         description:
           "Phối hợp 5 phòng ban qua email dễ trễ hạn và nộp nhầm file giá. Tender Workspace quản lý theo vòng thầu với bất biến duy nhất 1 bản nộp final.",
         imageUrl:
-          "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=768&q=80",
+          "https://images.unsplash.com/photo-1590935216109-8d3318de2c1c?w=768&q=80",
         linkText: "Khám phá Tender Workspace",
         linkUrl: "/features#tender",
       },
@@ -158,7 +158,7 @@ export const crmBladesData = {
         linkText: "Xem chi tiết mô-đun BD",
         linkUrl: "/features#project-intel",
         imageUrl:
-          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+          "https://images.unsplash.com/photo-1686061592689-312bbfb5c055?w=800&q=80",
       },
       {
         id: "gov-cloud",
@@ -170,12 +170,12 @@ export const crmBladesData = {
         features: [
           "Chấm điểm 6 tiêu chí trọng số: Kỹ thuật, Quan hệ, Giá, Lợi nhuận, Rủi ro, Nguồn lực",
           "Dừng thầu sớm có căn cứ (No-Go), tiết kiệm chi phí làm thầu",
-          "Bất biến lưu vết phê duyệt và lý do vào StageHistory",
+          "Tự động lưu vết người phê duyệt và lý do minh bạch",
         ],
         linkText: "Xem cơ chế Scorecard",
         linkUrl: "/features#gonogo",
         imageUrl:
-          "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=80",
+          "https://images.unsplash.com/photo-1544819679-57b273c027a3?w=800&q=80",
       },
       {
         id: "tender-cloud",
@@ -192,7 +192,7 @@ export const crmBladesData = {
         linkText: "Khám phá Tender Workspace",
         linkUrl: "/features#tender",
         imageUrl:
-          "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+          "https://images.unsplash.com/photo-1630487656049-6db93a53a7e9?w=800&q=80",
       },
       {
         id: "handover-cloud",
@@ -209,7 +209,7 @@ export const crmBladesData = {
         linkText: "Xem gói bàn giao S8",
         linkUrl: "/features#dashboard",
         imageUrl:
-          "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+          "https://images.unsplash.com/photo-1763568258367-1c52beb60be7?w=800&q=80",
       },
     ] as BladeProductCloud[],
   },
@@ -226,7 +226,7 @@ export const crmBladesData = {
       linkText: "Xem chi tiết 9 giai đoạn",
       linkUrl: "/stages",
       imageUrl:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+        "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&q=80",
     },
     {
       id: "feat-2",
@@ -238,7 +238,7 @@ export const crmBladesData = {
       linkText: "Khám phá Tender Workspace",
       linkUrl: "/features#tender",
       imageUrl:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+        "https://images.unsplash.com/photo-1630487656049-6db93a53a7e9?w=800&q=80",
     },
     {
       id: "feat-3",
@@ -250,7 +250,7 @@ export const crmBladesData = {
       linkText: "Tìm hiểu Capability Library",
       linkUrl: "/features#capability",
       imageUrl:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+        "https://images.unsplash.com/photo-1763568258367-1c52beb60be7?w=800&q=80",
     },
   ] as BladeFeatureZ[],
 
